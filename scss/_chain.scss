@@ -1,0 +1,15 @@
+section#chain{
+    .feature {
+        img{
+            max-width:30%;
+        }
+   
+    }
+    @include media-breakpoint-up(lg) {
+        .feature {
+            h3 {
+                max-width:50%;
+            }
+        }
+    }   
+}

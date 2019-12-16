@@ -1,0 +1,32 @@
+<svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 84 54">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        opacity: 0.48;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        fill: #010101;
+      }
+    </style>
+    <clipPath id="clip-path" transform="translate(-379.25 -270.33333)">
+      <rect class="cls-1" x="379.25" y="270.33333" width="84" height="53.99998"/>
+    </clipPath>
+  </defs>
+  <title>25_email</title>
+  <g class="cls-2">
+    <g class="cls-3">
+      <g id="Group_23" data-name="Group 23">
+        <path id="Path_62" data-name="Path 62" class="cls-4" d="M381.25,270.33333a2.019,2.019,0,0,0-2,2v50a2.019,2.019,0,0,0,2,2h80a2.019,2.019,0,0,0,2-2v-50a2.019,2.019,0,0,0-2-2Zm0,2h80v2.469l-40,31.219-40-31.219Zm0,5.062,25.344,19.782-25.344,23.719Zm80,0v43.5l-25.344-23.718Zm-53.062,21.032,12.438,9.687a1,1,0,0,0,1.25,0l12.438-9.687,25.536,23.906H382.657Z" transform="translate(-379.25 -270.33333)"/>
+      </g>
+    </g>
+  </g>
+</svg>
