@@ -43,7 +43,8 @@ hr.light {
   h2:after {
     display:block;
     content: "";
-    margin-top: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
     width: 3.25rem;
     border-color: $primary;
     border-bottom: 0.2rem solid $primary;
