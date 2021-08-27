@@ -1,3 +1,0 @@
-# Desmos Website
-
-## WIP
