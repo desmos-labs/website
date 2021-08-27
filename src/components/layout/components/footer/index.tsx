@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import validator from "validator";
 import useTranslation from "next-translate/useTranslation";
 import FooterLogo from "@assets/desmos.svg";
 import { SocialMedia } from "@components";
