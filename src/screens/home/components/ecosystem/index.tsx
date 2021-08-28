@@ -2,11 +2,11 @@ import React from "react";
 // import { useTranslation } from "i18n";
 import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
-import { ProfileCard } from "./components";
+import { ProductCard } from "./components";
 import { useStyles } from "./styles";
-import { profileItems } from "./ultils";
+import { productItems } from "./ultils";
 
-const Profile = () => {
+const Ecosystem = () => {
   const { t, lang } = useTranslation("common");
   const classes = useStyles();
   return (
@@ -20,13 +20,13 @@ const Profile = () => {
         />
       </div>
       <p>{t("profileP")}</p>
-      <div className="profileGrid">
-        {profileItems.map((item, i) => (
-          <ProfileCard
+      <div className="productGrid">
+        {productItems.map((item, i) => (
+          <ProductCard
             key={i}
             image={item.image}
-            title={item.title}
             details={item.details}
+            link={item.link}
           />
         ))}
       </div>
@@ -34,4 +34,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Ecosystem;
