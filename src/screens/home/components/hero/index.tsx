@@ -13,7 +13,11 @@ const Hero = () => {
     <div className={classes.root}>
       <HeroSlogan className="hero__slogan" />
       <p>{t("hero")}</p>
-      <a href="https://drive.google.com/file/d/1yFL3kp1BhAsgBn0SVHAuBsPbMcg4j1Zf/view">
+      <a
+        href="https://drive.google.com/file/d/1yFL3kp1BhAsgBn0SVHAuBsPbMcg4j1Zf/view"
+        target="_blank"
+        rel="noreferrer"
+      >
         <div className="hero__content">
           <h4>{t("learnMore")}</h4>
           <ArrowIcon className="arrow__icon" />

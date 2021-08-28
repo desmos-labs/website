@@ -27,12 +27,12 @@ const Home = () => {
          */}
         <Intro />
       </div>
-      <div className="home-page__solution">
+      <div className="home-page__solution" id="solution">
         {/* <h1 className="hero__title">{t("title")}</h1>
          */}
         <Solution />
       </div>
-      <div className="home-page__solution">
+      <div className="home-page__solution" id="team">
         {/* <h1 className="hero__title">{t("title")}</h1>
          */}
         <Team />

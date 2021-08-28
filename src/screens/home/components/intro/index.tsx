@@ -1,14 +1,10 @@
 import React from "react";
 import Image from "next/image";
-// import { useTranslation } from "i18n";
 import { useGetScreenSizeHook } from "@hooks";
 import useTranslation from "next-translate/useTranslation";
 import { useStyles } from "./styles";
-import IntroSlogan from "@assets/intro-slogan.svg";
-// import ArrowIcon from "@assets/icon-arrow.svg";
 import LeftDotIcon from "@assets/intro-left-dot.svg";
 import RightDotIcon from "@assets/intro-right-dot.svg";
-import IntroDesktop from "@assets/intro-desktop.svg";
 
 const Intro = () => {
   const { t, lang } = useTranslation("common");

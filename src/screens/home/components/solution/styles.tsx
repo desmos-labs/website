@@ -7,7 +7,7 @@ export const useStyles = () => {
       root: {
         // height: "max-content",
         "& .image-container": {
-          width: "330px",
+          width: "280px",
           [theme.breakpoints.up("lg")]: {
             width: "430px",
           },
@@ -23,9 +23,6 @@ export const useStyles = () => {
               height: "95px !important",
             },
           },
-        },
-        "& .hero__slogan": {
-          width: "300px",
         },
         "& .solutionGrid": {
           //   display: "block",

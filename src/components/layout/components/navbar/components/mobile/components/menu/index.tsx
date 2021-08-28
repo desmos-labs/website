@@ -1,7 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 import Link from "next/link";
-import { Drawer, MenuItem, Typography } from "@material-ui/core";
+import { Drawer, MenuItem, Typography, Select } from "@material-ui/core";
 import { useRouter } from "next/router";
 import useTranslation from "next-translate/useTranslation";
 // import { useSettingsContext } from "@contexts";
@@ -21,7 +21,7 @@ const Menu = (props: MenuProps) => {
   const { toggleNavMenus, className } = props;
   const classes = useStyles();
   const languageOptions = useLanguageDrawer(lang, toggleNavMenus);
-
+  // console.log("toggle", toggleNavMenus);
   // const themeOptions = useThemeDrawer(theme, toggleNavMenus);
   return (
     <>
@@ -53,6 +53,7 @@ const Menu = (props: MenuProps) => {
                 </Link>
               </div>
             ))}
+          {/* </Select> */}
         </div>
       </Drawer>
       {/* ================================== */}
@@ -81,7 +82,7 @@ const Menu = (props: MenuProps) => {
       {/* ================================== */}
       <div className={classnames(className, classes.root)}>
         <div className={classes.menu}>
-          <MenuItems />
+          <MenuItems toggleNavMenus={toggleNavMenus} />
         </div>
         {/* ========================= */}
         {/* Footer Actions */}

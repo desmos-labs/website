@@ -11,7 +11,6 @@ export const useStyles = () => {
         display: "flex",
         flexDirection: "column",
         justifyItems: "center",
-        alignItems: "space-between",
         " & p": {
           padding: theme.spacing(1, 0, 0),
           color: "rgba(59, 60, 36, 1)",
