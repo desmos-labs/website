@@ -7,22 +7,32 @@ export const useStyles = () => {
       root: {
         // height: "max-content",
         "& .image-container": {
-          width: "280px",
+          width: "100%",
           [theme.breakpoints.up("lg")]: {
-            width: "430px",
+            width: "800px",
           },
           "& div": {
             position: "unset !important",
+            // float: "left",
           },
           "& .image": {
             objectFit: "contain",
-            width: "100% !important",
+            width: "350px !important",
             position: "relative !important",
-            height: "70px !important",
+            height: "95px !important",
+            right: "100px",
             [theme.breakpoints.up("lg")]: {
-              height: "95px !important",
+              height: "120px !important",
+              left: "-1px",
             },
           },
+        },
+        "& h3": {
+          color: theme.palette.custom.general.icon,
+          fontWeight: 700,
+        },
+        "& .productP": {
+          padding: theme.spacing(2, 0),
         },
         "& .productGrid": {
           //   display: "block",
