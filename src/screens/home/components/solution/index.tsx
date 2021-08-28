@@ -5,7 +5,6 @@ import useTranslation from "next-translate/useTranslation";
 import { useGetScreenSizeHook } from "@hooks";
 import { InfoCard } from "./components";
 import { useStyles } from "./styles";
-import SolutionIcon from "@assets/solution.svg";
 import ArrowIcon from "@assets/icon-arrow.svg";
 import { solutionItems } from "./ultils";
 

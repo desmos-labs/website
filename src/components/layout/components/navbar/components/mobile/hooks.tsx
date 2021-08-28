@@ -25,9 +25,11 @@ export const useMobileNavHook = () => {
   // closes menu if opened and opens menu if
   // closed and hamburger icon is clicked
   const toggleNavMenus = () => {
+    // console.log("check", state.isMenu);
     if (state.isMenu) {
       closeAll();
     } else {
+      // console.log("here ");
       // if initial state is closed then we open navbar
       handleSetState({
         isMenu: true,

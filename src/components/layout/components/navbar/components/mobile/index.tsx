@@ -14,8 +14,6 @@ const MobileNav: React.FC<{
   const { ref: heightRef, height } = useGetComponentDimension();
   const { isMenu, isOpen, toggleNavMenus } = useMobileNavHook();
   const classes = useStyles();
-  // const { color, displayBackground } = props;
-  // const { classes } = useGetStyles({ isOpen, color, displayBackground });
   return (
     <div className={className}>
       <div ref={heightRef} className={classes.root}>

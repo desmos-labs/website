@@ -7,11 +7,12 @@ import useTranslation from "next-translate/useTranslation";
 import { useStyles } from "./styles";
 import { getMenuItems } from "./utils";
 
-const MenuItems = () => {
+const MenuItems = (props: { toggleNavMenus: () => void }) => {
   const classes = useStyles();
   const router = useRouter();
   const { t } = useTranslation("common");
   const items = getMenuItems();
+  const { toggleNavMenus } = props;
 
   return (
     <List>
@@ -32,6 +33,7 @@ const MenuItems = () => {
                 active: isActive,
               })}
               component="a"
+              onClick={toggleNavMenus}
             >
               <ListItemText primary={t(x.key)} />
             </ListItem>
