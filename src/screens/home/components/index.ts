@@ -3,6 +3,7 @@ import Intro from './intro';
 import Solution from './solution';
 import Profile from "./profile";
 import Team from './team';
+import Ecosystem from './ecosystem';
 import RoadMap from './road_map';
 
 
@@ -12,5 +13,6 @@ export {
   Solution,
   Profile,
   Team,
+  Ecosystem,
   RoadMap
 };
