@@ -27,16 +27,18 @@ const Footer = () => {
       {/* ============================= */}
       {/* links */}
       {/* ============================= */}
-      <div className="footer__links">
-        {footerLinks.map((link) => {
-          return (
-            <div key={link.key} className={`${link.key} links__group`}>
-              <Link key={link.url} href={link.url}>
-                <a>{t(`${link.key}`)}</a>
-              </Link>
-            </div>
-          );
-        })}
+      <div className="footer__desktop">
+        <div className="footer__links">
+          {footerLinks.map((link) => {
+            return (
+              <div key={link.key} className={`${link.key} links__group`}>
+                <Link key={link.url} href={link.url}>
+                  <a>{t(`${link.key}`)}</a>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
       </div>
       {/* ============================= */}
       {/* social */}

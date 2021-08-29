@@ -58,6 +58,9 @@ export const useGetStyles = () => {
             paddingBottom: "1rem",
             transition: "0.2s",
             width: "100%",
+            [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
+              paddingBottom: 0,
+            },
             "&:hover": {
               color: "rgba(255,255,255, 0.3)",
             },
@@ -75,7 +78,7 @@ export const useGetStyles = () => {
             "& a": {
               margin: 0,
               borderBottom: "none",
-              padding: 0,
+              // padding: 0,
               width: "auto",
             },
             "&.media": {
@@ -90,6 +93,10 @@ export const useGetStyles = () => {
             display: "flex",
             flexDirection: "column",
           },
+          "& .footer__desktop": {
+            display: "flex",
+            alignItems: "flex-start",
+          },
           "& .footer__links": {
             height: "1rem",
             display: "flex",
@@ -97,6 +104,16 @@ export const useGetStyles = () => {
             alignItems: "center",
             marginTop: 0,
             padding: "2rem 0",
+            "& .links__group:last-child": {
+              borderRight: "1px solid rgba(0, 0, 0, 0)",
+            },
+            "& .links__group:first-child": {
+              // padding: "1px solid rgba(0, 0, 0, 0)",
+              // alignItems: "flex-start",
+              "& > a": {
+                padding: 0,
+              },
+            },
           },
           "& .footer__social": {
             display: "flex",
@@ -106,6 +123,10 @@ export const useGetStyles = () => {
           "& .links__group": {
             borderRight: "1px solid rgba(0, 0, 0, 0.5)",
             width: "10rem",
+            alignItems: "center",
+            "& > a": {
+              padding: "0 1rem",
+            },
           },
           "& .footer__copyright": {
             borderTop: "none",
