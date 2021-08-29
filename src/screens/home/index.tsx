@@ -9,6 +9,7 @@ import {
   Intro,
   Solution,
   Profile,
+  Supply,
   Team,
   RoadMap,
   Ecosystem,
@@ -44,6 +45,11 @@ const Home = () => {
         {/* <h1 className="hero__title">{t("title")}</h1>
          */}
         <Profile />
+      </div>
+      <div className="home-page__solution" id="supply">
+        {/* <h1 className="hero__title">{t("title")}</h1>
+         */}
+        <Supply />
       </div>
       <div className="home-page__solution" id="team">
         {/* <h1 className="hero__title">{t("title")}</h1>
