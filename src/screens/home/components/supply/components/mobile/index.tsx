@@ -12,7 +12,7 @@ const MobileCarousel: React.FC<{
   className?: string;
 }> = ({ className }) => {
   const classes = useStyles();
-  const { isDesktop, windowSize } = useGetScreenSizeHook();
+  const { windowSize } = useGetScreenSizeHook();
   const screenWidth = windowSize.width;
   return (
     <div className={classname(className, classes.root)}>
@@ -36,7 +36,7 @@ const MobileCarousel: React.FC<{
               <NoSSR>
                 <Svg
                   className="roadMap"
-                  width={isDesktop ? 986 : screenWidth - 100}
+                  width={screenWidth - 100}
                   height={400}
                 />
               </NoSSR>
