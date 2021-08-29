@@ -70,22 +70,22 @@ const Home = () => {
       {/* ============================= */}
       {/* about */}
       {/* ============================= */}
-      <div className="max-width__parent" id="about">
+      {/* <div className="max-width__parent" id="about">
         <div className="about__container max-width__content">
           <h1 className="about__title">{t("aboutBigDipper")}</h1>
           <p className="about__content">{t("aboutContent")}</p>
           <p className="about__media">{t("socialMediaVisit")}</p>
           <SocialMedia className="home-page__media" />
         </div>
-      </div>
+      </div> */}
       {/* ============================= */}
       {/* networks */}
       {/* ============================= */}
-      <div className="max-width__parent">
+      {/* <div className="max-width__parent">
         <div className="networks__container max-width__content">
           <h2 className="networks__title">{t("supportedNetworks")}</h2>
-          <div className="networks__items-list">
-            {/* {networks.map((x) => {
+          <div className="networks__items-list"> */}
+      {/* {networks.map((x) => {
               return (
                 <div className="network__item" key={x.name}>
                   <div className="column">
@@ -94,7 +94,7 @@ const Home = () => {
                       src={x.banner}
                       className="fixedratio"
                     /> */}
-            {/* </div>
+      {/* </div>
                   <h3 className="network__item--title">{x.name}</h3>
                   <div className="network__item--links">
                     {x.mainnet.map((network) => (
@@ -129,9 +129,9 @@ const Home = () => {
                 </div>
               );
             })} */}
-          </div>
-        </div>
-      </div>
+      {/* </div>
+        </div> */}
+      {/* </div> */}
     </Layout>
   );
 };
