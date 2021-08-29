@@ -6,7 +6,7 @@ import { useGetScreenSizeHook } from "@hooks";
 import { InfoCard } from "./components";
 import { useStyles } from "./styles";
 import ArrowIcon from "@assets/icon-arrow.svg";
-import { solutionItems } from "./ultils";
+import { solutionItems } from "./utils";
 
 const Solution = () => {
   const { t, lang } = useTranslation("common");

@@ -13,7 +13,7 @@ export const common = {
       lg: 1280,
       xl: 1920,
       mobile: 0,
-      tablet: 769,
+      tablet: 767,
       desktop: 1080,
       maxWidth: 1280,
     },

@@ -1,5 +1,4 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { getMinMediaQuery } from "@styles";
 
 export const useStyles = () => {
   const styles = makeStyles((theme) => {
@@ -12,7 +11,7 @@ export const useStyles = () => {
       },
       desktop: {
         display: "none",
-        [theme.breakpoints.up("lg")]: {
+        [theme.breakpoints.up("md")]: {
           display: "block",
         },
       },

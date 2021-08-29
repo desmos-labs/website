@@ -14,7 +14,7 @@ const MobileCarousel: React.FC<{
   className?: string;
 }> = ({ className }) => {
   const classes = useStyles();
-  const { windowSize } = useGetScreenSizeHook();
+  const { windowSize, isTablet } = useGetScreenSizeHook();
   const screenWidth = windowSize.width;
   return (
     <div className={classname(className, classes.root)}>
@@ -28,7 +28,7 @@ const MobileCarousel: React.FC<{
           />
         </div>
         <NoSSR>
-          <InitialSupply width={screenWidth - 150} />
+          <InitialSupply width={isTablet ? 280 : screenWidth - 150} />
         </NoSSR>
       </div>
       <Carousel
