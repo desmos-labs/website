@@ -4,7 +4,15 @@ import useTranslation from "next-translate/useTranslation";
 import { Layout, SocialMedia } from "@components";
 import { useGetStyles } from "./styles";
 // import { useHomeHook } from "./hooks";
-import { Hero, Intro, Solution, Profile, Team, Ecosystem } from "./components";
+import {
+  Hero,
+  Intro,
+  Solution,
+  Profile,
+  Team,
+  RoadMap,
+  Ecosystem,
+} from "./components";
 
 const Home = () => {
   const { t, lang } = useTranslation();
@@ -42,11 +50,17 @@ const Home = () => {
          */}
         <Team />
       </div>
+      <div className="home-page__solution" id="roadmap">
+        {/* <h1 className="hero__title">{t("title")}</h1>
+         */}
+        <RoadMap />
+      </div>
       <div className="home-page__solution" id="ecosystem">
         {/* <h1 className="hero__title">{t("title")}</h1>
          */}
         <Ecosystem />
       </div>
+
       {/* ============================= */}
       {/* about */}
       {/* ============================= */}
