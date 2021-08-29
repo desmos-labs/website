@@ -1,5 +1,5 @@
 import React from "react";
-// import { useTranslation } from "i18n";
+import { NoSSR } from "@components";
 import useTranslation from "next-translate/useTranslation";
 import { useGetScreenSizeHook } from "@hooks";
 import { useStyles } from "./styles";
@@ -9,13 +9,16 @@ const RoadMap = () => {
   const { t, lang } = useTranslation("common");
   const classes = useStyles();
   const { isDesktop, windowSize } = useGetScreenSizeHook();
+  const screenWidth = windowSize.width;
   return (
     <div className={classes.root}>
-      <RoadMapSVG
-        className="roadMap"
-        width={isDesktop ? 986 : windowSize.width - 40}
-        height="100%"
-      />
+      <NoSSR>
+        <RoadMapSVG
+          className="roadMap"
+          width={isDesktop ? 986 : screenWidth - 40}
+          height="100%"
+        />
+      </NoSSR>
     </div>
   );
 };
