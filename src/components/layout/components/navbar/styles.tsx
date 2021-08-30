@@ -11,7 +11,9 @@ export const useStyles = () => {
       desktop: {
         display: "none",
         [theme.breakpoints.up("lg")]: {
-          display: "block",
+          display: "flex",
+          justifyContent: "center",
+          width: "100%",
         },
       },
     };

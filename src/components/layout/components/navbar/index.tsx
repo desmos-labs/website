@@ -4,7 +4,7 @@ import { useGetScreenSizeHook } from "@hooks";
 import { Mobile } from "./components";
 import { useStyles } from "./styles";
 
-// const Desktop = dynamic(() => import('./components/desktop'));
+const Desktop = dynamic(() => import("./components/desktop"));
 
 const Nav: React.FC<{
   title?: string;
@@ -14,11 +14,7 @@ const Nav: React.FC<{
   return (
     <>
       {isDesktop ? (
-        // <Desktop
-        //   className={classes.desktop}
-        //   title={title}
-        // />
-        <></>
+        <Desktop className={classes.desktop} />
       ) : (
         <Mobile className={classes.mobile} title={title} />
       )}
