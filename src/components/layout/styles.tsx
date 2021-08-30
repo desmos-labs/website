@@ -16,6 +16,9 @@ export const useGetStyles = () => {
           justifyContent: "space-between",
           position: "absolute",
           width: "100%",
+          [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
+            justifyContent: "flex-start",
+          },
         },
         "& .nav__logo": {
           width: "180px",
