@@ -13,6 +13,12 @@ export const useStyles = () => {
         },
         menu: {
           flex: '1',
+          '& ul': {
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-evenly",
+          }
         },
         footerActions: {
           display: 'flex',
