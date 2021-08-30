@@ -14,7 +14,7 @@ const Hero = () => {
       <HeroSlogan className="hero__slogan" />
       <p>{t("hero")}</p>
       <a
-        href="https://drive.google.com/file/d/1yFL3kp1BhAsgBn0SVHAuBsPbMcg4j1Zf/view"
+        href="/files/desmos-project-plan-v0.4.2.pdf"
         target="_blank"
         rel="noreferrer"
       >

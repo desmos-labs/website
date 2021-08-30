@@ -34,10 +34,16 @@ const Solution = () => {
         </div>
       )}
       <p>{t("solutionP")}</p>
-      <div className="hero__content">
-        <h4>{t("learnMore")}</h4>
-        <ArrowIcon className="arrow__icon" />
-      </div>
+      <a
+        href="/files/desmos-project-plan-v0.4.2.pdf"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <div className="hero__content">
+          <h4>{t("learnMore")}</h4>
+          <ArrowIcon className="arrow__icon" />
+        </div>
+      </a>
       <div className="solutionGrid">
         {solutionItems.map((item, i) => (
           <InfoCard
