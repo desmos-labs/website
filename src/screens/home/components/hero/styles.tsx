@@ -36,7 +36,7 @@ export const useStyles = () => {
         [theme.breakpoints.up("lg")]: {
           maxWidth: "1200px",
           "& .hero__slogan": {
-            width: "550px",
+            width: "650px",
           },
           " & p, & .hero__content": {
             fontSize: theme.spacing(3),
