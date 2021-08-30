@@ -12,6 +12,13 @@ export const useGetStyles = () => {
           height: "100%",
           zIndex: 101,
           position: "relative",
+          [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
+            "&.footer": {
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            },
+          },
         },
         "& p": {
           marginTop: 0,
@@ -62,7 +69,7 @@ export const useGetStyles = () => {
               paddingBottom: 0,
             },
             "&:hover": {
-              color: "rgba(255,255,255, 0.3)",
+              color: theme.palette.custom.general.icon,
             },
           },
           "&.forbole": {
@@ -88,10 +95,9 @@ export const useGetStyles = () => {
         },
         [getMinMediaQuery(theme?.breakpoints?.values?.tablet)]: {},
         [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
-          "&.footer": {
-            padding: "2.5rem 2rem",
-            display: "flex",
-            flexDirection: "column",
+          "& .footer__content": {
+            maxWidth: "1200px",
+            width: "100%",
           },
           "& .footer__desktop": {
             display: "flex",
@@ -108,7 +114,6 @@ export const useGetStyles = () => {
               borderRight: "1px solid rgba(0, 0, 0, 0)",
             },
             "& .links__group:first-child": {
-              // padding: "1px solid rgba(0, 0, 0, 0)",
               alignItems: "flex-start",
               width: "7.5rem",
               "& > a": {

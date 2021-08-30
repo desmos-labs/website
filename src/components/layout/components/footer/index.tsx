@@ -17,42 +17,44 @@ const Footer = () => {
 
   return (
     <div className={`${classes.root} footer`}>
-      {/* ============================= */}
-      {/* logo */}
-      {/* ============================= */}
-      <div className="footer__logo--container">
-        <FooterLogo className="footer__logo" />
-        {/* <p className="footer__slogan">{t("common:slogan")}</p> */}
-      </div>
-      {/* ============================= */}
-      {/* links */}
-      {/* ============================= */}
-      <div className="footer__desktop">
-        <div className="footer__links">
-          {footerLinks.map((link) => {
-            return (
-              <div key={link.key} className={`${link.key} links__group`}>
-                <Link key={link.url} href={link.url}>
-                  <a>{t(`${link.key}`)}</a>
-                </Link>
-              </div>
-            );
-          })}
+      <div className="footer__content">
+        {/* ============================= */}
+        {/* logo */}
+        {/* ============================= */}
+        <div className="footer__logo--container">
+          <FooterLogo className="footer__logo" />
+          {/* <p className="footer__slogan">{t("common:slogan")}</p> */}
         </div>
-      </div>
-      {/* ============================= */}
-      {/* social */}
-      {/* ============================= */}
-      <div className="footer__social">
-        {/* <h3>{t("community")}</h3> */}
-        <SocialMedia />
         {/* ============================= */}
-        {/* copyright */}
+        {/* links */}
         {/* ============================= */}
-        <div className="footer__copyright">
-          <p>
-            {t("copyright")} {year}
-          </p>
+        <div className="footer__desktop">
+          <div className="footer__links">
+            {footerLinks.map((link) => {
+              return (
+                <div key={link.key} className={`${link.key} links__group`}>
+                  <Link key={link.url} href={link.url}>
+                    <a>{t(`${link.key}`)}</a>
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        {/* ============================= */}
+        {/* social */}
+        {/* ============================= */}
+        <div className="footer__social">
+          {/* <h3>{t("community")}</h3> */}
+          <SocialMedia />
+          {/* ============================= */}
+          {/* copyright */}
+          {/* ============================= */}
+          <div className="footer__copyright">
+            <p>
+              {t("copyright")} {year}
+            </p>
+          </div>
         </div>
       </div>
     </div>
