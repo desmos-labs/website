@@ -39,9 +39,9 @@ export const useStyles = () => {
           //   height: "70vh",
           display: "grid",
           gridTemplateColumns: "repeat(2, 1fr)",
-          gridGap: theme.spacing(2),
-          padding: theme.spacing(1.5, 1),
+          gridGap: theme.spacing(1),
           [theme.breakpoints.up("lg")]: {
+            gridGap: theme.spacing(1.5),
             gridTemplateColumns: "repeat(4, 1fr)",
           },
         },

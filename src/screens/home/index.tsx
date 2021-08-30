@@ -3,7 +3,7 @@ import React from "react";
 import useTranslation from "next-translate/useTranslation";
 import { Layout, SocialMedia } from "@components";
 import { useGetStyles } from "./styles";
-// import { useHomeHook } from "./hooks";
+import LazyShow from "./hooks";
 import {
   Hero,
   Intro,
@@ -34,37 +34,53 @@ const Home = () => {
       <div className="home-page__intro">
         {/* <h1 className="hero__title">{t("title")}</h1>
          */}
-        <Intro />
+        <LazyShow>
+          <Intro />
+        </LazyShow>
       </div>
+
       <div className="home-page__solution" id="solution">
         {/* <h1 className="hero__title">{t("title")}</h1>
          */}
-        <Solution />
+        <LazyShow>
+          <Solution />
+        </LazyShow>
       </div>
+
       <div className="home-page__solution" id="profile">
         {/* <h1 className="hero__title">{t("title")}</h1>
          */}
-        <Profile />
+        <LazyShow>
+          <Profile />
+        </LazyShow>
       </div>
       <div className="home-page__solution" id="supply">
         {/* <h1 className="hero__title">{t("title")}</h1>
          */}
-        <Supply />
+        <LazyShow>
+          <Supply />
+        </LazyShow>
       </div>
       <div className="home-page__solution" id="team">
         {/* <h1 className="hero__title">{t("title")}</h1>
          */}
-        <Team />
+        <LazyShow>
+          <Team />
+        </LazyShow>
       </div>
       <div className="home-page__solution" id="roadmap">
         {/* <h1 className="hero__title">{t("title")}</h1>
          */}
-        <RoadMap />
+        <LazyShow>
+          <RoadMap />
+        </LazyShow>
       </div>
       <div className="home-page__solution" id="ecosystem">
         {/* <h1 className="hero__title">{t("title")}</h1>
          */}
-        <Ecosystem />
+        <LazyShow>
+          <Ecosystem />
+        </LazyShow>
       </div>
 
       {/* ============================= */}

@@ -5,20 +5,21 @@ export const useGetStyles = () => {
   const useStyles = makeStyles((theme: any) => {
     return createStyles({
       root: {
-        backgroundImage: "url('/images/background-desktop.png')",
+        backgroundImage: "url('/images/background-mobile.png')",
         backgroundSize: "100%",
         backgroundPosition: "0% 0%",
         backgroundRepeat: "no-repeat",
         position: "relative",
+        [theme.breakpoints.up("lg")]: {
+          backgroundImage: "url('/images/background-desktop.png')",
+          justifyContent: "flex-start",
+        },
         "& .nav__container": {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
           position: "absolute",
           width: "100%",
-          [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
-            justifyContent: "flex-start",
-          },
         },
         "& .nav__logo": {
           width: "180px",
