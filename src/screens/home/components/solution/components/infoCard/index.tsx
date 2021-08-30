@@ -19,10 +19,10 @@ const InfoCard = (props: ICardProps) => {
     <Card className={classes.root}>
       {/* <HeroSlogan className="hero__slogan" /> */}
       <Svg />
-      {/* <div className="card__content"> */}
-      <h3>{title}</h3>
-      <p>{details}</p>
-      {/* </div> */}
+      <div className="card__content">
+        <h3>{title}</h3>
+        <p>{details}</p>
+      </div>
     </Card>
   );
 };
