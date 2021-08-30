@@ -109,7 +109,8 @@ export const useGetStyles = () => {
             },
             "& .links__group:first-child": {
               // padding: "1px solid rgba(0, 0, 0, 0)",
-              // alignItems: "flex-start",
+              alignItems: "flex-start",
+              width: "7.5rem",
               "& > a": {
                 padding: 0,
               },
@@ -122,7 +123,7 @@ export const useGetStyles = () => {
           },
           "& .links__group": {
             borderRight: "1px solid rgba(0, 0, 0, 0.5)",
-            width: "10rem",
+            width: "12rem",
             alignItems: "center",
             "& > a": {
               padding: "0 1rem",
