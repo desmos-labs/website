@@ -19,7 +19,7 @@ export const common = {
     },
   },
   typography: {
-    fontFamily: '"Hind Madurai", sans-serif',
+    fontFamily: '"Poppins", sans-serif',
     h1: {
       fontSize: '2rem',
       letterSpacing: 0.25,
