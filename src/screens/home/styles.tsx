@@ -47,7 +47,7 @@ export const useGetStyles = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "250%",
           backgroundPosition: "-70px -120px",
-          padding: theme.spacing(3, 3, 0),
+          padding: theme.spacing(7, 3, 0),
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
