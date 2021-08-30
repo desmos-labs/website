@@ -24,7 +24,7 @@ export const useGetStyles = () => {
           },
         },
         "& .home-page__intro": {
-          minHeight: "50vh",
+          minHeight: "100vh",
           backgroundColor: "transparent",
           // backgroundImage: "url('/images/intro-bg.png')",
           backgroundRepeat: "no-repeat",
@@ -40,20 +40,21 @@ export const useGetStyles = () => {
           },
         },
         "& .home-page__solution": {
-          minHeight: "150vh",
+          minHeight: "100vh",
           // height: "150vh",
           backgroundColor: "transparent",
           // backgroundImage: "url('/images/intro-bg.png')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "250%",
           backgroundPosition: "-70px -120px",
-          padding: theme.spacing(3, 3, 0),
+          padding: theme.spacing(7, 3, 0),
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
             backgroundSize: "100%",
             backgroundPosition: "0% 0%",
+            padding: theme.spacing(15, 3, 0),
           },
         },
         "& .hero__title": {

@@ -18,7 +18,7 @@ export const useStyles = () => {
           display: "grid",
           gridTemplateColumns: "repeat(1, 1fr)",
           gridGap: theme.spacing(5),
-          padding: theme.spacing(1.5, 1),
+          padding: theme.spacing(8, 1),
           // "& svg": {
           //   margin: "0 0.1rem",
           //   width: "14px",

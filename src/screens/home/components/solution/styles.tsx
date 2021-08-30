@@ -61,7 +61,7 @@ export const useStyles = () => {
           },
         },
         "& p": {
-          padding: theme.spacing(8, 1, 3),
+          padding: theme.spacing(1, 1, 3),
         },
         [theme.breakpoints.up("lg")]: {
           maxWidth: "1200px",

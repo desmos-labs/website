@@ -11,6 +11,14 @@ export const useStyles = () => {
         display: "flex",
         flexDirection: "column",
         justifyItems: "center",
+        [theme.breakpoints.up("lg")]: {
+          flexDirection: "row",
+          alignItems: "center",
+        },
+        " & svg": {
+          [theme.breakpoints.up("lg")]: { width: "30%" },
+        },
+        " & .card__content": { [theme.breakpoints.up("lg")]: { width: "70%" } },
         " & p": {
           padding: theme.spacing(1, 0, 0),
           color: "rgba(59, 60, 36, 1)",

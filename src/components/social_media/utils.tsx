@@ -9,16 +9,16 @@ export const socialMediaLinks: {
   {
     component: <DiscordIcon />,
     className: "discord",
-    url: "https://t.me/desmosnetwork",
+    url: "https://discord.com/invite/yxPRGdq",
   },
   {
     component: <GithubIcon />,
     className: "github",
-    url: "https://github.com/forbole",
+    url: "https://github.com/desmos-labs",
   },
   {
     component: <TwitterIcon />,
     className: "twitter",
-    url: "https://twitter.com/bigdipperlive",
+    url: "https://twitter.com/DesmosNetwork",
   },
 ];

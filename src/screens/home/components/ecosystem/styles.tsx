@@ -7,7 +7,7 @@ export const useStyles = () => {
       root: {
         // height: "max-content",
         "& .image-container": {
-          width: "100%",
+          width: "280px",
           [theme.breakpoints.up("lg")]: {
             width: "800px",
           },

@@ -1,13 +1,17 @@
 import React from "react";
 import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
+import { useGetScreenSizeHook } from "@hooks";
+import { NoSSR } from "@components";
 import { useStyles } from "./styles";
-import TeamSlogan from "@assets/team.svg";
+import TeamImage from "@assets/team-image.svg";
 import ArrowIcon from "@assets/icon-arrow.svg";
 
 const Team = () => {
   const { t, lang } = useTranslation("common");
   const classes = useStyles();
+  const { windowSize, isDesktop } = useGetScreenSizeHook();
+  const screenWidth = windowSize.width;
   return (
     <div className={classes.root}>
       <div className="left__content">
@@ -34,14 +38,12 @@ const Team = () => {
           </div>
         </a>
       </div>
-      <div className="team-image-container">
-        <Image
-          src="/images/team-image.png"
-          alt="Team Image"
-          className="teamImage"
-          layout="fill"
+      <NoSSR>
+        <TeamImage
+          style={{ float: "right" }}
+          width={isDesktop ? 875 : screenWidth - 30}
         />
-      </div>
+      </NoSSR>
     </div>
   );
 };
