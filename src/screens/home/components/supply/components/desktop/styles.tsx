@@ -36,7 +36,11 @@ export const useStyles = () => {
             margin: "0 0.1rem",
             width: "14px",
             height: "14px",
-            [theme.breakpoints.up("lg")]: { width: "20px", height: "20px" },
+            [theme.breakpoints.up("lg")]: {
+              margin: "0 0.7rem",
+              width: "20px",
+              height: "20px",
+            },
           },
         },
         " & p, & .hero__content": {
