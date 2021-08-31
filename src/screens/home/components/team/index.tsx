@@ -27,16 +27,17 @@ const Team = () => {
         <div className="hero__content">
           <p>{t("teamP")}</p>
         </div>
-        <a
-          href="https://www.forbole.com/about"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="hero__content">
+
+        <div className="hero__content">
+          <a
+            href="https://www.forbole.com/about"
+            target="_blank"
+            rel="noreferrer"
+          >
             <h4>{t("browseTeam")}</h4>
             <ArrowIcon className="arrow__icon" />
-          </div>
-        </a>
+          </a>
+        </div>
       </div>
       <NoSSR>
         <TeamImage

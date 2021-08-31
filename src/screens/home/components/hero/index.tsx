@@ -13,16 +13,17 @@ const Hero = () => {
     <div className={classes.root}>
       <HeroSlogan className="hero__slogan" />
       <p>{t("hero")}</p>
-      <a
-        href="/files/desmos-project-plan-v0.4.2.pdf"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <div className="hero__content">
+      <div className="hero__content">
+        <a
+          href="/files/desmos-project-plan-v0.4.2.pdf"
+          target="_blank"
+          rel="noreferrer"
+          // style={{ width: "fit-content" }}
+        >
           <h4>{t("learnMore")}</h4>
           <ArrowIcon className="arrow__icon" />
-        </div>
-      </a>
+        </a>
+      </div>
     </div>
   );
 };

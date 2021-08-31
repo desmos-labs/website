@@ -24,6 +24,9 @@ export const useStyles = () => {
         },
         "& a": {
           textDecoration: "none",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
         },
         "& .hero__content": {
           display: "flex",

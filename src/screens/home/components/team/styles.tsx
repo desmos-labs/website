@@ -55,6 +55,9 @@ export const useStyles = () => {
         },
         "& a": {
           textDecoration: "none",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
         },
         " & p, & .hero__content": {
           color: "rgba(59, 60, 36, 1)",
