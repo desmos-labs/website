@@ -4,7 +4,8 @@ import { useStyles } from "./styles";
 import Card from "@material-ui/core/Card";
 
 export interface ICardProps {
-  image: any;
+  image?: any;
+  mobileImage?: any;
   title: string;
   details: string;
 }
