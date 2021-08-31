@@ -6,7 +6,7 @@ import ForboleVentureIcon from "@assets/forbole-venture.svg"
 export const productItems = [
     {
         image: ForboleIcon, 
-        details: "Forbole is a renowned and experienced validator, developer and community builder for.",
+        details: "Forbole is a renowned and experienced validator, developer and community builder for the Interchain.",
         link: "https://www.forbole.com/"
     },
     {
