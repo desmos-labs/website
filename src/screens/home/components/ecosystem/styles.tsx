@@ -30,9 +30,15 @@ export const useStyles = () => {
         "& h3": {
           color: theme.palette.custom.general.icon,
           fontWeight: 700,
+          [theme.breakpoints.up("lg")]: {
+            paddingBottom: theme.spacing(3),
+          },
         },
         "& .productP": {
           padding: theme.spacing(2, 0),
+          [theme.breakpoints.up("lg")]: {
+            padding: theme.spacing(5, 0, 2, 0),
+          },
         },
         "& .productGrid": {
           //   display: "block",
@@ -41,7 +47,8 @@ export const useStyles = () => {
           gridTemplateColumns: "repeat(2, 1fr)",
           gridGap: theme.spacing(1),
           [theme.breakpoints.up("lg")]: {
-            gridGap: theme.spacing(1.5),
+            paddingTop: theme.spacing(9),
+            gridGap: theme.spacing(2.5),
             gridTemplateColumns: "repeat(4, 1fr)",
           },
         },
