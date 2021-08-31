@@ -7,10 +7,11 @@ export const useStyles = () => {
       root: {
         boxShadow: "-4px 8px 30px rgba(70, 53, 43, 0.1)",
         borderRadius: theme.spacing(2),
-        padding: theme.spacing(4),
+        // padding: theme.spacing(4),
         display: "flex",
         flexDirection: "column",
         justifyItems: "center",
+        position: "relative",
         " & p": {
           padding: theme.spacing(1, 0, 0),
           color: "rgba(59, 60, 36, 1)",
@@ -22,6 +23,14 @@ export const useStyles = () => {
             fontSize: theme.spacing(2.5),
             paddingBottom: theme.spacing(2),
           },
+        },
+        "& .svg": {
+          // position: "absolute",
+          // right: 0,
+          // left: "2px",
+          // float: "center",
+          // display: "block",
+          // margin: "auto",
         },
         "& h3": {
           // color: theme.palette.custom.general.icon,

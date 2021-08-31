@@ -17,10 +17,12 @@ const ProfileCard = (props: ICardProps) => {
   return (
     <Card className={classes.root}>
       {/* <HeroSlogan className="hero__slogan" /> */}
-      <Svg height={300} />
+      {/* <div style={{ height: 300, width: 350 }}> */}
+      <Svg className="svg" width="100%" />
+      {/* </div> */}
       {/* <div className="card__content"> */}
-      <h3>{title}</h3>
-      <p>{details}</p>
+      <h3 style={{ padding: "0px 32px" }}>{title}</h3>
+      <p style={{ padding: "32px" }}>{details}</p>
       {/* </div> */}
     </Card>
   );
