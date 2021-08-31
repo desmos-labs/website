@@ -25,16 +25,18 @@ const DesktopSupply: React.FC<{
           layout="fill"
         />
       </div>
-      <a
-        href="/files/desmos-project-plan-v0.4.2.pdf"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <div className="hero__content">
+
+      <div className="hero__content">
+        <a
+          href="/files/desmos-project-plan-v0.4.2.pdf"
+          target="_blank"
+          rel="noreferrer"
+        >
           <h4>{t("learnMore")}</h4>
           <ArrowIcon className="arrow__icon" />
-        </div>
-      </a>
+        </a>
+      </div>
+
       <div className="chart">
         <NoSSR>
           <DSMChart width={screenWidth - 500} />
