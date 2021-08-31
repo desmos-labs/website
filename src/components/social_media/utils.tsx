@@ -9,7 +9,7 @@ export const socialMediaLinks: {
   {
     component: <DiscordIcon />,
     className: "discord",
-    url: "https://discord.com/invite/yxPRGdq",
+    url: "https://discord.desmos.network",
   },
   {
     component: <GithubIcon />,
