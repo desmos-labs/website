@@ -9,14 +9,19 @@ import { IMobileNav, IMobileNavBarIconCSS } from "./types";
 const MobileNav: React.FC<{
   className?: string;
   title: string;
-}> = ({ className, title }) => {
+  displayBackground: boolean;
+}> = ({ className, title, displayBackground }) => {
   // const { isOpen, toggle } = useMobileNavHook();
   const { ref: heightRef, height } = useGetComponentDimension();
   const { isMenu, isOpen, toggleNavMenus } = useMobileNavHook();
   const classes = useStyles();
   return (
     <div className={className}>
-      <div ref={heightRef} className={classes.root}>
+      <div
+        ref={heightRef}
+        className={classes.root}
+        style={{ background: displayBackground ? "white" : "transparent" }}
+      >
         <Menu
           toggleNavMenus={toggleNavMenus}
           className={classnames(classes.screens, {

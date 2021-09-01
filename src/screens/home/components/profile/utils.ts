@@ -5,7 +5,7 @@ import CrossMobileIcon from "@assets/cross-mobile.svg";
 import IncentivizedMobileIcon from "@assets/incentivized-mobile.svg";
 import VerificationMobileIcon from "@assets/verification-mobile.svg";
 
-export const profileItems = [
+const profileItems = [
     {
         image: CrossIcon, 
         mobileImage: CrossMobileIcon,
@@ -25,3 +25,5 @@ export const profileItems = [
         details: "We encourage pseudo-anonymous social networking. But if users link more of their profiles to Desmos Profiles, they will be rewarded."
     },
 ]
+
+export default profileItems;

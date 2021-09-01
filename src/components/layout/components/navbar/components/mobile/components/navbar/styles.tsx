@@ -7,7 +7,7 @@ export const useStyles = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: theme.spacing(2, 2, 0),
+        padding: theme.spacing(1, 2, 1),
       },
       a: {
         lineHeight: 0,
