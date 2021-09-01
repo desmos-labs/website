@@ -4,7 +4,7 @@ import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
 import { ProfileCard } from "./components";
 import { useStyles } from "./styles";
-import { profileItems } from "./utils";
+import profileItems from "./utils";
 
 const Profile = () => {
   const { t, lang } = useTranslation("common");
