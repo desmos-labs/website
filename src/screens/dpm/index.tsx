@@ -19,7 +19,7 @@ const DPM = () => {
       <Box
         display="flex"
         justifyContent="center"
-        padding={isDesktop ? "40px 24px 0" : "72px 32px 0"}
+        padding={isDesktop ? "40px 24px 0" : "72px 32px 24px"}
       >
         <Box className="dpm-page__container">
           {/* <h1 className="hero__title">{t("title")}</h1>
@@ -51,7 +51,11 @@ const DPM = () => {
           </Box>
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/dpm.png" alt="DPM Screenshot" />
+          <img
+            style={{ width: "350px" }}
+            src="/images/dpm.png"
+            alt="DPM Screenshot"
+          />
           <Box
             style={{ display: isDesktop ? "none" : "flex" }}
             display="flex"

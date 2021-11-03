@@ -40,18 +40,20 @@ export const useGetStyles = () => {
         },
         "& .dpm-mobile": {
           "& img": {
-            width: "180px",
+            width: "200px",
             // height: "355px",
-            height: "50px",
+            height: "60px",
             margin: "8px",
           },
         },
         "& img": {
-          width: "250px",
-          // height: "355px",
-          height: "450px",
+          // width: "250px",
+          // // height: "355px",
+          // height: "450px",
           [theme.breakpoints.up("lg")]: {
-            width: "400px",
+            // width: "300px",
+            width: "200px",
+            margin: theme.spacing(3, 3, 1, 0),
           },
         },
       },
