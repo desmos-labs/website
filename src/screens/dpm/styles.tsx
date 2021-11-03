@@ -10,9 +10,14 @@ export const useGetStyles = () => {
         "& .dpm-page__container": {
           height: "100vh",
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "space-around",
+          "& p": {
+            padding: theme.spacing(2),
+          },
           [theme.breakpoints.up("lg")]: {
+            flexDirection: "row",
             maxWidth: theme?.breakpoints?.values?.maxWidth,
           },
         },
@@ -29,6 +34,7 @@ export const useGetStyles = () => {
         },
         "& .dpm-downloads": {
           "& img": {
+            width: "20px",
             [theme.breakpoints.up("lg")]: {
               width: "200px",
               margin: theme.spacing(3, 3, 1, 0),
@@ -36,6 +42,9 @@ export const useGetStyles = () => {
           },
         },
         "& img": {
+          width: "250px",
+          // height: "355px",
+          height: "450px",
           [theme.breakpoints.up("lg")]: {
             width: "400px",
           },
