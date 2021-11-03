@@ -8,7 +8,7 @@ export const useGetStyles = () => {
         // height: "100vh",
         // width: "100%",
         "& .dpm-page__container": {
-          height: "100vh",
+          minHeight: "100vh",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -33,12 +33,17 @@ export const useGetStyles = () => {
           },
         },
         "& .dpm-downloads": {
+          [theme.breakpoints.up("lg")]: {
+            width: "200px",
+            margin: theme.spacing(3, 3, 1, 0),
+          },
+        },
+        "& .dpm-mobile": {
           "& img": {
-            width: "20px",
-            [theme.breakpoints.up("lg")]: {
-              width: "200px",
-              margin: theme.spacing(3, 3, 1, 0),
-            },
+            width: "180px",
+            // height: "355px",
+            height: "50px",
+            margin: "8px",
           },
         },
         "& img": {

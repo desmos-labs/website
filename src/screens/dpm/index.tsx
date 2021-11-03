@@ -52,6 +52,17 @@ const DPM = () => {
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/images/dpm.png" alt="DPM Screenshot" />
+          <Box
+            style={{ display: isDesktop ? "none" : "flex" }}
+            display="flex"
+            flexDirection="column"
+            className="dpm-mobile"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/testflight.png" alt="DPM Screenshot" />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/images/google-play.png" alt="DPM Screenshot" />
+          </Box>
         </Box>
       </Box>
     </Layout>
