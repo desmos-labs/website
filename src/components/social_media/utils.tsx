@@ -1,5 +1,5 @@
 import React from "react";
-import { DiscordIcon, TwitterIcon, GithubIcon } from "@icons";
+import { DiscordIcon, TwitterIcon, GithubIcon, MediumIcon } from "@icons";
 
 export const socialMediaLinks: {
   component: React.ReactNode;
@@ -20,5 +20,10 @@ export const socialMediaLinks: {
     component: <TwitterIcon />,
     className: "twitter",
     url: "https://twitter.com/DesmosNetwork",
+  },
+  {
+    component: <MediumIcon />,
+    className: "medium",
+    url: "https://medium.com/desmosnetwork",
   },
 ];
