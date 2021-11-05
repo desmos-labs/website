@@ -24,6 +24,7 @@ const Airdrop = () => {
   const [address, setAddress] = React.useState("");
   const [verifyData, setVerifyData] = React.useState(null);
   const [dataStakingInfo, setDataStakingInfo] = React.useState(null);
+  const [lpInfos, setLpInfos] = React.useState(null);
   const [error, setError] = React.useState(false);
 
   const verify = React.useCallback(async () => {
@@ -34,8 +35,9 @@ const Airdrop = () => {
       );
       const { data } = result;
       setVerifyData(data);
-      const { staking_infos, dsm_allotted } = data;
+      const { staking_infos, dsm_allotted, lp_infos } = data;
       setDataStakingInfo(staking_infos);
+      setLpInfos(lp_infos);
       setLoading(false);
       setError(false);
     } catch (err) {
@@ -152,6 +154,31 @@ const Airdrop = () => {
                       >
                         {chain} Staker{" "}
                         {item.forbole_delegator ? "& Forbole Delegator" : null}
+                      </Typography>
+                    </Box>
+                  );
+                })}
+              </Box>
+            ) : null}
+            {lpInfos !== null && lpInfos !== undefined ? (
+              <Box>
+                {lpInfos.map((item, key) => {
+                  const chain = item.chain_name;
+                  return (
+                    <Box
+                      display="flex"
+                      flexDirection="row"
+                      pl="16px"
+                      pt="16px"
+                      key={key}
+                    >
+                      <Box pr="8px">
+                        <TickIcon />
+                      </Box>
+                      <Typography
+                        style={{ color: "rgba(237, 108, 83, 1)", padding: 0 }}
+                      >
+                        {chain} LP Staker
                       </Typography>
                     </Box>
                   );
