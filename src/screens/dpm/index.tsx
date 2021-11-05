@@ -41,11 +41,24 @@ const DPM = () => {
               Desmos profile easily.
             </Typography>
             {isDesktop && (
-              <Box className="dpm-downloads" display="flex" flexDirection="row">
+              <Box
+                className="dpm-downloads"
+                display="flex"
+                flexDirection="row"
+                pl="16px"
+              >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/testflight.png" alt="DPM Screenshot" />
+                <img
+                  style={{ filter: "grayscale(100%)" }}
+                  src="/images/testflight.png"
+                  alt="DPM Screenshot"
+                />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/images/google-play.png" alt="DPM Screenshot" />
+                <img
+                  style={{ filter: "grayscale(100%)" }}
+                  src="/images/google-play.png"
+                  alt="DPM Screenshot"
+                />
               </Box>
             )}
           </Box>
@@ -63,9 +76,17 @@ const DPM = () => {
             className="dpm-mobile"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/testflight.png" alt="DPM Screenshot" />
+            <img
+              style={{ filter: "grayscale(100%)" }}
+              src="/images/testflight.png"
+              alt="DPM Screenshot"
+            />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/google-play.png" alt="DPM Screenshot" />
+            <img
+              style={{ filter: "grayscale(100%)" }}
+              src="/images/google-play.png"
+              alt="DPM Screenshot"
+            />
           </Box>
         </Box>
       </Box>
