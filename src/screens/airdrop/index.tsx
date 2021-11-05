@@ -81,7 +81,7 @@ const Airdrop = () => {
               }}
             >
               <Typography style={{ padding: "0 16px" }}>
-                Please insert you address
+                Please insert your address
               </Typography>{" "}
               <Box display="flex" flexDirection={isDesktop ? "row" : "column"}>
                 <TextField
