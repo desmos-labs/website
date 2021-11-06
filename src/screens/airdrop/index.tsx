@@ -98,6 +98,7 @@ const Airdrop = () => {
                   variant="outlined"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
+                  placeholder="Cosmos/Kava/Regen... address"
                 />
                 <Box
                   padding={isDesktop ? 0 : "16px"}
