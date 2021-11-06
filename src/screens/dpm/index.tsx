@@ -47,18 +47,22 @@ const DPM = () => {
                 flexDirection="row"
                 pl="16px"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  style={{ filter: "grayscale(100%)" }}
-                  src="/images/testflight.png"
-                  alt="DPM Screenshot"
-                />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  style={{ filter: "grayscale(100%)" }}
-                  src="/images/google-play.png"
-                  alt="DPM Screenshot"
-                />
+                <a
+                  href="https://testflight.apple.com/join/cdgaOHai"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/testflight.png" alt="DPM Screenshot" />
+                </a>
+                <a
+                  href="https://play.google.com/apps/testing/network.desmos.dpm"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/images/google-play.png" alt="DPM Screenshot" />
+                </a>
               </Box>
             )}
           </Box>
@@ -75,18 +79,22 @@ const DPM = () => {
             flexDirection="column"
             className="dpm-mobile"
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              style={{ filter: "grayscale(100%)" }}
-              src="/images/testflight.png"
-              alt="DPM Screenshot"
-            />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              style={{ filter: "grayscale(100%)" }}
-              src="/images/google-play.png"
-              alt="DPM Screenshot"
-            />
+            <a
+              href="https://testflight.apple.com/join/cdgaOHai"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/testflight.png" alt="DPM Screenshot" />
+            </a>
+            <a
+              href="https://play.google.com/apps/testing/network.desmos.dpm"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/images/google-play.png" alt="DPM Screenshot" />
+            </a>
           </Box>
         </Box>
       </Box>
