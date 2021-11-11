@@ -34,7 +34,8 @@ const Layout = (props: LayoutProps) => {
 
   const title = "Desmos Network";
   const type = "website";
-  const description = t("headDescription");
+  const description =
+    "A blockchain which serves as the backbone to empower the development of user-centric social networks.";
   const imageUrl = `${baseUrl}/images/desmos.png`;
 
   return (
