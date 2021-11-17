@@ -37,7 +37,7 @@ const DPM = () => {
           cardType: "summary_large_image",
         }}
       />
-      <Layout className={`${classes.root}`}>
+      <Layout className={`${classes.root}`} logoURL="https://desmos.network" >
         <Box
           display="flex"
           justifyContent="center"

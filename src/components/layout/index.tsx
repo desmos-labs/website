@@ -14,10 +14,11 @@ export interface LayoutProps {
   color?: string;
   navColor?: string;
   mobileNavColor?: string;
+  logoURL?: string;
 }
 
 const Layout = (props: LayoutProps) => {
-  const { children, className, color, navColor, mobileNavColor } = props;
+  const { children, className, color, navColor, mobileNavColor, logoURL } = props;
   const { t, lang } = useTranslation();
   // const { t } = useTranslation(["home", "common"]);
   const { classes } = useGetStyles();
@@ -88,13 +89,13 @@ const Layout = (props: LayoutProps) => {
           {/* </a> */}
           {/* </Link> */}
           {/* <Languages color={color} /> */}
-          <NavBar />
+          <NavBar logoURL={logoURL || "/"} />
         </div>
         {children}
         <div className="socials__container">
           <SocialMedia />
         </div>
-        <Footer />
+        <Footer baseURL={logoURL || "/"}/>
       </div>
     </>
   );

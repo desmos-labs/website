@@ -9,19 +9,24 @@ const Desktop = dynamic(() => import("./components/desktop"));
 
 const Nav: React.FC<{
   title?: string;
-}> = ({ title }) => {
+  logoURL: string;
+}> = ({ title, logoURL }) => {
   const classes = useStyles();
   const { isDesktop } = useGetScreenSizeHook();
   const { displayBackground } = useNavHook();
   return (
     <>
       {isDesktop ? (
-        <Desktop className={classes.desktop} />
+        <Desktop
+          className={classes.desktop}
+          logoURL={logoURL}
+        />
       ) : (
         <Mobile
           className={classes.mobile}
           title={title}
           displayBackground={displayBackground}
+          logoURL={logoURL}
         />
       )}
     </>

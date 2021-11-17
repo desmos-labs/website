@@ -9,8 +9,9 @@ import { IMobileNav, IMobileNavBarIconCSS } from "./types";
 const MobileNav: React.FC<{
   className?: string;
   title: string;
+  logoURL: string;
   displayBackground: boolean;
-}> = ({ className, title, displayBackground }) => {
+}> = ({ className, title, displayBackground, logoURL }) => {
   // const { isOpen, toggle } = useMobileNavHook();
   const { ref: heightRef, height } = useGetComponentDimension();
   const { isMenu, isOpen, toggleNavMenus } = useMobileNavHook();
@@ -33,6 +34,7 @@ const MobileNav: React.FC<{
           isOpen={isOpen}
           // openItem={openItem}
           toggleNavMenus={toggleNavMenus}
+          logoURL={logoURL}
         />
         {/* <SearchBar className={classes.searchBar} /> */}
       </div>

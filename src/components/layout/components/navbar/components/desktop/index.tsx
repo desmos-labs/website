@@ -4,13 +4,14 @@ import { useStyles } from "./styles";
 import DesmosLogo from "@assets/desmos.svg";
 
 const Desktop: React.FC<{
+  logoURL: string;
   className?: string;
-}> = ({ className }) => {
+}> = ({ className, logoURL }) => {
   const classes = useStyles();
   return (
     <div className={className}>
       <div className={classes.root}>
-        <Link href="/">
+        <Link href={logoURL}>
           <a className={classes.a}>
             <DesmosLogo className={classes.logo} />
           </a>

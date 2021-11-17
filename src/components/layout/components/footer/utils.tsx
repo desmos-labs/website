@@ -1,26 +1,26 @@
 export const footerLinks = [
   {
     key: "solution",
-    url: "/#solution",
+    url: "#solution",
   },
   {
     key: "desmosProfile",
-    url: "/#profile",
+    url: "#profile",
   },
   {
     key: "dsmSupply",
-    url: "/#supply",
+    url: "#supply",
   },
   {
     key: "ourTeam",
-    url: "/#team",
+    url: "#team",
   },
   {
     key: "roadMap",
-    url: "/#roadmap",
+    url: "#roadmap",
   },
   {
     key: "ecosystem",
-    url: "/#ecosystem",
+    url: "#ecosystem",
   },
 ];

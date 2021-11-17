@@ -6,7 +6,9 @@ import { SocialMedia } from "@components";
 import { footerLinks } from "./utils";
 import { useGetStyles } from "./styles";
 
-const Footer = () => {
+const Footer: React.FC<{
+  baseURL: string;
+}> = ({ baseURL }) => {
   const { t } = useTranslation("common");
   const { classes } = useGetStyles();
 
@@ -33,7 +35,7 @@ const Footer = () => {
             {footerLinks.map((link) => {
               return (
                 <div key={link.key} className={`${link.key} links__group`}>
-                  <Link key={link.url} href={link.url}>
+                  <Link key={link.url} href={baseURL + link.url}>
                     <a>{t(`${link.key}`)}</a>
                   </Link>
                 </div>

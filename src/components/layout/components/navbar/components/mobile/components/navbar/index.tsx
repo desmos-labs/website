@@ -10,7 +10,7 @@ import { useStyles } from "./styles";
 const Navbar = (props: NavbarProps) => {
   // const { isOpen, color, displayBackground } = props;
   const classes = useStyles();
-  const { isOpen, toggleNavMenus } = props;
+  const { isOpen, toggleNavMenus, logoURL } = props;
 
   return (
     <div
@@ -19,7 +19,7 @@ const Navbar = (props: NavbarProps) => {
       // color={color}
       // displayBackground={displayBackground}
     >
-      <Link href="/">
+      <Link href={logoURL || "/"}>
         <a className={classes.a}>
           <DesmosLogo className={classes.logo} />
         </a>
