@@ -17,7 +17,7 @@ export const productItems = [
     {
         image: ForboleXIcon, 
         details: "Forbole X is an all-round crypto management tool for general users aimed at driving wide-adoption of crypto through gamification and education.",
-        link: "https://staging.portal.forbole.com/"
+        link: "https://x.forbole.com/"
     },
     {
         image: ForboleVentureIcon, 
