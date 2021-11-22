@@ -134,6 +134,7 @@ const Airdrop = () => {
                       fullWidth={isDesktop ? undefined : true}
                       variant="contained"
                       color="primary"
+                      disableElevation={true}
                       style={{
                         backgroundColor: "rgba(237, 108, 83, 1)",
                         height: isDesktop ? "auto" : "2.5rem",
@@ -151,7 +152,7 @@ const Airdrop = () => {
                   </Box>
                 </Box>
               </form>
-              {verifyData !== null && (
+              {!error && verifyData !== null && (
                 <Box>
                   <Typography>The allocated DSM amount is</Typography>
                   <Typography style={{ paddingLeft: "16px" }} variant="h3">
@@ -159,7 +160,7 @@ const Airdrop = () => {
                   </Typography>
                 </Box>
               )}
-              {dataStakingInfo !== null && dataStakingInfo !== undefined ? (
+              {!error && dataStakingInfo !== null && dataStakingInfo !== undefined ? (
                 <Box>
                   {dataStakingInfo.map((item, key) => {
                     const chain = item.chain_name;
@@ -188,7 +189,7 @@ const Airdrop = () => {
                   })}
                 </Box>
               ) : null}
-              {lpInfos !== null && lpInfos !== undefined ? (
+              {!error && lpInfos !== null && lpInfos !== undefined ? (
                 <Box>
                   {lpInfos.map((item, key) => {
                     const chain = item.chain_name;
@@ -213,6 +214,18 @@ const Airdrop = () => {
                   })}
                 </Box>
               ) : null}
+                {!error && verifyData !== null && (
+                <Box>
+                  <Typography>
+                    If you want to know more about the airdrop please check <a
+                    href="https://medium.com/desmosnetwork/announcing-dsm-airdrop-to-the-interchain-community-39d9837dcc5c"
+                    style={{
+                      color: "rgba(237, 108, 83, 1)"
+                    }}
+                    >this link</a>.
+                  </Typography>
+                </Box>
+              )}
             </Box>
 
             {isDesktop && <AirdropParachuteDSM width="650px" height="700px" />}
