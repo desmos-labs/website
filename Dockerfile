@@ -14,7 +14,7 @@ RUN yarn global add pm2
 # Installing dependencies
 COPY package*.json ./
 COPY yarn* ./
-RUN ["yarn"]
+RUN ["yarn", "install", "--ignore-engines"]
 
 # Copying source files
 COPY . .
