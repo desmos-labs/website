@@ -198,7 +198,7 @@ const Airdrop = () => {
                               : null}
                           </Typography>
                           <Typography
-                            style={{color: "#3D3D3D", fontSize:"14px", padding: 0}}>
+                            style={{color: "#3D3D3D", fontSize: "14px", padding: 0}}>
                             Eligible address: {item.address}
                           </Typography>
                         </Box>
@@ -222,11 +222,17 @@ const Airdrop = () => {
                         <Box pr="8px">
                           <TickIcon/>
                         </Box>
-                        <Typography
-                          style={{color: "rgba(237, 108, 83, 1)", padding: 0}}
-                        >
-                          {chain} LP Staker
-                        </Typography>
+                        <Box>
+                          <Typography
+                            style={{color: "rgba(237, 108, 83, 1)", padding: 0}}
+                          >
+                            {chain} LP Staker
+                          </Typography>
+                          <Typography
+                            style={{color: "#3D3D3D", fontSize: "14px", padding: 0}}>
+                            Eligible address: {item.address}
+                          </Typography>
+                        </Box>
                       </Box>
                     );
                   })}

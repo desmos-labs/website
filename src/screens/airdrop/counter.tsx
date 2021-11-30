@@ -21,8 +21,8 @@ const Counter = () => {
     const linksCount = linksResult.data.chain_link_aggregate.aggregate.count;
     return (
         <Typography style={{ lineHeight: "24px" }}>
-            So far, <strong>{profilesCount}</strong> profiles have been created,
-            and a total of <strong>{linksCount}</strong> external accounts have been connected to them.
+            So far, <strong>{profilesCount}</strong> profiles have been created{" "}
+            and <strong>{linksCount}</strong> external accounts have been connected to them.
         </Typography>
     )
 }
