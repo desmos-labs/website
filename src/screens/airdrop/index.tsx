@@ -8,23 +8,23 @@ import {
 } from "@material-ui/core";
 import axios from "axios";
 import useTranslation from "next-translate/useTranslation";
-import {Layout, SocialMedia} from "@components";
-import {useGetStyles} from "./styles";
+import { Layout, SocialMedia, Staker } from "@components";
+import { useGetStyles } from "./styles";
 import AirdropSlogan from "@assets/airdrop-slogan-mobile.svg";
 import AirdropDesktopSlogan from "@assets/airdrop-slogan-desktop.svg";
 import TickIcon from "@assets/tick.svg";
 import AirdropParachuteDSM from "@assets/airdrop-dsm.svg";
-import {useGetScreenSizeHook} from "@hooks";
-import {NextSeo} from "next-seo";
-import {ApolloProvider} from "@apollo/client";
-import Counter from "@screens/airdrop/counter";
-import {client} from "./apis/apollo";
+import { useGetScreenSizeHook } from "@hooks";
+import { NextSeo } from "next-seo";
+import { ApolloProvider } from "@apollo/client";
+import Counter from "./counter";
+import { client } from "./apis/apollo";
 
 const Airdrop = () => {
-  const {t, lang} = useTranslation("common");
+  const { t, lang } = useTranslation("common");
   const [loading, setLoading] = React.useState(false);
-  const {classes} = useGetStyles();
-  const {isDesktop} = useGetScreenSizeHook();
+  const { classes } = useGetStyles();
+  const { isDesktop } = useGetScreenSizeHook();
   const [address, setAddress] = React.useState("");
   const [verifyData, setVerifyData] = React.useState(null);
   const [dataStakingInfo, setDataStakingInfo] = React.useState(null);
@@ -37,9 +37,9 @@ const Airdrop = () => {
       const result = await axios.get(
         `https://api.airdrop.desmos.network/users/${address}`
       );
-      const {data} = result;
+      const { data } = result;
       setVerifyData(data);
-      const {staking_infos, dsm_allotted, lp_infos} = data;
+      const { staking_infos, dsm_allotted, lp_infos } = data;
       setDataStakingInfo(staking_infos);
       setLpInfos(lp_infos);
       setLoading(false);
@@ -85,22 +85,22 @@ const Airdrop = () => {
               className="dpm-page__left-container"
             >
               {isDesktop ? (
-                <AirdropDesktopSlogan/>
+                <AirdropDesktopSlogan />
               ) : (
                 <>
-                  <AirdropSlogan/>
+                  <AirdropSlogan />
                   <Box display="flex" justifyContent="center">
-                    <AirdropParachuteDSM width="300px" height="355px"/>
+                    <AirdropParachuteDSM width="300px" height="355px" />
                   </Box>
                 </>
               )}
 
-              <Counter/>
+              <Counter />
 
-              <Typography style={{lineHeight: "24px"}}>
-                Are you ready to join them? Insert below your address and verify how many{" "}
-                <strong>DSM</strong> have been allocated to you inside the currently active{" "}
-                <strong>Desmos airdrop</strong>!
+              <Typography style={{ lineHeight: "24px" }}>
+                Are you ready to join them? Insert below your address and verify
+                how many <strong>DSM</strong> have been allocated to you inside
+                the currently active <strong>Desmos airdrop</strong>!
               </Typography>
               <form
                 noValidate
@@ -109,7 +109,7 @@ const Airdrop = () => {
                   verify();
                 }}
               >
-                <Typography style={{padding: "0 16px"}}>
+                <Typography style={{ padding: "0 16px" }}>
                   Please insert your address
                 </Typography>{" "}
                 <Box
@@ -149,7 +149,7 @@ const Airdrop = () => {
                       }}
                     >
                       {loading ? (
-                        <CircularProgress color="inherit" size="24px"/>
+                        <CircularProgress color="inherit" size="24px" />
                       ) : (
                         "Calculate"
                       )}
@@ -157,15 +157,27 @@ const Airdrop = () => {
                   </Box>
                 </Box>
               </form>
+              {!error &&
+              verifyData == null &&
+              dataStakingInfo == null &&
+              lpInfos == null ? (
+                <Box>
+                  <Staker />
+                </Box>
+              ) : null}
               {!error && verifyData != null && verifyData.dsm_allotted == 0 ? (
                 <Box>
-                  <Typography>Unfortunately, looks like you have no DSM allotted to you.</Typography>
+                  <Typography>
+                    Unfortunately, looks like you have no DSM allotted to you.
+                  </Typography>
                 </Box>
               ) : null}
               {!error && verifyData != null && verifyData.dsm_allotted > 0 ? (
                 <Box>
-                  <Typography>Congratulations! You have been allotted</Typography>
-                  <Typography style={{paddingLeft: "16px"}} variant="h3">
+                  <Typography>
+                    Congratulations! You have been allotted
+                  </Typography>
+                  <Typography style={{ paddingLeft: "16px" }} variant="h3">
                     {verifyData.dsm_allotted} DSM
                   </Typography>
                 </Box>
@@ -174,7 +186,6 @@ const Airdrop = () => {
                 <Box>
                   {dataStakingInfo.map((item, key) => {
                     const chain = item.chain_name;
-                    // console.log(dataStakingInfo);
                     return (
                       <Box
                         display="flex"
@@ -184,13 +195,14 @@ const Airdrop = () => {
                         key={key}
                       >
                         <Box pr="8px">
-                          <TickIcon/>
+                          <TickIcon />
                         </Box>
-                        <Box
-                          display="flex"
-                          flexDirection="column">
+                        <Box display="flex" flexDirection="column">
                           <Typography
-                            style={{color: "rgba(237, 108, 83, 1)", padding: 0}}
+                            style={{
+                              color: "rgba(237, 108, 83, 1)",
+                              padding: 0,
+                            }}
                           >
                             {chain} Staker{" "}
                             {item.forbole_delegator
@@ -198,7 +210,12 @@ const Airdrop = () => {
                               : null}
                           </Typography>
                           <Typography
-                            style={{color: "#3D3D3D", fontSize: "14px", padding: 0}}>
+                            style={{
+                              color: "#3D3D3D",
+                              fontSize: "14px",
+                              padding: 0,
+                            }}
+                          >
                             Eligible address: {item.address}
                           </Typography>
                         </Box>
@@ -220,16 +237,24 @@ const Airdrop = () => {
                         key={key}
                       >
                         <Box pr="8px">
-                          <TickIcon/>
+                          <TickIcon />
                         </Box>
                         <Box>
                           <Typography
-                            style={{color: "rgba(237, 108, 83, 1)", padding: 0}}
+                            style={{
+                              color: "rgba(237, 108, 83, 1)",
+                              padding: 0,
+                            }}
                           >
                             {chain} LP Staker
                           </Typography>
                           <Typography
-                            style={{color: "#3D3D3D", fontSize: "14px", padding: 0}}>
+                            style={{
+                              color: "#3D3D3D",
+                              fontSize: "14px",
+                              padding: 0,
+                            }}
+                          >
                             Eligible address: {item.address}
                           </Typography>
                         </Box>
@@ -241,31 +266,40 @@ const Airdrop = () => {
               {!error && verifyData !== null && verifyData.dsm_allotted > 0 ? (
                 <Box>
                   <Typography>
-                    Claiming your amount is as easy as creating your Desmos profile and{" "}
-                    connecting it to all your eligible addresses! To know more please visit <a
-                    href="https://medium.com/desmosnetwork"
-                    style={{
-                      color: "rgba(237, 108, 83, 1)"
-                    }}
-                  >our Medium page</a>.
+                    Claiming your amount is as easy as creating your Desmos
+                    profile and connecting it to all your eligible addresses! To
+                    know more please visit{" "}
+                    <a
+                      href="https://medium.com/desmosnetwork"
+                      style={{
+                        color: "rgba(237, 108, 83, 1)",
+                      }}
+                    >
+                      our Medium page
+                    </a>
+                    .
                   </Typography>
                 </Box>
               ) : null}
               {!error && verifyData !== null ? (
                 <Box>
                   <Typography>
-                    If you want to know more about the airdrop please check <a
-                    href="https://medium.com/desmosnetwork/announcing-dsm-airdrop-to-the-interchain-community-39d9837dcc5c"
-                    style={{
-                      color: "rgba(237, 108, 83, 1)"
-                    }}
-                  >this link</a>.
+                    If you want to know more about the airdrop please check{" "}
+                    <a
+                      href="https://medium.com/desmosnetwork/announcing-dsm-airdrop-to-the-interchain-community-39d9837dcc5c"
+                      style={{
+                        color: "rgba(237, 108, 83, 1)",
+                      }}
+                    >
+                      this link
+                    </a>
+                    .
                   </Typography>
                 </Box>
               ) : null}
             </Box>
 
-            {isDesktop && <AirdropParachuteDSM width="650px" height="700px"/>}
+            {isDesktop && <AirdropParachuteDSM width="650px" height="700px" />}
           </Box>
         </Box>
       </Layout>
