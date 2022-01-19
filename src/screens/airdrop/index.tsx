@@ -8,23 +8,21 @@ import {
 } from "@material-ui/core";
 import axios from "axios";
 import useTranslation from "next-translate/useTranslation";
-import {Layout, SocialMedia} from "@components";
-import {useGetStyles} from "./styles";
+import { Layout, SocialMedia, Staker } from "@components";
+import { useGetStyles } from "./styles";
 import AirdropSlogan from "@assets/airdrop-slogan-mobile.svg";
 import AirdropDesktopSlogan from "@assets/airdrop-slogan-desktop.svg";
 import TickIcon from "@assets/tick.svg";
 import AirdropParachuteDSM from "@assets/airdrop-dsm.svg";
-import {useGetScreenSizeHook} from "@hooks";
-import {NextSeo} from "next-seo";
-import {ApolloProvider} from "@apollo/client";
-import Counter from "@screens/airdrop/counter";
-import {client} from "./apis/apollo";
+import { useGetScreenSizeHook } from "@hooks";
+import { NextSeo } from "next-seo";
+import Counter from "./counter";
 
 const Airdrop = () => {
-  const {t, lang} = useTranslation("common");
+  const { t, lang } = useTranslation("common");
   const [loading, setLoading] = React.useState(false);
-  const {classes} = useGetStyles();
-  const {isDesktop} = useGetScreenSizeHook();
+  const { classes } = useGetStyles();
+  const { isDesktop } = useGetScreenSizeHook();
   const [address, setAddress] = React.useState("");
   const [verifyData, setVerifyData] = React.useState(null);
   const [dataStakingInfo, setDataStakingInfo] = React.useState(null);
@@ -37,9 +35,9 @@ const Airdrop = () => {
       const result = await axios.get(
         `https://api.airdrop.desmos.network/users/${address}`
       );
-      const {data} = result;
+      const { data } = result;
       setVerifyData(data);
-      const {staking_infos, dsm_allotted, lp_infos} = data;
+      const { staking_infos, dsm_allotted, lp_infos } = data;
       setDataStakingInfo(staking_infos);
       setLpInfos(lp_infos);
       setLoading(false);
@@ -52,7 +50,7 @@ const Airdrop = () => {
   }, [address]);
 
   return (
-    <ApolloProvider client={client}>
+    <>
       <NextSeo
         title="DSM Airdrop"
         description="Insert below your address and verify how many DSM have been allocated to you inside the upcoming Desmos airdrop"
@@ -85,22 +83,22 @@ const Airdrop = () => {
               className="dpm-page__left-container"
             >
               {isDesktop ? (
-                <AirdropDesktopSlogan/>
+                <AirdropDesktopSlogan />
               ) : (
                 <>
-                  <AirdropSlogan/>
+                  <AirdropSlogan />
                   <Box display="flex" justifyContent="center">
-                    <AirdropParachuteDSM width="300px" height="355px"/>
+                    <AirdropParachuteDSM width="300px" height="355px" />
                   </Box>
                 </>
               )}
 
-              <Counter/>
+              <Counter />
 
-              <Typography style={{lineHeight: "24px"}}>
-                Are you ready to join them? Insert below your address and verify how many{" "}
-                <strong>DSM</strong> have been allocated to you inside the currently active{" "}
-                <strong>Desmos airdrop</strong>!
+              <Typography style={{ lineHeight: "24px" }}>
+                Are you ready to join them? Insert below your address and verify
+                how many <strong>DSM</strong> have been allocated to you inside
+                the currently active <strong>Desmos airdrop</strong>!
               </Typography>
               <form
                 noValidate
@@ -109,7 +107,7 @@ const Airdrop = () => {
                   verify();
                 }}
               >
-                <Typography style={{padding: "0 16px"}}>
+                <Typography style={{ padding: "0 16px" }}>
                   Please insert your address
                 </Typography>{" "}
                 <Box
@@ -149,7 +147,7 @@ const Airdrop = () => {
                       }}
                     >
                       {loading ? (
-                        <CircularProgress color="inherit" size="24px"/>
+                        <CircularProgress color="inherit" size="24px" />
                       ) : (
                         "Calculate"
                       )}
@@ -157,119 +155,243 @@ const Airdrop = () => {
                   </Box>
                 </Box>
               </form>
-              {!error && verifyData != null && verifyData.dsm_allotted == 0 ? (
+              <Box padding="16px">
+                <a
+                  href={
+                    "https://medium.com/desmosnetwork/announcing-dsm-airdrop-to-the-interchain-community-39d9837dcc5c"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    color: "rgba(237, 108, 83, 1)",
+                    paddingRight: "16px",
+                  }}
+                >
+                  DSM Airdrop Criteria
+                </a>
+                <a
+                  href={
+                    "https://medium.com/desmosnetwork/desmos-airdrop-faqs-d5107dd34f17"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: "rgba(237, 108, 83, 1)" }}
+                >
+                  FAQs
+                </a>
+              </Box>
+              {!error &&
+              verifyData == null &&
+              dataStakingInfo == null &&
+              lpInfos == null ? (
                 <Box>
-                  <Typography>Unfortunately, looks like you have no DSM allotted to you.</Typography>
+                  <Staker />
                 </Box>
               ) : null}
-              {!error && verifyData != null && verifyData.dsm_allotted > 0 ? (
+              {!error && verifyData != null && verifyData.dsm_allotted == 0 ? (
                 <Box>
-                  <Typography>Congratulations! You have been allotted</Typography>
-                  <Typography style={{paddingLeft: "16px"}} variant="h3">
-                    {verifyData.dsm_allotted} DSM
+                  <Typography>
+                    Unfortunately, looks like you have no DSM allotted to you.
                   </Typography>
                 </Box>
               ) : null}
-              {!error && dataStakingInfo ? (
-                <Box>
-                  {dataStakingInfo.map((item, key) => {
-                    const chain = item.chain_name;
-                    // console.log(dataStakingInfo);
-                    return (
-                      <Box
-                        display="flex"
-                        flexDirection="row"
-                        pl="16px"
-                        pt="16px"
-                        key={key}
-                      >
-                        <Box pr="8px">
-                          <TickIcon/>
-                        </Box>
+              {/* Data Result div/box: */}
+              <Box
+                display="flex"
+                alignItems="center"
+                flexDirection="column"
+                width={isDesktop ? "50%" : "100%"}
+              >
+                {!error && verifyData != null && verifyData.dsm_allotted > 0 ? (
+                  <Box>
+                    <Typography>
+                      <strong>Congratulations!</strong> You have been allotted
+                    </Typography>
+                    <Typography style={{ paddingLeft: "16px" }} variant="h3">
+                      {verifyData.dsm_allotted} DSM
+                    </Typography>
+                  </Box>
+                ) : null}
+                {!error && dataStakingInfo ? (
+                  <Box
+                    display="flex"
+                    alignSelf="baseline"
+                    flexDirection="column"
+                    width={isDesktop ? "50%" : "100%"}
+                  >
+                    {dataStakingInfo.map((item, key) => {
+                      const chain = item.chain_name;
+
+                      return (
                         <Box
                           display="flex"
-                          flexDirection="column">
-                          <Typography
-                            style={{color: "rgba(237, 108, 83, 1)", padding: 0}}
-                          >
-                            {chain} Staker{" "}
-                            {item.forbole_delegator
-                              ? "& Forbole Delegator"
-                              : null}
-                          </Typography>
-                          <Typography
-                            style={{color: "#3D3D3D", fontSize: "14px", padding: 0}}>
-                            Eligible address: {item.address}
-                          </Typography>
+                          flexDirection="row"
+                          pl="16px"
+                          pt="16px"
+                          key={key}
+                        >
+                          <Box pr="8px">
+                            <TickIcon />
+                          </Box>
+                          <Box display="flex" flexDirection="column">
+                            <Box
+                              display="flex"
+                              flexDirection={isDesktop ? "row" : "column"}
+                            >
+                              <Typography
+                                style={{
+                                  color: "rgba(237, 108, 83, 1)",
+                                  padding: 0,
+                                }}
+                              >
+                                {chain} Staker{" "}
+                                {item.forbole_delegator
+                                  ? "& Forbole Delegator"
+                                  : null}
+                                <Typography
+                                  style={{
+                                    display: "inline",
+                                    color: "rgba(0, 0, 0, 1)",
+                                    padding: 0,
+                                    paddingLeft: isDesktop ? "16px" : "8px",
+                                  }}
+                                >
+                                  {item.dsm_allotted} DSM
+                                </Typography>
+                              </Typography>
+                            </Box>
+
+                            <Box
+                              style={{
+                                backgroundColor: "rgba(232, 232, 232, 0.5)",
+                                borderRadius: "16px",
+                                width: "min-content",
+                              }}
+                              py="5px"
+                              px="8px"
+                            >
+                              <Typography
+                                style={{
+                                  color: "#3D3D3D",
+                                  fontSize: isDesktop ? "14px" : "10px",
+                                  padding: 0,
+                                }}
+                              >
+                                {item.address}
+                              </Typography>
+                            </Box>
+                          </Box>
                         </Box>
-                      </Box>
-                    );
-                  })}
-                </Box>
-              ) : null}
-              {!error && lpInfos ? (
-                <Box>
-                  {lpInfos.map((item, key) => {
-                    const chain = item.chain_name;
-                    return (
-                      <Box
-                        display="flex"
-                        flexDirection="row"
-                        pl="16px"
-                        pt="16px"
-                        key={key}
-                      >
-                        <Box pr="8px">
-                          <TickIcon/>
+                      );
+                    })}
+                  </Box>
+                ) : null}
+                {!error && lpInfos ? (
+                  <Box
+                    display="flex"
+                    alignSelf="baseline"
+                    flexDirection="column"
+                    width={isDesktop ? "50%" : "100%"}
+                  >
+                    {lpInfos.map((item, key) => {
+                      const chain = item.chain_name;
+                      return (
+                        <Box
+                          display="flex"
+                          flexDirection="row"
+                          pl="16px"
+                          pt="16px"
+                          key={key}
+                        >
+                          <Box pr="8px">
+                            <TickIcon />
+                          </Box>
+                          <Box>
+                            <Typography
+                              style={{
+                                color: "rgba(237, 108, 83, 1)",
+                                padding: 0,
+                              }}
+                            >
+                              {chain} LP Staker
+                              <Typography
+                                style={{
+                                  display: "inline",
+                                  color: "rgba(0, 0, 0, 1)",
+                                  padding: 0,
+                                  paddingLeft: isDesktop ? "16px" : "8px",
+                                }}
+                              >
+                                {item.dsm_allotted} DSM
+                              </Typography>
+                            </Typography>
+                            <Box
+                              style={{
+                                backgroundColor: "rgba(232, 232, 232, 0.5)",
+                                borderRadius: "16px",
+                                width: "min-content",
+                              }}
+                              py="5px"
+                              px="8px"
+                            >
+                              <Typography
+                                style={{
+                                  color: "#3D3D3D",
+                                  fontSize: isDesktop ? "14px" : "10px",
+                                  padding: 0,
+                                }}
+                              >
+                                {item.address}
+                              </Typography>
+                            </Box>
+                          </Box>
                         </Box>
-                        <Box>
-                          <Typography
-                            style={{color: "rgba(237, 108, 83, 1)", padding: 0}}
-                          >
-                            {chain} LP Staker
-                          </Typography>
-                          <Typography
-                            style={{color: "#3D3D3D", fontSize: "14px", padding: 0}}>
-                            Eligible address: {item.address}
-                          </Typography>
-                        </Box>
-                      </Box>
-                    );
-                  })}
-                </Box>
-              ) : null}
-              {!error && verifyData !== null && verifyData.dsm_allotted > 0 ? (
+                      );
+                    })}
+                  </Box>
+                ) : null}
+              </Box>
+              {/* {!error && verifyData !== null && verifyData.dsm_allotted > 0 ? (
                 <Box>
                   <Typography>
-                    Claiming your amount is as easy as creating your Desmos profile and{" "}
-                    connecting it to all your eligible addresses! To know more please visit <a
-                    href="https://medium.com/desmosnetwork"
-                    style={{
-                      color: "rgba(237, 108, 83, 1)"
-                    }}
-                  >our Medium page</a>.
+                    Claiming your amount is as easy as creating your Desmos
+                    profile and connecting it to all your eligible addresses! To
+                    know more please visit{" "}
+                    <a
+                      href="https://medium.com/desmosnetwork"
+                      style={{
+                        color: "rgba(237, 108, 83, 1)",
+                      }}
+                    >
+                      our Medium page
+                    </a>
+                    .
                   </Typography>
                 </Box>
               ) : null}
               {!error && verifyData !== null ? (
                 <Box>
                   <Typography>
-                    If you want to know more about the airdrop please check <a
-                    href="https://medium.com/desmosnetwork/announcing-dsm-airdrop-to-the-interchain-community-39d9837dcc5c"
-                    style={{
-                      color: "rgba(237, 108, 83, 1)"
-                    }}
-                  >this link</a>.
+                    If you want to know more about the airdrop please check{" "}
+                    <a
+                      href="https://medium.com/desmosnetwork/announcing-dsm-airdrop-to-the-interchain-community-39d9837dcc5c"
+                      style={{
+                        color: "rgba(237, 108, 83, 1)",
+                      }}
+                    >
+                      this link
+                    </a>
+                    .
                   </Typography>
                 </Box>
-              ) : null}
+              ) : null} */}
             </Box>
 
-            {isDesktop && <AirdropParachuteDSM width="650px" height="700px"/>}
+            {isDesktop && <AirdropParachuteDSM width="650px" height="700px" />}
           </Box>
         </Box>
       </Layout>
-    </ApolloProvider>
+    </>
   );
 };
 
