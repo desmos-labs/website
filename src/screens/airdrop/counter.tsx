@@ -1,10 +1,4 @@
 import { Box, Typography } from "@material-ui/core";
-import { useSubscription } from "@apollo/client";
-import {
-  client,
-  PROFILES_SUBSCRIPTION,
-  LINKS_SUBSCRIPTION,
-} from "./apis/apollo";
 import { formatCrypto } from "@src/utils/formatter";
 import { useGetScreenSizeHook } from "@hooks";
 import { useStatHook } from "./hooks";

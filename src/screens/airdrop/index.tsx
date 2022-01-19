@@ -16,9 +16,7 @@ import TickIcon from "@assets/tick.svg";
 import AirdropParachuteDSM from "@assets/airdrop-dsm.svg";
 import { useGetScreenSizeHook } from "@hooks";
 import { NextSeo } from "next-seo";
-import { ApolloProvider } from "@apollo/client";
 import Counter from "./counter";
-import { client } from "./apis/apollo";
 
 const Airdrop = () => {
   const { t, lang } = useTranslation("common");
@@ -52,7 +50,7 @@ const Airdrop = () => {
   }, [address]);
 
   return (
-    <ApolloProvider client={client}>
+    <>
       <NextSeo
         title="DSM Airdrop"
         description="Insert below your address and verify how many DSM have been allocated to you inside the upcoming Desmos airdrop"
@@ -303,7 +301,7 @@ const Airdrop = () => {
           </Box>
         </Box>
       </Layout>
-    </ApolloProvider>
+    </>
   );
 };
 
