@@ -7,6 +7,6 @@ export const formatCrypto = (
   ): string =>
     `${new Intl.NumberFormat(lang, {
       signDisplay: 'never',
-      maximumFractionDigits: compact ? 2 : 6,
+      maximumFractionDigits: compact ? 2 : 0,
       notation: compact ? 'compact' : undefined,
     }).format(amount || 0)}${hideUnit ? '' : ` ${(unit || '').toUpperCase()}`}`
