@@ -195,98 +195,163 @@ const Airdrop = () => {
                   </Typography>
                 </Box>
               ) : null}
-              {!error && verifyData != null && verifyData.dsm_allotted > 0 ? (
-                <Box>
-                  <Typography>
-                    Congratulations! You have been allotted
-                  </Typography>
-                  <Typography style={{ paddingLeft: "16px" }} variant="h3">
-                    {verifyData.dsm_allotted} DSM
-                  </Typography>
-                </Box>
-              ) : null}
-              {!error && dataStakingInfo ? (
-                <Box>
-                  {dataStakingInfo.map((item, key) => {
-                    const chain = item.chain_name;
-                    return (
-                      <Box
-                        display="flex"
-                        flexDirection="row"
-                        pl="16px"
-                        pt="16px"
-                        key={key}
-                      >
-                        <Box pr="8px">
-                          <TickIcon />
+              {/* Data Result div/box: */}
+              <Box
+                display="flex"
+                alignItems="center"
+                flexDirection="column"
+                width={isDesktop ? "50%" : "100%"}
+              >
+                {!error && verifyData != null && verifyData.dsm_allotted > 0 ? (
+                  <Box>
+                    <Typography>
+                      <strong>Congratulations!</strong> You have been allotted
+                    </Typography>
+                    <Typography style={{ paddingLeft: "16px" }} variant="h3">
+                      {verifyData.dsm_allotted} DSM
+                    </Typography>
+                  </Box>
+                ) : null}
+                {!error && dataStakingInfo ? (
+                  <Box
+                    display="flex"
+                    alignSelf="baseline"
+                    flexDirection="column"
+                    width={isDesktop ? "50%" : "100%"}
+                  >
+                    {dataStakingInfo.map((item, key) => {
+                      const chain = item.chain_name;
+
+                      return (
+                        <Box
+                          display="flex"
+                          flexDirection="row"
+                          pl="16px"
+                          pt="16px"
+                          key={key}
+                        >
+                          <Box pr="8px">
+                            <TickIcon />
+                          </Box>
+                          <Box display="flex" flexDirection="column">
+                            <Box
+                              display="flex"
+                              flexDirection={isDesktop ? "row" : "column"}
+                            >
+                              <Typography
+                                style={{
+                                  color: "rgba(237, 108, 83, 1)",
+                                  padding: 0,
+                                }}
+                              >
+                                {chain} Staker{" "}
+                                {item.forbole_delegator
+                                  ? "& Forbole Delegator"
+                                  : null}
+                                <Typography
+                                  style={{
+                                    display: "inline",
+                                    color: "rgba(0, 0, 0, 1)",
+                                    padding: 0,
+                                    paddingLeft: isDesktop ? "16px" : "8px",
+                                  }}
+                                >
+                                  {item.dsm_allotted} DSM
+                                </Typography>
+                              </Typography>
+                            </Box>
+
+                            <Box
+                              style={{
+                                backgroundColor: "rgba(232, 232, 232, 0.5)",
+                                borderRadius: "16px",
+                                width: "min-content",
+                              }}
+                              py="5px"
+                              px="8px"
+                            >
+                              <Typography
+                                style={{
+                                  color: "#3D3D3D",
+                                  fontSize: isDesktop ? "14px" : "10px",
+                                  padding: 0,
+                                }}
+                              >
+                                {item.address}
+                              </Typography>
+                            </Box>
+                          </Box>
                         </Box>
-                        <Box display="flex" flexDirection="column">
-                          <Typography
-                            style={{
-                              color: "rgba(237, 108, 83, 1)",
-                              padding: 0,
-                            }}
-                          >
-                            {chain} Staker{" "}
-                            {item.forbole_delegator
-                              ? "& Forbole Delegator"
-                              : null}
-                          </Typography>
-                          <Typography
-                            style={{
-                              color: "#3D3D3D",
-                              fontSize: "14px",
-                              padding: 0,
-                            }}
-                          >
-                            Eligible address: {item.address}
-                          </Typography>
+                      );
+                    })}
+                  </Box>
+                ) : null}
+                {!error && lpInfos ? (
+                  <Box
+                    display="flex"
+                    alignSelf="baseline"
+                    flexDirection="column"
+                    width={isDesktop ? "50%" : "100%"}
+                  >
+                    {lpInfos.map((item, key) => {
+                      const chain = item.chain_name;
+                      return (
+                        <Box
+                          display="flex"
+                          flexDirection="row"
+                          pl="16px"
+                          pt="16px"
+                          key={key}
+                        >
+                          <Box pr="8px">
+                            <TickIcon />
+                          </Box>
+                          <Box>
+                            <Typography
+                              style={{
+                                color: "rgba(237, 108, 83, 1)",
+                                padding: 0,
+                              }}
+                            >
+                              {chain} LP Staker
+                              <Typography
+                                style={{
+                                  display: "inline",
+                                  color: "rgba(0, 0, 0, 1)",
+                                  padding: 0,
+                                  paddingLeft: isDesktop ? "16px" : "8px",
+                                }}
+                              >
+                                {item.dsm_allotted} DSM
+                              </Typography>
+                            </Typography>
+                            <Box
+                              style={{
+                                backgroundColor: "rgba(232, 232, 232, 0.5)",
+                                borderRadius: "16px",
+                                width: "min-content",
+                              }}
+                              py="5px"
+                              px="8px"
+                            >
+                              <Typography
+                                style={{
+                                  color: "#3D3D3D",
+                                  fontSize: isDesktop ? "14px" : "10px",
+                                  padding: 0,
+                                }}
+                              >
+                                {item.address}
+                              </Typography>
+                            </Box>
+                          </Box>
                         </Box>
-                      </Box>
-                    );
-                  })}
-                </Box>
-              ) : null}
-              {!error && lpInfos ? (
-                <Box>
-                  {lpInfos.map((item, key) => {
-                    const chain = item.chain_name;
-                    return (
-                      <Box
-                        display="flex"
-                        flexDirection="row"
-                        pl="16px"
-                        pt="16px"
-                        key={key}
-                      >
-                        <Box pr="8px">
-                          <TickIcon />
-                        </Box>
-                        <Box>
-                          <Typography
-                            style={{
-                              color: "rgba(237, 108, 83, 1)",
-                              padding: 0,
-                            }}
-                          >
-                            {chain} LP Staker
-                          </Typography>
-                          <Typography
-                            style={{
-                              color: "#3D3D3D",
-                              fontSize: "14px",
-                              padding: 0,
-                            }}
-                          >
-                            Eligible address: {item.address}
-                          </Typography>
-                        </Box>
-                      </Box>
-                    );
-                  })}
-                </Box>
-              ) : null}
-              {!error && verifyData !== null && verifyData.dsm_allotted > 0 ? (
+                      );
+                    })}
+                  </Box>
+                ) : null}
+              </Box>
+              {/* {!error && verifyData !== null && verifyData.dsm_allotted > 0 ? (
                 <Box>
                   <Typography>
                     Claiming your amount is as easy as creating your Desmos
@@ -319,7 +384,7 @@ const Airdrop = () => {
                     .
                   </Typography>
                 </Box>
-              ) : null}
+              ) : null} */}
             </Box>
 
             {isDesktop && <AirdropParachuteDSM width="650px" height="700px" />}
