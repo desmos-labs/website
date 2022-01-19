@@ -155,6 +155,31 @@ const Airdrop = () => {
                   </Box>
                 </Box>
               </form>
+              <Box padding="16px">
+                <a
+                  href={
+                    "https://medium.com/desmosnetwork/announcing-dsm-airdrop-to-the-interchain-community-39d9837dcc5c"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{
+                    color: "rgba(237, 108, 83, 1)",
+                    paddingRight: "16px",
+                  }}
+                >
+                  DSM Airdrop Criteria
+                </a>
+                <a
+                  href={
+                    "https://medium.com/desmosnetwork/desmos-airdrop-faqs-d5107dd34f17"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: "rgba(237, 108, 83, 1)" }}
+                >
+                  FAQs
+                </a>
+              </Box>
               {!error &&
               verifyData == null &&
               dataStakingInfo == null &&
