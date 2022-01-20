@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 import axios from "axios";
 import useTranslation from "next-translate/useTranslation";
-import { Layout, SocialMedia, Staker } from "@components";
+import { Layout, Staker } from "@components";
 import { useGetStyles } from "./styles";
 import AirdropSlogan from "@assets/airdrop-slogan-mobile.svg";
 import AirdropDesktopSlogan from "@assets/airdrop-slogan-desktop.svg";
@@ -78,7 +78,7 @@ const Airdrop = () => {
         <Box
           display="flex"
           justifyContent="center"
-          padding={isDesktop ? "40px 24px 0" : "72px 32px 24px"}
+          padding={isDesktop ? "40px 24px 40px" : "72px 32px 24px"}
         >
           <Box className="dpm-page__container">
             <Box
