@@ -31,6 +31,7 @@ export const useGetStyles = () => {
           },
           [theme.breakpoints.up("lg")]: {
             flexDirection: "row",
+            alignItems: "flex-start",
             maxWidth: theme?.breakpoints?.values?.maxWidth,
           },
         },
