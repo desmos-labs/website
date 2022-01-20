@@ -15,19 +15,11 @@ export interface LayoutProps {
   navColor?: string;
   mobileNavColor?: string;
   logoURL?: string;
-  externalURL?: boolean;
 }
 
 const Layout = (props: LayoutProps) => {
-  const {
-    children,
-    className,
-    color,
-    navColor,
-    mobileNavColor,
-    logoURL,
-    externalURL,
-  } = props;
+  const { children, className, color, navColor, mobileNavColor, logoURL } =
+    props;
   const { t, lang } = useTranslation();
   // const { t } = useTranslation(["home", "common"]);
   const { classes } = useGetStyles();
