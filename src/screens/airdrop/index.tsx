@@ -452,40 +452,6 @@ const Airdrop = () => {
                   ) : null}
                 </Box>
               </Box>
-              {/* {!error && verifyData !== null && verifyData.dsm_allotted > 0 ? (
-                <Box>
-                  <Typography>
-                    Claiming your amount is as easy as creating your Desmos
-                    profile and connecting it to all your eligible addresses! To
-                    know more please visit{" "}
-                    <a
-                      href="https://medium.com/desmosnetwork"
-                      style={{
-                        color: "rgba(237, 108, 83, 1)",
-                      }}
-                    >
-                      our Medium page
-                    </a>
-                    .
-                  </Typography>
-                </Box>
-              ) : null}
-              {!error && verifyData !== null ? (
-                <Box>
-                  <Typography>
-                    If you want to know more about the airdrop please check{" "}
-                    <a
-                      href="https://medium.com/desmosnetwork/announcing-dsm-airdrop-to-the-interchain-community-39d9837dcc5c"
-                      style={{
-                        color: "rgba(237, 108, 83, 1)",
-                      }}
-                    >
-                      this link
-                    </a>
-                    .
-                  </Typography>
-                </Box>
-              ) : null} */}
             </Box>
 
             {isDesktop && <AirdropParachuteDSM width="650px" height="700px" />}
