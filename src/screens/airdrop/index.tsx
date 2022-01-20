@@ -366,16 +366,19 @@ const Airdrop = () => {
                 {/* Right Box on Desktop view: Info with how-to banners */}
                 <Box
                   display="flex"
-                  alignItems="center"
+                  position={isDesktop ? "absolute" : undefined}
+                  right={isDesktop ? "20px" : undefined}
+                  alignItems="flex-start"
                   flexDirection="column"
                   width={isDesktop ? "50%" : "100%"}
+                  pl="16px"
                 >
                   {!error &&
                   verifyData !== null &&
                   verifyData.dsm_allotted > 0 ? (
                     <>
-                      <Typography variant="h2">
-                        Claim Your DSM Airdrop
+                      <Typography style={{ padding: "20px 0" }}>
+                        <strong>Claim Your DSM Airdrop</strong>
                       </Typography>
                       <Box
                         display="flex"
@@ -392,13 +395,57 @@ const Airdrop = () => {
                         </a>
                         <a
                           href={
-                            "https://medium.com/desmosnetwork/desmos-airdrop-faqs-d5107dd34f17"
+                            "https://medium.com/desmosnetwork/how-to-claim-your-dsm-airdrop-with-dpm-8de80cbbfe3f"
                           }
                           target="_blank"
                           rel="noreferrer"
-                          style={{ color: "rgba(237, 108, 83, 1)" }}
+                          style={{
+                            color: "rgba(237, 108, 83, 1)",
+                            paddingLeft: "5px",
+                          }}
                         >
                           How to
+                        </a>
+                      </Box>
+                      <Box
+                        display="flex"
+                        alignItems="center"
+                        flexDirection="row"
+                        pt="8px"
+                      >
+                        <a
+                          href={"https://x.forbole.com/"}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <XIcon />
+                        </a>
+                        <a
+                          href={
+                            "https://medium.com/desmosnetwork/how-to-claim-dsm-airdrop-with-forbole-x-5d6d84e27cb4"
+                          }
+                          target="_blank"
+                          rel="noreferrer"
+                          style={{
+                            color: "rgba(237, 108, 83, 1)",
+                            paddingLeft: "5px",
+                          }}
+                        >
+                          How to
+                        </a>
+                      </Box>
+                      <Box
+                        display="flex"
+                        alignItems="center"
+                        flexDirection="row"
+                        pt="8px"
+                      >
+                        <a
+                          href={"https://go-find.me/"}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <GoFindMeIcon />
                         </a>
                       </Box>
                     </>
