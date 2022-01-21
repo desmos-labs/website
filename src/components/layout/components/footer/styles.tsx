@@ -115,7 +115,7 @@ export const useGetStyles = () => {
             },
             "& .links__group:first-child": {
               alignItems: "flex-start",
-              width: "7.5rem",
+              width: "12rem",
               "& > a": {
                 padding: 0,
               },

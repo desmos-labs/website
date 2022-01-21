@@ -35,7 +35,10 @@ const Footer: React.FC<{
             {footerLinks.map((link) => {
               return (
                 <div key={link.key} className={`${link.key} links__group`}>
-                  <Link key={link.url} href={baseURL + link.url}>
+                  <Link
+                    key={link.url}
+                    href={link.externalURL ? link.url : baseURL + link.url}
+                  >
                     <a>{t(`${link.key}`)}</a>
                   </Link>
                 </div>

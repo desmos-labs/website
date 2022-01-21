@@ -1,5 +1,15 @@
 export const footerLinks = [
   {
+    key: "documentation",
+    url: "https://docs.desmos.network/",
+    externalURL: true,
+  },
+  // {
+  //   key: "profileManager",
+  //   url: "https://dpm.desmos.network/",
+  //   externalURL: true,
+  // },
+  {
     key: "solution",
     url: "#solution",
   },

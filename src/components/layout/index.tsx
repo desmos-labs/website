@@ -18,7 +18,8 @@ export interface LayoutProps {
 }
 
 const Layout = (props: LayoutProps) => {
-  const { children, className, color, navColor, mobileNavColor, logoURL } = props;
+  const { children, className, color, navColor, mobileNavColor, logoURL } =
+    props;
   const { t, lang } = useTranslation();
   // const { t } = useTranslation(["home", "common"]);
   const { classes } = useGetStyles();
@@ -95,7 +96,7 @@ const Layout = (props: LayoutProps) => {
         <div className="socials__container">
           <SocialMedia />
         </div>
-        <Footer baseURL={logoURL || "/"}/>
+        <Footer baseURL={logoURL || "/"} />
       </div>
     </>
   );

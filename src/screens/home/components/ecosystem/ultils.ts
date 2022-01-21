@@ -22,6 +22,6 @@ export const productItems = [
     {
         image: ForboleVentureIcon, 
         details: "Forbole Ventures is a $20M private investment arm of Forbole to invest in projects which will use Desmos Profiles as their user profiles and other features provided by Desmos project.",
-        link: "https://www.forbole.com/blog/announcing-soft-launch-of-forbole-ventures"
+        link: " https://ventures.forbole.com"
     },
 ]
