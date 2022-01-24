@@ -36,7 +36,7 @@
     "react-i18next": "^11.7.2",
     "react-material-ui-carousel": "^2.3.1",
     "subscriptions-transport-ws": "^0.11.0",
-    "validator": "^13.6.0"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",
