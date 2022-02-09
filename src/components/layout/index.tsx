@@ -7,6 +7,7 @@ import { NextSeo } from "next-seo";
 import { Languages, Footer, NavBar } from "./components";
 import { useGetStyles } from "./styles";
 import SocialMedia from "../social_media";
+import AirdropBox from "../airdrop_box";
 
 export interface LayoutProps {
   children: any;
@@ -20,6 +21,7 @@ export interface LayoutProps {
 const Layout = (props: LayoutProps) => {
   const { children, className, color, navColor, mobileNavColor, logoURL } =
     props;
+  const [airdropDialogOpen, setAirdropDialogOpen] = React.useState(true);
   const { t, lang } = useTranslation();
   // const { t } = useTranslation(["home", "common"]);
   const { classes } = useGetStyles();
@@ -93,6 +95,9 @@ const Layout = (props: LayoutProps) => {
           <NavBar logoURL={logoURL || "/"} />
         </div>
         {children}
+        <div className="airdrop__container">
+          <AirdropBox />
+        </div>
         <div className="socials__container">
           <SocialMedia />
         </div>

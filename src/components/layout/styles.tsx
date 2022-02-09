@@ -47,6 +47,17 @@ export const useGetStyles = () => {
             },
           },
         },
+        "& .airdrop__container": {
+          position: "fixed",
+          zIndex: 1,
+          // position: "absolute",
+          bottom: theme.spacing(1),
+          right: theme.spacing(1),
+          [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
+            bottom: theme.spacing(5),
+            right: theme.spacing(7),
+          },
+        },
       },
       [getMinMediaQuery(theme?.breakpoints?.values?.tablet)]: {},
       [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {},
