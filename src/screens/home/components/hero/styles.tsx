@@ -21,6 +21,9 @@ export const useStyles = () => {
           boxShadow:
             "box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)",
           color: "rgba(255, 255, 255, 1)",
+          "&:hover": {
+            background: "rgba(255, 78, 2, 1)",
+          },
         },
         "& .hero__content": {
           display: "flex",
