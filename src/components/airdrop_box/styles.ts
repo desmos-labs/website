@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles'
-import { getMinMediaQuery } from "@styles";
 
 const useStyles = makeStyles(
   (theme: any) => ({
@@ -18,7 +17,7 @@ const useStyles = makeStyles(
       right: theme.spacing(0),
     },
     h1: {
-      fontWeight: 900,
+      fontFamily: "Poppins Extra Bold",
       background:
       "conic-gradient(from -0.17deg at 47.89% 40.11%, #FF3E9A -45deg, #FF9E75 40.76deg, #FF4E02 125.63deg, #FFB800 181.87deg, #FF3E9A 315deg, #FF9E75 400.76deg)",
       "-webkit-background-clip": "text",
