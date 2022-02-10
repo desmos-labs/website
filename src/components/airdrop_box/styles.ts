@@ -33,7 +33,7 @@ const useStyles = makeStyles(
     },
     button: {
       backgroundColor: "rgba(237, 108, 83, 1)",
-      borderRadius: theme.spacing(0.5),
+      borderRadius: theme.spacing(2),
       color: "rgba(255, 255, 255, 1)",
       '&:hover': {
         background: "rgba(255, 78, 2, 1)",

@@ -16,11 +16,19 @@ export interface LayoutProps {
   navColor?: string;
   mobileNavColor?: string;
   logoURL?: string;
+  airdropPage?: boolean;
 }
 
 const Layout = (props: LayoutProps) => {
-  const { children, className, color, navColor, mobileNavColor, logoURL } =
-    props;
+  const {
+    children,
+    className,
+    color,
+    navColor,
+    mobileNavColor,
+    logoURL,
+    airdropPage,
+  } = props;
   const [airdropDialogOpen, setAirdropDialogOpen] = React.useState(true);
   const { t, lang } = useTranslation();
   // const { t } = useTranslation(["home", "common"]);
@@ -95,9 +103,12 @@ const Layout = (props: LayoutProps) => {
           <NavBar logoURL={logoURL || "/"} />
         </div>
         {children}
-        <div className="airdrop__container">
-          <AirdropBox />
-        </div>
+        {airdropPage ? null : (
+          <div className="airdrop__container">
+            <AirdropBox />
+          </div>
+        )}
+
         <div className="socials__container">
           <SocialMedia />
         </div>
