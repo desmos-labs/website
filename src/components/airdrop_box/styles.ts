@@ -2,6 +2,12 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles(
   (theme: any) => ({
+    box: {
+      padding: theme.spacing(0.125, 3),
+      [theme.breakpoints.up("lg")]: {
+        padding: theme.spacing(1, 6)
+      },
+    },
     menuItem: {
       padding: theme.spacing(1, 3),
       borderBottom: `1px solid ${theme.palette.grey[100]}`,

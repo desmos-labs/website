@@ -27,6 +27,7 @@ const AirdropBox = () => {
       padding="16px"
       flexDirection="column"
       alignItems="center"
+      className={classes.box}
       style={{
         background: "url('/images/airdrop_banner.svg')",
         backgroundColor: "rgba(255, 255, 255, 1)",
