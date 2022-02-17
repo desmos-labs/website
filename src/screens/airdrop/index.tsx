@@ -74,7 +74,11 @@ const Airdrop = () => {
           cardType: "summary_large_image",
         }}
       />
-      <Layout className={`${classes.root}`} logoURL="https://desmos.network">
+      <Layout
+        className={`${classes.root}`}
+        logoURL="https://desmos.network"
+        airdropPage
+      >
         <Box
           display="flex"
           justifyContent="center"

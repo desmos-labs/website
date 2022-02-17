@@ -1,8 +1,13 @@
 import { makeStyles } from '@material-ui/core/styles'
-import { getMinMediaQuery } from "@styles";
 
 const useStyles = makeStyles(
   (theme: any) => ({
+    box: {
+      padding: theme.spacing(0.125, 3),
+      [theme.breakpoints.up("lg")]: {
+        padding: theme.spacing(1, 6)
+      },
+    },
     menuItem: {
       padding: theme.spacing(1, 3),
       borderBottom: `1px solid ${theme.palette.grey[100]}`,
@@ -18,7 +23,7 @@ const useStyles = makeStyles(
       right: theme.spacing(0),
     },
     h1: {
-      fontWeight: 900,
+      fontFamily: "Poppins Extra Bold",
       background:
       "conic-gradient(from -0.17deg at 47.89% 40.11%, #FF3E9A -45deg, #FF9E75 40.76deg, #FF4E02 125.63deg, #FFB800 181.87deg, #FF3E9A 315deg, #FF9E75 400.76deg)",
       "-webkit-background-clip": "text",
@@ -34,7 +39,7 @@ const useStyles = makeStyles(
     },
     button: {
       backgroundColor: "rgba(237, 108, 83, 1)",
-      borderRadius: theme.spacing(0.5),
+      borderRadius: theme.spacing(0.75),
       color: "rgba(255, 255, 255, 1)",
       '&:hover': {
         background: "rgba(255, 78, 2, 1)",
