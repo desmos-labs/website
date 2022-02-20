@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { Box } from "@material-ui/core";
 import useTranslation from "next-translate/useTranslation";
 import FooterLogo from "@assets/desmos.svg";
 import { SocialMedia } from "@components";
@@ -21,12 +22,14 @@ const Footer: React.FC<{
     <div className={`${classes.root} footer`}>
       <div className="footer__content">
         {/* ============================= */}
-        {/* logo */}
+        {/* top container: logo & socials */}
         {/* ============================= */}
-        <div className="footer__logo--container">
-          <FooterLogo className="footer__logo" />
-          {/* <p className="footer__slogan">{t("common:slogan")}</p> */}
-        </div>
+        <Box>
+          <div className="footer__logo--container">
+            <FooterLogo className="footer__logo" />
+            {/* <p className="footer__slogan">{t("common:slogan")}</p> */}
+          </div>
+        </Box>
         {/* ============================= */}
         {/* links */}
         {/* ============================= */}

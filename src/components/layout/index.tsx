@@ -29,7 +29,6 @@ const Layout = (props: LayoutProps) => {
     logoURL,
     airdropPage,
   } = props;
-  const [airdropDialogOpen, setAirdropDialogOpen] = React.useState(true);
   const { t, lang } = useTranslation();
   // const { t } = useTranslation(["home", "common"]);
   const { classes } = useGetStyles();
