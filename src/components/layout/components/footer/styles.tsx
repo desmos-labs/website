@@ -4,6 +4,28 @@ import { getMinMediaQuery } from "@styles";
 export const useGetStyles = () => {
   const useStyles = makeStyles((theme: any) => {
     return createStyles({
+      listItem: {
+        paddingLeft: 0,
+        "& path": {
+          transition: "all 0.3s ease",
+          fill: "rgba(59, 60, 36, 1)",
+        },
+        "&:hover": {
+          "& path": {
+            fill: "rgba(153, 153, 153, 0.2)",
+          },
+        },
+      },
+      footer: {
+        display: "grid",
+        gridGap: theme.spacing(2),
+        gridTemplateColumns: "repeat(2, 1fr)",
+        [theme.breakpoints.up("lg")]: {
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+        },
+      },
       root: {
         "&.footer": {
           background: "#FAFAFA",

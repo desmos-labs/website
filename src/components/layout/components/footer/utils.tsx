@@ -1,3 +1,5 @@
+import { DiscordIcon, TelegramIcon } from "@src/components/icons";
+
 export const footerLinks = [
   {
     key: "documentation",
@@ -91,6 +93,58 @@ export const footer = {
     {
       key: "forbole x wallet",
       url: "https://x.forbole.com/",
+      externalURL: true,
+    },
+    {
+      key: "forbole ventures",
+      url: "https://ventures.forbole.com/",
+      externalURL: true,
+    },
+    {
+      key: "dsm airdrop",
+      url: "https://airdrop.desmos.network/",
+      externalURL: true,
+    },
+  ],
+  about: [
+    {
+      key: "team",
+      url: "https://www.forbole.com/about",
+      externalURL: true,
+    },
+    {
+      key: "airdrop faq",
+      url: "https://medium.com/desmosnetwork/desmos-airdrop-faqs-d5107dd34f17",
+      externalURL: true,
+    },
+    // {
+    //   key: "brand asset",
+    //   url: "/brand-asset"
+    // }
+  ],
+  join: [
+    {
+      icon: <DiscordIcon />,
+      key: "@Desmos",
+      url: "https://discord.com/invite/yxPRGd",
+      externalURL: true,
+    },
+    {
+      icon: <TelegramIcon />,
+      key: "@Desmosnetwork",
+      url: "https://t.me/desmosnetwork",
+      externalURL: true,
+    },
+    {
+      icon: <TelegramIcon />,
+      key: "@Desmos Italia 🇮🇹",
+      url: "https://t.me/DesmosITA",
+      externalURL: true,
+    },
+    {
+      icon: <TelegramIcon />,
+      key: "@Desmos 中文社區",
+      url: "https://t.me/DesmosChinese",
       externalURL: true,
     },
   ],
