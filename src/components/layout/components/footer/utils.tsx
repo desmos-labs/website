@@ -99,7 +99,7 @@ export const footer: FooterProps = {
     },
     {
       key: "validator",
-      url: "https://docs.desmos.network/",
+      url: "https://docs.desmos.network/validators/overview/",
       externalURL: true,
     },
     {
