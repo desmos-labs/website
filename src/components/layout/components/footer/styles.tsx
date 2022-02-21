@@ -6,6 +6,8 @@ export const useGetStyles = () => {
     return createStyles({
       listItem: {
         paddingLeft: 0,
+        color: "rgba(59, 60, 36, 1)",
+        textDecoration: "underline",
         "& path": {
           transition: "all 0.3s ease",
           fill: "rgba(59, 60, 36, 1)",
@@ -20,6 +22,7 @@ export const useGetStyles = () => {
         display: "grid",
         gridGap: theme.spacing(2),
         gridTemplateColumns: "repeat(2, 1fr)",
+        paddingBottom: 24,
         [theme.breakpoints.up("lg")]: {
           display: "flex",
           flexDirection: "row",
@@ -51,12 +54,14 @@ export const useGetStyles = () => {
         },
         "& .footer__copyright": {
           borderTop: "solid 1px rgba(227, 227, 227, 1)",
+          textAlign: "left",
           " & p": {
             color: "rgba(59, 60, 36, 1)",
             marginTop: "1rem",
             fontSize: "0.8rem",
           },
           [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
+            textAlign: "right",
             " & p": {
               color: "rgba(59, 60, 36, 1)",
               margin: 0,

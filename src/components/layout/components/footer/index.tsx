@@ -28,7 +28,12 @@ const Footer: React.FC<{
         {/* ============================= */}
         {/* top container: logo & socials */}
         {/* ============================= */}
-        <Box display="flex" justifyContent="space-between" alignItems="center">
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          pb={3}
+        >
           <div className="footer__logo--container">
             <FooterLogo className="footer__logo" />
             {/* <p className="footer__slogan">{t("common:slogan")}</p> */}
@@ -57,23 +62,16 @@ const Footer: React.FC<{
         <Box className={classes.footer}>
           {footerItems.map((item, i) => {
             const { title, details } = item;
-            console.log(details);
             return (
               <Box key={i} display="flex" flexDirection="column">
                 <Box fontWeight="fontWeightBold" pb={1}>
                   {t(title)}
                 </Box>
                 {details.map((detail, x) => {
-                  const { key, url } = detail;
+                  const { key } = detail;
+                  let { url } = detail;
+                  url = detail.externalURL ? url : baseURL + url;
                   return (
-                    // <Box key={x}>
-                    //   <Link
-                    //     key={url}
-                    //     href={detail.externalURL ? detail.url : baseURL + url}
-                    //   >
-                    //     <a>{t(`${key}`)}</a>
-                    //   </Link>
-                    // </Box>
                     <Link href={url} key={x} passHref>
                       <ListItem component="a" className={classes.listItem}>
                         {detail.icon && (
@@ -98,18 +96,18 @@ const Footer: React.FC<{
         {/* ============================= */}
         {/* social */}
         {/* ============================= */}
-        <div className="footer__social">
-          {/* <h3>{t("community")}</h3> */}
-          <SocialMedia />
-          {/* ============================= */}
-          {/* copyright */}
-          {/* ============================= */}
-          <div className="footer__copyright">
-            <p>
-              {t("copyright")} {year}
-            </p>
-          </div>
+        {/* <div className="footer__social"> */}
+        {/* <h3>{t("community")}</h3> */}
+        {/* <SocialMedia /> */}
+        {/* ============================= */}
+        {/* copyright */}
+        {/* ============================= */}
+        <div className="footer__copyright">
+          <p>
+            {t("copyright")} {year}
+          </p>
         </div>
+        {/* </div> */}
       </div>
     </div>
   );

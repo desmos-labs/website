@@ -37,11 +37,40 @@ export const footerLinks = [
   },
 ];
 
-export const footer = {
+interface FooterProps {
+  learn: {
+    key: string;
+    url: string;
+    externalURL?: boolean;
+  }[];
+  build: {
+    key: string;
+    url: string;
+    externalURL?: boolean;
+  }[];
+  explore: {
+    key: string;
+    url: string;
+    externalURL?: boolean;
+  }[];
+  about: {
+    key: string;
+    url: string;
+    externalURL?: boolean;
+  }[];
+  join: {
+    icon: React.ReactNode;
+    key: string;
+    url: string;
+    externalURL?: boolean;
+  }[];
+}
+
+export const footer: FooterProps = {
   learn: [
     {
       key: "projectPlan",
-      url: "/",
+      url: "",
     },
     {
       key: "dsmToken",
@@ -54,12 +83,12 @@ export const footer = {
     {
       key: "medium",
       url: "https://medium.com/desmosnetwork",
-      externalUrl: true,
+      externalURL: true,
     },
     {
       key: "forboleBlog",
       url: "https://www.forbole.com/blog",
-      externalUrl: true,
+      externalURL: true,
     },
   ],
   build: [
