@@ -26,3 +26,16 @@ export const getMenuItems = () => {
     },
   ];
 };
+
+export const getGrantItems = () => {
+  return [
+    {
+      key: "grants",
+      url: "/grants",
+    },
+    {
+      key: "application",
+      url: "/application",
+    },
+  ];
+};

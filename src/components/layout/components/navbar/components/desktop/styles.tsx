@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 export const useStyles = () => {
   const styles = makeStyles((theme) => {
     return {
-      root: { width: "1200px" },
+      root: { width: "1200px", "&.active": {} },
       logo: {
         width: theme.spacing(17),
         "&:hover": {

@@ -11,7 +11,8 @@ const MobileNav: React.FC<{
   title: string;
   logoURL: string;
   displayBackground: boolean;
-}> = ({ className, title, displayBackground, logoURL }) => {
+  grants?: boolean;
+}> = ({ className, title, displayBackground, logoURL, grants }) => {
   // const { isOpen, toggle } = useMobileNavHook();
   const { ref: heightRef, height } = useGetComponentDimension();
   const { isMenu, isOpen, toggleNavMenus } = useMobileNavHook();
@@ -29,6 +30,7 @@ const MobileNav: React.FC<{
             open: isMenu,
             menu: isMenu,
           })}
+          grants={grants}
         />
         <Navbar
           isOpen={isOpen}
