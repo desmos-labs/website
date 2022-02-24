@@ -27,7 +27,7 @@ const Desktop: React.FC<{
           </a>
         </Link>
         <Box style={{ display: grants ? "flex" : "none" }}>
-          <List>
+          <List className={classes.items}>
             {items.map((x) => {
               let isActive = false;
               if (x.url === router?.asPath) {

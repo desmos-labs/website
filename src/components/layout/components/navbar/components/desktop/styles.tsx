@@ -3,12 +3,25 @@ import { makeStyles } from "@material-ui/core/styles";
 export const useStyles = () => {
   const styles = makeStyles((theme) => {
     return {
-      root: { width: "1200px", "&.active": {} },
+      root: {
+        width: "1200px",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+      },
       logo: {
         width: theme.spacing(17),
         "&:hover": {
           cursor: "pointer",
         },
+      },
+      items: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        fontWeight: 500,
+        "& a": { color: "rgba(255, 105, 0, 0.4)" },
+        "& .active": { color: "rgba(237, 108, 83, 1)" },
       },
       a: {
         lineHeight: 0,

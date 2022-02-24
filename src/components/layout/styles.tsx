@@ -8,14 +8,18 @@ interface StyleProps {
 export const useStyles = makeStyles((theme: any) => ({
   root: {
     backgroundImage: (props: StyleProps) =>
-      props.grants ? "hi" : "url('/images/background-mobile.png')",
+      props.grants
+        ? "url('/images/background-grants-mobile.png')"
+        : "url('/images/background-mobile.png')",
     backgroundSize: "100%",
     backgroundPosition: "0% 0%",
     backgroundRepeat: "no-repeat",
     position: "relative",
     [theme.breakpoints.up("lg")]: {
       backgroundImage: (props: StyleProps) =>
-        props.grants ? "hi" : "url('/images/background-desktop.png')",
+        props.grants
+          ? "url('/images/background-grants-desktop.png')"
+          : "url('/images/background-desktop.png')",
       justifyContent: "flex-start",
     },
     "& .nav__container": {
@@ -24,6 +28,7 @@ export const useStyles = makeStyles((theme: any) => ({
       justifyContent: "space-between",
       position: "absolute",
       width: "100%",
+      padding: "1rem 1.5rem",
     },
     "& .nav__logo": {
       width: "180px",
