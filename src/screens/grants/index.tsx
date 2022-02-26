@@ -43,9 +43,9 @@ const Grants = () => {
         logoURL="https://desmos.network"
         grants
       >
-        <Box display="flex" justifyContent="center" flexDirection="column">
-          <GrantsHero />
-        </Box>
+        {/* <Box display="flex" justifyContent="center" flexDirection="column"> */}
+        <GrantsHero />
+        {/* </Box> */}
       </Layout>
     </>
   );

@@ -20,9 +20,20 @@ const GrantsHero = () => {
       <Box
         display="flex"
         justifyContent="center"
-        // padding={isDesktop ? "40px 24px 0" : "72px 32px 24px"}
+        padding={isDesktop ? "40px 24px 0" : "72px 32px 24px"}
         height="100vh"
-      ></Box>
+      >
+        <Typography
+          variant="h1"
+          style={{ display: "block" }}
+          className={classes.h1}
+        >
+          Desmos
+        </Typography>
+        <Typography variant="h1" className={classes.h1}>
+          Grant Programme
+        </Typography>
+      </Box>
     </>
   );
 };
