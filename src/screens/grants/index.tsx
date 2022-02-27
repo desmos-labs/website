@@ -44,7 +44,9 @@ const Grants = () => {
         grants
       >
         {/* <Box display="flex" justifyContent="center" flexDirection="column"> */}
-        <GrantsHero />
+        <Box className={classes.section}>
+          <GrantsHero />
+        </Box>
         {/* </Box> */}
       </Layout>
     </>
