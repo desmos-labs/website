@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Box, Button, ThemeProvider, Typography } from "@material-ui/core";
 // import { useTranslation } from "i18n";
@@ -17,7 +18,7 @@ const GrantsHero = () => {
   const { isDesktop } = useGetScreenSizeHook();
 
   return (
-    <>
+    <Box className={classes.container}>
       <Box
         display="flex"
         justifyContent="center"
@@ -62,14 +63,21 @@ const GrantsHero = () => {
         </Box>
       </Box>
       {isDesktop ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src="/images/desktop-granta-hero-image.png" alt="Hero Image" />
+        <Box className={classes.desktopImage}>
+          {/* // eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/desktop-granta-hero-image.png"
+            alt="Hero Image"
+            // className={classes.desktopImage}
+            style={{ width: "100%" }}
+          />
+        </Box>
       ) : (
         <Box position="absolute" right="10px" top="40px">
           <HeroIcon />
         </Box>
       )}
-    </>
+    </Box>
   );
 };
 

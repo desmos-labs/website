@@ -16,11 +16,20 @@ export const useStyles = makeStyles((theme: any) => ({
     background: "linear-gradient(160.72deg, #FFFFFF -18.73%, #F84998 -4.7%, #FF6B00 17.53%, #FFB342 35.66%, #FBDA0F 52.03%, #FA9805 69.58%)",
     "-webkit-background-clip": "text",
     "-webkit-text-fill-color": "transparent",
+    [theme.breakpoints.up("lg")]: {
+      fontSize: theme.spacing(8),
+      paddingBottom: theme.spacing(3)
+    }
   },
   p: {
     fontSize: theme.spacing(2),
     lineHeight: "24px",
     fontWeight: 300,
+    [theme.breakpoints.up("lg")]: {
+      fontSize: theme.spacing(2.5),
+      paddingBottom: theme.spacing(3),
+      lineHeight: "30px",
+    }
   },
   button: {
     backgroundColor: "rgba(237, 108, 83, 1)",
@@ -35,5 +44,24 @@ export const useStyles = makeStyles((theme: any) => ({
     "&:hover": {
       background: "rgba(255, 78, 2, 1)",
     },
+  },
+  container: {
+    height: "100vh",
+    // alignItems: "center",
+    // flexDirection: "column",
+    // justifyContent: "center",
+    [theme.breakpoints.up("lg")]: {
+      height: "100vh",
+      maxWidth: "1200px",
+      display: "flex",
+      flexDirection: "row"
+    }
+  },
+  desktopImage: {
+    [theme.breakpoints.up("lg")]: {
+      width: "100%",
+      // width: "583px",
+      height: "774px"
+    }
   }
 }))
