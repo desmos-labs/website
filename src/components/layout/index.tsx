@@ -104,11 +104,11 @@ const Layout = (props: LayoutProps) => {
           <NavBar logoURL={logoURL || "/"} grants={grants} />
         </div>
         {children}
-        {airdropPage ? null : (
+        {/* {airdropPage ? null : (
           <div className="airdrop__container">
             <AirdropBox />
           </div>
-        )}
+        )} */}
 
         <div className="socials__container">
           <SocialMedia />
