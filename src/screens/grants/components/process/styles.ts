@@ -32,7 +32,7 @@ export const useStyles = () => {
             marginRight: 'auto'
           },
           [theme.breakpoints.up("md")]: {
-            maxWidth: '600px',
+            maxWidth: '800px',
           },
         },
         stepWrapper: {
@@ -53,53 +53,19 @@ export const useStyles = () => {
           },
           [theme.breakpoints.up("md")]: {
             margin: theme.spacing(8, 0),
+            padding: theme.spacing(6, 2),
           },
           [theme.breakpoints.up("lg")]: {
             margin: theme.spacing(13, 0),
-            borderRadius: '500px',
-            // '&.even': {
-            //   position: 'relative',
-            //   left: '-125px'
-            // },
-            // '&.odd': {
-            //   position: 'relative',
-            //   left: '125px'
-            // },
-            // '&.step-wrapper-1:after': {
-            //   content: '"#1"',
-            //   background: 'linear-gradient(137.42deg, #BD00FF -2.91%, rgba(66, 0, 255, 0.44) 107.27%)',
-            // },
-            // '&.step-wrapper-2:after': {
-            //   content: '"#2"',
-            //   background: 'linear-gradient(137.42deg, #FF008A -2.91%, rgba(255, 0, 61, 0.44) 107.27%)',
-            // },
-            // '&.step-wrapper-3:after': {
-            //   content: '"#3"',
-            //   background: 'linear-gradient(137.42deg, #FFB800 -2.91%, rgba(255, 107, 0, 0.85) 107.27%)',
-            // },
-            // '&.step-wrapper-4:after': {
-            //   content: '"#4"',
-            //   background: 'linear-gradient(137.42deg, #FF8731 -2.91%, rgba(255, 122, 0, 0.71) 107.27%)',
-            // },
-            // '&.step-wrapper.even:after': {
-            //   right: '-200px',
-            // },
-            // '&.step-wrapper.odd:after': {
-            //   left: '-200px',
-            // },
-            // '&.step-wrapper:after': {
-            //   position: 'absolute',
-            //   fontFamily: "Poppins Extra Bold",
-            //   fontSize: '3rem',
-            //   "-webkit-background-clip": "text",
-            //   "-webkit-text-fill-color": "transparent",
-            //   color: 'transparent',
-            // }
+            borderRadius: theme.spacing(4),
+            padding: theme.spacing(8, 2),
           },
         },
         stepTitle: {
+          textAlign: 'center',
           color: '#3B3C24',
           fontFamily: "Poppins Extra Bold",
+          marginBottom: theme.spacing(2),
           '&.step-1': {
             background: 'linear-gradient(137.42deg, #BD00FF -2.91%, rgba(66, 0, 255, 0.44) 107.27%)',
           },
@@ -116,20 +82,49 @@ export const useStyles = () => {
             "-webkit-background-clip": "text",
             "-webkit-text-fill-color": "transparent",
             color: 'transparent',
-            marginBottom: theme.spacing(2),
           },
-          // [theme.breakpoints.up("lg")]: {
-          //   '&.step': {
-          //     display: 'none'
-          //   }
-          // }
+          [theme.breakpoints.up("lg")]: {
+            marginBottom: theme.spacing(1),
+            textAlign: 'left',
+            '&.step': {
+              display: 'none'
+            }
+          }
         },
         stepDetails: {
           marginBottom: theme.spacing(2),
           textAlign: 'center',
+          [theme.breakpoints.up("lg")]: {
+            textAlign: 'left',
+            marginBottom: 0,
+          }
         },
         stepImage: {
 
+        },
+        stepFlex: {
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          [theme.breakpoints.up("lg")]: {
+            width: '100%',
+            flexDirection: 'row-reverse',
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+            '& img': {
+              width: '75px',
+              marginRight: theme.spacing(4),
+              marginLeft:theme.spacing(8),
+              '&.application': {
+                width: '60px',
+              }
+            },
+            "& .text-wrapper": {
+              flex: 1,
+              marginRight:theme.spacing(8),
+            }
+          }
         }
       });
     },

@@ -15,9 +15,9 @@ const Process: React.FC<{ className?: string }> = (props) => {
       >
         Application Process
       </Typography>
-      {/* steps */}
       <div className={classes.stepBodyWrapper}>
         {steps.map((x, i) => {
+          const isComponent = React.isValidElement(x.details);
           return (
             <div key={x.label} className={classnames(classes.stepWrapper, 'step-wrapper', `step-wrapper-${i+1}`, {
               even: i % 2 === 0,
@@ -26,13 +26,23 @@ const Process: React.FC<{ className?: string }> = (props) => {
               <Typography variant="h2" className={classnames(classes.stepTitle, 'step', `step-${i+1}`)}>
                 #{i + 1}
               </Typography>
-              <Typography variant="h3" className={classes.stepTitle}>
-                {x.label}
-              </Typography>
-              <Typography className={classes.stepDetails}>
-                {x.details}
-              </Typography>
-              <img src={x.imageUrl} alt={x.label} className={classnames(classes.stepImage, x.label.toLowerCase())}/>
+              <div className={classes.stepFlex}>
+                <div className="text-wrapper">
+                <Typography variant="h3" className={classes.stepTitle}>
+                  {x.label}
+                </Typography>
+                {isComponent ? (
+                  <>
+                    {x.details}
+                  </>
+                ): (
+                  <Typography className={classes.stepDetails}>
+                    {x.details}
+                  </Typography>
+                )}
+                </div>
+                <img src={x.imageUrl} alt={x.label} className={classnames(classes.stepImage, x.label.toLowerCase())}/>
+              </div>
             </div>
           )
         })}

@@ -1,11 +1,19 @@
+import React from 'react';
 import { Typography } from '@material-ui/core';
 
-export const steps = [
+export const steps: {
+  label: string;
+  details: string | React.ReactNode;
+  imageUrl: string;
+}[] = [
   {
     label: 'Application',
     details: (
       <Typography>
-        Submit your Grants Application
+        Submit your <a
+          target="_blank"
+          href="https://docs.google.com/forms/d/1cjrQd89_4y2h9BrbvJhZJ_ZwP_4pi9Qh759V6SjG29w/"
+          rel="noreferrer">Application</a>
       </Typography>
     ),
     imageUrl: '/images/grant-application-application.svg',
