@@ -26,7 +26,7 @@ const Desktop: React.FC<{
             <DesmosLogo className={classes.logo} />
           </a>
         </Link>
-        <Box style={{ display: grants ? "flex" : "none" }}>
+        <Box>
           <List className={classes.items}>
             {items.map((x) => {
               let isActive = false;

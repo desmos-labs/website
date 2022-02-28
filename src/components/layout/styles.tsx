@@ -28,7 +28,9 @@ export const useStyles = makeStyles((theme: any) => ({
       justifyContent: "space-between",
       position: "absolute",
       width: "100%",
-      padding: "1rem 1.5rem",
+      [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
+        padding: "1rem 1.5rem",
+      }
     },
     "& .nav__logo": {
       width: "180px",
