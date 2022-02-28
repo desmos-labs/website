@@ -7,6 +7,10 @@ export const useStyles = makeStyles((theme: any) => ({
     boxShadow: "0px 30px 30px rgba(65, 55, 129, 0.13)",
     padding: theme.spacing(4, 4.2),
   },
-  h3: { fontFamily: "Poppins Extra Bold" },
-  p: {},
+  h3: {
+    fontFamily: "Poppins Extra Bold",
+    paddingTop: theme.spacing(0.5),
+    fontSize: theme.spacing(2.25),
+  },
+  p: { paddingTop: theme.spacing(0.5), fontSize: theme.spacing(1.75) },
 }));
