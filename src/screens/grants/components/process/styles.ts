@@ -66,21 +66,34 @@ export const useStyles = () => {
             //   left: '125px'
             // },
             // '&.step-wrapper-1:after': {
-            //   position: 'absolute',
-            //   top: '-4px',
-            //   bottom: '-4px',
-            //   left: '-4px',
-            //   right: '-4px',
-            //   background: 'linear-gradient(red, blue)',
-            //   content: '" "',
-            //   zIndex: -1,
-            //   borderRadius: '500px'
-            //   // borderWidth: '3px',
-            //   // borderStyle: 'solid',
-            //   // borderImage: "linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%"
+            //   content: '"#1"',
+            //   background: 'linear-gradient(137.42deg, #BD00FF -2.91%, rgba(66, 0, 255, 0.44) 107.27%)',
             // },
-            // '&.step-wrapper': {
-            //   position: 'relative'
+            // '&.step-wrapper-2:after': {
+            //   content: '"#2"',
+            //   background: 'linear-gradient(137.42deg, #FF008A -2.91%, rgba(255, 0, 61, 0.44) 107.27%)',
+            // },
+            // '&.step-wrapper-3:after': {
+            //   content: '"#3"',
+            //   background: 'linear-gradient(137.42deg, #FFB800 -2.91%, rgba(255, 107, 0, 0.85) 107.27%)',
+            // },
+            // '&.step-wrapper-4:after': {
+            //   content: '"#4"',
+            //   background: 'linear-gradient(137.42deg, #FF8731 -2.91%, rgba(255, 122, 0, 0.71) 107.27%)',
+            // },
+            // '&.step-wrapper.even:after': {
+            //   right: '-200px',
+            // },
+            // '&.step-wrapper.odd:after': {
+            //   left: '-200px',
+            // },
+            // '&.step-wrapper:after': {
+            //   position: 'absolute',
+            //   fontFamily: "Poppins Extra Bold",
+            //   fontSize: '3rem',
+            //   "-webkit-background-clip": "text",
+            //   "-webkit-text-fill-color": "transparent",
+            //   color: 'transparent',
             // }
           },
         },
@@ -105,6 +118,11 @@ export const useStyles = () => {
             color: 'transparent',
             marginBottom: theme.spacing(2),
           },
+          // [theme.breakpoints.up("lg")]: {
+          //   '&.step': {
+          //     display: 'none'
+          //   }
+          // }
         },
         stepDetails: {
           marginBottom: theme.spacing(2),
