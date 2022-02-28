@@ -5,13 +5,10 @@ interface StyleProps {
 }
 
 export const useStyles = makeStyles((theme: any) => ({
-  root: {},
   h1: {
-    fontFamily: "Poppins Extra Bold", 
-    // filter: "blur(30px)",
+    fontFamily: "Poppins Extra Bold",
     fontSize: theme.spacing(4),
     fontWeight: 800,
-    // lineHeight: theme.spacing(6),
     background: "linear-gradient(160.72deg, #FFFFFF -18.73%, #F84998 -4.7%, #FF6B00 17.53%, #FFB342 35.66%, #FBDA0F 52.03%, #FA9805 69.58%)",
     "-webkit-background-clip": "text",
     "-webkit-text-fill-color": "transparent",
@@ -45,10 +42,8 @@ export const useStyles = makeStyles((theme: any) => ({
     },
   },
   container: {
-    height: "100vh",
-    // alignItems: "center",
-    // flexDirection: "column",
-    // justifyContent: "center",
+    zIndex: 1,
+    minHeight: "100vh",
     [theme.breakpoints.up("lg")]: {
       height: "100vh",
       maxWidth: "1200px",
@@ -61,6 +56,26 @@ export const useStyles = makeStyles((theme: any) => ({
       width: "100%",
       // width: "583px",
       height: "774px"
+    }
+  },
+  heroIconBox: {
+    position: 'absolute',
+    right: '10px',
+    top: '40px',
+    '& img': {
+      opacity: 0.6,
+      width: '200px',
+      display: 'none',
+      [theme.breakpoints.up("sm")]: {
+        display: 'block',
+        width: '300px',
+      },
+      [theme.breakpoints.up("md")]: {
+        width: '350px',
+      },
+      [theme.breakpoints.up("lg")]: {
+        width: '600px',
+      }
     }
   }
 }))
