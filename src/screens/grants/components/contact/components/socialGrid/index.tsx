@@ -33,8 +33,7 @@ const SocialGrid = () => {
         <Button
           variant="contained"
           component="a"
-          target="_blank"
-          href={"https://discord.com/invite/ckFcU5vxxc"}
+          href={"mailto: grants@desmos.network"}
           className={classes.card}
         >
           <EmailIcon

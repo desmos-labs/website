@@ -4,8 +4,13 @@ export const useStyles = makeStyles((theme: any) => ({
   grid: {
     display: "grid",
     gridTemplateRows: "repeat(2, 1fr)",
-    gridTemplateColumns: "1fr 1fr",
+    gridTemplateColumns: "repeat(2, 1fr)",
     gridGap: "20px",
+    width: '100%',
+    [theme.breakpoints.up("md")]: {
+      margin: '0 auto',
+      width: '70%',
+    }
   },
   grid1: {
     gridRow: "1 / span 1",
@@ -20,15 +25,16 @@ export const useStyles = makeStyles((theme: any) => ({
     gridColumn: "1 / span 2",
   },
   card: {
-    padding: theme.spacing(3, 7.5),
+    width: '100%',
+    height: theme.spacing(8),
     background: "rgba(255, 255, 255, 0.6)",
     boxShadow: "0px 51.6667px 51.6667px rgba(69, 42, 124, 0.08)",
     borderRadius: theme.spacing(2),
     "&:hover": {
       background: "rgba(255, 255, 255, 1)",
     },
-    [theme.breakpoints.up("lg")]: {
-      padding: theme.spacing(3, 14),
+    [theme.breakpoints.up("md")]: {
+      height: theme.spacing(14),
     },
   },
   button: {

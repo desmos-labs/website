@@ -48,9 +48,9 @@ const Grants = () => {
         <Box className={classes.section}>
           <Categories />
         </Box>
-        {/* <Box className={classes.section}>
+        <Box className={classes.section}>
           <Contact />
-        </Box> */}
+        </Box>
       </Layout>
     </>
   );

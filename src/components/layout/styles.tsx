@@ -37,7 +37,7 @@ export const useStyles = makeStyles((theme: any) => ({
     },
     "& .socials__container": {
       position: "fixed",
-      zIndex: 1,
+      zIndex: 500,
       bottom: theme.spacing(1),
       right: theme.spacing(1),
       [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
