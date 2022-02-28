@@ -7,7 +7,7 @@ export const useStyles = makeStyles((theme: any) => ({
     // flexDirection: "column",
     // justifyContent: "center",
     [theme.breakpoints.up("lg")]: {
-      height: "100vh",
+      minHeight: "100vh",
       maxWidth: "1200px",
       display: "flex",
       flexDirection: "row",

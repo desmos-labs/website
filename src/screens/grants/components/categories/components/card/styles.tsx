@@ -11,6 +11,17 @@ export const useStyles = makeStyles((theme: any) => ({
     fontFamily: "Poppins Extra Bold",
     paddingTop: theme.spacing(0.5),
     fontSize: theme.spacing(2.25),
+    [theme.breakpoints.up("lg")]: {
+      paddingTop: theme.spacing(1.5),
+      fontSize: theme.spacing(3),
+    },
   },
-  p: { paddingTop: theme.spacing(0.5), fontSize: theme.spacing(1.75) },
+  p: {
+    paddingTop: theme.spacing(0.5),
+    fontSize: theme.spacing(1.75),
+    [theme.breakpoints.up("lg")]: {
+      paddingTop: theme.spacing(1.5),
+      fontSize: theme.spacing(2),
+    },
+  },
 }));
