@@ -22,17 +22,67 @@ export const useStyles = () => {
           [theme.breakpoints.up("lg")]: {
             paddingBottom: theme.spacing(4.5),
             fontSize: theme.spacing(6),
+            marginBottom: theme.spacing(3)
+          },
+        },
+        stepBodyWrapper: {
+          [theme.breakpoints.up("sm")]: {
+            width: '70%',
+            marginLeft: 'auto',
+            marginRight: 'auto'
+          },
+          [theme.breakpoints.up("md")]: {
+            maxWidth: '600px',
           },
         },
         stepWrapper: {
           background: 'rgba(255, 255, 255, 0.6)',
+          boxShadow: "0px 30px 30px rgba(65, 55, 129, 0.13)",
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           flexDirection: 'column',
-          padding: theme.spacing(3, 2),
-          margin: theme.spacing(2, 0),
+          padding: theme.spacing(4, 2),
+          margin: theme.spacing(6, 0),
           borderRadius: theme.spacing(2),
+          '&:first-child': {
+            marginTop: 0,
+          },
+          '&:last-child': {
+            marginBottom: 0,
+          },
+          [theme.breakpoints.up("md")]: {
+            margin: theme.spacing(8, 0),
+          },
+          [theme.breakpoints.up("lg")]: {
+            margin: theme.spacing(13, 0),
+            borderRadius: '500px',
+            // '&.even': {
+            //   position: 'relative',
+            //   left: '-125px'
+            // },
+            // '&.odd': {
+            //   position: 'relative',
+            //   left: '125px'
+            // },
+            // '&.step-wrapper-1:after': {
+            //   position: 'absolute',
+            //   top: '-4px',
+            //   bottom: '-4px',
+            //   left: '-4px',
+            //   right: '-4px',
+            //   background: 'linear-gradient(red, blue)',
+            //   content: '" "',
+            //   zIndex: -1,
+            //   borderRadius: '500px'
+            //   // borderWidth: '3px',
+            //   // borderStyle: 'solid',
+            //   // borderImage: "linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%"
+            // },
+            // '&.step-wrapper': {
+            //   position: 'relative'
+            // }
+          },
         },
         stepTitle: {
           color: '#3B3C24',
@@ -52,7 +102,8 @@ export const useStyles = () => {
           '&.step': {
             "-webkit-background-clip": "text",
             "-webkit-text-fill-color": "transparent",
-            color: 'transparent'
+            color: 'transparent',
+            marginBottom: theme.spacing(2),
           },
         },
         stepDetails: {

@@ -16,10 +16,13 @@ const Process: React.FC<{ className?: string }> = (props) => {
         Application Process
       </Typography>
       {/* steps */}
-      <div>
+      <div className={classes.stepBodyWrapper}>
         {steps.map((x, i) => {
           return (
-            <div key={x.label} className={classes.stepWrapper}>
+            <div key={x.label} className={classnames(classes.stepWrapper, 'step-wrapper', `step-wrapper-${i+1}`, {
+              even: i % 2 === 0,
+              odd: i % 2 > 0,
+            })}>
               <Typography variant="h2" className={classnames(classes.stepTitle, 'step', `step-${i+1}`)}>
                 #{i + 1}
               </Typography>
