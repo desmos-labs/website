@@ -41,9 +41,9 @@ const GrantsHero = () => {
         </Box>
         <Box pt="12px">
           <Typography variant="body1" className={classes.p}>
-            By offering grants for projects, contributions and community
-            expansion that will ultimately enrich the Desmos ecosystem and
-            community.
+            Offering grants for projects, contributions and community
+            expansions that will ultimately enrich the Desmos ecosystem and
+            community
           </Typography>
         </Box>
         <Box pt="12px">

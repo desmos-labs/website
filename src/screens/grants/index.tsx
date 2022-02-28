@@ -3,7 +3,7 @@ import { Box, ThemeProvider, Typography } from "@material-ui/core";
 // import { useTranslation } from "i18n";
 import useTranslation from "next-translate/useTranslation";
 import { Layout, SocialMedia } from "@components";
-import { GrantsHero, Categories, Contact } from "./components";
+import { GrantsHero, Categories, Contact, Process } from "./components";
 import { useStyles } from "./styles";
 import DPMSlogan from "@assets/dpm-slogan.svg";
 import { useGetScreenSizeHook } from "@hooks";
@@ -45,6 +45,7 @@ const Grants = () => {
         <Box className={classes.section}>
           <GrantsHero />
         </Box>
+        <Process />
         <Box className={classes.section}>
           <Categories />
         </Box>
