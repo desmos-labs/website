@@ -29,13 +29,13 @@ export const getMenuItems = () => {
 
 export const getGrantItems = () => {
   return [
-    {
-      key: "grants",
-      url: "/grants",
-    },
-    {
-      key: "application",
-      url: "https://docs.google.com/forms/d/1cjrQd89_4y2h9BrbvJhZJ_ZwP_4pi9Qh759V6SjG29w/",
-    },
+    // {
+    //   key: "grants",
+    //   url: "/grants",
+    // },
+    // {
+    //   key: "application",
+    //   url: "https://docs.google.com/forms/d/1cjrQd89_4y2h9BrbvJhZJ_ZwP_4pi9Qh759V6SjG29w/",
+    // },
   ];
 };
