@@ -23,6 +23,44 @@ export const useStyles = () => {
             paddingBottom: theme.spacing(4.5),
             fontSize: theme.spacing(6),
           },
+        },
+        stepWrapper: {
+          background: 'rgba(255, 255, 255, 0.6)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexDirection: 'column',
+          padding: theme.spacing(3, 2),
+          margin: theme.spacing(2, 0),
+          borderRadius: theme.spacing(2),
+        },
+        stepTitle: {
+          color: '#3B3C24',
+          fontFamily: "Poppins Extra Bold",
+          '&.step-1': {
+            background: 'linear-gradient(137.42deg, #BD00FF -2.91%, rgba(66, 0, 255, 0.44) 107.27%)',
+          },
+          '&.step-2': {
+            background: 'linear-gradient(137.42deg, #FF008A -2.91%, rgba(255, 0, 61, 0.44) 107.27%)',
+          },
+          '&.step-3': {
+            background: 'linear-gradient(137.42deg, #FFB800 -2.91%, rgba(255, 107, 0, 0.85) 107.27%)',
+          },
+          '&.step-4': {
+            background: 'linear-gradient(137.42deg, #FF8731 -2.91%, rgba(255, 122, 0, 0.71) 107.27%)',
+          },
+          '&.step': {
+            "-webkit-background-clip": "text",
+            "-webkit-text-fill-color": "transparent",
+            color: 'transparent'
+          },
+        },
+        stepDetails: {
+          marginBottom: theme.spacing(2),
+          textAlign: 'center',
+        },
+        stepImage: {
+
         }
       });
     },
