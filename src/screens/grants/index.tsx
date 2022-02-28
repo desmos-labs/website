@@ -3,7 +3,7 @@ import { Box, ThemeProvider, Typography } from "@material-ui/core";
 // import { useTranslation } from "i18n";
 import useTranslation from "next-translate/useTranslation";
 import { Layout, SocialMedia } from "@components";
-import { GrantsHero } from "./components";
+import { GrantsHero, Categories } from "./components";
 import { useStyles } from "./styles";
 import DPMSlogan from "@assets/dpm-slogan.svg";
 import { useGetScreenSizeHook } from "@hooks";
@@ -43,11 +43,12 @@ const Grants = () => {
         logoURL="https://desmos.network"
         grants
       >
-        {/* <Box display="flex" justifyContent="center" flexDirection="column"> */}
         <Box className={classes.section}>
           <GrantsHero />
         </Box>
-        {/* </Box> */}
+        <Box className={classes.section}>
+          <Categories />
+        </Box>
       </Layout>
     </>
   );

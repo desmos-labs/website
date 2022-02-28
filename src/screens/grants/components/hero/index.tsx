@@ -12,9 +12,7 @@ import HeroIcon from "@assets/r-grants-hero-image.svg";
 
 const GrantsHero = () => {
   const { t, lang } = useTranslation("common");
-  // const { t } = useTranslation(["home", "common"]);
   const classes = useStyles();
-  // const { networks } = useHomeHook();
   const { isDesktop } = useGetScreenSizeHook();
 
   return (
@@ -64,11 +62,9 @@ const GrantsHero = () => {
       </Box>
       {isDesktop ? (
         <Box className={classes.desktopImage}>
-          {/* // eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/desktop-granta-hero-image.png"
             alt="Hero Image"
-            // className={classes.desktopImage}
             style={{ width: "100%" }}
           />
         </Box>

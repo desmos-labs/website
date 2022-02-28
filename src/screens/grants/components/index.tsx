@@ -1,3 +1,4 @@
 import GrantsHero from "./hero";
+import Categories from "./categories";
 
-export { GrantsHero };
+export { GrantsHero, Categories };
