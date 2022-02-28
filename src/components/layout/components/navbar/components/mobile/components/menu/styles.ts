@@ -17,7 +17,7 @@ export const useStyles = () => {
             height: "100%",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-evenly",
+            justifyContent: "flex-start",
           }
         },
         footerActions: {

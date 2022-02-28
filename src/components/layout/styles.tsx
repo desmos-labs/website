@@ -28,14 +28,16 @@ export const useStyles = makeStyles((theme: any) => ({
       justifyContent: "space-between",
       position: "absolute",
       width: "100%",
-      // padding: "1rem 1.5rem",
+      [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
+        padding: "1rem 1.5rem",
+      }
     },
     "& .nav__logo": {
       width: "180px",
     },
     "& .socials__container": {
       position: "fixed",
-      zIndex: 1,
+      zIndex: 500,
       bottom: theme.spacing(1),
       right: theme.spacing(1),
       [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {

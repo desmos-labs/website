@@ -21,9 +21,9 @@ export const useGetStyles = () => {
       footer: {
         display: "grid",
         gridGap: theme.spacing(2),
-        gridTemplateColumns: "repeat(2, 1fr)",
         paddingBottom: 24,
         [theme.breakpoints.up("lg")]: {
+          gridTemplateColumns: "repeat(2, 1fr)",
           display: "flex",
           flexDirection: "row",
           justifyContent: "space-between",

@@ -32,6 +32,7 @@ const Footer: React.FC<{
           display="flex"
           justifyContent="space-between"
           alignItems="center"
+          flexWrap="wrap"
           pb={3}
         >
           <div className="footer__logo--container">
