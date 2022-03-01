@@ -23,18 +23,15 @@ const Process: React.FC<{ className?: string }> = (props) => {
               even: i % 2 === 0,
               odd: i % 2 > 0,
             })}>
-              <Typography variant="h2" className={classnames(classes.stepTitle, 'step', `step-${i+1}`)}>
-                #{i + 1}
-              </Typography>
               <div className={classes.stepFlex}>
                 <div className="text-wrapper">
                 <Typography variant="h3" className={classes.stepTitle}>
                   {x.label}
                 </Typography>
                 {isComponent ? (
-                  <>
+                  <div className={classes.stepDetails}>
                     {x.details}
-                  </>
+                  </div>
                 ): (
                   <Typography className={classes.stepDetails}>
                     {x.details}
