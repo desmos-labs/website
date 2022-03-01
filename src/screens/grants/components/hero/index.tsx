@@ -6,6 +6,7 @@ import useTranslation from "next-translate/useTranslation";
 import { Layout, SocialMedia } from "@components";
 import { useStyles } from "./styles";
 import DPMSlogan from "@assets/dpm-slogan.svg";
+import { GRANTS_FORM } from '@api';
 import { useGetScreenSizeHook } from "@hooks";
 import { NextSeo } from "next-seo";
 import HeroIcon from "@assets/r-grants-hero-image.svg";
@@ -52,9 +53,7 @@ const GrantsHero = () => {
               variant="contained"
               component="a"
               target="_blank"
-              href={
-                "https://docs.google.com/forms/d/1cjrQd89_4y2h9BrbvJhZJ_ZwP_4pi9Qh759V6SjG29w/"
-              }
+              href={GRANTS_FORM}
               className={classes.button}
             >
               APPLY NOW

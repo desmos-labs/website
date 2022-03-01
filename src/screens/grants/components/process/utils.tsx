@@ -1,5 +1,6 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
+import { GRANTS_FORM } from '@api';
 
 export const steps: {
   label: string;
@@ -11,8 +12,9 @@ export const steps: {
     details: (
       <Typography>
         Submit your <a
+          className="application-link"
           target="_blank"
-          href="https://docs.google.com/forms/d/1cjrQd89_4y2h9BrbvJhZJ_ZwP_4pi9Qh759V6SjG29w/"
+          href={GRANTS_FORM}
           rel="noreferrer">Application</a>
       </Typography>
     ),

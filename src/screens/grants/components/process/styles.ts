@@ -27,11 +27,14 @@ export const useStyles = () => {
         },
         stepBodyWrapper: {
           [theme.breakpoints.up("sm")]: {
-            width: '70%',
+            maxWidth: '70%',
             marginLeft: 'auto',
             marginRight: 'auto'
           },
           [theme.breakpoints.up("md")]: {
+            maxWidth: '650px',
+          },
+          [theme.breakpoints.up("lg")]: {
             maxWidth: '800px',
           },
         },
@@ -66,23 +69,6 @@ export const useStyles = () => {
           color: '#3B3C24',
           fontFamily: "Poppins Extra Bold",
           marginBottom: theme.spacing(2),
-          '&.step-1': {
-            background: 'linear-gradient(137.42deg, #BD00FF -2.91%, rgba(66, 0, 255, 0.44) 107.27%)',
-          },
-          '&.step-2': {
-            background: 'linear-gradient(137.42deg, #FF008A -2.91%, rgba(255, 0, 61, 0.44) 107.27%)',
-          },
-          '&.step-3': {
-            background: 'linear-gradient(137.42deg, #FFB800 -2.91%, rgba(255, 107, 0, 0.85) 107.27%)',
-          },
-          '&.step-4': {
-            background: 'linear-gradient(137.42deg, #FF8731 -2.91%, rgba(255, 122, 0, 0.71) 107.27%)',
-          },
-          '&.step': {
-            "-webkit-background-clip": "text",
-            "-webkit-text-fill-color": "transparent",
-            color: 'transparent',
-          },
           [theme.breakpoints.up("lg")]: {
             marginBottom: theme.spacing(1),
             textAlign: 'left',
@@ -94,6 +80,11 @@ export const useStyles = () => {
         stepDetails: {
           marginBottom: theme.spacing(2),
           textAlign: 'center',
+          '& a.application-link': {
+            fontFamily: "Poppins Extra Bold",
+            color: 'rgba(250, 122, 66, 1)',
+            textDecoration: 'none'
+          },
           [theme.breakpoints.up("lg")]: {
             textAlign: 'left',
             marginBottom: 0,
