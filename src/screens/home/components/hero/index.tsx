@@ -14,7 +14,7 @@ const Hero = () => {
     <div className={classes.root}>
       <HeroSlogan className="hero__slogan" />
       <p>{t("hero")}</p>
-      <div className="hero__content">
+      {/* <div className="hero__content">
         <Box className="a">
           <a
             href="/files/desmos-project-plan-v0.4.2.pdf"
@@ -26,7 +26,7 @@ const Hero = () => {
             <ArrowIcon className="arrow__icon" />
           </a>
         </Box>
-      </div>
+      </div> */}
       <Box pl="8px">
         <Button
           variant="contained"
