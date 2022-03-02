@@ -18,7 +18,7 @@ const Menu = (props: MenuProps) => {
   const { t, lang } = useTranslation("common");
   // const { theme, themeList, changeTheme } = useSettingsContext();
 
-  const { toggleNavMenus, className } = props;
+  const { toggleNavMenus, className, grants } = props;
   const classes = useStyles();
   const languageOptions = useLanguageDrawer(lang, toggleNavMenus);
   // console.log("toggle", toggleNavMenus);
@@ -82,7 +82,7 @@ const Menu = (props: MenuProps) => {
       {/* ================================== */}
       <div className={classnames(className, classes.root)}>
         <div className={classes.menu}>
-          <MenuItems toggleNavMenus={toggleNavMenus} />
+          <MenuItems toggleNavMenus={toggleNavMenus} grants={grants} />
         </div>
         {/* ========================= */}
         {/* Footer Actions */}

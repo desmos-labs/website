@@ -5,14 +5,14 @@ import Link from "next/link";
 import { List, ListItem, ListItemText } from "@material-ui/core";
 import useTranslation from "next-translate/useTranslation";
 import { useStyles } from "./styles";
-import { getMenuItems } from "./utils";
+import { getMenuItems, getGrantItems } from "./utils";
 
-const MenuItems = (props: { toggleNavMenus: () => void }) => {
+const MenuItems = (props: { toggleNavMenus: () => void; grants?: boolean }) => {
   const classes = useStyles();
   const router = useRouter();
   const { t } = useTranslation("common");
-  const items = getMenuItems();
-  const { toggleNavMenus } = props;
+  const { toggleNavMenus, grants } = props;
+  const items = grants ? getGrantItems() : getMenuItems();
 
   return (
     <List>

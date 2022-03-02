@@ -44,7 +44,9 @@ export const useStyles = () => {
           //   display: "block",
           //   height: "70vh",
           display: "grid",
-          gridTemplateColumns: "repeat(2, 1fr)",
+          [theme.breakpoints.up("sm")]: {
+            gridTemplateColumns: "repeat(2, 1fr)",
+          },
           gridGap: theme.spacing(1),
           [theme.breakpoints.up("lg")]: {
             paddingTop: theme.spacing(9),
