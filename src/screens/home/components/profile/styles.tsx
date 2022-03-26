@@ -63,6 +63,31 @@ export const useStyles = () => {
         "& p": {
           padding: theme.spacing(3, 1, 3),
         },
+        "& .link": {
+          "& a": {
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            "& h4": {
+              color: "rgba(237, 108, 83, 1)",
+              fontSize: theme.spacing(2.5),
+              fontWeight: 300,
+              letterSpacing: "0em",
+              textAlign: "left",
+              padding: theme.spacing(0, 0, 0, 1),
+            },
+          },
+          "& svg": {
+            margin: "0 0.1rem",
+            width: "14px",
+            height: "14px",
+            [theme.breakpoints.up("lg")]: {
+              margin: "0 0.7rem",
+              width: "20px",
+              height: "20px",
+            },
+          },
+        },
         [theme.breakpoints.up("lg")]: {
           maxWidth: "1200px",
           "& .hero__slogan": {

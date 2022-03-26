@@ -74,11 +74,15 @@ const Airdrop = () => {
           cardType: "summary_large_image",
         }}
       />
-      <Layout className={`${classes.root}`} logoURL="https://desmos.network">
+      <Layout
+        className={`${classes.root}`}
+        logoURL="https://desmos.network"
+        airdropPage
+      >
         <Box
           display="flex"
           justifyContent="center"
-          padding={isDesktop ? "80px 24px 40px" : "72px 32px 24px"}
+          padding={isDesktop ? "80px 24px 80px" : "72px 32px 24px"}
         >
           <Box className="dpm-page__container">
             <Box

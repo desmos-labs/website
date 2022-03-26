@@ -1,5 +1,11 @@
 import React from "react";
-import { DiscordIcon, TwitterIcon, GithubIcon, MediumIcon } from "@icons";
+import {
+  DiscordIcon,
+  TwitterIcon,
+  GithubIcon,
+  MediumIcon,
+  YoutubeIcon,
+} from "@icons";
 
 export const socialMediaLinks: {
   component: React.ReactNode;
@@ -25,5 +31,10 @@ export const socialMediaLinks: {
     component: <MediumIcon />,
     className: "medium",
     url: "https://medium.com/desmosnetwork",
+  },
+  {
+    component: <YoutubeIcon />,
+    className: "youtube",
+    url: "https://www.youtube.com/channel/UCWsStillLytB4OyWu3-vS4w/",
   },
 ];

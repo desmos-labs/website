@@ -5,8 +5,9 @@ import Link from "next/link";
 import useTranslation from "next-translate/useTranslation";
 import { NextSeo } from "next-seo";
 import { Languages, Footer, NavBar } from "./components";
-import { useGetStyles } from "./styles";
+import { useStyles } from "./styles";
 import SocialMedia from "../social_media";
+import AirdropBox from "../airdrop_box";
 
 export interface LayoutProps {
   children: any;
@@ -15,14 +16,24 @@ export interface LayoutProps {
   navColor?: string;
   mobileNavColor?: string;
   logoURL?: string;
+  airdropPage?: boolean;
+  grants?: boolean;
 }
 
 const Layout = (props: LayoutProps) => {
-  const { children, className, color, navColor, mobileNavColor, logoURL } =
-    props;
+  const {
+    children,
+    className,
+    color,
+    navColor,
+    mobileNavColor,
+    logoURL,
+    airdropPage,
+    grants,
+  } = props;
   const { t, lang } = useTranslation();
   // const { t } = useTranslation(["home", "common"]);
-  const { classes } = useGetStyles();
+  const classes = useStyles({ grants: grants });
   // ============================
   // Meta Tags
   // ============================
@@ -90,9 +101,15 @@ const Layout = (props: LayoutProps) => {
           {/* </a> */}
           {/* </Link> */}
           {/* <Languages color={color} /> */}
-          <NavBar logoURL={logoURL || "/"} />
+          <NavBar logoURL={logoURL || "/"} grants={grants} />
         </div>
         {children}
+        {/* {airdropPage ? null : (
+          <div className="airdrop__container">
+            <AirdropBox />
+          </div>
+        )} */}
+
         <div className="socials__container">
           <SocialMedia />
         </div>

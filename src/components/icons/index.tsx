@@ -8,6 +8,7 @@ import YoutubeIcon from "./youtube";
 import TwitterIcon from "./twitter";
 import DiscordIcon from "./discord";
 import DesmosIcon from "./desmos";
+import EmailIcon from "./email";
 
 export {
   FacebookIcon,
@@ -20,4 +21,5 @@ export {
   TwitterIcon,
   DiscordIcon,
   DesmosIcon,
+  EmailIcon,
 };
