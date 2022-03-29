@@ -24,13 +24,14 @@ export const useStyles = makeStyles((theme: any) => ({
     },
     "& .nav__container": {
       display: "flex",
+      position: "fixed",
       alignItems: "center",
       justifyContent: "space-between",
-      position: "absolute",
       width: "100%",
       [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
-        padding: "1rem 1.5rem",
-      }
+        zIndex: 500,
+        padding: 0,
+      },
     },
     "& .nav__logo": {
       width: "180px",

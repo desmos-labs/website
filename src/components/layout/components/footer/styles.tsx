@@ -35,7 +35,7 @@ export const useGetStyles = () => {
           padding: "3rem 1.5rem 4rem",
           color: "black",
           height: "100%",
-          zIndex: 101,
+          zIndex: 501,
           position: "relative",
           [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
             "&.footer": {

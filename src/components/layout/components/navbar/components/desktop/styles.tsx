@@ -6,8 +6,10 @@ export const useStyles = () => {
       root: {
         width: "1200px",
         display: "flex",
+        // position: "fixed",
         flexDirection: "row",
         justifyContent: "space-between",
+        alignItems: "center",
       },
       logo: {
         width: theme.spacing(17),
@@ -20,7 +22,13 @@ export const useStyles = () => {
         flexDirection: "row",
         justifyContent: "space-between",
         fontWeight: 500,
-        "& a": { color: "rgba(237, 108, 83, 1)" },
+        "& a": {
+          color: "rgba(237, 108, 83, 1)",
+          "&:hover": {
+            background: "rgba(237, 108, 83, 0.2)",
+            borderRadius: theme.spacing(0.5),
+          },
+        },
         "& .active": { color: "rgba(237, 108, 83, 1)" },
       },
       a: {

@@ -20,6 +20,7 @@ const Nav: React.FC<{
       {isDesktop ? (
         <Desktop
           className={classes.desktop}
+          displayBackground={displayBackground}
           logoURL={logoURL}
           grants={grants}
         />
