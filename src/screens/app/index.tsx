@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 import { AppProps } from "next/app";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import { init } from "@socialgouv/matomo-next";
 // import { ApolloProvider } from "@apollo/client";
 // import client from "@graphql";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
@@ -34,6 +35,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
     }
+    // init call Matamo
+    const MATOMO_URL = process.env.NEXT_PUBLIC_MATOMO_URL;
+    const MATOMO_SITE_ID = process.env.NEXT_PUBLIC_MATOMO_SITE_ID;
+    init({ url: MATOMO_URL, siteId: MATOMO_SITE_ID });
   }, []);
 
   // =============================
