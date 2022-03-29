@@ -23,6 +23,21 @@ jobs:
           echo ::set-output name=version::${VERSION}
           echo ::set-output name=tags::${TAGS}
           echo ::set-output name=created::$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+      - name: Prepare docker build env
+        id: dockerPrep
+        run: |
+          NEXT_PUBLIC_MATOMO_URL=
+          NEXT_PUBLIC_MATOMO_SITE_ID=
+          NODE_ENV="production"
+          PORT=3000
+          if [[ $GITHUB_REF == refs/tags/* ]]; then
+            NEXT_PUBLIC_MATOMO_URL="https://analytics.desmos.network"
+            NEXT_PUBLIC_MATOMO_SITE_ID=11
+          fi
+          echo ::set-output name=NEXT_PUBLIC_MATOMO_URL::${NEXT_PUBLIC_MATOMO_URL}
+          echo ::set-output name=NEXT_PUBLIC_MATOMO_SITE_ID::${NEXT_PUBLIC_MATOMO_SITE_ID}
+          echo ::set-output name=NODE_ENV::${NODE_ENV}
+          echo ::set-output name=PORT::${PORT}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Login to DockerHub
@@ -46,12 +61,10 @@ jobs:
           DESMOS_WEBHOOK: ${{ secrets.DESMOS_WEBHOOK }}
           AKASH_WEBHOOK_SECRET: ${{ secrets.AKASH_WEBHOOK_SECRET }}
         run: |
-            BRANCH=${GITHUB_REF}
-            WEBHOOK_URL=''
-            if [[ $GITHUB_REF == refs/tags/v* ]]; then
-              echo 'Deploying to Desmos Landing '
-              WEBHOOK_URL=$DESMOS_WEBHOOK
-            fi
-              curl -i -X POST -H "Content-Type: application/json" -d '{"parameters":{"tag": "${{ steps.prep.outputs.version }}"}}' -k $WEBHOOK_URL -u "deploy:$AKASH_WEBHOOK_SECRET"
-
-
+          BRANCH=${GITHUB_REF}
+          WEBHOOK_URL=''
+          if [[ $GITHUB_REF == refs/tags/v* ]]; then
+            echo 'Deploying to Desmos Landing '
+            WEBHOOK_URL=$DESMOS_WEBHOOK
+          fi
+            curl -i -X POST -H "Content-Type: application/json" -d '{"parameters":{"tag": "${{ steps.prep.outputs.version }}"}}' -k $WEBHOOK_URL -u "deploy:$AKASH_WEBHOOK_SECRET"
