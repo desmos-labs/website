@@ -3,8 +3,8 @@ import { NoSSR } from "@components";
 import useTranslation from "next-translate/useTranslation";
 import { useGetScreenSizeHook } from "@hooks";
 import { useStyles } from "./styles";
-import RoadMapDesktop from "@assets/road-map-desktop.svg";
-import RoadMapMobile from "@assets/road-map-mobile.svg";
+import RoadMapDesktop from "@assets/roadmap-desktop.svg";
+import RoadMapMobile from "@assets/mobile-roadmap.svg";
 
 const RoadMap = () => {
   const { t, lang } = useTranslation("common");
@@ -15,11 +15,14 @@ const RoadMap = () => {
     <div className={classes.root}>
       <NoSSR>
         {isDesktop ? (
-          <RoadMapDesktop
-            className="roadMap"
-            width={isDesktop ? 986 : screenWidth - 40}
-            height="100%"
-          />
+          <>
+            <h5>{t("roadMap")}</h5>
+            <RoadMapDesktop
+              className="roadMap"
+              width={isDesktop ? 986 : screenWidth - 40}
+              height={2553}
+            />
+          </>
         ) : (
           <>
             <h3>{t("roadMapCap")}</h3>

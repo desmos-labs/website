@@ -1,6 +1,7 @@
 import React from "react";
 import classnames from "classnames";
 import Link from "next/link";
+import { useGetComponentDimension } from "@hooks";
 import { useRouter } from "next/router";
 import { Box, List, ListItem, ListItemText } from "@material-ui/core";
 import useTranslation from "next-translate/useTranslation";
@@ -11,15 +12,20 @@ import { MenuItems } from "../";
 
 const Desktop: React.FC<{
   logoURL: string;
+  displayBackground: boolean;
   className?: string;
   grants?: boolean;
-}> = ({ className, logoURL, grants }) => {
+}> = ({ className, displayBackground, logoURL, grants }) => {
   const classes = useStyles();
   const router = useRouter();
   const { t } = useTranslation("common");
+  const { ref: heightRef, height } = useGetComponentDimension();
   const items = grants ? getGrantItems() : getMenuItems();
   return (
-    <div className={className}>
+    <div
+      className={className}
+      style={{ background: displayBackground ? "white" : "transparent" }}
+    >
       <div className={classes.root}>
         <Link href={logoURL}>
           <a className={classes.a}>

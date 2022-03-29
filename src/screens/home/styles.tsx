@@ -110,7 +110,7 @@ export const useGetStyles = () => {
         },
         [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
           "& .nav__container": {
-            padding: "1rem 1.5rem",
+            padding: 0,
           },
           "& .home-page__hero": {
             backgroundSize: "100%",

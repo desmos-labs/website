@@ -8,6 +8,7 @@ export const useStyles = () => {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
+        alignItems: "center",
       },
       logo: {
         width: theme.spacing(17),
@@ -20,7 +21,13 @@ export const useStyles = () => {
         flexDirection: "row",
         justifyContent: "space-between",
         fontWeight: 500,
-        "& a": { color: "rgba(255, 105, 0, 0.4)" },
+        "& a": {
+          color: "rgba(237, 108, 83, 1)",
+          "&:hover": {
+            background: "rgba(237, 108, 83, 0.2)",
+            borderRadius: theme.spacing(0.5),
+          },
+        },
         "& .active": { color: "rgba(237, 108, 83, 1)" },
       },
       a: {

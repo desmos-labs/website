@@ -4,11 +4,9 @@ export const useStyles = () => {
   const styles = makeStyles((theme) => {
     return {
       root: {
-        zIndex: 500,
         width: "100%",
         position: "fixed",
         top: "0",
-        // background: theme.palette.background.default,
         background: "transparent",
       },
       screens: {
