@@ -23,6 +23,13 @@ jobs:
           fi
           echo ::set-output name=created::$(date -u +'%Y-%m-%dT%H:%M:%SZ')
           echo ::set-output name=branch::${BRANCH}
+      - name: Prepare docker build env
+        id: dockerPrep
+        run: |
+          NEXT_PUBLIC_MATOMO_URL="https://analytics.desmos.network"
+          NEXT_PUBLIC_MATOMO_SITE_ID=11
+          echo ::set-output name=NEXT_PUBLIC_MATOMO_URL::${NEXT_PUBLIC_MATOMO_URL}
+          echo ::set-output name=NEXT_PUBLIC_MATOMO_SITE_ID::${NEXT_PUBLIC_MATOMO_SITE_ID}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Login to DockerHub
