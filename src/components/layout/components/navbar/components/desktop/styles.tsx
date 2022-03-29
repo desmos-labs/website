@@ -6,7 +6,6 @@ export const useStyles = () => {
       root: {
         width: "1200px",
         display: "flex",
-        // position: "fixed",
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",

@@ -28,6 +28,7 @@ export const useStyles = makeStyles((theme: any) => ({
       alignItems: "center",
       justifyContent: "space-between",
       width: "100%",
+      zIndex: 500,
       [getMinMediaQuery(theme?.breakpoints?.values?.desktop)]: {
         zIndex: 500,
         padding: 0,
