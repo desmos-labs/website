@@ -27,7 +27,7 @@ const Hero = () => {
           </a>
         </Box>
       </div> */}
-      <Box pl="8px">
+      {/* <Box pl="8px">
         <Button
           variant="contained"
           component="a"
@@ -37,7 +37,7 @@ const Hero = () => {
         >
           {t("stakeNowB")}
         </Button>
-      </Box>
+      </Box> */}
     </div>
   );
 };
