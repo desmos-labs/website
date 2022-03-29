@@ -20,7 +20,7 @@ export const useStyles = () => {
         flexDirection: "row",
         justifyContent: "space-between",
         fontWeight: 500,
-        "& a": { color: "rgba(255, 105, 0, 0.4)" },
+        "& a": { color: "rgba(237, 108, 83, 1)" },
         "& .active": { color: "rgba(237, 108, 83, 1)" },
       },
       a: {
