@@ -4,7 +4,7 @@ import useTranslation from "next-translate/useTranslation";
 import { useGetScreenSizeHook } from "@hooks";
 import { useStyles } from "./styles";
 import RoadMapDesktop from "@assets/roadmap-desktop.svg";
-import RoadMapMobile from "@assets/mobile-roadmap.svg";
+import RoadMapMobile from "@assets/roadmap-mobile.svg";
 
 const RoadMap = () => {
   const { t, lang } = useTranslation("common");
@@ -20,7 +20,7 @@ const RoadMap = () => {
             <RoadMapDesktop
               className="roadMap"
               width={isDesktop ? 986 : screenWidth - 40}
-              height={2553}
+              height="100%"
             />
           </>
         ) : (
