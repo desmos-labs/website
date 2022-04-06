@@ -1,9 +1,5 @@
 name: Test
-on:
-  push:
-  pull_request:
-    types:
-      - opened
+on: push
 jobs:
   tests:
     runs-on: ubuntu-latest
