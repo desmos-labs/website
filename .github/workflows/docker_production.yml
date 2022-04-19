@@ -34,7 +34,7 @@ jobs:
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             NEXT_PUBLIC_MATOMO_URL="https://analytics.desmos.network"
             NEXT_PUBLIC_MATOMO_SITE_ID=11
-            NEXT_PUBLIC_URL="https://www.forbole.com/"
+            NEXT_PUBLIC_URL="https://desmos.network/"
           fi
           echo ::set-output name=NEXT_PUBLIC_MATOMO_URL::${NEXT_PUBLIC_MATOMO_URL}
           echo ::set-output name=NEXT_PUBLIC_MATOMO_SITE_ID::${NEXT_PUBLIC_MATOMO_SITE_ID}
