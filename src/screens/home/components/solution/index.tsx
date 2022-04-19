@@ -18,7 +18,7 @@ const Solution = () => {
         <div className="image-container">
           <Image
             src="/images/solution-desktop.png"
-            alt="Feature Image"
+            alt="Solution"
             className="image"
             layout="fill"
           />
@@ -27,7 +27,7 @@ const Solution = () => {
         <div className="image-container">
           <Image
             src="/images/solution.png"
-            alt="Feature Image"
+            alt="Solution"
             className="image"
             layout="fill"
           />

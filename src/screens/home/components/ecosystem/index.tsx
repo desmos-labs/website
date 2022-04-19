@@ -18,7 +18,7 @@ const Ecosystem = () => {
         <div className="image-container">
           <Image
             src="/images/ecosystem-slogan.png"
-            alt="Feature Image"
+            alt="Ecosystem Slogan"
             className="image"
             layout="fill"
           />
@@ -27,7 +27,7 @@ const Ecosystem = () => {
         <div className="image-container">
           <Image
             src="/images/ecosystem-mobile.png"
-            alt="Feature Image"
+            alt="Ecosystem Slogan"
             className="image"
             layout="fill"
           />

@@ -28,8 +28,10 @@ jobs:
         run: |
           NEXT_PUBLIC_MATOMO_URL="https://analytics.desmos.network"
           NEXT_PUBLIC_MATOMO_SITE_ID=11
+          NEXT_PUBLIC_URL="https://desmos.network/"
           echo ::set-output name=NEXT_PUBLIC_MATOMO_URL::${NEXT_PUBLIC_MATOMO_URL}
           echo ::set-output name=NEXT_PUBLIC_MATOMO_SITE_ID::${NEXT_PUBLIC_MATOMO_SITE_ID}
+          echo ::set-output name=NEXT_PUBLIC_URL::${NEXT_PUBLIC_URL}
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Login to DockerHub
@@ -47,6 +49,7 @@ jobs:
           build-args: |
             "NEXT_PUBLIC_MATOMO_URL=${{ steps.dockerPrep.outputs.NEXT_PUBLIC_MATOMO_URL }}"
             "NEXT_PUBLIC_MATOMO_SITE_ID=${{ steps.dockerPrep.outputs.NEXT_PUBLIC_MATOMO_SITE_ID }}"
+            "NEXT_PUBLIC_URL=${{ steps.dockerPrep.outputs.NEXT_PUBLIC_URL }}"
           tags: "desmoslabs/desmos-landing:${{ steps.prep.outputs.branch }}-staging"
           labels: |
             org.opencontainers.image.source=${{ github.event.repository.html_url }}
