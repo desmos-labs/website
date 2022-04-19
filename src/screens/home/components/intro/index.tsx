@@ -19,7 +19,7 @@ const Intro = () => {
         <div className="image-container">
           <Image
             src="/images/intro-slogan-desktop.png"
-            alt="Feature Image"
+            alt="Intro Slogan"
             className="image"
             layout="fill"
           />
@@ -28,7 +28,7 @@ const Intro = () => {
         <div className="image-container">
           <Image
             src="/images/intro-slogan.png"
-            alt="Feature Image"
+            alt="Intro Slogan"
             className="image"
             layout="fill"
           />

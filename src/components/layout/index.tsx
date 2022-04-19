@@ -63,15 +63,28 @@ const Layout = (props: LayoutProps) => {
           type,
           title,
           site_name: "Desmos",
-          url: currentPath,
+          url: baseUrl,
           description,
           images: [
             {
-              url: imageUrl,
+              url: "/static/images/assets/Facebook_Desmos.png",
+              width: 1500,
+              height: 800,
+              alt: "Og Image Alt",
+              type: "image/png",
+            },
+            {
+              url: "/static/images/assets/Twitter.png",
+              width: 1400,
+              height: 700,
+              alt: "Og Image Alt Second",
+              type: "image/png",
             },
           ],
         }}
         twitter={{
+          handle: "@desmosnetwork",
+          site: "@desmosnetwork",
           cardType: "summary_large_image",
         }}
         additionalMetaTags={[

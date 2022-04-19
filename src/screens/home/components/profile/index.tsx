@@ -17,7 +17,7 @@ const Profile = () => {
       <div className="image-container">
         <Image
           src="/images/profile-slogan.png"
-          alt="Feature Image"
+          alt="Profile Slogan"
           className="image"
           layout="fill"
         />

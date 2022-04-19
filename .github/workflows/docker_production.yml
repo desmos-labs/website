@@ -30,12 +30,15 @@ jobs:
           NEXT_PUBLIC_MATOMO_SITE_ID=
           NODE_ENV="production"
           PORT=3000
+          NEXT_PUBLIC_URL=
           if [[ $GITHUB_REF == refs/tags/* ]]; then
             NEXT_PUBLIC_MATOMO_URL="https://analytics.desmos.network"
             NEXT_PUBLIC_MATOMO_SITE_ID=11
+            NEXT_PUBLIC_URL="https://www.forbole.com/"
           fi
           echo ::set-output name=NEXT_PUBLIC_MATOMO_URL::${NEXT_PUBLIC_MATOMO_URL}
           echo ::set-output name=NEXT_PUBLIC_MATOMO_SITE_ID::${NEXT_PUBLIC_MATOMO_SITE_ID}
+          echo ::set-output name=NEXT_PUBLIC_URL=::${NEXT_PUBLIC_URL}
           echo ::set-output name=NODE_ENV::${NODE_ENV}
           echo ::set-output name=PORT::${PORT}
       - name: Set up Docker Buildx
@@ -55,6 +58,7 @@ jobs:
           build-args: |
             "NEXT_PUBLIC_MATOMO_URL=${{ steps.dockerPrep.outputs.NEXT_PUBLIC_MATOMO_URL }}"
             "NEXT_PUBLIC_MATOMO_SITE_ID=${{ steps.dockerPrep.outputs.NEXT_PUBLIC_MATOMO_SITE_ID }}"
+            "NEXT_PUBLIC_URL=${{ steps.dockerPrep.outputs.NEXT_PUBLIC_URL }}"
             "NODE_ENV=${{ steps.dockerPrep.outputs.NODE_ENV }}"
             "PORT=${{ steps.dockerPrep.outputs.PORT }}"
           labels: |
