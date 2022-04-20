@@ -22,7 +22,11 @@ const Home = () => {
   // const { networks } = useHomeHook();
 
   return (
-    <Layout className={`${classes.root} home-page__container`}>
+    <Layout
+      className={`${classes.root} home-page__container`}
+      image={"/images/assets/Facebook_Desmos.png"}
+      twitterImage={"/images/assets/Twitter_Desmos.png"}
+    >
       {/* ============================= */}
       {/* hero */}
       {/* ============================= */}

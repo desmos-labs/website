@@ -1,6 +1,7 @@
 import React from "react";
 // import Logo from '@assets/big-dipper-red.svg';
 import Link from "next/link";
+import Head from "next/head";
 // import { useTranslation } from "i18n";
 import useTranslation from "next-translate/useTranslation";
 import { NextSeo } from "next-seo";
@@ -18,6 +19,8 @@ export interface LayoutProps {
   logoURL?: string;
   airdropPage?: boolean;
   grants?: boolean;
+  image?: string;
+  twitterImage?: string;
 }
 
 const Layout = (props: LayoutProps) => {
@@ -30,6 +33,8 @@ const Layout = (props: LayoutProps) => {
     logoURL,
     airdropPage,
     grants,
+    image,
+    twitterImage,
   } = props;
   const { t, lang } = useTranslation();
   // const { t } = useTranslation(["home", "common"]);
@@ -50,58 +55,72 @@ const Layout = (props: LayoutProps) => {
   const description =
     "A blockchain which serves as the backbone to empower the development of user-centric social networks.";
   const imageUrl = `${baseUrl}/images/desmos.png`;
+  let ogImage = image ?? `${baseUrl}/static/icons/favicon-96x96.png`;
+  let metaTwitterImage = twitterImage ?? ogImage;
 
   return (
     <>
       {/* ============================= */}
       {/* SEO */}
       {/* ============================= */}
-      <NextSeo
-        title={title}
-        description={description}
-        openGraph={{
-          type,
-          title,
-          site_name: "Desmos",
-          url: baseUrl,
-          description,
-          images: [
-            {
-              url: "/static/images/assets/Facebook_Desmos.png",
-              width: 1500,
-              height: 800,
-              alt: "Og Image Alt",
-              type: "image/png",
-            },
-            {
-              url: "/static/images/assets/Twitter.png",
-              width: 1400,
-              height: 700,
-              alt: "Og Image Alt Second",
-              type: "image/png",
-            },
-          ],
-        }}
-        twitter={{
-          handle: "@desmosnetwork",
-          site: "@desmosnetwork",
-          cardType: "summary_large_image",
-        }}
-        additionalMetaTags={[
-          {
-            name: "msapplication-TileColor",
-            content: "#da532c",
-          },
-          {
-            name: "msapplication-config",
-            content: `${baseUrl}/images/icons/browserconfig.xml`,
-          },
-          {
-            name: "theme-color",
-            content: "#ffffff",
-          },
-        ]}
-      />
+      <Head>
+        <title>{title}</title>
+        {!!(baseUrl === "https://staging.forbole.com") && (
+          <meta name="googlebot" content="noindex" />
+        )}
+        <meta name="description" content={description} />
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="og:type"
+          content={type}
+        />
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="og:title"
+          content={title}
+        />
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="og:site_name"
+          content="Forbole"
+        />
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="og:url"
+          content={`${baseUrl}${currentPath}`}
+        />
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="og:description"
+          content={description}
+        />
+        <meta
+          prefix="og: http://ogp.me/ns#"
+          property="og:image"
+          content={ogImage}
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={metaTwitterImage} />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="96x96"
+          href={`${baseUrl}/static/icons/favicon-96x96.png`}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href={`${baseUrl}/static/icons/favicon-32x32.png`}
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href={`${baseUrl}/static/icons/favicon-16x16.png`}
+        />
+        <link rel="manifest" href={`${baseUrl}/static/icons/manifest.json`} />
+      </Head>
       <div className={`${className} ${classes.root}`}>
         {/* ============================= */}
         {/* nav */}
