@@ -34,6 +34,12 @@ export const useStyles = () => {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
+          "& a": {
+            textDecoration: "none",
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+          },
           "& svg": {
             margin: "0 0.1rem",
             width: "14px",
