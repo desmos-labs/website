@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "nodemon",
-    "build": "npm run build:next && npm run build:server",
+    "build": "cross-env NODE_OPTIONS='--openssl-legacy-provider' npm run build:next && npm run build:server",
     "build:server": "tsc --project tsconfig.server.json",
     "build:next": "next build",
-    "start": "ENV=production node dist/index.js",
+    "start": "cross-env NODE_OPTIONS='--openssl-legacy-provider' ENV=production node dist/index.js",
     "type-check": "tsc",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx"
   },
@@ -22,6 +22,7 @@
     "classnames": "^2.3.1",
     "color": "^4.0.1",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "express": "^4.17.1",
     "framer-motion": "^4.1.17",
     "graphql": "^16.0.1",
@@ -42,7 +43,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.24",
     "@types/node": "^16.4.10",
-    "@types/react": "^18.0.31",
+    "@types/react": "18.0.1",
     "@types/react-dom": "^17.0.9",
     "eslint": "7.31.0",
     "eslint-config-next": "11.0.1",
