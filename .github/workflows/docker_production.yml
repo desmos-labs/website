@@ -65,15 +65,3 @@ jobs:
             org.opencontainers.image.source=${{ github.event.repository.html_url }}
             org.opencontainers.image.created=${{ steps.prep.outputs.created }}
             org.opencontainers.image.revision=${{ github.sha }}
-      - name: Deploy to Akash 🌐
-        env:
-          DESMOS_WEBHOOK: ${{ secrets.DESMOS_WEBHOOK }}
-          AKASH_WEBHOOK_SECRET: ${{ secrets.AKASH_WEBHOOK_SECRET }}
-        run: |
-          BRANCH=${GITHUB_REF}
-          WEBHOOK_URL=''
-          if [[ $GITHUB_REF == refs/tags/v* ]]; then
-            echo 'Deploying to Desmos Landing '
-            WEBHOOK_URL=$DESMOS_WEBHOOK
-          fi
-            curl -i -X POST -H "Content-Type: application/json" -d '{"parameters":{"tag": "${{ steps.prep.outputs.version }}"}}' -k $WEBHOOK_URL -u "deploy:$AKASH_WEBHOOK_SECRET"
