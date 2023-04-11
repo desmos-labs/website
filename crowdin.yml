@@ -1,0 +1,17 @@
+files:
+  - source: /app/public/locales/en/common.json
+    translation: /app/public/locales/%locale%/common.json
+  - source: /app/public/locales/en/index.json
+    translation: /app/public/locales/%locale%/index.json
+  - source: /app/public/locales/en/privacy-policy.json
+    translation: /app/public/locales/%locale%/privacy-policy.json
+  - source: /app/public/locales/en/terms-and-conditions.json
+    translation: /app/public/locales/%locale%/terms-and-conditions.json
+  - source: /app/public/locales/en/academy.json
+    translation: /app/public/locales/%locale%/academy.json
+  - source: /app/public/locales/en/ecosystem.json
+    translation: /app/public/locales/%locale%/ecosystem.json
+  - source: /app/public/locales/en/kickstart-program.json
+    translation: /app/public/locales/%locale%/kickstart-program.json
+  - source: /app/public/locales/en/university-program.json
+    translation: /app/public/locales/%locale%/university-program.json

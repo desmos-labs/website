@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* https://tailwindcss.com/docs/font-family#customizing-the-default-font */
+    font-family: Poppins, system-ui, sans-serif;
+  }
+  .complete-toolkit-btn-stroke-gradient:hover::after,
+  .hover-gradient-shadow:hover::after {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    background: linear-gradient(153.15deg, #ff6c3e33 30.18%, #b5949433 84.11%);
+    border-radius: 12px;
+    filter: blur(8px);
+    z-index: -1;
+  }
+
+  @media (max-width: 768px) {
+    .complete-toolkit-btn-stroke-gradient:hover::after,
+    .hover-gradient-shadow:hover::after {
+      inset: -5px;
+      filter: blur(5px);
+    }
+  }
+  @media (min-width: 769px) {
+    .complete-toolkit-btn-stroke-gradient::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 12px;
+      border: 2px solid transparent;
+      background: linear-gradient(135deg, #ffffff33, #303c5933) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+    }
+  }
+}
+@media (max-width: 1919px) and (min-width: 1280px) {
+  .popup .slick-slide {
+    min-height: 604px !important;
+  }
+}
+
+@layer utilities {
+  .transparent-grey {
+    background: rgba(125, 116, 116, 0.2);
+  }
+  .transparent-grey-2 {
+    background: rgba(164, 143, 122, 0.1);
+  }
+}

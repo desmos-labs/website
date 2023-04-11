@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  site:
+    container_name: desmos-web
+    image: node:16-alpine
+    # Running interactive shell by
+    # docker-compose -f docker-compose.yml -f docker-compose.dev.yml run <service_name>
+    # stdin_open: true
+    # tty: true
+    volumes:
+      - ./app:/usr/src/app
+      # - /usr/src/app/node_modules/
+      - /usr/src/app/.next/
+    working_dir: /usr/src/app

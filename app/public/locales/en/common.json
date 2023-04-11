@@ -1,0 +1,16 @@
+{
+  "menuBuild": "Build",
+  "menuLearn": "Learn",
+  "menuExplore": "Explore",
+  "menuDocumentation": "Documentation",
+  "menuGithub": "Github",
+  "menuDesmosKickstartProgram": "Desmos Kickstart Program",
+  "menuDesmosAcademy": "Desmos Academy",
+  "menuDesmosUniversityProgram": "Desmos University Program",
+  "menuEcosystem": "Ecosystem",
+  "menuDSM": "DSM",
+  "buttonDsm": "Get DSM",
+  "title404": "404",
+  "pagetitle404": "Page Not Found",
+  "description404": "The page you were looking for appears to have moved or never existed."
+}
