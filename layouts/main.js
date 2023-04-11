@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import NavigationBar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { install } from "resize-observer"
+import useBreakpoints from "@/hooks/use-breakpoints"
 
 export default function MainLayout({
   title,
@@ -11,6 +12,7 @@ export default function MainLayout({
   children,
 }) {
   const [isHydrated, setIsHydrated] = useState(false)
+  const [isMobile, , , , isBreakpointReady] = useBreakpoints()
   const [navbarBgVisible, setNavbarBgVisible] = useState(false)
 
   useEffect(() => {
@@ -21,9 +23,13 @@ export default function MainLayout({
     setIsHydrated(true)
   }, [])
 
+  useEffect(() => {
+    handleScroll()
+  }, [isBreakpointReady])
+
   const handleScroll = () => {
     const currentScrollPos = window.scrollY
-    setNavbarBgVisible(currentScrollPos > 10)
+    setNavbarBgVisible(currentScrollPos > 10 || isMobile)
   }
 
   useEffect(() => {
@@ -48,7 +54,7 @@ export default function MainLayout({
         </Head>
         <div className={`relative mx-auto w-full min-w-[375px]`}>
           <div
-            className={`fixed top-0 w-full transition-colors duration-100 ${
+            className={`fixed top-0 w-full ${
               navbarBgVisible ? "bg-desmos-background-primary" : "bg-none"
             }  z-20`}
           >

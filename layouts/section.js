@@ -32,7 +32,7 @@ export default function SectionLayout({
 }) {
   const [sectionHeight, setSectionHeight] = useState("h-auto")
   const [videoBackground, setVideoBackground] = useState(<></>)
-  const { isMobile, isMd, isLg, isXl, isBreakpointReady } = useBreakpoints()
+  const [isMobile, isMd, isLg, isXl, isBreakpointReady] = useBreakpoints()
 
   useEffect(() => {
     setVideoBackground(

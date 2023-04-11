@@ -7,7 +7,7 @@ import useBreakpoints from "@/hooks/use-breakpoints"
 
 export default function WhyDesmosSection() {
   const { t } = useTranslation("index")
-  const { isMobile, isMd, isLg, isXl } = useBreakpoints()
+  const [isMobile, isMd, isLg, isXl] = useBreakpoints()
 
   function NextArrow(props) {
     const { className, style, onClick } = props

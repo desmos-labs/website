@@ -26,5 +26,5 @@ export default function useBreakpoints() {
     setIsBreakpointReady(true)
   }, [isMobile, isMd, isLg, isXl])
 
-  return { isMobile, isMd, isLg, isXl, isBreakpointReady }
+  return [isMobile, isMd, isLg, isXl, isBreakpointReady]
 }

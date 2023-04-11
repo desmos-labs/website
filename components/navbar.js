@@ -13,7 +13,7 @@ import NavbarLinkButton from "./button-link-navbar"
 export default function NavigationBar() {
   const { t } = useTranslation("common")
   const locale = useRouter().locale
-  const { isMobile, isMd, isLg, isXl, isBreakpointReady } = useBreakpoints()
+  const [isMobile, isMd, isLg, isXl, isBreakpointReady] = useBreakpoints()
   const [selectedMobileMenuItemId, setSelectedMobileMenuItemId] = useState(-1)
 
   const menuItems = [
