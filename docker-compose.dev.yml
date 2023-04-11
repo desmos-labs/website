@@ -1,7 +1,0 @@
-version: "3.8"
-
-services:
-  site:
-    ports:
-      - 4580:4580 # These 2 ports must be the same! Otherwise there will be cors issue
-    command: sh -c "yarn && yarn dev"
