@@ -19,7 +19,7 @@ function KickstartProgram() {
     <MainLayout
       title={t("pageTitle")}
       description={t("pageDescription")}
-      url="https://www.desmos.network/kickstart-program"
+      url="https://desmos.network/kickstart-program"
       footerBackground="bg-desmos-background-secondary"
     >
       <BannerSection />

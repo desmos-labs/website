@@ -22,7 +22,7 @@ function Home() {
     <MainLayout
       title={t("pageTitle")}
       description={t("pageDescription")}
-      url="https://www.desmos.network"
+      url="https://desmos.network"
     >
       <BannerSection />
       <AllinOneSection />

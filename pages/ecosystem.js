@@ -20,7 +20,7 @@ function Ecosystem() {
     <MainLayout
       title={t("pageTitle")}
       description={t("pageDescription")}
-      url="https://www.desmos.network/ecosystem"
+      url="https://desmos.network/ecosystem"
     >
       <SectionLayout fullScreenHeightOption="never">
         <div className="pt-[34px] md:pt-0 xl:pl-[140px]">
