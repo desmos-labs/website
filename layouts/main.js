@@ -52,7 +52,7 @@ export default function MainLayout({
         </Head>
 
         {/* SEO information */}
-        <DesmosSeo title={title} description={description} url={url} />
+        <DesmosSeo title={`Desmos | ${title}`} description={description} url={url} />
 
         <div className={`relative mx-auto w-full min-w-[375px]`}>
           <div
