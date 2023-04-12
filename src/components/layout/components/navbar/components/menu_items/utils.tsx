@@ -1,9 +1,9 @@
 export const getMenuItems = () => {
   return [
-    {
-      key: "grants",
-      url: "/grants",
-    },
+    // {
+    //   key: "grants",
+    //   url: "/grants",
+    // },
     // {
     //   key: "solution",
     //   url: "/#solution",
