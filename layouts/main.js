@@ -43,16 +43,17 @@ export default function MainLayout({
   return (
     isHydrated && (
       <>
+        {/* Meta information */}
         <Head>
-          {/* Meta information */}
           <title>{title} - Desmos</title>
           <meta name="description" content={description} />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/desmos_favicon.svg" type="image/x-icon" />
-
-          {/* SEO information */}
-          <DesmosSeo title={title} description={description} url={url} />
         </Head>
+
+        {/* SEO information */}
+        <DesmosSeo title={title} description={description} url={url} />
+
         <div className={`relative mx-auto w-full min-w-[375px]`}>
           <div
             className={`fixed top-0 w-full ${
