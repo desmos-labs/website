@@ -7,6 +7,7 @@ export default function DesmosSeo({ url, title, description }) {
       description={description}
       canonical={url}
       openGraph={{
+        type: "website",
         url: url,
         title: title,
         description: description,
