@@ -4,10 +4,12 @@ import NavigationBar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { install } from "resize-observer"
 import useBreakpoints from "@/hooks/use-breakpoints"
+import DesmosSeo from "@/components/desmos-seo";
 
 export default function MainLayout({
   title,
   description,
+  url,
   footerBackground,
   children,
 }) {
@@ -42,15 +44,14 @@ export default function MainLayout({
     isHydrated && (
       <>
         <Head>
+          {/* Meta information */}
           <title>{title} - Desmos</title>
           <meta name="description" content={description} />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/desmos_favicon.svg" type="image/x-icon" />
-          <link
-            rel="shortcut icon"
-            href="/desmos_favicon.svg"
-            type="image/x-icon"
-          />
+
+          {/* SEO information */}
+          <DesmosSeo title={title} description={description} url={url} />
         </Head>
         <div className={`relative mx-auto w-full min-w-[375px]`}>
           <div

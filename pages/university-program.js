@@ -7,6 +7,7 @@ import OurOfferingsSection from "@/sections/university-program/ourOfferings"
 import EligibilitySection from "@/sections/university-program/eligibility"
 import GetInTouchSection from "@/sections/university-program/getInTouch"
 import { NextSeo } from "next-seo"
+import DesmosSeo from "@/components/desmos-seo";
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
@@ -18,44 +19,18 @@ function UniversityProgram() {
   const { t } = useTranslation("university-program")
 
   return (
-    <>
-      <NextSeo
-        title={t("pageTitle")}
-        description={t("pageDescription")}
-        canonical="https://www.desmos.com/university-program"
-        openGraph={{
-          url: "https://www.desmos.com/university-program",
-          title: "Desmos University Program",
-          description: "Desmos University Program",
-          images: [
-            {
-              url: `${process.env.NEXT_PUBLIC_HOST}/og-logo.webp`,
-              width: 166,
-              height: 40,
-              alt: "Desmos Logo",
-              type: "image/jpeg",
-            },
-          ],
-          siteName: "Desmos",
-        }}
-        twitter={{
-          handle: "@desmosnetwork",
-          site: "@desmosnetwork",
-          cardType: "summary_large_image",
-        }}
-      />
-      <MainLayout
-        title={t("pageTitle")}
-        description={t("pageDescription")}
-        footerBackground="bg-desmos-background-secondary"
-      >
-        <BannerSection />
-        <DescriptionSection />
-        <OurOfferingsSection />
-        <EligibilitySection />
-        <GetInTouchSection />
-      </MainLayout>
-    </>
+    <MainLayout
+      title={t("pageTitle")}
+      description={t("pageDescription")}
+      url="https://www.desmos.com/university-program"
+      footerBackground="bg-desmos-background-secondary"
+    >
+      <BannerSection />
+      <DescriptionSection />
+      <OurOfferingsSection />
+      <EligibilitySection />
+      <GetInTouchSection />
+    </MainLayout>
   )
 }
 
