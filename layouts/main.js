@@ -5,6 +5,7 @@ import Footer from "@/components/footer"
 import { install } from "resize-observer"
 import useBreakpoints from "@/hooks/use-breakpoints"
 import DesmosSeo from "@/components/desmos-seo";
+import {useTranslation} from "next-i18next";
 
 export default function MainLayout({
   title,
@@ -13,6 +14,8 @@ export default function MainLayout({
   footerBackground,
   children,
 }) {
+  const { t } = useTranslation()
+
   const [isHydrated, setIsHydrated] = useState(false)
   const [isMobile, , , , isBreakpointReady] = useBreakpoints()
   const [navbarBgVisible, setNavbarBgVisible] = useState(false)
@@ -40,18 +43,20 @@ export default function MainLayout({
     return () => window.removeEventListener("scroll", handleScroll)
   })
 
+  const pageTitle = title.includes('Desmos') ? title : `Desmos ${title}`
+
   return (
     <>
       {/* Meta information */}
       <Head>
-        <title>{title} - Desmos</title>
+        <title>{pageTitle}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/desmos_favicon.svg" type="image/x-icon" />
       </Head>
 
       {/* SEO information */}
-      <DesmosSeo title={`Desmos | ${title}`} description={description} url={url} />
+      <DesmosSeo title={pageTitle} description={description} url={url} />
 
       {/* Main content */}
       isHydrated && (
