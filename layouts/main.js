@@ -5,7 +5,6 @@ import Footer from "@/components/footer"
 import { install } from "resize-observer"
 import useBreakpoints from "@/hooks/use-breakpoints"
 import DesmosSeo from "@/components/desmos-seo";
-import {useTranslation} from "next-i18next";
 
 export default function MainLayout({
   title,
@@ -14,8 +13,6 @@ export default function MainLayout({
   footerBackground,
   children,
 }) {
-  const { t } = useTranslation()
-
   const [isHydrated, setIsHydrated] = useState(false)
   const [isMobile, , , , isBreakpointReady] = useBreakpoints()
   const [navbarBgVisible, setNavbarBgVisible] = useState(false)
