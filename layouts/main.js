@@ -18,7 +18,7 @@ export default function MainLayout({
   const [navbarBgVisible, setNavbarBgVisible] = useState(false)
 
   useEffect(() => {
-    // Fix the erro of the slick slider on some versions of Safari: Unhandled Runtime Error ReferenceError: Can't find variable: ResizeObserver
+    // Fix the error of the slick slider on some versions of Safari: Unhandled Runtime Error ReferenceError: Can't find variable: ResizeObserver
     // https://stackoverflow.com/a/65832955/11261557
     install()
 
