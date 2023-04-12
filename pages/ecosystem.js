@@ -6,8 +6,6 @@ import WalletsSection from "@/sections/ecosystem/wallets"
 import TheSDKSection from "@/sections/ecosystem/theSDK"
 import OurChainSection from "@/sections/ecosystem/ourChain"
 import SectionLayout from "@/layouts/section"
-import { NextSeo } from "next-seo"
-import DesmosSeo from "@/components/desmos-seo";
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

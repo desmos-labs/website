@@ -7,8 +7,6 @@ import WhyLearnDesmosSection from "@/sections/academy/whyLearnDesmos"
 import TheSkillSection from "@/sections/academy/theSkill"
 import TheEasiestWaySection from "@/sections/academy/theEasiestWay"
 import JoinOurAcademySection from "@/sections/academy/joinOurAcademy"
-import { NextSeo } from "next-seo"
-import DesmosSeo from "@/components/desmos-seo";
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

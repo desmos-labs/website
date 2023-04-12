@@ -5,8 +5,6 @@ import BannerSection from "@/sections/kickstart-program/banner"
 import HowItWorksSection from "@/sections/kickstart-program/how-it-works"
 import RequirementsSection from "@/sections/kickstart-program/requirements"
 import AcceptCategoriesSection from "@/sections/kickstart-program/accepted-categories"
-import { NextSeo } from "next-seo"
-import DesmosSeo from "@/components/desmos-seo";
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

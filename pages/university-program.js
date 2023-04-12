@@ -6,8 +6,6 @@ import DescriptionSection from "@/sections/university-program/description"
 import OurOfferingsSection from "@/sections/university-program/ourOfferings"
 import EligibilitySection from "@/sections/university-program/eligibility"
 import GetInTouchSection from "@/sections/university-program/getInTouch"
-import { NextSeo } from "next-seo"
-import DesmosSeo from "@/components/desmos-seo";
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
