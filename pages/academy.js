@@ -21,7 +21,7 @@ function Academy() {
     <MainLayout
       title={t("pageTitle")}
       description={t("pageDescription")}
-      url="https://www.desmos.com/academy"
+      url="https://www.desmos.network/academy"
       footerBackground="bg-desmos-background-secondary"
     >
       <BannerSection />

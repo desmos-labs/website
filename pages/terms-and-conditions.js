@@ -409,7 +409,7 @@ function TermsAndConditions({}) {
     <MainLayout
       title={t("pageTitle")}
       description={t("pageDescription")}
-      url="https://www.desmos.com/terms-and-conditions"
+      url="https://www.desmos.network/terms-and-conditions"
     >
       <NestedList content={content} t={t} />
     </MainLayout>
