@@ -26,6 +26,13 @@ export default function WalletsSection() {
       content: "walletsButtonContent03",
       link: "https://keplr.app/",
     },
+    {
+      id: 4,
+      title: "walletsButtonTitle04",
+      image: "/LeapWallet.png",
+      content: "walletsButtonContent04",
+      link: "https://www.leapwallet.io/",
+    },
   ]
   return (
     <div className="mt-[60px] md:mt-[80px] lg:mt-[120px] text-white">
