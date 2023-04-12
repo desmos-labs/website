@@ -12,11 +12,11 @@ export default function DesmosSeo({ url, title, description }) {
         description: description,
         images: [
           {
-            url: `${process.env.NEXT_PUBLIC_HOST}/og-logo.webp`,
-            width: 166,
-            height: 40,
-            alt: "Desmos Logo",
-            type: "image/jpeg",
+            url: `${process.env.NEXT_PUBLIC_HOST}/desmos_cover.png`,
+            width: 1500,
+            height: 500,
+            alt: "Desmos Cover picture",
+            type: "image/png",
           },
         ],
         siteName: "Desmos",
