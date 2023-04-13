@@ -20,7 +20,7 @@ function UniversityProgram() {
     <MainLayout
       title={t("pageTitle")}
       description={t("pageDescription")}
-      url="https://desmos.network/university-program"
+      pageRoute="/university-program"
       footerBackground="bg-desmos-background-secondary"
     >
       <BannerSection />

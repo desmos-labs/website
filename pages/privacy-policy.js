@@ -203,7 +203,7 @@ function PrivacyPolicy() {
     <MainLayout
       title={t("pageTitle")}
       description={t("pageDescription")}
-      url="https://desmos.network/privacy-policy"
+      pageRoute="/privacy-policy"
     >
       <NestedList content={content} t={t} />
     </MainLayout>

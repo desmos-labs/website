@@ -19,11 +19,7 @@ export const getStaticProps = async ({ locale }) => ({
 function Home() {
   const { t } = useTranslation("index")
   return (
-    <MainLayout
-      title={t("pageTitle")}
-      description={t("pageDescription")}
-      url="https://desmos.network"
-    >
+    <MainLayout title={t("pageTitle")} description={t("pageDescription")}>
       <BannerSection />
       <AllinOneSection />
       <ModulesSection />

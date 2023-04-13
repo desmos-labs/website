@@ -9,7 +9,7 @@ import DesmosSeo from "@/components/desmos-seo";
 export default function MainLayout({
   title,
   description,
-  url,
+  pageRoute,
   footerBackground,
   children,
 }) {
@@ -40,7 +40,8 @@ export default function MainLayout({
     return () => window.removeEventListener("scroll", handleScroll)
   })
 
-  const pageTitle = title.includes('Desmos') ? title : `Desmos ${title}`
+  // Compute the proper page title and URL
+  const pageTitle = title.includes("Desmos") ? title : `Desmos ${title}`
 
   return (
     <>
@@ -53,7 +54,7 @@ export default function MainLayout({
       </Head>
 
       {/* SEO information */}
-      <DesmosSeo title={pageTitle} description={description} url={url} />
+      <DesmosSeo title={pageTitle} description={description} pageRoute={pageRoute} />
 
       {/* Main content */}
       isHydrated && (

@@ -1,14 +1,18 @@
 import {NextSeo} from "next-seo";
 
-export default function DesmosSeo({ url, title, description }) {
+export default function DesmosSeo({ title, description, pageRoute }) {
+  // Compute the proper url
+  const pageSlur = pageRoute?.startsWith("/") ? pageRoute : (pageRoute ? `/${pageRoute}` : "")
+  const pageUrl = `${process.env.NEXT_PUBLIC_HOST}${pageSlur}`
+
   return (
     <NextSeo
       title={title}
       description={description}
-      canonical={url}
+      canonical={pageUrl}
       openGraph={{
         type: "website",
-        url: url,
+        url: pageUrl,
         title: title,
         description: description,
         images: [

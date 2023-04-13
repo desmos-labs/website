@@ -21,7 +21,7 @@ function Academy() {
     <MainLayout
       title={t("pageTitle")}
       description={t("pageDescription")}
-      url="https://desmos.network/academy"
+      pageRoute="/academy"
       footerBackground="bg-desmos-background-secondary"
     >
       <BannerSection />
