@@ -1,5 +1,9 @@
 FROM node:16-alpine AS base
 
+ARG HOSTNAME
+ARG MATOMO_URL
+ARG MATOMO_SITE_ID
+
 # Install dependencies only when needed
 FROM base AS deps
 
@@ -17,11 +21,19 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Next.js collects completely anonymous telemetry data about general usage.
+# Disable Next.js telemetry during the build.
 # Learn more here: https://nextjs.org/telemetry
-# Uncomment the following line in case you want to disable telemetry during the build.
-# ENV NEXT_TELEMETRY_DISABLED 1
+ENV NEXT_TELEMETRY_DISABLED 1
 
+# Setup hostname and host values
+ENV NEXT_PUBLIC_HOSTNAME ${HOSTNAME}
+ENV NEXT_PUBLIC_HOST=https://$NEXT_PUBLIC_HOSTNAME
+
+# Setup Matomo variables
+ENV NEXT_PUBLIC_MATOMO_URL ${MATOMO_URL}
+ENV NEXT_PUBLIC_MATOMO_SITE_ID ${MATOMO_SITE_ID}
+
+# Build the site for production
 RUN yarn build
 
 # Production image, copy all the files and run next
@@ -29,8 +41,10 @@ FROM base AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
-# Uncomment the following line in case you want to disable telemetry during runtime.
-# ENV NEXT_TELEMETRY_DISABLED 1
+
+# Disable Next.js telemetry during runtime
+# Learn more here: https://nextjs.org/telemetry
+ENV NEXT_TELEMETRY_DISABLED 1
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
