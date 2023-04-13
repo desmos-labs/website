@@ -1,5 +1,5 @@
 import MainLayout from "@/layouts/main"
-import { useTranslation, Trans } from "next-i18next"
+import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import NestedList from "@/components/list-nested"
 

@@ -8,7 +8,6 @@ import CosmWasmSection from "@/sections/index/cosmwasm"
 import CompleteToolkitSection from "@/sections/index/complete-toolkit"
 import WhyDesmosSection from "@/sections/index/why-desmos"
 import ContributeSection from "@/sections/index/contribute"
-import DesmosSeo from "@/components/desmos-seo";
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
