@@ -29,8 +29,15 @@ export default function WalletsSection() {
     {
       id: 4,
       title: "walletsButtonTitle04",
-      image: "/LeapWallet.png",
+      image: "/cosmostation-wallet.png",
       content: "walletsButtonContent04",
+      link: "https://cosmostation.io/wallet",
+    },
+    {
+      id: 5,
+      title: "walletsButtonTitle05",
+      image: "/LeapWallet.png",
+      content: "walletsButtonContent05",
       link: "https://www.leapwallet.io/",
     },
   ]
