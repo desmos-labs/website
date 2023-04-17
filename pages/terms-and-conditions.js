@@ -1,7 +1,7 @@
-import MainLayout from "@/layouts/main"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import NestedList from "@/components/list-nested"
+import NestedList from "components/list-nested"
+import MainLayout from "@/layouts/main"
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
@@ -12,7 +12,7 @@ export const getStaticProps = async ({ locale }) => ({
   },
 })
 
-function TermsAndConditions({}) {
+function TermsAndConditions() {
   const { t } = useTranslation("terms-and-conditions")
 
   const content = {

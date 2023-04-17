@@ -1,6 +1,6 @@
-import MainLayout from "@/layouts/main"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import MainLayout from "@/layouts/main"
 import BannerSection from "@/sections/kickstart-program/banner"
 import HowItWorksSection from "@/sections/kickstart-program/how-it-works"
 import RequirementsSection from "@/sections/kickstart-program/requirements"

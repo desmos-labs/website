@@ -1,8 +1,18 @@
-import {NextSeo} from "next-seo";
+import { NextSeo } from "next-seo"
+
+function getPageSlur(pageRoute) {
+  switch (true) {
+    case !pageRoute:
+      return ""
+    case pageRoute.startsWith("/"):
+      return pageRoute
+    default:
+      return `/${pageRoute}`
+  }
+}
 
 export default function DesmosSeo({ title, description, pageRoute }) {
-  // Compute the proper url
-  const pageSlur = pageRoute?.startsWith("/") ? pageRoute : (pageRoute ? `/${pageRoute}` : "")
+  const pageSlur = getPageSlur(pageRoute)
   const pageUrl = `${process.env.NEXT_PUBLIC_HOST}${pageSlur}`
 
   return (
@@ -13,8 +23,8 @@ export default function DesmosSeo({ title, description, pageRoute }) {
       openGraph={{
         type: "website",
         url: pageUrl,
-        title: title,
-        description: description,
+        title,
+        description,
         images: [
           {
             url: `${process.env.NEXT_PUBLIC_HOST}/desmos_cover.png`,

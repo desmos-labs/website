@@ -11,14 +11,15 @@ export default function PopupSliderComponent({
   const { t } = useTranslation("index")
   const buttons = nextButtons
   const [nowIndex, setNowIndex] = useState(1)
+
   useEffect(() => {
-    console.log(lastIndex)
-    if (index == 0) {
+    if (index === 0) {
       setNowIndex(lastIndex)
     } else {
       setNowIndex(index - 1)
     }
   }, [])
+
   function NextArrow(props) {
     const { className, style, onClick } = props
     return (

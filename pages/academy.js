@@ -1,6 +1,6 @@
-import MainLayout from "@/layouts/main"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import MainLayout from "@/layouts/main"
 import BannerSection from "@/sections/academy/banner"
 import IsTheDesmosSection from "@/sections/academy/isTheDesmos"
 import WhyLearnDesmosSection from "@/sections/academy/whyLearnDesmos"

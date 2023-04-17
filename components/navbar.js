@@ -1,18 +1,18 @@
 import { Fragment, useRef, useState } from "react"
-import DesmosLogo from "./logo-desmos"
-import MobileMenuIcon from "./icons/menu-mobile"
-import CloseIcon from "./icons/close"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import OrangeButton from "./orange-button"
 import { Menu, Popover, Transition } from "@headlessui/react"
 import { useTranslation } from "next-i18next"
 import useBreakpoints from "@/hooks/use-breakpoints"
+import DesmosLogo from "./logo-desmos"
+import MobileMenuIcon from "./icons/menu-mobile"
+import CloseIcon from "./icons/close"
+import OrangeButton from "./orange-button"
 import NavbarLinkButton from "./button-link-navbar"
 
 export default function NavigationBar() {
   const { t } = useTranslation("common")
-  const locale = useRouter().locale
+  const { locale } = useRouter()
   const [isMobile, isMd, isLg, isXl, isBreakpointReady] = useBreakpoints()
   const [selectedMobileMenuItemId, setSelectedMobileMenuItemId] = useState(-1)
 

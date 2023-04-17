@@ -2,9 +2,9 @@ import SectionLayout from "@/layouts/section"
 import { useTranslation } from "next-i18next"
 import PopupLayout from "@/layouts/popup"
 import SlideLayout from "@/layouts/slide"
-import PopupSliderComponent from "@/components/slider-popup"
-import CompleteToolkitButton from "@/components/button-complete-toolkit"
-import OrangeButton from "@/components/orange-button"
+import PopupSliderComponent from "components/slider-popup"
+import CompleteToolkitButton from "components/button-complete-toolkit"
+import OrangeButton from "components/orange-button"
 import CenteredContentLayout from "@/layouts/content-centered"
 
 export default function CompleteToolkitSection() {

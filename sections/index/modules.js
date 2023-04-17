@@ -1,9 +1,9 @@
 import SectionLayout from "@/layouts/section"
 import { useTranslation } from "next-i18next"
-import ModuleButton from "@/components/button-module"
+import ModuleButton from "components/button-module"
 import PopupLayout from "@/layouts/popup"
 import SlideLayout from "@/layouts/slide"
-import PopupSliderComponent from "@/components/slider-popup"
+import PopupSliderComponent from "components/slider-popup"
 import CenteredContentLayout from "@/layouts/content-centered"
 
 export default function ModulesSection() {

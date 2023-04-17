@@ -1,10 +1,6 @@
-import { useTranslation } from "next-i18next"
-import { useRouter } from "next/router"
+import Link from "next/link"
 
 export default function Footer() {
-  const { t } = useTranslation("common")
-  const locale = useRouter().locale
-
   return (
     <div className="flex flex-col md:gap-6 gap-3 py-12 px-xMobile md:px-xMd lg:px-xLg xl:px-xXl">
       <div className="flex md:flex-row flex-col-reverse items-center md:justify-between">
@@ -12,22 +8,22 @@ export default function Footer() {
           <span className="hidden lg:inline-block">
             Copyright © Forbole {new Date().getFullYear()}
           </span>
-          <a
+          <Link
             className="md:inline-block text-desmos-white-Default lg:px-6 md:leading-[21px] leading-[40px]"
             href="/terms-and-conditions"
           >
             Terms & Conditions
-          </a>
+          </Link>
           <span className="hidden lg:inline-block">|</span>
-          <a
+          <Link
             className="md:inline-block block text-desmos-white-Default px-6 md:leading-[21px] leading-[40px]"
             href="/privacy-policy"
           >
             Privacy Policy
-          </a>
+          </Link>
         </div>
         <div className="flex flex-row gap-2 md:mb-0 mb-3">
-          <a href="https://twitter.com/desmosnetwork" target="_blank">
+          <Link href="https://twitter.com/desmosnetwork" target="_blank">
             <svg
               width="28"
               height="28"
@@ -48,8 +44,8 @@ export default function Footer() {
                 </clipPath>
               </defs>
             </svg>
-          </a>
-          <a href="https://scripta.network/@desmosnetwork" target="_blank">
+          </Link>
+          <Link href="https://scripta.network/@desmosnetwork" target="_blank">
             <svg
               width="28"
               height="28"
@@ -58,9 +54,9 @@ export default function Footer() {
               xmlns="http://www.w3.org/2000/svg"
             >
               <g clip-path="url(#clip0_2088_12236)">
-                <path 
-                  fill-rule="evenodd" 
-                  clip-rule="evenodd" 
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
                   d="M14 28C21.732 28 28 21.732 28 14C28 6.26801 21.732 0 14 0C6.26801 0 0 6.26801 0 14C0 21.732 6.26801 28 14 28ZM17.2397 15.5434L17.8866 16.664C17.91 16.7045 17.9393 16.7494 17.9706 16.7971C18.0727 16.9533 18.1947 17.1398 18.1933 17.3026C18.1923 17.4714 18.0639 17.666 17.956 17.8295L17.956 17.8296C17.9212 17.8823 17.8885 17.9318 17.863 17.9761L17.2063 19.1133L16.237 20.7922C16.1675 20.9127 16.0368 20.9865 15.898 20.9865H13.8905H12.5966C12.5496 20.9865 12.4961 20.9895 12.4393 20.9926L12.4392 20.9926C12.2555 21.0028 12.0377 21.015 11.8981 20.9343C11.751 20.8495 11.6465 20.6405 11.5587 20.4651C11.5307 20.4091 11.5044 20.3565 11.479 20.3125C11.2599 19.9335 11.041 19.5544 10.8222 19.1754L9.85285 17.4962C9.78332 17.3759 9.78191 17.2262 9.85149 17.1056C10.1473 16.5931 10.4431 16.0808 10.7391 15.5685C10.9896 15.1345 11.6618 15.5226 11.4113 15.9565C11.1755 16.3651 10.9396 16.7736 10.7036 17.1821L10.6358 17.2995L11.8132 19.339L12.3161 20.21H15.6769L17.3572 17.2997L15.6769 14.3894H12.0893C12.0418 14.3894 12.0002 14.3806 11.9618 14.3678L11.9528 14.3652L11.9528 14.3652L11.9528 14.3652C11.9452 14.363 11.9375 14.3608 11.9302 14.3576C11.9199 14.3532 11.9104 14.3474 11.901 14.3416L11.901 14.3416L11.8942 14.3375L11.8858 14.3328C11.8788 14.3289 11.8717 14.325 11.865 14.3201C11.8564 14.3137 11.8488 14.3064 11.8413 14.2991L11.8413 14.2991L11.8344 14.2926C11.8062 14.2665 11.7797 14.2364 11.7574 14.1977L11.2125 13.2541L9.8529 10.8992C9.78337 10.779 9.78197 10.6291 9.85155 10.5086L10.8554 8.76998L11.5023 7.64958C11.5259 7.60872 11.5502 7.56051 11.576 7.50933C11.6588 7.3452 11.7571 7.15049 11.8956 7.06937C12.0431 6.98293 12.2812 6.99705 12.4796 7.00883L12.4797 7.00883C12.5424 7.01255 12.6011 7.01604 12.6518 7.01604H13.965H15.9038C16.0382 7.01604 16.1686 7.0913 16.2358 7.20767L17.8865 10.0668C17.9686 10.2091 18.0507 10.3514 18.133 10.4937C18.2553 10.7056 18.1533 10.8794 18.0489 11.0576L18.023 11.1019L17.224 12.486C16.9735 12.9199 16.3013 12.5318 16.5518 12.098C16.8202 11.6327 17.0887 11.1678 17.3573 10.7028L15.677 7.79227H12.3163L10.636 10.7026L12.3162 13.6132H15.9038C16.0383 13.6132 16.1687 13.6885 16.2359 13.8049L16.4067 14.1007L16.4084 14.1038C16.6855 14.5837 16.9625 15.0636 17.2397 15.5434ZM12.7833 9.43964C12.5143 9.43964 12.2963 9.22158 12.2963 8.95284C12.2963 8.68383 12.5143 8.46582 12.7833 8.46582C13.0523 8.46582 13.2702 8.68377 13.2702 8.95284C13.2702 9.22158 13.0523 9.43964 12.7833 9.43964ZM15.5411 15.6633C15.5411 15.3943 15.3231 15.1762 15.0541 15.1762C14.7852 15.1762 14.5672 15.3943 14.5672 15.6633C14.5672 15.9321 14.7852 16.1501 15.0541 16.1501C15.323 16.1501 15.5411 15.9321 15.5411 15.6633Z"
                 />
               </g>
@@ -70,8 +66,8 @@ export default function Footer() {
                 </clipPath>
               </defs>
             </svg>
-          </a>
-          <a href="https://discord.desmos.network" target="_blank">
+          </Link>
+          <Link href="https://discord.desmos.network" target="_blank">
             <svg
               width="28"
               height="28"
@@ -92,8 +88,8 @@ export default function Footer() {
                 </clipPath>
               </defs>
             </svg>
-          </a>
-          <a href="https://github.com/desmos-labs" target="_blank">
+          </Link>
+          <Link href="https://github.com/desmos-labs" target="_blank">
             <svg
               width="28"
               height="28"
@@ -114,7 +110,7 @@ export default function Footer() {
                 </clipPath>
               </defs>
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="lg:hidden text-[#878787] text-[14px] font-[400] tracking-[.0025em] leading-[21px] md:text-left text-center">

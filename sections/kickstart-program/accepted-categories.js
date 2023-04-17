@@ -1,6 +1,6 @@
 import SectionLayout from "@/layouts/section"
 import { useTranslation } from "next-i18next"
-import OrangeButton from "@/components/orange-button"
+import OrangeButton from "components/orange-button"
 
 export default function AcceptCategoriesSection() {
   const { t } = useTranslation("kickstart-program")

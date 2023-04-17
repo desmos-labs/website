@@ -1,6 +1,6 @@
-import MainLayout from "@/layouts/main"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import MainLayout from "@/layouts/main"
 import BannerSection from "@/sections/university-program/banner"
 import DescriptionSection from "@/sections/university-program/description"
 import OurOfferingsSection from "@/sections/university-program/ourOfferings"

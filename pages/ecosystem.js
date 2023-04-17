@@ -1,11 +1,11 @@
-import MainLayout from "@/layouts/main"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import MainLayout from "@/layouts/main"
+import SectionLayout from "@/layouts/section"
 import ApplicationsSection from "@/sections/ecosystem/applications"
 import WalletsSection from "@/sections/ecosystem/wallets"
 import TheSDKSection from "@/sections/ecosystem/theSDK"
 import OurChainSection from "@/sections/ecosystem/ourChain"
-import SectionLayout from "@/layouts/section"
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
