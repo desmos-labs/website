@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import useBreakpoints from "@/hooks/use-breakpoints"
+import useBreakpoints from "@/hooks/useBreakpoints"
 import VideoWithPlaceholder from "@/components/video-with-placeholder"
 
 /**

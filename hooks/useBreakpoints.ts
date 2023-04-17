@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useMediaQuery } from "react-responsive"
 import { ContentWidth } from "@/utils/sizes"
 
-export default function useBreakpoints() {
+const useBreakpoints = () => {
   const [isBreakpointReady, setIsBreakpointReady] = useState(false)
   const isMobile = useMediaQuery({
     maxWidth: 767,
@@ -28,3 +28,5 @@ export default function useBreakpoints() {
 
   return [isMobile, isMd, isLg, isXl, isBreakpointReady]
 }
+
+export default useBreakpoints

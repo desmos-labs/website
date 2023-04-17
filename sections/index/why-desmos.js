@@ -3,7 +3,7 @@ import { useTranslation } from "next-i18next"
 import Slider from "react-slick"
 import CenteredContentLayout from "@/layouts/content-centered"
 import VideoWithPlaceholder from "@/components/video-with-placeholder"
-import useBreakpoints from "@/hooks/use-breakpoints"
+import useBreakpoints from "@/hooks/useBreakpoints"
 
 export default function WhyDesmosSection() {
   const { t } = useTranslation("index")

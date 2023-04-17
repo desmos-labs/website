@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import NavigationBar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { install } from "resize-observer"
-import useBreakpoints from "@/hooks/use-breakpoints"
+import useBreakpoints from "@/hooks/useBreakpoints"
 import DesmosSeo from "@/components/desmos-seo"
 
 export default function MainLayout({
