@@ -1,4 +1,5 @@
 import { useTranslation } from "next-i18next"
+import Image from "next/image"
 
 export default function CompleteToolkitButton({ button }) {
   const { t } = useTranslation("index")
@@ -23,12 +24,21 @@ export default function CompleteToolkitButton({ button }) {
         <Image
           className="inline-block w-[38px] h-auto mr-8"
           src={button.buttonImage}
+          alt="Image"
+          width={81}
+          height={86}
         />
         <span className="leading-[21px] tracking-[0.0025em]">
           {t(button.title)}
         </span>
       </span>
-      <Image className="hidden md:block" src={button.buttonImage} />
+      <Image
+        className="hidden md:block"
+        src={button.buttonImage}
+        alt="Image"
+        width={81}
+        height={86}
+      />
       <span className="hidden md:block md:pt-[32px] md:whitespace-pre-wrap text-center leading-[22px] tracking-[0.005em]">
         {t(button.title)}
       </span>

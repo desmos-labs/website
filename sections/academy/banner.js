@@ -1,6 +1,6 @@
 import SectionLayout from "@/layouts/section"
 import { useTranslation } from "next-i18next"
-import OrangeButton from "components/orange-button"
+import OrangeButton from "@/components/orange-button"
 import CenteredContentLayout from "@/layouts/content-centered"
 
 export default function BannerSection() {
@@ -31,7 +31,10 @@ export default function BannerSection() {
         </div>
         <div className="absolute bottom-0 left-0 w-full">
           <img className="hidden lg:block" src="hill-academy.png" />
-          <img className="lg:hidden md:block hidden min-w-full" src="hill-academy-768.png" />
+          <img
+            className="lg:hidden md:block hidden min-w-full"
+            src="hill-academy-768.png"
+          />
           <img className="md:hidden min-w-full" src="hill-academy-mobile.png" />
         </div>
       </CenteredContentLayout>

@@ -1,6 +1,6 @@
 import SectionLayout from "@/layouts/section"
 import { useTranslation } from "next-i18next"
-import LinkCardButton from "components/button-link-card"
+import LinkCardButton from "@/components/button-link-card"
 
 export default function ApplicationsSection() {
   const { t } = useTranslation("ecosystem")
@@ -10,21 +10,21 @@ export default function ApplicationsSection() {
       title: "applicationsButtonTitle01",
       image: "/goFindMe.png",
       content: "applicationsButtonContent01",
-      link: "https://go-find.me/"
+      link: "https://go-find.me/",
     },
     {
       id: 2,
       title: "applicationsButtonTitle02",
       image: "/scripta.png",
       content: "applicationsButtonContent02",
-      link: "https://scripta.network/"
+      link: "https://scripta.network/",
     },
     {
       id: 3,
       title: "applicationsButtonTitle03",
       image: "/butter.png",
       content: "applicationsButtonContent03",
-      link: "https://butter.social"
+      link: "https://butter.social",
     },
   ]
   return (
@@ -36,7 +36,13 @@ export default function ApplicationsSection() {
         {buttons.map((button) => {
           return (
             <div className="md:col-span-1">
-              <LinkCardButton key={button.id} image={button.image} title={button.title} content={button.content} link={button.link}/>
+              <LinkCardButton
+                key={button.id}
+                image={button.image}
+                title={button.title}
+                content={button.content}
+                link={button.link}
+              />
             </div>
           )
         })}

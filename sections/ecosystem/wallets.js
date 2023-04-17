@@ -1,6 +1,6 @@
 import SectionLayout from "@/layouts/section"
 import { useTranslation } from "next-i18next"
-import LinkCardButton from "components/button-link-card"
+import LinkCardButton from "@/components/button-link-card"
 
 export default function WalletsSection() {
   const { t } = useTranslation("ecosystem")
@@ -50,7 +50,13 @@ export default function WalletsSection() {
         {buttons.map((button) => {
           return (
             <div className="md:col-span-1">
-              <LinkCardButton key={button.id} image={button.image} title={button.title} content={button.content} link={button.link}/>
+              <LinkCardButton
+                key={button.id}
+                image={button.image}
+                title={button.title}
+                content={button.content}
+                link={button.link}
+              />
             </div>
           )
         })}

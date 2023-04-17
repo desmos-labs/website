@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import useBreakpoints from "@/hooks/use-breakpoints"
-import VideoWithPlaceholder from "components/video-with-placeholder"
+import VideoWithPlaceholder from "@/components/video-with-placeholder"
 
 /**
  * Foundation layout of all sections, background will always be fullscreen width, and content will always be in container width

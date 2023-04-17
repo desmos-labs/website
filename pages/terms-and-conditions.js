@@ -1,6 +1,6 @@
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import NestedList from "components/list-nested"
+import NestedList from "@/components/list-nested"
 import MainLayout from "@/layouts/main"
 
 export const getStaticProps = async ({ locale }) => ({

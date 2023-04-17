@@ -14,6 +14,8 @@ export default function IconListing({
             className="max-w-[62px] md:w-[62px] w-[40px]"
             src={imagePath}
             alt={imageText}
+            width={62}
+            height={62}
           />
         </div>
         <div className="lg:mt-[22px] md:mt-[18px] mt-[16px]">

@@ -1,10 +1,10 @@
 import Head from "next/head"
 import { useEffect, useState } from "react"
-import NavigationBar from "components/navbar"
-import Footer from "components/footer"
+import NavigationBar from "@/components/navbar"
+import Footer from "@/components/footer"
 import { install } from "resize-observer"
 import useBreakpoints from "@/hooks/use-breakpoints"
-import DesmosSeo from "components/desmos-seo";
+import DesmosSeo from "@/components/desmos-seo"
 
 export default function MainLayout({
   title,
@@ -52,43 +52,45 @@ export default function MainLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/desmos_favicon.svg" type="image/x-icon" />
       </Head>
-
       {/* SEO information */}
-      <DesmosSeo title={pageTitle} description={description} pageRoute={pageRoute} />
-
+      <DesmosSeo
+        title={pageTitle}
+        description={description}
+        pageRoute={pageRoute}
+      />
       {/* Main content */}
       isHydrated && (
-        <>
-          <div className={`relative mx-auto w-full min-w-[375px]`}>
-            <div
-              className={`fixed top-0 w-full ${
-                navbarBgVisible ? "bg-desmos-background-primary" : "bg-none"
-              }  z-20`}
-            >
-              <div className="relative w-full min-w-[375px] max-w-[1920px] left-1/2 -translate-x-1/2">
-                <NavigationBar />
-              </div>
+      <>
+        <div className={`relative mx-auto w-full min-w-[375px]`}>
+          <div
+            className={`fixed top-0 w-full ${
+              navbarBgVisible ? "bg-desmos-background-primary" : "bg-none"
+            }  z-20`}
+          >
+            <div className="relative w-full min-w-[375px] max-w-[1920px] left-1/2 -translate-x-1/2">
+              <NavigationBar />
             </div>
-            <main className="w-full">{children}</main>
+          </div>
+          <main className="w-full">{children}</main>
+          <div
+            className={`relative w-full ${
+              footerBackground
+                ? footerBackground
+                : "bg-desmos-background-primary"
+            } bg-no-repeat`}
+          >
             <div
-              className={`relative w-full ${
+              className={`relative left-1/2 -translate-x-1/2 w-full min-w-[375px] max-w-[1920px] ${
                 footerBackground
                   ? footerBackground
                   : "bg-desmos-background-primary"
               } bg-no-repeat`}
             >
-              <div
-                className={`relative left-1/2 -translate-x-1/2 w-full min-w-[375px] max-w-[1920px] ${
-                  footerBackground
-                    ? footerBackground
-                    : "bg-desmos-background-primary"
-                } bg-no-repeat`}
-              >
-                <Footer />
-              </div>
+              <Footer />
             </div>
           </div>
-        </>
+        </div>
+      </>
       )
     </>
   )
