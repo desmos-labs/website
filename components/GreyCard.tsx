@@ -1,11 +1,15 @@
+import React from "react"
 import Image from "next/image"
 
-export default function GreyCard({
-  cardTitle,
-  cardDescription,
-  imagePath,
-  imageText,
-}) {
+export interface GreyCardProps {
+  readonly cardTitle: string
+  readonly cardDescription: string
+  readonly imagePath: string
+  readonly imageText: string
+}
+
+const GreyCard = (props: GreyCardProps) => {
+  const { cardTitle, cardDescription, imagePath, imageText } = props
   return (
     <>
       <div className="flex md:flex-row flex-col lg:w-[747px] items-start md:transparent-grey transparent-grey-2 rounded-lg md:p-6 py-[20px] pl-[17px] pr-[15px] mb-6">
@@ -30,3 +34,5 @@ export default function GreyCard({
     </>
   )
 }
+
+export default GreyCard

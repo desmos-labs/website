@@ -1,6 +1,7 @@
+import React from "react"
 import Link from "next/link"
 
-export default function Footer() {
+const Footer = () => {
   return (
     <div className="flex flex-col md:gap-6 gap-3 py-12 px-xMobile md:px-xMd lg:px-xLg xl:px-xXl">
       <div className="flex md:flex-row flex-col-reverse items-center md:justify-between">
@@ -119,3 +120,5 @@ export default function Footer() {
     </div>
   )
 }
+
+export default Footer

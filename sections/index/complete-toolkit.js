@@ -2,9 +2,9 @@ import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import PopupLayout from "@/layouts/PopupLayout"
 import SlideLayout from "@/layouts/SlideLayout"
-import PopupSliderComponent from "@/components/slider-popup"
-import CompleteToolkitButton from "@/components/button-complete-toolkit"
-import OrangeButton from "@/components/orange-button"
+import PopupSlider from "@/components/PopupSlider"
+import CompleteToolkitButton from "@/components/CompleteToolkitButton"
+import OrangeButton from "@/components/OrangeButton"
 import CenteredContentLayout from "@/layouts/CenteredContentLayout"
 
 export default function CompleteToolkitSection() {
@@ -134,7 +134,7 @@ export default function CompleteToolkitSection() {
   const slides = (index) => {
     return (
       <>
-        <PopupSliderComponent
+        <PopupSlider
           lastIndex={lastIndex}
           nextButtons={nextButtons}
           index={index}

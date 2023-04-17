@@ -1,25 +1,37 @@
+import React, { useCallback } from "react"
 import { Trans } from "next-i18next"
+import { PageData } from "@/types/PageData"
 
-export default function NestedList({ content, t }) {
-  const translatedBlock = (key) => {
-    return (
-      <Trans
-        i18nKey={key}
-        t={t}
-        components={{
-          bold: <span className="font-bold" />,
-          underline: <span className="underline underline-offset-2" />,
-          a: (
-            <a
-              className="underline underline-offset-2"
-              target="_blank"
-              href="https://desmos.network"
-            />
-          ),
-        }}
-      />
-    )
-  }
+export interface NestedListProps {
+  readonly content: PageData
+  readonly t: any
+}
+
+const NestedList = (props: NestedListProps) => {
+  const { content, t } = props
+
+  const translatedBlock = useCallback(
+    (key: string) => {
+      return (
+        <Trans
+          i18nKey={key}
+          t={t}
+          components={{
+            bold: <span className="font-bold" />,
+            underline: <span className="underline underline-offset-2" />,
+            a: (
+              <a
+                className="underline underline-offset-2"
+                target="_blank"
+                href="https://desmos.network"
+              />
+            ),
+          }}
+        />
+      )
+    },
+    [t]
+  )
 
   return (
     <div className="xl:px-[240px] lg:pl-[90px] lg:pr-[168px] lg:py-[160px] md:pl-[40px] md:pt-[80px] md:pb-[7px] pt-[70px] pb-[20px] pl-[24px] text-desmos-black-light box-border">
@@ -127,3 +139,5 @@ export default function NestedList({ content, t }) {
     </div>
   )
 }
+
+export default NestedList

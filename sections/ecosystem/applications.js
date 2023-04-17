@@ -1,6 +1,6 @@
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
-import LinkCardButton from "@/components/button-link-card"
+import LinkCardButton from "@/components/LinkCardButton"
 
 export default function ApplicationsSection() {
   const { t } = useTranslation("ecosystem")

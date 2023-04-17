@@ -1,6 +1,5 @@
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
-import OrangeButton from "@/components/orange-button"
 
 export default function TheEasiestWaySection() {
   const { t } = useTranslation("academy")

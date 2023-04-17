@@ -1,22 +1,30 @@
 import { useEffect, useRef, useState } from "react"
 
+export interface VideoWithPlaceholderProps {
+  /**
+   * Url
+   */
+  readonly src: string
+
+  /**
+   * Tailwind background
+   */
+  readonly placeholder?: string
+}
+
 /**
  * Video component with placeholder image
- *
- * @param src: Url
- *
- * @param placeholder: Tailwind bg
- *
  */
+const VideoWithPlaceholder = (props: VideoWithPlaceholderProps) => {
+  const { src, placeholder } = props
 
-export default function VideoWithPlaceholder({ src, placeholder }) {
-  const videoRef = useRef(null)
+  const videoRef = useRef<HTMLVideoElement | null>(null)
   const [isVideoLoaded, setIsVideoLoaded] = useState(false)
   const [shouldShowVideo, setShouldShowVideo] = useState(true)
   const [shouldShowPlaceholder, setShouldShowPlaceholder] = useState(true)
 
   useEffect(() => {
-    if (isVideoLoaded && videoRef.current) {
+    if (isVideoLoaded && videoRef.current !== null) {
       videoRef.current
         .play()
         .then(() => {
@@ -26,7 +34,7 @@ export default function VideoWithPlaceholder({ src, placeholder }) {
           setShouldShowVideo(false)
         })
     }
-  }, [isVideoLoaded])
+  }, [isVideoLoaded, videoRef])
 
   return (
     <div className={`relative w-full h-full`}>
@@ -42,7 +50,7 @@ export default function VideoWithPlaceholder({ src, placeholder }) {
           onLoadedData={() => {
             setIsVideoLoaded(true)
           }}
-          type="video/mp4"
+          typeof="video/mp4"
           autoPlay
           controls={false}
           playsInline
@@ -54,3 +62,5 @@ export default function VideoWithPlaceholder({ src, placeholder }) {
     </div>
   )
 }
+
+export default VideoWithPlaceholder

@@ -1,6 +1,6 @@
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
-import LinkButton from "@/components/button-link"
+import LinkButton from "@/components/LinkButton"
 
 export default function OurChainSection() {
   const { t } = useTranslation("ecosystem")

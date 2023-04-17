@@ -2,7 +2,7 @@ import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import Slider from "react-slick"
 import CenteredContentLayout from "@/layouts/CenteredContentLayout"
-import VideoWithPlaceholder from "@/components/video-with-placeholder"
+import VideoWithPlaceholder from "@/components/VideoWithPlaceholder"
 import useBreakpoints from "@/hooks/useBreakpoints"
 
 export default function WhyDesmosSection() {

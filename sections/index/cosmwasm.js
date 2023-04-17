@@ -1,7 +1,7 @@
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import CenteredContentLayout from "@/layouts/CenteredContentLayout"
-import NavbarLinkButton from "@/components/button-link-navbar"
+import NavbarLinkButton from "@/components/NavbarLinkButton"
 
 export default function CosmWasmSection() {
   const { t } = useTranslation("index")

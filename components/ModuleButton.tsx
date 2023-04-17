@@ -1,13 +1,18 @@
+import React from "react"
 import { useTranslation } from "next-i18next"
+import ImageButtonData from "@/types/ImageButtonData"
 
-export default function ModuleButton({
-  button,
-  position,
-  size,
-  hoverSize,
-  smallText,
-  animationDelay,
-}) {
+export interface ModuleButtonProps {
+  readonly button: ImageButtonData
+  readonly position: string
+  readonly size: string
+  readonly hoverSize: string
+  readonly smallText: boolean
+  readonly animationDelay: string
+}
+
+const ModuleButton = (props: ModuleButtonProps) => {
+  const { button, position, size, hoverSize, smallText, animationDelay } = props
   const { t } = useTranslation("index")
 
   return (
@@ -33,3 +38,5 @@ export default function ModuleButton({
     </div>
   )
 }
+
+export default ModuleButton

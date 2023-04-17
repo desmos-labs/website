@@ -1,7 +1,7 @@
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
-import OrangeButton from "@/components/orange-button"
-import VideoWithPlaceholder from "@/components/video-with-placeholder"
+import OrangeButton from "@/components/OrangeButton"
+import VideoWithPlaceholder from "@/components/VideoWithPlaceholder"
 
 export default function ContributeSection() {
   const { t } = useTranslation("index")

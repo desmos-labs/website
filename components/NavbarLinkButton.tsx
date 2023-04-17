@@ -1,10 +1,16 @@
-export default function NavbarLinkButton({
-  buttonLink,
-  buttonText,
-  fontSize,
-  leading,
-  tracking,
-}) {
+import React from "react"
+
+export interface NavbarLinkButtonProps {
+  readonly buttonLink: string
+  readonly buttonText: string
+  readonly fontSize: string
+  readonly leading: string
+  readonly tracking: string
+}
+
+const NavbarLinkButton = (props: NavbarLinkButtonProps) => {
+  const { buttonLink, buttonText, fontSize, leading, tracking } = props
+
   return (
     <>
       <a
@@ -31,3 +37,5 @@ export default function NavbarLinkButton({
     </>
   )
 }
+
+export default NavbarLinkButton

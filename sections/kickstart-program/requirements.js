@@ -1,7 +1,7 @@
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
-import IconListing from "@/components/icon-listing"
-import OrangeButton from "@/components/orange-button"
+import IconListing from "@/components/IconListing"
+import OrangeButton from "@/components/OrangeButton"
 
 export default function RequirementsSection() {
   const { t } = useTranslation("kickstart-program")

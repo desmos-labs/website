@@ -1,9 +1,14 @@
-export default function OrangeButton({
-  buttonText,
-  buttonLink,
-  buttonMargin,
-  buttonPadding,
-}) {
+import React from "react"
+
+export interface OrangeButtonProps {
+  readonly buttonText: string
+  readonly buttonLink: string
+  readonly buttonMargin?: string
+  readonly buttonPadding?: string
+}
+
+const OrangeButton = (props: OrangeButtonProps) => {
+  const { buttonText, buttonLink, buttonMargin, buttonPadding } = props
   return (
     <a
       href={`${buttonLink}`}
@@ -29,3 +34,5 @@ export default function OrangeButton({
     </a>
   )
 }
+
+export default OrangeButton

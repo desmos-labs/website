@@ -1,7 +1,14 @@
+import React from "react"
 import { useTranslation } from "next-i18next"
 import Image from "next/image"
+import ImageButtonData from "@/types/ImageButtonData"
 
-export default function CompleteToolkitButton({ button }) {
+export interface CompleteToolkitButtonProps {
+  readonly button: ImageButtonData
+}
+
+const CompleteToolkitButton = (props: CompleteToolkitButtonProps) => {
+  const { button } = props
   const { t } = useTranslation("index")
 
   return (
@@ -45,3 +52,5 @@ export default function CompleteToolkitButton({ button }) {
     </div>
   )
 }
+
+export default CompleteToolkitButton

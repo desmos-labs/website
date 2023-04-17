@@ -1,17 +1,16 @@
+import React from "react"
 import { NextSeo } from "next-seo"
+import getPageSlur from "@/utils/getPageSlur"
 
-function getPageSlur(pageRoute) {
-  switch (true) {
-    case !pageRoute:
-      return ""
-    case pageRoute.startsWith("/"):
-      return pageRoute
-    default:
-      return `/${pageRoute}`
-  }
+export interface DesmosSeoProps {
+  readonly title: string
+  readonly description: string
+  readonly pageRoute?: string
 }
 
-export default function DesmosSeo({ title, description, pageRoute }) {
+const DesmosSeo = (props: DesmosSeoProps) => {
+  const { title, description, pageRoute } = props
+
   const pageSlur = getPageSlur(pageRoute)
   const pageUrl = `${process.env.NEXT_PUBLIC_HOST}${pageSlur}`
 
@@ -44,3 +43,5 @@ export default function DesmosSeo({ title, description, pageRoute }) {
     />
   )
 }
+
+export default DesmosSeo

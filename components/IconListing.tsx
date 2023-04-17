@@ -1,11 +1,15 @@
+import React from "react"
 import Image from "next/image"
 
-export default function IconListing({
-  iconTitle,
-  iconDescription,
-  imagePath,
-  imageText,
-}) {
+export interface IconListingProps {
+  readonly iconTitle: string
+  readonly iconDescription: string
+  readonly imagePath: string
+  readonly imageText: string
+}
+
+const IconListing = (props: IconListingProps) => {
+  const { iconTitle, iconDescription, imagePath, imageText } = props
   return (
     <>
       <div className="flex flex-col w-full">
@@ -30,3 +34,5 @@ export default function IconListing({
     </>
   )
 }
+
+export default IconListing

@@ -1,11 +1,10 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Head from "next/head"
-import { useEffect, useState } from "react"
-import NavigationBar from "@/components/navbar"
-import Footer from "@/components/footer"
+import NavigationBar from "@/components/NavigationBar"
+import Footer from "@/components/Footer"
 import { install } from "resize-observer"
 import useBreakpoints from "@/hooks/useBreakpoints"
-import DesmosSeo from "@/components/desmos-seo"
+import DesmosSeo from "@/components/DesmosSeo"
 
 export interface MainLayoutProps {
   readonly title: string

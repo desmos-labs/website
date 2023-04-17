@@ -1,6 +1,6 @@
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
-import OrangeButton from "@/components/orange-button"
+import OrangeButton from "@/components/OrangeButton"
 
 export default function IsTheDesmosSection() {
   const { t } = useTranslation("academy")

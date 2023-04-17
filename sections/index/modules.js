@@ -1,9 +1,9 @@
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
-import ModuleButton from "@/components/button-module"
+import ModuleButton from "@/components/ModuleButton"
 import PopupLayout from "@/layouts/PopupLayout"
 import SlideLayout from "@/layouts/SlideLayout"
-import PopupSliderComponent from "@/components/slider-popup"
+import PopupSlider from "@/components/PopupSlider"
 import CenteredContentLayout from "@/layouts/CenteredContentLayout"
 
 export default function ModulesSection() {
@@ -257,7 +257,7 @@ export default function ModulesSection() {
   const slides = (index) => {
     return (
       <>
-        <PopupSliderComponent
+        <PopupSlider
           lastIndex={lastIndex}
           nextButtons={nextButtons}
           index={index}

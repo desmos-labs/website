@@ -1,7 +1,16 @@
+import React from "react"
 import { useTranslation } from "next-i18next"
 import Image from "next/image"
 
-export default function LinkCardButton({ image, title, content, link }) {
+export interface LinkCardButtonProps {
+  readonly image: string
+  readonly title: string
+  readonly content: string
+  readonly link: string
+}
+
+const LinkCardButton = (props: LinkCardButtonProps) => {
+  const { image, title, content, link } = props
   const { t } = useTranslation("ecosystem")
 
   return (
@@ -27,3 +36,5 @@ export default function LinkCardButton({ image, title, content, link }) {
     </a>
   )
 }
+
+export default LinkCardButton

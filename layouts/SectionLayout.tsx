@@ -1,7 +1,6 @@
-import React from "react"
-import { useEffect, useState } from "react"
+import React, { useCallback, useEffect, useMemo, useState } from "react"
 import useBreakpoints from "@/hooks/useBreakpoints"
-import VideoWithPlaceholder from "@/components/video-with-placeholder"
+import VideoWithPlaceholder from "@/components/VideoWithPlaceholder"
 
 export interface ContentBackground {
   /**
@@ -65,36 +64,62 @@ const SectionLayout = (props: SectionLayoutProps) => {
   const [videoBackground, setVideoBackground] = useState(<></>)
   const [isMobile, isMd, isLg, isXl, isBreakpointReady] = useBreakpoints()
 
+  // Callback that allows to get the URL of the video to display
+  // in the background of the section, depending on the current breakpoint
+  const getVideoUrl = useCallback(
+    (content: ContentBackground | undefined) => {
+      switch (true) {
+        case isXl:
+          return content?.videos?.xl
+        case isLg:
+          return content?.videos?.lg
+        case isMd:
+          return content?.videos?.md
+        case isMobile:
+          return content?.videos?.mobile
+        default:
+          return undefined
+      }
+    },
+    [isXl, isLg, isMd, isMobile]
+  )
+
+  // Memoize the URL of the video to display in the background of the section
+  const videoUrl = useMemo(
+    () => getVideoUrl(contentBackground),
+    [getVideoUrl, contentBackground]
+  )
+
   useEffect(() => {
     setVideoBackground(
       <>
-        {isXl && (
+        {isXl && videoUrl && (
           <VideoWithPlaceholder
-            src={contentBackground?.videos?.xl}
+            src={videoUrl}
             placeholder={contentBackground?.image}
           />
         )}
-        {isLg && (
+        {isLg && videoUrl && (
           <VideoWithPlaceholder
-            src={contentBackground?.videos?.lg}
+            src={videoUrl}
             placeholder={contentBackground?.image}
           />
         )}
-        {isMd && (
+        {isMd && videoUrl && (
           <VideoWithPlaceholder
-            src={contentBackground?.videos?.md}
+            src={videoUrl}
             placeholder={contentBackground?.image}
           />
         )}
-        {isMobile && (
+        {isMobile && videoUrl && (
           <VideoWithPlaceholder
-            src={contentBackground?.videos?.mobile}
+            src={videoUrl}
             placeholder={contentBackground?.image}
           />
         )}
       </>
     )
-  }, [isMobile, isMd, isLg, isXl])
+  }, [videoUrl, isMobile, isMd, isLg, isXl])
 
   useEffect(() => {
     if (fullScreenHeightOption) {
@@ -110,7 +135,7 @@ const SectionLayout = (props: SectionLayoutProps) => {
           break
       }
     }
-  }, [])
+  }, [fullScreenHeightOption])
 
   return (
     <div

@@ -1,4 +1,12 @@
-export default function DesmosLogo({ width, height }) {
+import React from "react"
+
+export interface DesmosLogoProps {
+  readonly width: string
+  readonly height: string
+}
+
+const DesmosLogo = (props: DesmosLogoProps) => {
+  const { width, height } = props
   return (
     <svg
       width={width}
@@ -16,3 +24,5 @@ export default function DesmosLogo({ width, height }) {
     </svg>
   )
 }
+
+export default DesmosLogo

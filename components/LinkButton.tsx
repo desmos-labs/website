@@ -1,6 +1,14 @@
+import React from "react"
 import { useTranslation } from "next-i18next"
 
-export default function LinkButton({ title, link, margin }) {
+export interface LinkButtonProps {
+  readonly title: string
+  readonly link: string
+  readonly margin: string
+}
+
+const LinkButton = (props: LinkButtonProps) => {
+  const { title, link, margin } = props
   const { t } = useTranslation("ecosystem")
   return (
     <a href={link} target="_blank">
@@ -26,3 +34,5 @@ export default function LinkButton({ title, link, margin }) {
     </a>
   )
 }
+
+export default LinkButton
