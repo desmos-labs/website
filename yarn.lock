@@ -2064,7 +2064,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.56.0":
+"@typescript-eslint/eslint-plugin@npm:^5.58.0":
   version: 5.58.0
   resolution: "@typescript-eslint/eslint-plugin@npm:5.58.0"
   dependencies:
@@ -4507,7 +4507,7 @@ __metadata:
     "@next/font": 13.1.1
     "@openpolitica/matomo-next": ^1.2.1
     "@react-spring/web": ^9.6.1
-    "@typescript-eslint/eslint-plugin": ^5.56.0
+    "@typescript-eslint/eslint-plugin": ^5.58.0
     "@typescript-eslint/parser": ^5.56.0
     autoprefixer: ^10.4.13
     eslint: ^8.38.0
