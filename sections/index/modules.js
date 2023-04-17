@@ -322,7 +322,7 @@ export default function ModulesSection() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <g clip-path="url(#clip0_1518_16876)">
+                <g clipPath="url(#clip0_1518_16876)">
                   <path
                     d="M402.347 60.5209C402.763 60.5209 403.101 60.1805 403.101 59.7605C403.101 59.3405 402.763 59 402.347 59C401.93 59 401.593 59.3405 401.593 59.7605C401.593 60.1805 401.93 60.5209 402.347 60.5209Z"
                     fill="white"
