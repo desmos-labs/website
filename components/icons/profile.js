@@ -136,9 +136,9 @@ export default function Profile({ width, height }) {
           y2="216.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_2098_1929"
@@ -148,9 +148,9 @@ export default function Profile({ width, height }) {
           y2="216.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_2098_1929"
@@ -160,9 +160,9 @@ export default function Profile({ width, height }) {
           y2="216.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_2098_1929"
@@ -172,9 +172,9 @@ export default function Profile({ width, height }) {
           y2="216.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_2098_1929"
@@ -184,9 +184,9 @@ export default function Profile({ width, height }) {
           y2="216.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_2098_1929"
@@ -196,9 +196,9 @@ export default function Profile({ width, height }) {
           y2="216.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_2098_1929"
@@ -208,9 +208,9 @@ export default function Profile({ width, height }) {
           y2="216.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_2098_1929"
@@ -220,9 +220,9 @@ export default function Profile({ width, height }) {
           y2="216.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_2098_1929"
@@ -232,9 +232,9 @@ export default function Profile({ width, height }) {
           y2="216.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint9_linear_2098_1929"
@@ -244,9 +244,9 @@ export default function Profile({ width, height }) {
           y2="216.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint10_linear_2098_1929"
@@ -256,9 +256,9 @@ export default function Profile({ width, height }) {
           y2="216.25"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint11_linear_2098_1929"
@@ -268,9 +268,9 @@ export default function Profile({ width, height }) {
           y2="244"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint12_linear_2098_1929"
@@ -280,9 +280,9 @@ export default function Profile({ width, height }) {
           y2="228"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint13_linear_2098_1929"
@@ -292,9 +292,9 @@ export default function Profile({ width, height }) {
           y2="216"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint14_linear_2098_1929"
@@ -304,9 +304,9 @@ export default function Profile({ width, height }) {
           y2="202"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint15_linear_2098_1929"
@@ -316,9 +316,9 @@ export default function Profile({ width, height }) {
           y2="190"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint16_linear_2098_1929"
@@ -328,9 +328,9 @@ export default function Profile({ width, height }) {
           y2="181"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint17_linear_2098_1929"
@@ -340,9 +340,9 @@ export default function Profile({ width, height }) {
           y2="172"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint18_linear_2098_1929"
@@ -352,9 +352,9 @@ export default function Profile({ width, height }) {
           y2="165"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
         <linearGradient
           id="paint19_linear_2098_1929"
@@ -364,9 +364,9 @@ export default function Profile({ width, height }) {
           y2="159"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="white" stop-opacity="0" />
-          <stop offset="0.505208" stop-color="white" />
-          <stop offset="1" stop-color="white" stop-opacity="0" />
+          <stop stopColor="white" stop-opacity="0" />
+          <stop offset="0.505208" stopColor="white" />
+          <stop offset="1" stopColor="white" stop-opacity="0" />
         </linearGradient>
       </defs>
     </svg>
