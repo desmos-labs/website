@@ -1,12 +1,16 @@
+import React from "react"
 import { useTranslation } from "react-i18next"
 
-export default function SlideLayout({
-  title,
-  subtitle,
-  desktopContent,
-  mobileContent,
-  image,
-}) {
+export interface SlideLayoutProps {
+  readonly title: string
+  readonly subtitle: string
+  readonly desktopContent: React.ReactNode
+  readonly mobileContent: React.ReactNode
+  readonly image: string
+}
+
+const SlideLayout = (props: SlideLayoutProps) => {
+  const { title, subtitle, desktopContent, mobileContent, image } = props
   const { t } = useTranslation("index")
 
   return (
@@ -34,3 +38,5 @@ export default function SlideLayout({
     </div>
   )
 }
+
+export default SlideLayout

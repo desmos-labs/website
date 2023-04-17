@@ -1,4 +1,4 @@
-import SectionLayout from "@/layouts/section"
+import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 
 export default function EligibilitySection() {

@@ -1,6 +1,6 @@
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
-import MainLayout from "@/layouts/main"
+import MainLayout from "@/layouts/MainLayout"
 import BannerSection from "@/sections/index/banner"
 import ModulesSection from "@/sections/index/modules"
 import AllinOneSection from "@/sections/index/all-in-one"

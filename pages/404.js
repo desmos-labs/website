@@ -1,8 +1,8 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
-import MainLayout from "@/layouts/main"
-import SectionLayout from "@/layouts/section"
-import CenteredContentLayout from "@/layouts/content-centered"
+import MainLayout from "@/layouts/MainLayout"
+import SectionLayout from "@/layouts/SectionLayout"
+import CenteredContentLayout from "@/layouts/CenteredContentLayout"
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

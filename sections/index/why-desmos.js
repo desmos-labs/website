@@ -1,7 +1,7 @@
-import SectionLayout from "@/layouts/section"
+import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import Slider from "react-slick"
-import CenteredContentLayout from "@/layouts/content-centered"
+import CenteredContentLayout from "@/layouts/CenteredContentLayout"
 import VideoWithPlaceholder from "@/components/video-with-placeholder"
 import useBreakpoints from "@/hooks/useBreakpoints"
 

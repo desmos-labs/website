@@ -1,3 +1,4 @@
+import React from "react"
 import Head from "next/head"
 import { useEffect, useState } from "react"
 import NavigationBar from "@/components/navbar"
@@ -6,13 +7,17 @@ import { install } from "resize-observer"
 import useBreakpoints from "@/hooks/useBreakpoints"
 import DesmosSeo from "@/components/desmos-seo"
 
-export default function MainLayout({
-  title,
-  description,
-  pageRoute,
-  footerBackground,
-  children,
-}) {
+export interface MainLayoutProps {
+  readonly title: string
+  readonly description: string
+  readonly pageRoute: string
+  readonly footerBackground?: string
+  readonly children: React.ReactNode
+}
+
+const MainLayout = (props: MainLayoutProps) => {
+  const { title, description, pageRoute, footerBackground, children } = props
+
   const [isHydrated, setIsHydrated] = useState(false)
   const [isMobile, , , , isBreakpointReady] = useBreakpoints()
   const [navbarBgVisible, setNavbarBgVisible] = useState(false)
@@ -36,7 +41,6 @@ export default function MainLayout({
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll)
-
     return () => window.removeEventListener("scroll", handleScroll)
   })
 
@@ -95,3 +99,5 @@ export default function MainLayout({
     </>
   )
 }
+
+export default MainLayout

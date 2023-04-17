@@ -1,7 +1,7 @@
-import SectionLayout from "@/layouts/section"
+import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import OrangeButton from "@/components/orange-button"
-import CenteredContentLayout from "@/layouts/content-centered"
+import CenteredContentLayout from "@/layouts/CenteredContentLayout"
 
 export default function GetInTouchSection() {
   const { t } = useTranslation("university-program")

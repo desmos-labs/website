@@ -295,23 +295,21 @@ export default function NavigationBar() {
     </Popover>
   )
 
-  return (
-    isBreakpointReady && (
-      <nav className="relative flex justify-between items-center w-full h-navbar-mobile md:h-navbar-md lg:h-navbar-lg xl:h-navbar-xl px-xMobile md:px-xMd lg:px-xLg xl:px-xXl">
-        {/* z-index -30 is due to the Get DSM button has background gradient with z-index -20 */}
-        {/* Moved to the MainLayout since we want it to not be bounded by max-w */}
-        {/* <div className="absolute top-0 left-0 right-0 h-full -z-30 bg-desmos-background-primary lg:bg-transparent lg:bg-gradient-to-b from-desmos-background-primary" /> */}
-        <Link href="/" locale={locale}>
-          {isLg || isXl ? (
-            <DesmosLogo width="166" height="40" />
-          ) : (
-            <DesmosLogo width="132" height="32" />
-          )}
-        </Link>
-        {(isLg || isXl) && largeMenu}
-        {isMd && tabletMenu}
-        {isMobile && mobileMenu}
-      </nav>
-    )
-  )
+  return isBreakpointReady ? (
+    <nav className="relative flex justify-between items-center w-full h-navbar-mobile md:h-navbar-md lg:h-navbar-lg xl:h-navbar-xl px-xMobile md:px-xMd lg:px-xLg xl:px-xXl">
+      {/* z-index -30 is due to the Get DSM button has background gradient with z-index -20 */}
+      {/* Moved to the MainLayout since we want it to not be bounded by max-w */}
+      {/* <div className="absolute top-0 left-0 right-0 h-full -z-30 bg-desmos-background-primary lg:bg-transparent lg:bg-gradient-to-b from-desmos-background-primary" /> */}
+      <Link href="/" locale={locale}>
+        {isLg || isXl ? (
+          <DesmosLogo width="166" height="40" />
+        ) : (
+          <DesmosLogo width="132" height="32" />
+        )}
+      </Link>
+      {(isLg || isXl) && largeMenu}
+      {isMd && tabletMenu}
+      {isMobile && mobileMenu}
+    </nav>
+  ) : undefined
 }

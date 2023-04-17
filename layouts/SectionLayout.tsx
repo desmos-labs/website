@@ -1,35 +1,66 @@
+import React from "react"
 import { useEffect, useState } from "react"
 import useBreakpoints from "@/hooks/useBreakpoints"
 import VideoWithPlaceholder from "@/components/video-with-placeholder"
 
+export interface ContentBackground {
+  /**
+   * Url of the image
+   */
+  readonly image?: string
+
+  /**
+   * Url of the video
+   */
+  readonly videos?: {
+    readonly mobile?: string
+    readonly md?: string
+    readonly lg?: string
+    readonly xl?: string
+  }
+
+  /**
+   * If true, the background will be set to full screen width. Otherwise, the background will be the same
+   * size as the container.
+   */
+  readonly isFullScreenWidth?: boolean
+}
+
+export interface SectionLayoutProps {
+  /**
+   * Optional. If not present, the section height will be auto and bounded by min-height of each breakpoint
+   */
+  fullScreenHeightOption?: "always" | "onlyDesktop" | "never"
+
+  /**
+   * Tailwind bg
+   * Optional. This is always as wide as the screen width, and as high as scetion height.
+   * It is UNDER contentBackground
+   */
+  sectionBackground?: string
+
+  /**
+   * Optional. This is always as wide as the container width, and as high as section height.
+   */
+  contentBackground?: ContentBackground
+
+  /**
+   * Required. The content of the section
+   */
+  children: React.ReactNode
+}
+
 /**
  * Foundation layout of all sections, background will always be fullscreen width, and content will always be in container width
- *
- * @param fullScreenHeightOption
- * "always", "onlyDesktop", "never"
- * Optional. If not present, the section height will be auto and bounded by min-height of each breakpoint
- *
- * @param contentBackground
- * {
- *   image: Url,
- *   videos: { mobile: Url, md: Url, lg: Url, xl: Url },
- *   isFullScreenWidth: Bool,
- * }
- * Optional. If isFullScreenWidth present and it's true, the background will be set to full screen width. Otherwise the background will be the same size as the container.
- *
- * @param sectionBackground
- * Tailwind bg
- * Optional. This is always as wide as the screen width, and as high as scetion height.
- * It is UNDER contentBackground
- *
- * @param children Required. The content of the section
  */
-export default function SectionLayout({
-  contentBackground,
-  sectionBackground,
-  fullScreenHeightOption,
-  children,
-}) {
+const SectionLayout = (props: SectionLayoutProps) => {
+  const {
+    contentBackground,
+    sectionBackground,
+    fullScreenHeightOption,
+    children,
+  } = props
+
   const [sectionHeight, setSectionHeight] = useState("h-auto")
   const [videoBackground, setVideoBackground] = useState(<></>)
   const [isMobile, isMd, isLg, isXl, isBreakpointReady] = useBreakpoints()
@@ -106,3 +137,5 @@ export default function SectionLayout({
     </div>
   )
 }
+
+export default SectionLayout

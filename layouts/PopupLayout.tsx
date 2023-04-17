@@ -1,9 +1,17 @@
+import React from "react"
 import { Dialog, Transition } from "@headlessui/react"
 import { Fragment, useState } from "react"
 import { useTranslation } from "next-i18next"
 
-// children should always be the last parameter
-export default function PopupLayout({ openItem, popupContent, closeText }) {
+export interface PopupLayoutProps {
+  readonly openItem: React.ReactNode
+  readonly popupContent: React.ReactNode
+  readonly closeText: string
+}
+
+const PopupLayout = (props: PopupLayoutProps) => {
+  const { openItem, popupContent, closeText } = props
+
   const [isOpen, setIsOpen] = useState(false)
   const { t } = useTranslation("index")
 
@@ -114,3 +122,5 @@ export default function PopupLayout({ openItem, popupContent, closeText }) {
     </>
   )
 }
+
+export default PopupLayout
