@@ -170,9 +170,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="230.52"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_2098_11741"
@@ -182,9 +182,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="230.52"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_2098_11741"
@@ -194,9 +194,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="230.52"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_2098_11741"
@@ -206,9 +206,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="230.52"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_2098_11741"
@@ -218,9 +218,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="230.52"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_2098_11741"
@@ -230,9 +230,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="230.52"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_2098_11741"
@@ -242,9 +242,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="230.52"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_2098_11741"
@@ -254,9 +254,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="230.52"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_2098_11741"
@@ -266,9 +266,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="230.52"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint9_linear_2098_11741"
@@ -278,9 +278,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="230.52"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint10_linear_2098_11741"
@@ -290,9 +290,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="230.52"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint11_linear_2098_11741"
@@ -302,9 +302,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="260.069"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint12_linear_2098_11741"
@@ -314,9 +314,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="243.013"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint13_linear_2098_11741"
@@ -326,9 +326,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="230.221"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint14_linear_2098_11741"
@@ -338,9 +338,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="215.297"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint15_linear_2098_11741"
@@ -350,9 +350,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="202.505"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint16_linear_2098_11741"
@@ -362,9 +362,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="192.911"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint17_linear_2098_11741"
@@ -374,9 +374,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="183.317"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint18_linear_2098_11741"
@@ -386,9 +386,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="175.855"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
         <linearGradient
           id="paint19_linear_2098_11741"
@@ -398,9 +398,9 @@ export default function LiveTestnetPopup({ width, height }) {
           y2="169.459"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="white" stop-opacity="0" />
+          <stop stopColor="white" stopOpacity="0" />
           <stop offset="0.505208" stopColor="white" />
-          <stop offset="1" stopColor="white" stop-opacity="0" />
+          <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>
