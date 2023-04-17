@@ -11,19 +11,19 @@ export default function MobileMenuIcon({ width, height }) {
         d="M7 8.5L25 8.5"
         stroke="white"
         strokeWidth="1.4"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
       <path
         d="M7 23.5L25 23.5"
         stroke="white"
         strokeWidth="1.4"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
       <path
         d="M7 16L25 16"
         stroke="white"
         strokeWidth="1.4"
-        stroke-linecap="round"
+        strokeLinecap="round"
       />
     </svg>
   )
