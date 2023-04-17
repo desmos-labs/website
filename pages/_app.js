@@ -3,7 +3,7 @@ import "@/styles/globals.css"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { useEffect } from "react"
-import init from "@openpolitica/matomo-next"
+import init from "@socialgouv/matomo-next"
 
 function App({ Component, pageProps }) {
   // Get Matomo constants

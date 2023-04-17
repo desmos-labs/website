@@ -11,8 +11,8 @@
   "dependencies": {
     "@headlessui/react": "^1.7.13",
     "@next/font": "13.1.1",
-    "@openpolitica/matomo-next": "^1.2.1",
     "@react-spring/web": "^9.6.1",
+    "@socialgouv/matomo-next": "^1.6.1",
     "autoprefixer": "^10.4.13",
     "framer-motion": "^9.0.2",
     "i18next": "^22.4.9",
