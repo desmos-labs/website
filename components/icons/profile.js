@@ -29,102 +29,102 @@ export default function Profile({ width, height }) {
         <path
           d="M292.5 148L394 284.5"
           stroke="url(#paint0_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M272.5 148L356 284.5"
           stroke="url(#paint1_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M255.5 148L316 284.5"
           stroke="url(#paint2_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M237.5 148L276 284.5"
           stroke="url(#paint3_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M222.5 148L237 284.5"
           stroke="url(#paint4_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M196.5 148L197 284.5"
           stroke="url(#paint5_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M171.5 148L158 284.5"
           stroke="url(#paint6_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M155.5 148L118 284.5"
           stroke="url(#paint7_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M139.5 148L79 284.5"
           stroke="url(#paint8_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M122.5 148L38 284.5"
           stroke="url(#paint9_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M103.5 148L0.999994 284.5"
           stroke="url(#paint10_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M0 243.5L394 243.5"
           stroke="url(#paint11_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M13 227.5L381 227.5"
           stroke="url(#paint12_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M24 215.5L370 215.5"
           stroke="url(#paint13_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M36 201.5L358 201.5"
           stroke="url(#paint14_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M48 189.5L346 189.5"
           stroke="url(#paint15_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M56 180.5L337 180.5"
           stroke="url(#paint16_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M64 171.5L330 171.5"
           stroke="url(#paint17_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M69 164.5L325 164.5"
           stroke="url(#paint18_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M77 158.5L318 158.5"
           stroke="url(#paint19_linear_2098_1929)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
       </g>
       <defs>

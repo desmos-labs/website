@@ -10,13 +10,13 @@ export default function CloseIcon({ width, height }) {
       <path
         d="M22.1582 9.5L9.43028 22.2279"
         stroke="white"
-        stroke-width="1.4"
+        strokeWidth="1.4"
         stroke-linecap="round"
       />
       <path
         d="M9.63599 9.5L22.3639 22.2279"
         stroke="white"
-        stroke-width="1.4"
+        strokeWidth="1.4"
         stroke-linecap="round"
       />
     </svg>

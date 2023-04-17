@@ -35,102 +35,102 @@ export default function WebMobilePopup({ width, height }) {
         <path
           d="M311.802 157.767L420 303.274"
           stroke="url(#paint0_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M290.482 157.767L379.492 303.274"
           stroke="url(#paint1_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M272.36 157.767L336.853 303.274"
           stroke="url(#paint2_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M253.173 157.767L294.213 303.274"
           stroke="url(#paint3_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M237.183 157.767L252.64 303.274"
           stroke="url(#paint4_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M209.467 157.767L210 303.274"
           stroke="url(#paint5_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M182.817 157.767L168.427 303.274"
           stroke="url(#paint6_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M165.761 157.767L125.787 303.274"
           stroke="url(#paint7_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M148.706 157.767L84.2132 303.274"
           stroke="url(#paint8_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M130.584 157.767L40.5076 303.274"
           stroke="url(#paint9_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M110.33 157.767L1.0661 303.274"
           stroke="url(#paint10_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M-1.66893e-06 259.569L420 259.569"
           stroke="url(#paint11_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M13.8579 242.513L406.142 242.513"
           stroke="url(#paint12_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M25.5838 229.721L394.416 229.721"
           stroke="url(#paint13_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M38.3755 214.797L381.624 214.797"
           stroke="url(#paint14_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M51.1675 202.005L368.833 202.005"
           stroke="url(#paint15_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M59.6954 192.411L359.239 192.411"
           stroke="url(#paint16_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M68.2233 182.817L351.777 182.817"
           stroke="url(#paint17_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M73.5534 175.355L346.447 175.355"
           stroke="url(#paint18_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
         <path
           d="M82.0813 168.959L338.985 168.959"
           stroke="url(#paint19_linear_2098_11527)"
-          stroke-width="0.25"
+          strokeWidth="0.25"
         />
       </g>
       <defs>
