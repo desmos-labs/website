@@ -30,10 +30,10 @@ function Ecosystem() {
           <p className="text-desmos-white-Default md:tracking-[0.005em] tracking-[0.0015em] mt-[16px] lg:text-[18px] lg:leading-[36px] md:text-[16px] md:leading-[32px] text-[14px] leading-[21px]">
             {t("headerDescription")}
           </p>
+          <ApplicationsSection />
+          <WalletsSection />
           <TheSDKSection />
           <OurChainSection />
-          <WalletsSection />
-          <ApplicationsSection />
         </div>
       </SectionLayout>
     </MainLayout>
