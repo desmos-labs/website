@@ -9,7 +9,6 @@ on:
 
 jobs:
   Lint:
-    name: yarn-lint
     runs-on: ubuntu-latest
     timeout-minutes: 6
     steps:
