@@ -1,3 +1,4 @@
+import React from "react"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import MainLayout from "@/layouts/MainLayout"
@@ -8,13 +9,13 @@ import SkillsSection from "@/sections/academy/SkillsSection"
 import TheEasiestWaySection from "@/sections/academy/TheEasiestWaySection"
 import JoinOurAcademySection from "@/sections/academy/JoinOurAcademySection"
 
-export const getStaticProps = async ({ locale }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, ["academy", "common"])),
   },
 })
 
-function Academy() {
+const Academy = () => {
   const { t } = useTranslation("academy")
 
   return (

@@ -1,6 +1,7 @@
-import { Html, Head, Main, NextScript } from "next/document"
+import React from "react"
+import { Head, Html, Main, NextScript } from "next/document"
 
-export default function Document() {
+const Document = () => {
   return (
     <Html lang="en">
       <Head>
@@ -9,7 +10,7 @@ export default function Document() {
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
-          crossOrigin="true"
+          crossOrigin=""
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Poppins:wght@400;600;700&display=swap"
@@ -23,3 +24,5 @@ export default function Document() {
     </Html>
   )
 }
+
+export default Document

@@ -1,3 +1,4 @@
+import React from "react"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import MainLayout from "@/layouts/MainLayout"
@@ -7,13 +8,13 @@ import WalletsSection from "@/sections/ecosystem/WalletSection"
 import SDKSection from "@/sections/ecosystem/SDKSection"
 import OurChainSection from "@/sections/ecosystem/OurChainSection"
 
-export const getStaticProps = async ({ locale }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, ["ecosystem", "common"])),
   },
 })
 
-function Ecosystem() {
+const Ecosystem = () => {
   const { t } = useTranslation("ecosystem")
 
   return (

@@ -1,20 +1,25 @@
+import React from "react"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import { useTranslation } from "next-i18next"
 import MainLayout from "@/layouts/MainLayout"
 import SectionLayout from "@/layouts/SectionLayout"
 import CenteredContentLayout from "@/layouts/CenteredContentLayout"
 
-export const getStaticProps = async ({ locale }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, ["common"])),
   },
 })
 
-export default function Custom404() {
+const Custom404 = () => {
   const { t } = useTranslation("common")
 
   return (
-    <MainLayout title={t("pagetitle404")} description={t("description404")}>
+    <MainLayout
+      title={t("pagetitle404")}
+      description={t("description404")}
+      pageRoute="/404"
+    >
       <SectionLayout fullScreenHeightOption="always">
         <CenteredContentLayout>
           <div className="text-desmos-white-Default text-center">
@@ -30,3 +35,5 @@ export default function Custom404() {
     </MainLayout>
   )
 }
+
+export default Custom404

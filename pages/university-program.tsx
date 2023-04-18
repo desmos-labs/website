@@ -1,3 +1,4 @@
+import React from "react"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import MainLayout from "@/layouts/MainLayout"
@@ -7,13 +8,13 @@ import OurOfferingsSection from "@/sections/university-program/OurOfferingsSecti
 import EligibilitySection from "@/sections/university-program/EligibilitySection"
 import GetInTouchSection from "@/sections/university-program/GetInTouchSection"
 
-export const getStaticProps = async ({ locale }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, ["university-program", "common"])),
   },
 })
 
-function UniversityProgram() {
+const UniversityProgram = () => {
   const { t } = useTranslation("university-program")
 
   return (

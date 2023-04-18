@@ -1,3 +1,4 @@
+import React from "react"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import MainLayout from "@/layouts/MainLayout"
@@ -6,13 +7,13 @@ import HowItWorksSection from "@/sections/kickstart-program/HowItWorksSection"
 import RequirementsSection from "@/sections/kickstart-program/RequirementsSection"
 import AcceptCategoriesSection from "@/sections/kickstart-program/AcceptedCategories"
 
-export const getStaticProps = async ({ locale }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, ["kickstart-program", "common"])),
   },
 })
 
-function KickstartProgram() {
+const KickstartProgram = () => {
   const { t } = useTranslation("kickstart-program")
 
   return (

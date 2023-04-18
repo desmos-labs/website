@@ -8,7 +8,7 @@ export interface Point {
 }
 
 export interface Subsection {
-  readonly content: string
+  readonly content?: string
   readonly points?: Point[]
   readonly pointsHeader?: string
   readonly pointsFooter?: string

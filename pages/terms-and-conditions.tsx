@@ -1,9 +1,10 @@
+import React from "react"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import NestedList from "@/components/NestedList"
 import MainLayout from "@/layouts/MainLayout"
 
-export const getStaticProps = async ({ locale }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, [
       "terms-and-conditions",
@@ -12,7 +13,7 @@ export const getStaticProps = async ({ locale }) => ({
   },
 })
 
-function TermsAndConditions() {
+const TermsAndConditions = () => {
   const { t } = useTranslation("terms-and-conditions")
 
   const content = {
@@ -22,7 +23,7 @@ function TermsAndConditions() {
     sections: [
       {
         title: "listTitle01",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent01a",
@@ -34,7 +35,7 @@ function TermsAndConditions() {
       },
       {
         title: "listTitle02",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent02a",
@@ -137,10 +138,10 @@ function TermsAndConditions() {
       },
       {
         title: "listTitle04",
-        description: null,
+        description: undefined,
         subsections: [
           {
-            content: null,
+            content: undefined,
             pointsHeader: "listContent04a",
             points: [
               {
@@ -194,7 +195,7 @@ function TermsAndConditions() {
       },
       {
         title: "listTitle05",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent05a",
@@ -217,7 +218,7 @@ function TermsAndConditions() {
       },
       {
         title: "listTitle06",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent06a",
@@ -254,7 +255,7 @@ function TermsAndConditions() {
       },
       {
         title: "listTitle07",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent07a",
@@ -266,7 +267,7 @@ function TermsAndConditions() {
       },
       {
         title: "listTitle08",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent08a",
@@ -278,7 +279,7 @@ function TermsAndConditions() {
       },
       {
         title: "listTitle09",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent09a",
@@ -310,7 +311,7 @@ function TermsAndConditions() {
       },
       {
         title: "listTitle10",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent10a",
@@ -322,7 +323,7 @@ function TermsAndConditions() {
       },
       {
         title: "listTitle11",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent11a",
@@ -345,7 +346,7 @@ function TermsAndConditions() {
       },
       {
         title: "listTitle12",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent12a",
@@ -357,7 +358,7 @@ function TermsAndConditions() {
       },
       {
         title: "listTitle13",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent13a",
@@ -381,10 +382,10 @@ function TermsAndConditions() {
       },
       {
         title: "listTitle14",
-        description: null,
+        description: undefined,
         subsections: [
           {
-            content: null,
+            content: undefined,
             pointsHeader: "listContent14a",
             points: [],
           },
@@ -392,7 +393,7 @@ function TermsAndConditions() {
       },
       {
         title: "listTitle15",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent15a",

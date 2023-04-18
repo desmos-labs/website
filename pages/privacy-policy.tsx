@@ -1,15 +1,16 @@
+import React from "react"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import NestedList from "@/components/NestedList"
 import MainLayout from "@/layouts/MainLayout"
 
-export const getStaticProps = async ({ locale }) => ({
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
     ...(await serverSideTranslations(locale, ["privacy-policy", "common"])),
   },
 })
 
-function PrivacyPolicy() {
+const PrivacyPolicy = () => {
   const { t } = useTranslation("privacy-policy")
 
   const content = {
@@ -19,7 +20,7 @@ function PrivacyPolicy() {
     sections: [
       {
         title: "listTitle01",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent01a",
@@ -31,7 +32,7 @@ function PrivacyPolicy() {
       },
       {
         title: "listTitle02",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent02a",
@@ -72,7 +73,7 @@ function PrivacyPolicy() {
       },
       {
         title: "listTitle03",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent03a",
@@ -99,7 +100,7 @@ function PrivacyPolicy() {
       },
       {
         title: "listTitle04",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent04a",
@@ -120,7 +121,7 @@ function PrivacyPolicy() {
       },
       {
         title: "listTitle05",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent05a",
@@ -139,7 +140,7 @@ function PrivacyPolicy() {
       },
       {
         title: "listTitle06",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent06a",
@@ -148,7 +149,7 @@ function PrivacyPolicy() {
       },
       {
         title: "listTitle07",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent07a",
@@ -160,7 +161,7 @@ function PrivacyPolicy() {
       },
       {
         title: "listTitle08",
-        description: null,
+        description: undefined,
         subsections: [
           {
             content: "listContent08a",
@@ -178,7 +179,7 @@ function PrivacyPolicy() {
       },
       {
         title: "listTitle09",
-        description: null,
+        description: undefined,
         subsections: [
           {
             pointsHeader: "listContent09a",
@@ -188,7 +189,7 @@ function PrivacyPolicy() {
       },
       {
         title: "listTitle10",
-        description: null,
+        description: undefined,
         subsections: [
           {
             pointsHeader: "listContent10a",
