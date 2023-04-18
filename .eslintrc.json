@@ -6,11 +6,12 @@
   "extends": [
     "airbnb-base",
     "airbnb-typescript/base",
+    "plugin:@next/next/recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
     "plugin:prettier/recommended",
-    "plugin:@next/next/recommended",
+    "plugin:react-hooks/recommended",
     "prettier"
   ],
   "parserOptions": {
@@ -19,21 +20,33 @@
     "project": "./tsconfig.json"
   },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "prettier"
   ],
   "rules": {
-    "class-methods-use-this": "off",
-    "import/extensions": "off",
-    "prettier/prettier": "error",
-    "no-underscore-dangle": "off",
     "@typescript-eslint/no-unused-vars": [
-      "warn",
+      "error",
       {
         "argsIgnorePattern": "^_",
         "varsIgnorePattern": "^_",
         "caughtErrorsIgnorePattern": "^_"
       }
-    ]
+    ],
+    "class-methods-use-this": "off",
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "prettier/prettier": "error",
+    // React hooks deps lints
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "settings": {
     "import/resolver": {
