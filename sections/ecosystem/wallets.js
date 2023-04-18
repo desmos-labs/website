@@ -1,4 +1,3 @@
-import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import LinkCardButton from "@/components/LinkCardButton"
 

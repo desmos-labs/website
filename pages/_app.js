@@ -13,6 +13,9 @@ function App({ Component, pageProps }) {
   useEffect(() => {
     // Initialize Matomo
     init({ url: matomoUrl, siteId: matomoSiteID })
+
+    // It's fine to disable the exhaustive-deps rule here because we only want to run this effect once
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return <Component {...pageProps} />

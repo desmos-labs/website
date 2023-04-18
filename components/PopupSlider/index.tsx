@@ -27,7 +27,7 @@ const PopupSlider = (props: PopupSliderProps) => {
     } else {
       setNowIndex(index - 1)
     }
-  }, [])
+  }, [index, lastIndex])
 
   const settings = useMemo(() => {
     return {
@@ -55,7 +55,7 @@ const PopupSlider = (props: PopupSliderProps) => {
         },
       ],
     }
-  }, [t, nowIndex, nextButtons])
+  }, [index, t, nextButtons, nowIndex])
 
   return <Slider {...settings}>{slide}</Slider>
 }
