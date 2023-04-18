@@ -1,0 +1,39 @@
+name: Lint
+# Lint runs yarn lint over the entire Desmos website repository.
+# This workflow is run on every pull request and push to main.
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  Lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Compute diff 📜
+        uses: technote-space/get-diff-action@v6.1.2
+        with:
+          PATTERNS: |
+            **/*.+(js|ts|tsx)
+          FILES: |
+            package.json
+            yarn.lock
+
+      - name: Setup Node 👷
+        if: env.GIT_DIFF
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install 🔨
+        if: env.GIT_DIFF
+        run: yarn install --immutable
+
+      - name: Run lint ✅
+        if: env.GIT_DIFF
+        run: yarn lint
