@@ -1,8 +1,9 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import CenteredContentLayout from "@/layouts/CenteredContentLayout"
 
-export default function AllinOneSection() {
+const AllinOneSection = () => {
   const { t } = useTranslation("index")
 
   return (
@@ -33,3 +34,5 @@ export default function AllinOneSection() {
     </SectionLayout>
   )
 }
+
+export default AllinOneSection

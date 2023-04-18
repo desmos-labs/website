@@ -1,10 +1,10 @@
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import MainLayout from "@/layouts/MainLayout"
-import BannerSection from "@/sections/kickstart-program/banner"
-import HowItWorksSection from "@/sections/kickstart-program/how-it-works"
-import RequirementsSection from "@/sections/kickstart-program/requirements"
-import AcceptCategoriesSection from "@/sections/kickstart-program/accepted-categories"
+import BannerSection from "@/sections/kickstart-program/BannerSection"
+import HowItWorksSection from "@/sections/kickstart-program/HowItWorksSection"
+import RequirementsSection from "@/sections/kickstart-program/RequirementsSection"
+import AcceptCategoriesSection from "@/sections/kickstart-program/AcceptedCategories"
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

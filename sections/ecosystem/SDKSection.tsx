@@ -1,8 +1,8 @@
-import SectionLayout from "@/layouts/SectionLayout"
+import React from "react"
 import { useTranslation } from "next-i18next"
 import LinkButton from "@/components/LinkButton"
 
-export default function TheSDKSection() {
+const SDKSection = () => {
   const { t } = useTranslation("ecosystem")
   const buttons = [
     {
@@ -56,3 +56,5 @@ export default function TheSDKSection() {
     </div>
   )
 }
+
+export default SDKSection

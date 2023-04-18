@@ -1,9 +1,10 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import CenteredContentLayout from "@/layouts/CenteredContentLayout"
 import NavbarLinkButton from "@/components/NavbarLinkButton"
 
-export default function CosmWasmSection() {
+const CosmWasmSection = () => {
   const { t } = useTranslation("index")
 
   return (
@@ -63,3 +64,5 @@ export default function CosmWasmSection() {
     </SectionLayout>
   )
 }
+
+export default CosmWasmSection

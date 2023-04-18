@@ -1,7 +1,8 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 
-export default function DescriptionSection() {
+const DescriptionSection = () => {
   const { t } = useTranslation("university-program")
 
   return (
@@ -14,3 +15,5 @@ export default function DescriptionSection() {
     </SectionLayout>
   )
 }
+
+export default DescriptionSection

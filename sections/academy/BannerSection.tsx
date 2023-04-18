@@ -1,9 +1,15 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import OrangeButton from "@/components/OrangeButton"
 import CenteredContentLayout from "@/layouts/CenteredContentLayout"
+import Image from "next/image"
+import imgAcademy from "@/public/academy.png"
+import imgHillAcademyLg from "@/public/hill-academy.png"
+import imgHillAcademyMd from "@/public/hill-academy-768.png"
+import imgHillAcademySm from "@/public/hill-academy-mobile.png"
 
-export default function BannerSection() {
+const BannerSection = () => {
   const { t } = useTranslation("academy")
 
   return (
@@ -27,17 +33,28 @@ export default function BannerSection() {
           />
         </div>
         <div className="lg:hidden absolute bottom-0 left-0 grid justify-items-center w-full">
-          <img src="academy.png" />
+          <Image src={imgAcademy} alt="Desmos Academy background" />
         </div>
         <div className="absolute bottom-0 left-0 w-full">
-          <img className="hidden lg:block" src="hill-academy.png" />
-          <img
-            className="lg:hidden md:block hidden min-w-full"
-            src="hill-academy-768.png"
+          <Image
+            className="hidden lg:block"
+            src={imgHillAcademyLg}
+            alt="Background"
           />
-          <img className="md:hidden min-w-full" src="hill-academy-mobile.png" />
+          <Image
+            className="lg:hidden md:block hidden min-w-full"
+            src={imgHillAcademyMd}
+            alt="Background"
+          />
+          <Image
+            className="md:hidden min-w-full"
+            src={imgHillAcademySm}
+            alt="Background"
+          />
         </div>
       </CenteredContentLayout>
     </SectionLayout>
   )
 }
+
+export default BannerSection

@@ -1,9 +1,10 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import IconListing from "@/components/IconListing"
 import OrangeButton from "@/components/OrangeButton"
 
-export default function RequirementsSection() {
+const RequirementsSection = () => {
   const { t } = useTranslation("kickstart-program")
 
   return (
@@ -52,3 +53,5 @@ export default function RequirementsSection() {
     </SectionLayout>
   )
 }
+
+export default RequirementsSection

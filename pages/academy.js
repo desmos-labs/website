@@ -1,12 +1,12 @@
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import MainLayout from "@/layouts/MainLayout"
-import BannerSection from "@/sections/academy/banner"
-import IsTheDesmosSection from "@/sections/academy/isTheDesmos"
-import WhyLearnDesmosSection from "@/sections/academy/whyLearnDesmos"
-import TheSkillSection from "@/sections/academy/theSkill"
-import TheEasiestWaySection from "@/sections/academy/theEasiestWay"
-import JoinOurAcademySection from "@/sections/academy/joinOurAcademy"
+import BannerSection from "@/sections/academy/BannerSection"
+import IsForYouSection from "@/sections/academy/IsForYouSection"
+import WhyLearnDesmosSection from "@/sections/academy/WhyLearnDesmos"
+import SkillsSection from "@/sections/academy/SkillsSection"
+import TheEasiestWaySection from "@/sections/academy/TheEasiestWaySection"
+import JoinOurAcademySection from "@/sections/academy/JoinOurAcademySection"
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
@@ -27,9 +27,9 @@ function Academy() {
       <BannerSection />
       <TheEasiestWaySection />
       <JoinOurAcademySection />
-      <IsTheDesmosSection />
+      <IsForYouSection />
       <WhyLearnDesmosSection />
-      <TheSkillSection />
+      <SkillsSection />
     </MainLayout>
   )
 }

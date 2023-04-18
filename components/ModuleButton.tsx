@@ -1,9 +1,12 @@
 import React from "react"
 import { useTranslation } from "next-i18next"
-import ImageButtonData from "@/types/ImageButtonData"
+
+export interface ModuleButtonData {
+  readonly title: string
+}
 
 export interface ModuleButtonProps {
-  readonly button: ImageButtonData
+  readonly button: ModuleButtonData
   readonly position: string
   readonly size: string
   readonly hoverSize: string

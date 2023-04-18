@@ -1,19 +1,22 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import OrangeButton from "@/components/OrangeButton"
+import imgJoinOurAcademy from "@/public/joinOurAcademy.png"
+import Image from "next/image"
 
-export default function JoinOurAcademySection() {
+const JoinOurAcademySection = () => {
   const { t } = useTranslation("academy")
 
   return (
     <SectionLayout sectionBackground="bg-desmos-background-secondary">
       <div className="md:grid md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
         <div className="md:hidden grid grid-cols-2 mb-[60px]">
-          <img src="/joinOurAcademy.png" />
+          <Image src={imgJoinOurAcademy} alt="Icon" />
           <div></div>
         </div>
         <div className="hidden md:grid lg:col-span-2 xl:col-span-3 justify-items-center items-center lg:items-start md:pr-8">
-          <img src="/joinOurAcademy.png" />
+          <Image src={imgJoinOurAcademy} alt="Icon" />
         </div>
         <div className="md:col-span-3 md:pl-8 xl:pl-16">
           <div className="tracking-[0.0015em] font-normal text-desmos-black-light text-[14px] md:text-[16px] lg:text-[18px] md:leading-[32px] leading-[24px] lg:leading-[36px]">
@@ -49,3 +52,5 @@ export default function JoinOurAcademySection() {
     </SectionLayout>
   )
 }
+
+export default JoinOurAcademySection

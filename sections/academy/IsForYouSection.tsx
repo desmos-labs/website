@@ -1,8 +1,11 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import OrangeButton from "@/components/OrangeButton"
+import imgIsForYou from "@/public/isTheDesmos.png"
+import Image from "next/image"
 
-export default function IsTheDesmosSection() {
+const IsForYouSection = () => {
   const { t } = useTranslation("academy")
 
   return (
@@ -10,7 +13,7 @@ export default function IsTheDesmosSection() {
       <div className="md:grid md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 mt-[38px] md:mt-[45px] lg:mt-[99px] xl:mt-[86px]">
         <div className="md:hidden grid grid-cols-2 mb-[60px]">
           <div></div>
-          <img src="/isTheDesmos.png" />
+          <Image src={imgIsForYou} alt="Icon" />
         </div>
         <div className="md:col-span-3 xl:pr-[72px]">
           <h2 className="tracking-[0.005em] font-semibold text-desmos-primary whitespace-pre-wrap text-[24px] md:text-[40px] lg:text-[40px]">
@@ -42,9 +45,11 @@ export default function IsTheDesmosSection() {
           </div>
         </div>
         <div className="hidden md:grid lg:col-span-2 xl:col-span-3 justify-items-center items-center lg:items-start md:pl-8">
-          <img src="/isTheDesmos.png" />
+          <Image src={imgIsForYou} alt="Icon" />
         </div>
       </div>
     </SectionLayout>
   )
 }
+
+export default IsForYouSection

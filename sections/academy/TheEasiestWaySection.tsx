@@ -1,7 +1,10 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
+import Image from "next/image"
+import imgEasiestWay from "@/public/theEasiestWay.png"
 
-export default function TheEasiestWaySection() {
+const TheEasiestWaySection = () => {
   const { t } = useTranslation("academy")
 
   return (
@@ -17,7 +20,7 @@ export default function TheEasiestWaySection() {
       <div className="md:grid md:grid-cols-4 lg:grid-cols-12 xl:grid-cols-6 mt-[38px] md:mt-[45px] lg:mt-[99px] xl:mt-[86px]">
         <div className="md:hidden grid grid-cols-2 mb-[60px]">
           <div></div>
-          <img src="/theEasiestWay.png" />
+          <Image src={imgEasiestWay} alt="Icon" />
         </div>
         <div className="md:col-span-3 lg:col-span-9 xl:col-span-3 xl:pr-16">
           <h2 className="hidden lg:block font-semibold text-desmos-primary text-[24px] md:text-[32px] lg:text-[40px] tracking-[0.005em] lg:tracking-normal">
@@ -46,9 +49,11 @@ export default function TheEasiestWaySection() {
           </div>
         </div>
         <div className="hidden md:grid lg:col-span-3 xl:col-span-3 justify-items-center items-center lg:items-start md:pl-8">
-          <img src="/theEasiestWay.png" />
+          <Image src={imgEasiestWay} alt="Icon" />
         </div>
       </div>
     </SectionLayout>
   )
 }
+
+export default TheEasiestWaySection

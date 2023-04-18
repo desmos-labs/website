@@ -1,18 +1,21 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
+import Image from "next/image"
+import imgWhyLearnDesmos from "@/public/whyLearnDesmos.png"
 
-export default function WhyLearnDesmosSection() {
+const WhyLearnDesmosSection = () => {
   const { t } = useTranslation("academy")
 
   return (
     <SectionLayout sectionBackground="bg-desmos-background-secondary">
       <div className="md:grid md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 mt-[38px] md:mt-[45px] lg:mt-[99px] xl:mt-[86px]">
         <div className="md:hidden grid grid-cols-2 mb-[60px]">
-          <img src="/whyLearnDesmos.png" />
+          <Image src={imgWhyLearnDesmos} alt="Icon" />
           <div></div>
         </div>
         <div className="hidden md:grid lg:col-span-2 xl:col-span-3 justify-items-center items-center lg:items-start md:pr-8">
-          <img src="/whyLearnDesmos.png" />
+          <Image src={imgWhyLearnDesmos} alt="Icon" />
         </div>
         <div className="md:col-span-3 md:pl-8 xl:pl-16">
           <h2 className="tracking-[0.005em] font-semibold text-desmos-primary whitespace-pre-wrap text-[24px] md:text-[40px] lg:text-[40px]">
@@ -37,3 +40,5 @@ export default function WhyLearnDesmosSection() {
     </SectionLayout>
   )
 }
+
+export default WhyLearnDesmosSection

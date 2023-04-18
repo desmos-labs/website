@@ -1,3 +1,4 @@
+import React, { useCallback, useMemo } from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import ModuleButton from "@/components/ModuleButton"
@@ -6,276 +7,285 @@ import SlideLayout from "@/layouts/SlideLayout"
 import PopupSlider from "@/components/PopupSlider"
 import CenteredContentLayout from "@/layouts/CenteredContentLayout"
 
-export default function ModulesSection() {
+const ModulesSection = () => {
   const { t } = useTranslation("index")
-  const buttons = [
-    {
-      id: 1,
-      title: "modulesButton01",
-      popupTitle: "modulesPopupTitle",
-      popupSubtitle: "modulesPopupSubtitle01",
-      position:
-        "xl:top-[260px] xl:left-[554px] lg:top-[135px] lg:left-[240px] md:top-[70px] md:left-[110px] top-[50px] left-[11px]",
-      size: "md:w-[113px] md:h-[113px] w-[74px] h-[74px]",
-      hoverSize: "md:w-[134px] md:h-[142px] w-[88px] h-[93px]",
-      smallText: false,
-      animationDelay: "lg:animation-delay-2000",
-      image: "modules-button-01.png",
-      desktopContent: (
-        <>
-          <div className="lg:mb-[40px] block whitespace-pre-wrap xl:max-w-[865px]">
-            {t("modulesPopupProfilesContent01")}
-          </div>
-          <div className="block lg:mb-[16px] whitespace-pre-wrap xl:max-w-[865px]">
-            {t("modulesPopupProfilesContent02")}
-          </div>
-          <div className="lg:mb-[16px] md:ml-[30px] xl:max-w-[865px]">
-            <ul className="list-disc">
-              <li>{t("modulesPopupProfilesContent03a")}</li>
-              <li>{t("modulesPopupProfilesContent03b")}</li>
-            </ul>
-          </div>
-          <div className="block whitespace-pre-wrap xl:max-w-[865px]">
-            {t("modulesPopupProfilesContent04")}
-          </div>
-        </>
-      ),
-      mobileContent: (
-        <>
-          <span className="mt-[24px] block whitespace-pre-wrap">
-            {t("modulesPopupProfilesContent01")}
-          </span>
-          <span className="mt-[24px] md:mt-[32px] block whitespace-pre-wrap">
-            {t("modulesPopupProfilesContent02")}
-          </span>
-          <div className="ml-[22px] md:ml-[30px]">
-            <ul className="list-disc p-0">
-              <li>{t("modulesPopupProfilesContent03a")}</li>
-              <li>{t("modulesPopupProfilesContent03b")}</li>
-            </ul>
-          </div>
-          <span className="mt-[24px] md:mt-[32px] block whitespace-pre-wrap">
-            {t("modulesPopupProfilesContent04")}
-          </span>
-        </>
-      ),
-    },
-    {
-      id: 2,
-      title: "modulesButton02",
-      popupTitle: "modulesPopupTitle",
-      popupSubtitle: "modulesPopupSubtitle02",
-      position:
-        "xl:top-[405px] xl:left-[461px] lg:top-[290px] lg:left-[135px] md:top-[330px] md:left-[80px] top-[220px] left-[0px]",
-      size: "md:w-[162px] md:h-[162px] w-[106px] h-[106px]",
-      hoverSize: "md:w-[192px] md:h-[204px] w-[126px] h-[133px]",
-      smallText: true,
-      animationDelay: "lg:animation-delay-900",
-      image: "modules-button-02.png",
-      desktopContent: (
-        <>
-          <div className="lg:mb-[40px] block whitespace-pre-wrap xl:max-w-[865px]">
-            {t("modulesPopupRelationshipsContent01")}
-          </div>
-          <div className="block lg:mb-[16px] whitespace-pre-wrap xl:max-w-[865px]">
-            {t("modulesPopupRelationshipsContent02")}
-          </div>
-        </>
-      ),
-      mobileContent: (
-        <>
-          <span className="mt-[24px] block whitespace-pre-wrap">
-            {t("modulesPopupRelationshipsContent01")}
-          </span>
-          <span className="mt-[24px] md:mt-[32px] block whitespace-pre-wrap">
-            {t("modulesPopupRelationshipsContent02")}
-          </span>
-        </>
-      ),
-    },
-    {
-      id: 3,
-      title: "modulesButton03",
-      popupTitle: "modulesPopupTitle",
-      popupSubtitle: "modulesPopupSubtitle03",
-      position:
-        "xl:top-[300px] xl:left-[755px] lg:top-[180px] lg:left-[442px] md:top-[200px] md:left-[270px] top-[150px] left-[111px]",
-      size: "md:w-[113px] md:h-[113px] w-[74px] h-[74px]",
-      hoverSize: "md:w-[134px] md:h-[142px] w-[88px] h-[93px]",
-      smallText: false,
-      animationDelay: "lg:animation1-delay-1500",
-      image: "modules-button-03.png",
-      desktopContent: (
-        <>
-          <div className="lg:mb-[40px] block whitespace-pre-wrap xl:max-w-[865px]">
-            {t("modulesPopupReportsContent01")}
-          </div>
-          <div className="block lg:mb-[16px] whitespace-pre-wrap xl:max-w-[865px]">
-            {t("modulesPopupReportsContent02")}
-          </div>
-        </>
-      ),
-      mobileContent: (
-        <>
-          <span className="mt-[24px] block whitespace-pre-wrap">
-            {t("modulesPopupReportsContent01")}
-          </span>
-          <span className="mt-[24px] md:mt-[32px] block whitespace-pre-wrap">
-            {t("modulesPopupReportsContent02")}
-          </span>
-        </>
-      ),
-    },
-    {
-      id: 4,
-      title: "modulesButton04",
-      popupTitle: "modulesPopupTitle",
-      popupSubtitle: "modulesPopupSubtitle04",
-      position:
-        "xl:top-[400px] xl:left-[954px] lg:top-[290px] lg:left-[655px] md:top-[355px] md:left-[350px] top-[240px] left-[170px]",
-      size: "md:w-[113px] md:h-[113px] w-[74px] h-[74px]",
-      hoverSize: "md:w-[134px] md:h-[142px] w-[88px] h-[93px]",
-      smallText: false,
-      animationDelay: "lg:animation-delay-4000",
-      image: "modules-button-04.png",
-      desktopContent: (
-        <>
-          <div className="lg:mb-[40px] block whitespace-pre-wrap xl:max-w-[865px]">
-            {t("modulesPopupPostsContent01")}
-          </div>
-        </>
-      ),
-      mobileContent: (
-        <>
-          <span className="mt-[24px] block whitespace-pre-wrap">
-            {t("modulesPopupPostsContent01")}
-          </span>
-        </>
-      ),
-    },
-    {
-      id: 5,
-      title: "modulesButton05",
-      popupTitle: "modulesPopupTitle",
-      popupSubtitle: "modulesPopupSubtitle05",
-      position:
-        "xl:top-[200px] xl:left-[1049px] lg:top-[90px] lg:left-[765px] md:top-[220px] md:left-[480px] top-[145px] left-[241px]",
-      size: "md:w-[131px] md:h-[131px] w-[86px] h-[86px]",
-      hoverSize: "md:w-[155px] md:h-[165px] w-[102px] h-[108px]",
-      smallText: true,
-      animationDelay: "",
-      image: "modules-button-05.png",
-      desktopContent: (
-        <>
-          <div className="lg:mb-[40px] block whitespace-pre-wrap xl:max-w-[865px]">
-            {t("modulesPopupSubspacesContent01")}
-          </div>
-          <div className="block lg:mb-[16px] whitespace-pre-wrap xl:max-w-[865px]">
-            {t("modulesPopupSubspacesContent02")}
-          </div>
-          <div className="lg:mb-[16px] md:ml-[30px] xl:max-w-[865px] lg:leading-[27px]">
-            <ul className="list-disc">
-              <li>{t("modulesPopupSubspacesContent03")}</li>
-              <li>{t("modulesPopupSubspacesContent04")}</li>
-            </ul>
-          </div>
-          <div className="block whitespace-pre-wrap xl:max-w-[865px]">
-            {t("modulesPopupSubspacesContent05")}
-          </div>
-        </>
-      ),
-      mobileContent: (
-        <>
-          <span className="mt-[24px] block whitespace-pre-wrap">
-            {t("modulesPopupSubspacesContent01")}
-          </span>
-          <span className="mt-[24px] md:mt-[32px] block whitespace-pre-wrap">
-            {t("modulesPopupSubspacesContent02")}
-          </span>
-          <div className="ml-[22px] md:ml-[30px]">
-            <ul className="list-disc p-0">
-              <li>{t("modulesPopupSubspacesContent03")}</li>
-              <li>{t("modulesPopupSubspacesContent04")}</li>
-            </ul>
-          </div>
-          <span className="mt-[24px] md:mt-[32px] block whitespace-pre-wrap">
-            {t("modulesPopupSubspacesContent05")}
-          </span>
-        </>
-      ),
-    },
-    {
-      id: 6,
-      title: "modulesButton06",
-      popupTitle: "modulesPopupTitle",
-      popupSubtitle: "modulesPopupSubtitle06",
-      position:
-        "xl:top-[520px] xl:left-[1150px] lg:top-[370px] lg:left-[855px] md:top-[530px] md:left-[420px] top-[355px] left-[221px]",
-      size: "md:w-[131px] md:h-[131px] w-[92px] h-[92px]",
-      hoverSize: "md:w-[155px] md:h-[165px] w-[102px] h-[108px]",
-      smallText: false,
-      animationDelay: "lg:animation-delay-1300",
-      image: "modules-button-06.png",
-      desktopContent: (
-        <>
-          <div className="lg:mb-[40px] block whitespace-pre-wrap xl:max-w-[865px]">
-            {t("modulesPopupReactionsContent01")}
-          </div>
-        </>
-      ),
-      mobileContent: (
-        <>
-          <span className="mt-[24px] block whitespace-pre-wrap">
-            {t("modulesPopupReactionsContent01")}
-          </span>
-        </>
-      ),
-    },
-  ]
-  const nextButtons = [
-    {
-      nextPopupSubtitle: "modulesPopupSubtitle03",
-    },
-    {
-      nextPopupSubtitle: "modulesPopupSubtitle04",
-    },
-    {
-      nextPopupSubtitle: "modulesPopupSubtitle05",
-    },
-    {
-      nextPopupSubtitle: "modulesPopupSubtitle06",
-    },
-    {
-      nextPopupSubtitle: "modulesPopupSubtitle01",
-    },
-    {
-      nextPopupSubtitle: "modulesPopupSubtitle02",
-    },
-  ]
+  const buttons = useMemo(() => {
+    return [
+      {
+        id: 1,
+        title: "modulesButton01",
+        popupTitle: "modulesPopupTitle",
+        popupSubtitle: "modulesPopupSubtitle01",
+        position:
+          "xl:top-[260px] xl:left-[554px] lg:top-[135px] lg:left-[240px] md:top-[70px] md:left-[110px] top-[50px] left-[11px]",
+        size: "md:w-[113px] md:h-[113px] w-[74px] h-[74px]",
+        hoverSize: "md:w-[134px] md:h-[142px] w-[88px] h-[93px]",
+        smallText: false,
+        animationDelay: "lg:animation-delay-2000",
+        image: "modules-button-01.png",
+        desktopContent: (
+          <>
+            <div className="lg:mb-[40px] block whitespace-pre-wrap xl:max-w-[865px]">
+              {t("modulesPopupProfilesContent01")}
+            </div>
+            <div className="block lg:mb-[16px] whitespace-pre-wrap xl:max-w-[865px]">
+              {t("modulesPopupProfilesContent02")}
+            </div>
+            <div className="lg:mb-[16px] md:ml-[30px] xl:max-w-[865px]">
+              <ul className="list-disc">
+                <li>{t("modulesPopupProfilesContent03a")}</li>
+                <li>{t("modulesPopupProfilesContent03b")}</li>
+              </ul>
+            </div>
+            <div className="block whitespace-pre-wrap xl:max-w-[865px]">
+              {t("modulesPopupProfilesContent04")}
+            </div>
+          </>
+        ),
+        mobileContent: (
+          <>
+            <span className="mt-[24px] block whitespace-pre-wrap">
+              {t("modulesPopupProfilesContent01")}
+            </span>
+            <span className="mt-[24px] md:mt-[32px] block whitespace-pre-wrap">
+              {t("modulesPopupProfilesContent02")}
+            </span>
+            <div className="ml-[22px] md:ml-[30px]">
+              <ul className="list-disc p-0">
+                <li>{t("modulesPopupProfilesContent03a")}</li>
+                <li>{t("modulesPopupProfilesContent03b")}</li>
+              </ul>
+            </div>
+            <span className="mt-[24px] md:mt-[32px] block whitespace-pre-wrap">
+              {t("modulesPopupProfilesContent04")}
+            </span>
+          </>
+        ),
+      },
+      {
+        id: 2,
+        title: "modulesButton02",
+        popupTitle: "modulesPopupTitle",
+        popupSubtitle: "modulesPopupSubtitle02",
+        position:
+          "xl:top-[405px] xl:left-[461px] lg:top-[290px] lg:left-[135px] md:top-[330px] md:left-[80px] top-[220px] left-[0px]",
+        size: "md:w-[162px] md:h-[162px] w-[106px] h-[106px]",
+        hoverSize: "md:w-[192px] md:h-[204px] w-[126px] h-[133px]",
+        smallText: true,
+        animationDelay: "lg:animation-delay-900",
+        image: "modules-button-02.png",
+        desktopContent: (
+          <>
+            <div className="lg:mb-[40px] block whitespace-pre-wrap xl:max-w-[865px]">
+              {t("modulesPopupRelationshipsContent01")}
+            </div>
+            <div className="block lg:mb-[16px] whitespace-pre-wrap xl:max-w-[865px]">
+              {t("modulesPopupRelationshipsContent02")}
+            </div>
+          </>
+        ),
+        mobileContent: (
+          <>
+            <span className="mt-[24px] block whitespace-pre-wrap">
+              {t("modulesPopupRelationshipsContent01")}
+            </span>
+            <span className="mt-[24px] md:mt-[32px] block whitespace-pre-wrap">
+              {t("modulesPopupRelationshipsContent02")}
+            </span>
+          </>
+        ),
+      },
+      {
+        id: 3,
+        title: "modulesButton03",
+        popupTitle: "modulesPopupTitle",
+        popupSubtitle: "modulesPopupSubtitle03",
+        position:
+          "xl:top-[300px] xl:left-[755px] lg:top-[180px] lg:left-[442px] md:top-[200px] md:left-[270px] top-[150px] left-[111px]",
+        size: "md:w-[113px] md:h-[113px] w-[74px] h-[74px]",
+        hoverSize: "md:w-[134px] md:h-[142px] w-[88px] h-[93px]",
+        smallText: false,
+        animationDelay: "lg:animation1-delay-1500",
+        image: "modules-button-03.png",
+        desktopContent: (
+          <>
+            <div className="lg:mb-[40px] block whitespace-pre-wrap xl:max-w-[865px]">
+              {t("modulesPopupReportsContent01")}
+            </div>
+            <div className="block lg:mb-[16px] whitespace-pre-wrap xl:max-w-[865px]">
+              {t("modulesPopupReportsContent02")}
+            </div>
+          </>
+        ),
+        mobileContent: (
+          <>
+            <span className="mt-[24px] block whitespace-pre-wrap">
+              {t("modulesPopupReportsContent01")}
+            </span>
+            <span className="mt-[24px] md:mt-[32px] block whitespace-pre-wrap">
+              {t("modulesPopupReportsContent02")}
+            </span>
+          </>
+        ),
+      },
+      {
+        id: 4,
+        title: "modulesButton04",
+        popupTitle: "modulesPopupTitle",
+        popupSubtitle: "modulesPopupSubtitle04",
+        position:
+          "xl:top-[400px] xl:left-[954px] lg:top-[290px] lg:left-[655px] md:top-[355px] md:left-[350px] top-[240px] left-[170px]",
+        size: "md:w-[113px] md:h-[113px] w-[74px] h-[74px]",
+        hoverSize: "md:w-[134px] md:h-[142px] w-[88px] h-[93px]",
+        smallText: false,
+        animationDelay: "lg:animation-delay-4000",
+        image: "modules-button-04.png",
+        desktopContent: (
+          <>
+            <div className="lg:mb-[40px] block whitespace-pre-wrap xl:max-w-[865px]">
+              {t("modulesPopupPostsContent01")}
+            </div>
+          </>
+        ),
+        mobileContent: (
+          <>
+            <span className="mt-[24px] block whitespace-pre-wrap">
+              {t("modulesPopupPostsContent01")}
+            </span>
+          </>
+        ),
+      },
+      {
+        id: 5,
+        title: "modulesButton05",
+        popupTitle: "modulesPopupTitle",
+        popupSubtitle: "modulesPopupSubtitle05",
+        position:
+          "xl:top-[200px] xl:left-[1049px] lg:top-[90px] lg:left-[765px] md:top-[220px] md:left-[480px] top-[145px] left-[241px]",
+        size: "md:w-[131px] md:h-[131px] w-[86px] h-[86px]",
+        hoverSize: "md:w-[155px] md:h-[165px] w-[102px] h-[108px]",
+        smallText: true,
+        animationDelay: "",
+        image: "modules-button-05.png",
+        desktopContent: (
+          <>
+            <div className="lg:mb-[40px] block whitespace-pre-wrap xl:max-w-[865px]">
+              {t("modulesPopupSubspacesContent01")}
+            </div>
+            <div className="block lg:mb-[16px] whitespace-pre-wrap xl:max-w-[865px]">
+              {t("modulesPopupSubspacesContent02")}
+            </div>
+            <div className="lg:mb-[16px] md:ml-[30px] xl:max-w-[865px] lg:leading-[27px]">
+              <ul className="list-disc">
+                <li>{t("modulesPopupSubspacesContent03")}</li>
+                <li>{t("modulesPopupSubspacesContent04")}</li>
+              </ul>
+            </div>
+            <div className="block whitespace-pre-wrap xl:max-w-[865px]">
+              {t("modulesPopupSubspacesContent05")}
+            </div>
+          </>
+        ),
+        mobileContent: (
+          <>
+            <span className="mt-[24px] block whitespace-pre-wrap">
+              {t("modulesPopupSubspacesContent01")}
+            </span>
+            <span className="mt-[24px] md:mt-[32px] block whitespace-pre-wrap">
+              {t("modulesPopupSubspacesContent02")}
+            </span>
+            <div className="ml-[22px] md:ml-[30px]">
+              <ul className="list-disc p-0">
+                <li>{t("modulesPopupSubspacesContent03")}</li>
+                <li>{t("modulesPopupSubspacesContent04")}</li>
+              </ul>
+            </div>
+            <span className="mt-[24px] md:mt-[32px] block whitespace-pre-wrap">
+              {t("modulesPopupSubspacesContent05")}
+            </span>
+          </>
+        ),
+      },
+      {
+        id: 6,
+        title: "modulesButton06",
+        popupTitle: "modulesPopupTitle",
+        popupSubtitle: "modulesPopupSubtitle06",
+        position:
+          "xl:top-[520px] xl:left-[1150px] lg:top-[370px] lg:left-[855px] md:top-[530px] md:left-[420px] top-[355px] left-[221px]",
+        size: "md:w-[131px] md:h-[131px] w-[92px] h-[92px]",
+        hoverSize: "md:w-[155px] md:h-[165px] w-[102px] h-[108px]",
+        smallText: false,
+        animationDelay: "lg:animation-delay-1300",
+        image: "modules-button-06.png",
+        desktopContent: (
+          <>
+            <div className="lg:mb-[40px] block whitespace-pre-wrap xl:max-w-[865px]">
+              {t("modulesPopupReactionsContent01")}
+            </div>
+          </>
+        ),
+        mobileContent: (
+          <>
+            <span className="mt-[24px] block whitespace-pre-wrap">
+              {t("modulesPopupReactionsContent01")}
+            </span>
+          </>
+        ),
+      },
+    ]
+  }, [t])
+
+  const nextButtons = useMemo(() => {
+    return [
+      {
+        nextPopupSubtitle: "modulesPopupSubtitle03",
+      },
+      {
+        nextPopupSubtitle: "modulesPopupSubtitle04",
+      },
+      {
+        nextPopupSubtitle: "modulesPopupSubtitle05",
+      },
+      {
+        nextPopupSubtitle: "modulesPopupSubtitle06",
+      },
+      {
+        nextPopupSubtitle: "modulesPopupSubtitle01",
+      },
+      {
+        nextPopupSubtitle: "modulesPopupSubtitle02",
+      },
+    ]
+  }, [])
+
   const lastIndex = nextButtons.length - 1
 
-  const slides = (index) => {
-    return (
-      <>
-        <PopupSlider
-          lastIndex={lastIndex}
-          nextButtons={nextButtons}
-          index={index}
-          slide={buttons.map((button) => {
-            return (
-              <SlideLayout
-                title={button.popupTitle}
-                subtitle={button.popupSubtitle}
-                desktopContent={button.desktopContent}
-                mobileContent={button.mobileContent}
-                image={button.image}
-              />
-            )
-          })}
-        />
-      </>
-    )
-  }
+  const createSlides = useCallback(
+    (index: number) => {
+      return (
+        <>
+          <PopupSlider
+            lastIndex={lastIndex}
+            nextButtons={nextButtons}
+            index={index}
+            slide={buttons.map((button) => {
+              return (
+                <SlideLayout
+                  title={button.popupTitle}
+                  subtitle={button.popupSubtitle}
+                  desktopContent={button.desktopContent}
+                  mobileContent={button.mobileContent}
+                  image={button.image}
+                />
+              )
+            })}
+          />
+        </>
+      )
+    },
+    [buttons, lastIndex, nextButtons]
+  )
 
   return (
     <SectionLayout
@@ -309,7 +319,7 @@ export default function ModulesSection() {
                       hoverSize={button.hoverSize}
                     />
                   }
-                  popupContent={slides(button.id - 1, button)}
+                  popupContent={createSlides(button.id - 1)}
                   closeText={"modulecloseText"}
                 />
               )
@@ -675,3 +685,5 @@ export default function ModulesSection() {
     </SectionLayout>
   )
 }
+
+export default ModulesSection

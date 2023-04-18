@@ -7,7 +7,7 @@ import CompleteToolkitButton from "@/components/CompleteToolkitButton"
 import OrangeButton from "@/components/OrangeButton"
 import CenteredContentLayout from "@/layouts/CenteredContentLayout"
 
-export default function CompleteToolkitSection() {
+const CompleteToolkitSection = () => {
   const { t } = useTranslation("index")
   const buttons = [
     {
@@ -131,7 +131,7 @@ export default function CompleteToolkitSection() {
   ]
   const lastIndex = nextButtons.length - 1
 
-  const slides = (index) => {
+  const slides = (index: number) => {
     return (
       <>
         <PopupSlider
@@ -217,3 +217,5 @@ export default function CompleteToolkitSection() {
     </SectionLayout>
   )
 }
+
+export default CompleteToolkitSection

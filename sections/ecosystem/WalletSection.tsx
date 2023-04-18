@@ -1,7 +1,8 @@
+import React from "react"
 import { useTranslation } from "next-i18next"
 import LinkCardButton from "@/components/LinkCardButton"
 
-export default function WalletsSection() {
+const WalletsSection = () => {
   const { t } = useTranslation("ecosystem")
   const buttons = [
     {
@@ -63,3 +64,5 @@ export default function WalletsSection() {
     </div>
   )
 }
+
+export default WalletsSection

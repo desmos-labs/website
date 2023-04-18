@@ -1,11 +1,11 @@
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import MainLayout from "@/layouts/MainLayout"
-import BannerSection from "@/sections/university-program/banner"
-import DescriptionSection from "@/sections/university-program/description"
-import OurOfferingsSection from "@/sections/university-program/ourOfferings"
-import EligibilitySection from "@/sections/university-program/eligibility"
-import GetInTouchSection from "@/sections/university-program/getInTouch"
+import BannerSection from "@/sections/university-program/BannerSection"
+import DescriptionSection from "@/sections/university-program/DescriptionSection"
+import OurOfferingsSection from "@/sections/university-program/OurOfferingsSection"
+import EligibilitySection from "@/sections/university-program/EligibilitySection"
+import GetInTouchSection from "@/sections/university-program/GetInTouchSection"
 
 export const getStaticProps = async ({ locale }) => ({
   props: {

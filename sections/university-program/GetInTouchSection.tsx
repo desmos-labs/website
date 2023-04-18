@@ -1,8 +1,9 @@
+import React from "react"
 import { useTranslation } from "next-i18next"
 import OrangeButton from "@/components/OrangeButton"
 import CenteredContentLayout from "@/layouts/CenteredContentLayout"
 
-export default function GetInTouchSection() {
+const GetInTouchSection = () => {
   const { t } = useTranslation("university-program")
 
   return (
@@ -30,3 +31,5 @@ export default function GetInTouchSection() {
     </div>
   )
 }
+
+export default GetInTouchSection

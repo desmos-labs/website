@@ -1,7 +1,9 @@
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
+import imgOffering from "@/public/ourOfferings.png"
+import Image from "next/image"
 
-export default function OurOfferingsSection() {
+const OurOfferingsSection = () => {
   const { t } = useTranslation("university-program")
 
   return (
@@ -9,7 +11,7 @@ export default function OurOfferingsSection() {
       <div className="md:grid md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-6 mt-[38px] md:mt-[45px] lg:mt-[99px] xl:mt-[86px]">
         <div className="grid grid-cols-2 lg:grid-cols-1 md:hidden lg:grid lg:col-span-2 xl:col-span-3 justify-items-center flex items-center lg:items-start md:pr-8">
           <div className="block md:hidden"></div>
-          <img src="/ourOfferings.png" />
+          <Image src={imgOffering} alt="Bakcground" />
         </div>
         <div className="md:col-span-3 xl:pl-16">
           <h2 className="md:tracking-normal tracking-[.005em] font-semibold text-desmos-primary whitespace-pre-wrap text-[24px] md:text-[32px] lg:text-[40px] leading-[36px] md:leading-[48px] lg:leading-[60px]">
@@ -25,9 +27,11 @@ export default function OurOfferingsSection() {
           </div>
         </div>
         <div className="lg:hidden md:grid md:col-span-2 hidden justify-items-center flex items-center pl-8">
-          <img src="/ourOfferings.png" />
+          <Image src={imgOffering} alt="Bakcground" />
         </div>
       </div>
     </SectionLayout>
   )
 }
+
+export default OurOfferingsSection

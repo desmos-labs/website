@@ -1,9 +1,15 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import OrangeButton from "@/components/OrangeButton"
 import CenteredContentLayout from "@/layouts/CenteredContentLayout"
+import imgUniversity from "@/public/university-desmos.png"
+import imgHillLg from "@/public/hill-program.png"
+import imgHillMd from "@/public/hill-university-768.png"
+import imgHillSm from "@/public/hill-program-mobile.png"
+import Image from "next/image"
 
-export default function BannerSection() {
+const BannerSection = () => {
   const { t } = useTranslation("university-program")
 
   return (
@@ -31,17 +37,20 @@ export default function BannerSection() {
           />
         </div>
         <div className="lg:hidden absolute bottom-48 md:left-20 w-[319px] md:w-auto">
-          <img src="university-desmos.png" />
+          <Image src={imgUniversity} alt="Background" />
         </div>
         <div className="absolute bottom-0 left-0 w-full">
-          <img className="hidden lg:block" src="hill-program.png" />
-          <img
+          <Image className="hidden lg:block" src={imgHillLg} alt="Icon" />
+          <Image
             className="lg:hidden md:block hidden min-w-full"
-            src="hill-university-768.png"
+            src={imgHillMd}
+            alt="Icon"
           />
-          <img className="md:hidden min-w-full" src="hill-program-mobile.png" />
+          <Image className="md:hidden min-w-full" src={imgHillSm} alt="Icon" />
         </div>
       </CenteredContentLayout>
     </SectionLayout>
   )
 }
+
+export default BannerSection

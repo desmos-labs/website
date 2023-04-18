@@ -2,10 +2,10 @@ import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import MainLayout from "@/layouts/MainLayout"
 import SectionLayout from "@/layouts/SectionLayout"
-import ApplicationsSection from "@/sections/ecosystem/applications"
-import WalletsSection from "@/sections/ecosystem/wallets"
-import TheSDKSection from "@/sections/ecosystem/theSDK"
-import OurChainSection from "@/sections/ecosystem/ourChain"
+import ApplicationsSection from "@/sections/ecosystem/ApplicationsSection"
+import WalletsSection from "@/sections/ecosystem/WalletSection"
+import SDKSection from "@/sections/ecosystem/SDKSection"
+import OurChainSection from "@/sections/ecosystem/OurChainSection"
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
@@ -32,7 +32,7 @@ function Ecosystem() {
           </p>
           <ApplicationsSection />
           <WalletsSection />
-          <TheSDKSection />
+          <SDKSection />
           <OurChainSection />
         </div>
       </SectionLayout>

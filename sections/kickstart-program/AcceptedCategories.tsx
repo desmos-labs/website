@@ -1,8 +1,9 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import OrangeButton from "@/components/OrangeButton"
 
-export default function AcceptCategoriesSection() {
+const AcceptCategoriesSection = () => {
   const { t } = useTranslation("kickstart-program")
 
   return (
@@ -81,3 +82,5 @@ export default function AcceptCategoriesSection() {
     </SectionLayout>
   )
 }
+
+export default AcceptCategoriesSection

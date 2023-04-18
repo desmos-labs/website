@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export interface GreyCardProps {
   readonly cardTitle: string
-  readonly cardDescription: string
+  readonly cardDescription: React.ReactNode
   readonly imagePath: string
   readonly imageText: string
 }

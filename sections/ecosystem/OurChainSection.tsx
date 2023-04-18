@@ -1,8 +1,8 @@
-import SectionLayout from "@/layouts/SectionLayout"
+import React from "react"
 import { useTranslation } from "next-i18next"
 import LinkButton from "@/components/LinkButton"
 
-export default function OurChainSection() {
+const OurChainSection = () => {
   const { t } = useTranslation("ecosystem")
   const buttons = [
     {
@@ -50,3 +50,5 @@ export default function OurChainSection() {
     </div>
   )
 }
+
+export default OurChainSection

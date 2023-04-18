@@ -1,8 +1,9 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import GreyCard from "@/components/GreyCard"
 
-export default function HowItWorksSection() {
+const HowItWorksSection = () => {
   const { t } = useTranslation("kickstart-program")
 
   return (
@@ -51,3 +52,5 @@ export default function HowItWorksSection() {
     </SectionLayout>
   )
 }
+
+export default HowItWorksSection

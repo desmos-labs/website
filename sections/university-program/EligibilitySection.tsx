@@ -1,7 +1,10 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
+import Image from "next/image"
+import imgEligibility from "@/public/eligibility.png"
 
-export default function EligibilitySection() {
+const EligibilitySection = () => {
   const { t } = useTranslation("university-program")
 
   return (
@@ -9,7 +12,7 @@ export default function EligibilitySection() {
       <div className="md:grid md:grid-cols-5 xl:grid-cols-6 mt-[38px] md:mt-[45px] lg:mt-[99px] xl:mt-[86px]">
         <div className="md:hidden grid grid-cols-2 mb-[60px]">
           <div></div>
-          <img src="/eligibility.png" />
+          <Image src={imgEligibility} alt="Icon" />
         </div>
         <div className="md:col-span-3 xl:pr-16 lg:pr-8">
           <h2 className="md:tracking-normal tracking-[.005em] font-semibold text-desmos-primary text-[24px] md:text-[32px] lg:text-[40px] leading-[36px] md:leading-[48px] lg:leading-[60px]">
@@ -35,9 +38,11 @@ export default function EligibilitySection() {
           </div>
         </div>
         <div className="hidden md:grid md:col-span-2 xl:col-span-3 justify-items-center flex items-center lg:items-start md:pl-8">
-          <img src="/eligibility.png" />
+          <Image src={imgEligibility} alt="Icon" />
         </div>
       </div>
     </SectionLayout>
   )
 }
+
+export default EligibilitySection

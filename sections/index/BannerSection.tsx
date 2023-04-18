@@ -1,9 +1,10 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import OrangeButton from "@/components/OrangeButton"
 import CenteredContentLayout from "@/layouts/CenteredContentLayout"
 
-export default function BannerSection() {
+const BannerSection = () => {
   const { t } = useTranslation("index")
 
   return (
@@ -21,7 +22,7 @@ export default function BannerSection() {
       }}
       fullScreenHeightOption="always"
     >
-      {/* We should put the content at center, instead of using padding-top to adjust the vertical position*/}
+      {/* We should put the content at center, instead of using padding-top to adjust the vertical position */}
       <CenteredContentLayout>
         <div className="flex flex-col items-center text-desmos-white-Default text-center">
           <h1 className="xl:text-[88px] lg:text-[80px] md:text-[56px] text-[44px] lg:leading-[116px] md:leading-[84px] leading-[66px] -tracking-[.015em] font-bold">
@@ -49,3 +50,5 @@ export default function BannerSection() {
     </SectionLayout>
   )
 }
+
+export default BannerSection

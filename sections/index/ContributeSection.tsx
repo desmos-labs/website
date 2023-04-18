@@ -1,17 +1,18 @@
+import React from "react"
 import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import OrangeButton from "@/components/OrangeButton"
 import VideoWithPlaceholder from "@/components/VideoWithPlaceholder"
 
-export default function ContributeSection() {
+const ContributeSection = () => {
   const { t } = useTranslation("index")
 
   return (
     <SectionLayout
       contentBackground={{
         image: "md:bg-gradient-orange-tablet lg:bg-none",
+        isFullScreenWidth: false,
       }}
-      isFullScreen={{ inWidth: false, inHeight: true }}
       fullScreenHeightOption="onlyDesktop"
     >
       <div className="lg:grid lg:grid-cols-5 xl:grid-cols-7">
@@ -62,3 +63,5 @@ export default function ContributeSection() {
     </SectionLayout>
   )
 }
+
+export default ContributeSection
