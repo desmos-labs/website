@@ -3,6 +3,8 @@ import SectionLayout from "@/layouts/SectionLayout"
 import { useTranslation } from "next-i18next"
 import CenteredContentLayout from "@/layouts/CenteredContentLayout"
 import NavbarLinkButton from "@/components/NavbarLinkButton"
+import imgNet from "@/public/net.webp"
+import Image from "next/image"
 
 const CosmWasmSection = () => {
   const { t } = useTranslation("index")
@@ -57,7 +59,7 @@ const CosmWasmSection = () => {
             />
           </div>
           <div className="hidden lg:block lg:basis-1/4">
-            <img src="/net.webp" alt="CosmWasm" />
+            <Image src={imgNet} alt="CosmWasm" />
           </div>
         </div>
       </CenteredContentLayout>
