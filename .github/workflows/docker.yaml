@@ -52,6 +52,10 @@ jobs:
         with:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.prep.outputs.tags }}
+          build-args: |
+            HOSTNAME=desmos.network
+            MATOMO_URL=${{ secrets.MATOMO_URL }}
+            MATOMO_SITE_ID=${{ secrets.MATOMO_SITE_ID }}
           labels: |
             org.opencontainers.image.source=${{ github.event.repository.html_url }}
             org.opencontainers.image.created=${{ steps.prep.outputs.created }}
