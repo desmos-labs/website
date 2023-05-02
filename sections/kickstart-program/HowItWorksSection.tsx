@@ -21,7 +21,7 @@ const HowItWorksSection = () => {
               {t("howItWorksCardDescription01a")}{" "}
               <a
                 className="text-[#FF9575] hover:text-[#F3725A]"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSent5pknHfLVjHpMvF6_DsR8JKQnTwqzyi3yYXxF5l-kpFngQ/viewform"
+                href="https://forms.gle/GK6jH5bRR5RA4qF99"
                 target="_blank"
               >
                 {t("howItWorksCardDescription01b")}

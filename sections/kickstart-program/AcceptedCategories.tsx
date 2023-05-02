@@ -71,9 +71,7 @@ const AcceptCategoriesSection = () => {
         <div className="xl:mt-12 mt-10">
           <OrangeButton
             buttonText={t("acceptedCategoriesButton")}
-            buttonLink={
-              "https://docs.google.com/forms/d/e/1FAIpQLSent5pknHfLVjHpMvF6_DsR8JKQnTwqzyi3yYXxF5l-kpFngQ/viewform"
-            }
+            buttonLink={"https://forms.gle/GK6jH5bRR5RA4qF99"}
             buttonMargin=""
             buttonPadding="px-8 py-2.5"
           />

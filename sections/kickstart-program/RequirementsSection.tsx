@@ -42,9 +42,7 @@ const RequirementsSection = () => {
         <div className="flex flex-col items-center xl:mt-32 md:mt-20 mt-10">
           <OrangeButton
             buttonText={t("requirementsButton")}
-            buttonLink={
-              "https://docs.google.com/forms/d/e/1FAIpQLSent5pknHfLVjHpMvF6_DsR8JKQnTwqzyi3yYXxF5l-kpFngQ/viewform"
-            }
+            buttonLink={"https://forms.gle/GK6jH5bRR5RA4qF99"}
             buttonMargin=""
             buttonPadding="px-8 py-2.5"
           />
