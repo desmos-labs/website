@@ -29,14 +29,14 @@ const MainLayout = (props: MainLayoutProps) => {
     setIsHydrated(true)
   }, [])
 
-  useEffect(() => {
-    handleScroll()
-  }, [isBreakpointReady])
-
   const handleScroll = () => {
     const currentScrollPos = window.scrollY
     setNavbarBgVisible(currentScrollPos > 10 || isMobile)
   }
+
+  useEffect(() => {
+    handleScroll()
+  }, [isBreakpointReady])
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll)
@@ -62,7 +62,6 @@ const MainLayout = (props: MainLayoutProps) => {
         pageRoute={pageRoute}
       />
       {/* Main content */}
-      isHydrated && (
       <>
         <div className={`relative mx-auto w-full min-w-[375px]`}>
           <div
@@ -77,16 +76,12 @@ const MainLayout = (props: MainLayoutProps) => {
           <main className="w-full">{children}</main>
           <div
             className={`relative w-full ${
-              footerBackground
-                ? footerBackground
-                : "bg-desmos-background-primary"
+              footerBackground || "bg-desmos-background-primary"
             } bg-no-repeat`}
           >
             <div
               className={`relative left-1/2 -translate-x-1/2 w-full min-w-[375px] max-w-[1920px] ${
-                footerBackground
-                  ? footerBackground
-                  : "bg-desmos-background-primary"
+                footerBackground || "bg-desmos-background-primary"
               } bg-no-repeat`}
             >
               <Footer />

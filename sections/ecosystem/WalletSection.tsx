@@ -10,7 +10,8 @@ const WalletsSection = () => {
       title: "walletsButtonTitle01",
       image: "/DPM.png",
       content: "walletsButtonContent01",
-      link: "https://dpm.desmos.network/",
+      link: "/dpm",
+      isExternal: true,
     },
     {
       id: 2,
@@ -56,6 +57,7 @@ const WalletsSection = () => {
                 title={button.title}
                 content={button.content}
                 link={button.link}
+                isExternal={button.isExternal}
               />
             </div>
           )

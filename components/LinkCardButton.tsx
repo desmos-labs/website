@@ -1,20 +1,22 @@
-import React from "react"
+import React, { useMemo } from "react"
 import { useTranslation } from "next-i18next"
 import Image from "next/image"
+import Link from "next/link"
 
 export interface LinkCardButtonProps {
   readonly image: string
   readonly title: string
   readonly content: string
   readonly link: string
+  readonly isExternal?: boolean
 }
 
 const LinkCardButton = (props: LinkCardButtonProps) => {
-  const { image, title, content, link } = props
+  const { image, title, content, link, isExternal } = props
   const { t } = useTranslation("ecosystem")
 
-  return (
-    <a href={link} target="_blank">
+  const buttonContent = useMemo(() => {
+    return (
       <div className="hover-gradient-shadow rounded-[8px] bg-[#141419] relative hover:cursor-pointer">
         <div className="w-full md:h-[385px] lg:h-[460px] xl:h-[424px] bg-[#7D747433] rounded-[8px] px-[20px] py-[40px] lg:px-[24px] lg:py-[48px]">
           <Image
@@ -33,6 +35,14 @@ const LinkCardButton = (props: LinkCardButtonProps) => {
           </div>
         </div>
       </div>
+    )
+  }, [content, image, t, title])
+
+  return isExternal ? (
+    <Link href={link}>{buttonContent}</Link>
+  ) : (
+    <a href={link} target="_blank">
+      {buttonContent}
     </a>
   )
 }
