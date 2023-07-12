@@ -2,12 +2,12 @@ import React from "react"
 import Link from "next/link"
 
 export interface FooterProps {
-  readonly privacyPathOverride?: string
+  readonly ppPathOverride?: string
   readonly tosPathOverride?: string
 }
 
 const Footer = (props: FooterProps) => {
-  const { privacyPathOverride, tosPathOverride } = props
+  const { ppPathOverride, tosPathOverride } = props
 
   return (
     <div className="flex flex-col md:gap-6 gap-3 py-12 px-xMobile md:px-xMd lg:px-xLg xl:px-xXl">
@@ -18,14 +18,14 @@ const Footer = (props: FooterProps) => {
           </span>
           <Link
             className="md:inline-block text-desmos-white-Default lg:px-6 md:leading-[21px] leading-[40px]"
-            href={tosPathOverride || "/terms"}
+            href={tosPathOverride || "/terms-and-conditions"}
           >
             Terms & Conditions
           </Link>
           <span className="hidden lg:inline-block">|</span>
           <Link
             className="md:inline-block block text-desmos-white-Default px-6 md:leading-[21px] leading-[40px]"
-            href={privacyPathOverride || "/privacy"}
+            href={ppPathOverride || "/terms-and-conditions"}
           >
             Privacy Policy
           </Link>
