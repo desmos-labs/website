@@ -1,29 +1,28 @@
 import React from "react"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import NestedList from "@/components/NestedList"
 import MainLayout from "@/layouts/MainLayout"
-import DpmSection from "@/sections/dpm/DpmSection"
+import { PPContent } from "@/pages/privacy-policy"
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["dpm", "common"])),
+    ...(await serverSideTranslations(locale, ["privacy-policy-dpm", "common"])),
   },
 })
 
-const Dpm = () => {
-  const { t } = useTranslation("dpm")
+const PrivacyPolicyDPM = () => {
+  const { t } = useTranslation("privacy-policy-dpm")
 
   return (
     <MainLayout
       title={t("pageTitle")}
       description={t("pageDescription")}
-      pageRoute="/dpm"
-      ppPathOverride={"/privacy-policy-dpm"}
-      tosPathOverride={"/terms-and-conditions-dpm"}
+      pageRoute="/privacy-policy-dpm"
     >
-      <DpmSection />
+      <NestedList content={PPContent} t={t} />
     </MainLayout>
   )
 }
 
-export default Dpm
+export default PrivacyPolicyDPM

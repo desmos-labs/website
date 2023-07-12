@@ -50,7 +50,7 @@ const WalletsSection = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:gap-[24px] md:gap-[18px] gap-4 mt-[16px] md:mt-[24px] xl:max-w-[1407px]">
         {buttons.map((button) => {
           return (
-            <div className="md:col-span-1">
+            <div className="md:col-span-1" key={button.id}>
               <LinkCardButton
                 key={button.id}
                 image={button.image}
