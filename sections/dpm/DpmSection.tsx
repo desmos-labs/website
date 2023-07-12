@@ -4,7 +4,6 @@ import Image from "next/image"
 import dpmHandAndPhone from "@/public/dpmHandAndPhone.png"
 import dpmIOSBanner from "@/public/dpmIOSBanner.png"
 import dpmGooglePlayBanner from "@/public/dpmGooglePlayBanner.png"
-import StoreButton from "@/components/DPM/StoreButton"
 
 const DpmSection = () => {
   const { t } = useTranslation("dpm")
@@ -17,36 +16,24 @@ const DpmSection = () => {
           alt="Hand"
           priority={true}
         />
-
         <div className="md:max-w-[600px] lg:max-w-[600px] lg:ml-[100px] xl:max-w-[1047px]">
           <h2 className="md:tracking-[0.0015em] tracking-[-0.015em] font-semibold text-[44px] md:text-[56px] text-desmos-black-light mb-[32px] break-after-column">
             {t("dpmPageTitle")}
           </h2>
-          <div className="tracking-[0.03px] font-[400] text-desmos-black-light text-[14px] md:text-[20px] ">
-            <Trans
-              i18nKey={"pageDescription"}
-              t={t}
-              components={{
-                bold: <span className="font-[600]" />,
-              }}
-            />
-          </div>
-
+          <p className="md:tracking-[0.0015em] tracking-[-0.015em] text-desmos-black-light text-[14px] md:text-[20px] ">
+            {t("pageDescription")}
+          </p>
           <div className="hidden lg:flex lg:flex-1 lg:flex-row lg:mt-[46px]">
-            <StoreButton
-              buttonClass={"w-[203px] h-[60px]"}
-              buttonAlt={"IOS Download"}
-              buttonImage={dpmIOSBanner}
-              buttonLink={"https://apps.apple.com/us/app/brows/id1593594950"}
+            <Image
+              className="w-[203px] h-[60px]"
+              src={dpmIOSBanner}
+              alt="IOS Download"
             />
             <div className="pb-[26px] md:pr-[24px]" />
-            <StoreButton
-              buttonClass={"w-[203px] h-[60px]"}
-              buttonAlt={"Google Play Download"}
-              buttonImage={dpmGooglePlayBanner}
-              buttonLink={
-                "https://play.google.com/store/apps/details?id=network.desmos.dpm"
-              }
+            <Image
+              className="w-[203px] h-[60px]"
+              src={dpmGooglePlayBanner}
+              alt="Google Play Download"
             />
           </div>
         </div>
@@ -60,20 +47,16 @@ const DpmSection = () => {
       <div className="flex flex-1 items-center flex-col lg:hidden">
         <Image className="md:hidden" src={dpmHandAndPhone} alt="Hand" />
         <div className="pb-20 pt-[28px] md:flex flex-1 flex-row">
-          <StoreButton
-            buttonClass={"w-[180px]  md:w-[203px] md:h-[60px]"}
-            buttonAlt={"IOS Download"}
-            buttonImage={dpmIOSBanner}
-            buttonLink={"https://apps.apple.com/us/app/brows/id1593594950"}
+          <Image
+            className="w-[180px]  md:w-[203px] md:h-[60px]"
+            src={dpmIOSBanner}
+            alt="IOS Download"
           />
           <div className="pb-[26px] md:pr-[24px]" />
-          <StoreButton
-            buttonClass={"w-[180px] md:w-[203px] md:h-[60px]"}
-            buttonAlt={"Google Play Download"}
-            buttonImage={dpmGooglePlayBanner}
-            buttonLink={
-              "https://play.google.com/store/apps/details?id=network.desmos.dpm"
-            }
+          <Image
+            className="w-[180px] md:w-[203px] md:h-[60px]"
+            src={dpmGooglePlayBanner}
+            alt="Google Play Download"
           />
         </div>
       </div>
