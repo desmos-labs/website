@@ -4,6 +4,7 @@ import Image from "next/image"
 import dpmHandAndPhone from "@/public/dpmHandAndPhone.png"
 import dpmIOSBanner from "@/public/dpmIOSBanner.png"
 import dpmGooglePlayBanner from "@/public/dpmGooglePlayBanner.png"
+import StoreButton from "@/components/DPM/StoreButton"
 
 const DpmSection = () => {
   const { t } = useTranslation("dpm")
@@ -32,29 +33,21 @@ const DpmSection = () => {
           </div>
 
           <div className="hidden lg:flex lg:flex-1 lg:flex-row lg:mt-[46px]">
-            <a
-              href={"https://apps.apple.com/us/app/brows/id1593594950"}
-              target="_blank"
-            >
-              <Image
-                className="w-[203px] h-[60px]"
-                src={dpmIOSBanner}
-                alt="IOS Download"
-              />
-            </a>
+            <StoreButton
+              buttonClass={"w-[203px] h-[60px]"}
+              buttonAlt={"IOS Download"}
+              buttonImage={dpmIOSBanner}
+              buttonLink={"https://apps.apple.com/us/app/brows/id1593594950"}
+            />
             <div className="pb-[26px] md:pr-[24px]" />
-            <a
-              href={
+            <StoreButton
+              buttonClass={"w-[203px] h-[60px]"}
+              buttonAlt={"Google Play Download"}
+              buttonImage={dpmGooglePlayBanner}
+              buttonLink={
                 "https://play.google.com/store/apps/details?id=network.desmos.dpm"
               }
-              target="_blank"
-            >
-              <Image
-                className="w-[203px] h-[60px]"
-                src={dpmGooglePlayBanner}
-                alt="Google Play Download"
-              />
-            </a>
+            />
           </div>
         </div>
         <Image
@@ -67,30 +60,21 @@ const DpmSection = () => {
       <div className="flex flex-1 items-center flex-col lg:hidden">
         <Image className="md:hidden" src={dpmHandAndPhone} alt="Hand" />
         <div className="pb-20 pt-[28px] md:flex flex-1 flex-row">
-          <a
-            href={"https://apps.apple.com/us/app/brows/id1593594950"}
-            target={"_blank"}
-          >
-            <Image
-              className="w-[180px]  md:w-[203px] md:h-[60px]"
-              src={dpmIOSBanner}
-              alt="IOS Download"
-            />
-          </a>
-
+          <StoreButton
+            buttonClass={"w-[180px]  md:w-[203px] md:h-[60px]"}
+            buttonAlt={"IOS Download"}
+            buttonImage={dpmIOSBanner}
+            buttonLink={"https://apps.apple.com/us/app/brows/id1593594950"}
+          />
           <div className="pb-[26px] md:pr-[24px]" />
-          <a
-            href={
+          <StoreButton
+            buttonClass={"w-[180px] md:w-[203px] md:h-[60px]"}
+            buttonAlt={"Google Play Download"}
+            buttonImage={dpmGooglePlayBanner}
+            buttonLink={
               "https://play.google.com/store/apps/details?id=network.desmos.dpm"
             }
-            target={"_blank"}
-          >
-            <Image
-              className="w-[180px] md:w-[203px] md:h-[60px]"
-              src={dpmGooglePlayBanner}
-              alt="Google Play Download"
-            />
-          </a>
+          />
         </div>
       </div>
     </div>
