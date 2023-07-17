@@ -8,12 +8,6 @@ export interface Content {
    * List of numbered points.
    */
   readonly points?: Content[]
-
-  /**
-   * Footer displayed after the points.
-   * This is only used when a list of points is provided as well.
-   */
-  readonly pointsFooter?: string[]
 }
 
 export interface Section {

@@ -33,59 +33,36 @@ const NestedList = (props: NestedListProps) => {
     [t]
   )
 
-  const getListType = (pointLevel: number) => {
-    return pointLevel % 2 === 0 ? "list-decimal" : "list-roman"
-  }
-
   const mapPoint = useCallback(
-    (pointIndex: number, pointData: Content, pointLevel: number = 1) => {
+    (pointData: Content) => {
       return (
-        <li>
+        <ul>
           {/* Text */}
           {pointData.text &&
             pointData.text?.map((text) => {
-              return <div>{translatedBlock(text)}</div>
+              return <div className="pb-16">{translatedBlock(text)}</div>
             })}
 
           {/* Subpoints */}
-          {pointData.points && (
-            <ul className={`${getListType(pointLevel)} pb-6 pl-10`}>
-              {pointData.points.map((pointContent, index) =>
-                mapPoint(index, pointContent, pointLevel + 1)
-              )}
-            </ul>
-          )}
-        </li>
+          {pointData.points && pointData.points.map(mapPoint)}
+        </ul>
       )
     },
     [translatedBlock]
   )
 
   const mapContent = useCallback(
-    (contentData: Content, _: number = 1) => {
+    (contentData: Content) => {
       return (
-        <div className="pb-2">
+        <div>
           {/* Text */}
           {contentData.text &&
             contentData.text?.map((text) => {
-              return <p className="p-0">{translatedBlock(text)}</p>
+              return <div className="pb-16">{translatedBlock(text)}</div>
             })}
 
           {/* Points */}
-          {contentData.points && (
-            <ul className={"list-decimal py-2 pl-8"}>
-              {contentData.points.map((pointContent, index) =>
-                mapPoint(index, pointContent, 1)
-              )}
-            </ul>
-          )}
-
-          {/* Points footer */}
-          {contentData.points &&
-            contentData.pointsFooter &&
-            contentData.pointsFooter.map((text) => {
-              return <p className="p-0 pl-4">{translatedBlock(text)}</p>
-            })}
+          {contentData.points && contentData.points.map(mapPoint)}
         </div>
       )
     },
@@ -93,36 +70,24 @@ const NestedList = (props: NestedListProps) => {
   )
 
   const mapSection = useCallback(
-    (sectionData: Section, level: number = 1) => {
+    (sectionData: Section) => {
       return (
-        <div key={sectionData.title}>
+        <div>
           {/* Section title */}
           {sectionData.title && (
-            <div className={`md:pb-${6 - (level - 1)} py-4 md:py-6 lg:pt-12`}>
-              <div className="flex font-semibold">
-                <div className={`flex-none`} />
-                <div
-                  className={`text-[${16 - (level - 1) * 8}px] md:text-[${
-                    26 - (level - 1) * 8
-                  }px]  lg:text-[${32 - (level - 1) * 8}px]`}
-                >
-                  {translatedBlock(sectionData.title)}
-                </div>
+            <div className="pb-8 md:pb-16">
+              <div className="flex text-base md:text-2xl font-semibold leading-6 md:leading-9 tracking-[0.001em] md:tracking-[0.0015em]">
+                <div className="flex-none w-8 md:w-12 before:[counter-increment:section] before:content-[counter(section)'.']" />
+                <div>{translatedBlock(sectionData.title)}</div>
               </div>
             </div>
           )}
 
           {/* Section content */}
-          {sectionData.content &&
-            sectionData.content.map((sectionContent) =>
-              mapContent(sectionContent, level)
-            )}
+          {sectionData.content && sectionData.content.map(mapContent)}
 
           {/* Subsections */}
-          {sectionData.subsections &&
-            sectionData.subsections.map((section) =>
-              mapSection(section, level + 1)
-            )}
+          {sectionData.subsections && sectionData.subsections.map(mapSection)}
         </div>
       )
     },
@@ -137,13 +102,13 @@ const NestedList = (props: NestedListProps) => {
         </h2>
         <div className="text-[12px] md:text-[16px] lg:leading-[29px] md:leading-[22px] tracking-[0.005em] md:pt-[80px] pt-[35px] md:pr-[104px] pr-[79px]">
           {/* Last updated date */}
-          <p className={"pb-8"}>{t(content.date)}</p>
+          <p>{t(content.date)}</p>
 
           {/* Content */}
-          {content.content.map((contentData) => mapContent(contentData, 1))}
+          {content.content.map(mapContent)}
 
           {/* Sections */}
-          {content.sections.map((sectionData) => mapSection(sectionData, 1))}
+          {content.sections.map(mapSection)}
         </div>
       </div>
     </div>
