@@ -33,8 +33,12 @@ const NestedList = (props: NestedListProps) => {
     [t]
   )
 
+  const getListType = (pointLevel: number) => {
+    return pointLevel % 2 === 1 ? "list-decimal" : "list-roman"
+  }
+
   const mapPoint = useCallback(
-    (pointData: Content, pointLevel: number = 1) => {
+    (pointIndex: number, pointData: Content, pointLevel: number = 1) => {
       return (
         <li>
           {/* Text */}
@@ -124,10 +128,10 @@ const NestedList = (props: NestedListProps) => {
           <p className={"pb-8"}>{t(content.date)}</p>
 
           {/* Content */}
-          {content.content.map(mapContent)}
+          {content.content.map((contentData) => mapContent(contentData, 1))}
 
           {/* Sections */}
-          {content.sections.map(mapSection)}
+          {content.sections.map((sectionData) => mapSection(sectionData, 1))}
         </div>
       </div>
     </div>
