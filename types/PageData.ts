@@ -1,43 +1,28 @@
-export interface Content {
-  /**
-   * Paragraphs representing the text of the content.
-   */
-  readonly text?: string[]
+export interface Subpoint {
+  readonly content: JSX.Element | string
+}
 
-  /**
-   * List of numbered points.
-   */
-  readonly points?: Content[]
+export interface Point {
+  readonly content: JSX.Element | string
+  readonly subpoints?: Subpoint[]
+}
+
+export interface Subsection {
+  readonly content?: JSX.Element | string
+  readonly points?: Point[]
+  readonly pointsHeader?: JSX.Element | string
+  readonly pointsFooter?: JSX.Element | string
 }
 
 export interface Section {
-  /**
-   * Title of the section
-   */
   readonly title: string
-
-  /**
-   * Content of this section.
-   */
-  readonly content?: Content[]
-
-  /**
-   * Subsections of this section.
-   */
-  readonly subsections?: Section[]
+  readonly description?: JSX.Element | string
+  readonly subsections?: Subsection[]
 }
 
 export interface PageData {
   readonly title: string
   readonly date: string
-
-  /**
-   * Paragraphs to be displayed before the sections
-   */
-  readonly content: Content[]
-
-  /**
-   * Sections to be displayed
-   */
+  readonly description: JSX.Element | string
   readonly sections: Section[]
 }
