@@ -2,8 +2,6 @@ import React from "react"
 import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import MainLayout from "@/layouts/MainLayout"
-import NestedList from "@/components/NestedList"
-import { PPContent } from "@/pages/privacy-policy"
 import DPMNestedList from "@/components/DPM/DPMNestedList"
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
