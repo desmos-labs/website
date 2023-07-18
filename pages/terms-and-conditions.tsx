@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import NestedList from "@/components/NestedList"
 import MainLayout from "@/layouts/MainLayout"
+import { PageData } from "@/types/PageData"
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -13,392 +14,197 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
   },
 })
 
-export const ToSContent = {
+const tosContent: PageData = {
   title: "pageTitle",
   date: "updatedAt",
-  description: "content",
+  content: [
+    { text: ["content01"] },
+    { text: ["content02"] },
+    { text: ["content03"] },
+  ],
   sections: [
     {
       title: "listTitle01",
-      description: undefined,
-      subsections: [
-        {
-          content: "listContent01a",
-        },
-        {
-          content: "listContent01b",
-        },
-      ],
+      content: [{ text: ["listContent01a"] }, { text: ["listContent01b"] }],
     },
     {
       title: "listTitle02",
-      description: undefined,
-      subsections: [
+      content: [
+        { text: ["listContent02a"] },
         {
-          content: "listContent02a",
-        },
-        {
-          content: "listContent02b",
+          text: ["listContent02b"],
           points: [
-            {
-              content: "listContent02b1",
-            },
-            {
-              content: "listContent02b2",
-            },
+            { text: ["listContent02b1"] },
+            { text: ["listContent02b2"] },
           ],
         },
         {
-          content: "listContent02c",
+          text: ["listContent02c"],
           points: [
-            {
-              content: "listContent02c1",
-            },
-            {
-              content: "listContent02c2",
-            },
+            { text: ["listContent02c1"] },
+            { text: ["listContent02c2"] },
           ],
         },
-        {
-          content: "listContent02d",
-        },
-        {
-          content: "listContent02e",
-        },
-        {
-          content: "listContent02f",
-        },
-        {
-          content: "listContent02g",
-        },
+        { text: ["listContent02d"] },
+        { text: ["listContent02e"] },
+        { text: ["listContent02f"] },
+        { text: ["listContent02g"] },
       ],
     },
     {
       title: "listTitle03",
-      description: "listSubtitle03",
-      subsections: [
+      content: [
+        { text: ["listSubtitle03"] },
+        { text: ["listContent03a"] },
+        { text: ["listContent03b"] },
+        { text: ["listContent03c"] },
+        { text: ["listContent03d"] },
+        { text: ["listContent03e"] },
+        { text: ["listContent03f"] },
+        { text: ["listContent03g"] },
+        { text: ["listContent03h"] },
+        { text: ["listContent03i"] },
+        { text: ["listContent03j"] },
+        { text: ["listContent03k"] },
         {
-          content: "listContent03a",
-        },
-        {
-          content: "listContent03b",
-        },
-        {
-          content: "listContent03c",
-        },
-        {
-          content: "listContent03d",
-        },
-        {
-          content: "listContent03e",
-        },
-        {
-          content: "listContent03f",
-        },
-        {
-          content: "listContent03g",
-        },
-        {
-          content: "listContent03h",
-        },
-        {
-          content: "listContent03i",
-        },
-        {
-          content: "listContent03j",
-        },
-        {
-          content: "listContent03k",
-        },
-        {
-          content: "listContent03l",
-          pointsFooter: "listContent03l4Description",
+          text: ["listContent03l"],
           points: [
-            {
-              content: "listContent03l1",
-            },
-            {
-              content: "listContent03l2",
-            },
-            {
-              content: "listContent03l3",
-            },
-            {
-              content: "listContent03l4",
-            },
+            { text: ["listContent03l1"] },
+            { text: ["listContent03l2"] },
+            { text: ["listContent03l3"] },
+            { text: ["listContent03l4"] },
           ],
+          pointsFooter: ["listContent03l4Description"],
         },
-        {
-          content: "listContent03m",
-        },
+        { text: ["listContent03m"] },
       ],
     },
     {
       title: "listTitle04",
-      description: undefined,
-      subsections: [
+      content: [
         {
-          content: undefined,
-          pointsHeader: "listContent04a",
+          text: ["listContent04a"],
           points: [
-            {
-              content: "listContent04a1",
-            },
-            {
-              content: "listContent04a2",
-            },
-            {
-              content: "listContent04a3",
-            },
-            {
-              content: "listContent04a4",
-            },
-            {
-              content: "listContent04a5",
-            },
-            {
-              content: "listContent04a6",
-            },
-            {
-              content: "listContent04a7",
-            },
-            {
-              content: "listContent04a8",
-            },
-            {
-              content: "listContent04a9",
-            },
-            {
-              content: "listContent04a10",
-            },
-            {
-              content: "listContent04a11",
-            },
-            {
-              content: "listContent04a12",
-            },
-            {
-              content: "listContent04a13",
-            },
-            {
-              content: "listContent04a14",
-            },
-            {
-              content: "listContent04a15",
-            },
+            { text: ["listContent04a1"] },
+            { text: ["listContent04a2"] },
+            { text: ["listContent04a3"] },
+            { text: ["listContent04a4"] },
+            { text: ["listContent04a5"] },
+            { text: ["listContent04a6"] },
+            { text: ["listContent04a7"] },
+            { text: ["listContent04a8"] },
+            { text: ["listContent04a9"] },
+            { text: ["listContent04a10"] },
+            { text: ["listContent04a11"] },
+            { text: ["listContent04a12"] },
+            { text: ["listContent04a13"] },
+            { text: ["listContent04a14"] },
+            { text: ["listContent04a15"] },
           ],
         },
       ],
     },
     {
       title: "listTitle05",
-      description: undefined,
-      subsections: [
+      content: [
         {
-          content: "listContent05a",
+          text: ["listContent05a"],
           points: [
-            {
-              content: "listContent05a1",
-            },
-            {
-              content: "listContent05a2",
-            },
-            {
-              content: "listContent05a3",
-            },
+            { text: ["listContent05a1"] },
+            { text: ["listContent05a2"] },
+            { text: ["listContent05a3"] },
           ],
         },
-        {
-          content: "listContent05b",
-        },
+        { text: ["listContent05b"] },
       ],
     },
     {
       title: "listTitle06",
-      description: undefined,
-      subsections: [
+      content: [
         {
-          content: "listContent06a",
+          text: ["listContent06a"],
           points: [
-            {
-              content: "listContent06a1",
-            },
-            {
-              content: "listContent06a2",
-            },
-            {
-              content: "listContent06a3",
-            },
-            {
-              content: "listContent06a4",
-            },
-            {
-              content: "listContent06a5",
-            },
+            { text: ["listContent06a1"] },
+            { text: ["listContent06a2"] },
+            { text: ["listContent06a3"] },
+            { text: ["listContent06a4"] },
+            { text: ["listContent06a5"] },
           ],
         },
         {
-          content: "listContent06b",
+          text: ["listContent06b"],
           points: [
-            {
-              content: "listContent06b1",
-            },
-            {
-              content: "listContent06b2",
-            },
+            { text: ["listContent06b1"] },
+            { text: ["listContent06b2"] },
           ],
         },
       ],
     },
     {
       title: "listTitle07",
-      description: undefined,
-      subsections: [
-        {
-          content: "listContent07a",
-        },
-        {
-          content: "listContent07b",
-        },
-      ],
+      content: [{ text: ["listContent07a"] }, { text: ["listContent07b"] }],
     },
     {
       title: "listTitle08",
-      description: undefined,
-      subsections: [
-        {
-          content: "listContent08a",
-        },
-        {
-          content: "listContent08b",
-        },
-      ],
+      content: [{ text: ["listContent08a"] }, { text: ["listContent08b"] }],
     },
     {
       title: "listTitle09",
-      description: undefined,
-      subsections: [
+      content: [
+        { text: ["listContent09a"] },
         {
-          content: "listContent09a",
-        },
-        {
-          content: "listContent09b",
+          text: ["listContent09b"],
           points: [
-            {
-              content: "listContent09b1",
-            },
-            {
-              content: "listContent09b2",
-            },
-            {
-              content: "listContent09b3",
-            },
-            {
-              content: "listContent09b4",
-            },
+            { text: ["listContent09b1"] },
+            { text: ["listContent09b2"] },
+            { text: ["listContent09b3"] },
+            { text: ["listContent09b4"] },
           ],
         },
-        {
-          content: "listContent09c",
-        },
-        {
-          content: "listContent09d",
-        },
+        { text: ["listContent09c"] },
+        { text: ["listContent09d"] },
       ],
     },
     {
       title: "listTitle10",
-      description: undefined,
-      subsections: [
-        {
-          content: "listContent10a",
-        },
-        {
-          content: "listContent10b",
-        },
-      ],
+      content: [{ text: ["listContent10a"] }, { text: ["listContent10b"] }],
     },
     {
       title: "listTitle11",
-      description: undefined,
-      subsections: [
+      content: [
+        { text: ["listContent11a"] },
         {
-          content: "listContent11a",
-        },
-        {
-          content: "listContent11b",
+          text: ["listContent11b"],
           points: [
-            {
-              content: "listContent11b1",
-            },
-            {
-              content: "listContent11b2",
-            },
+            { text: ["listContent11b1"] },
+            { text: ["listContent11b2"] },
           ],
         },
-        {
-          content: "listContent11c",
-        },
+        { text: ["listContent11c"] },
       ],
     },
     {
       title: "listTitle12",
-      description: undefined,
-      subsections: [
-        {
-          content: "listContent12a",
-        },
-        {
-          content: "listContent12b",
-        },
-      ],
+      content: [{ text: ["listContent12a"] }, { text: ["listContent12b"] }],
     },
     {
       title: "listTitle13",
-      description: undefined,
-      subsections: [
-        {
-          content: "listContent13a",
-        },
-        {
-          content: "listContent13b",
-        },
-        {
-          content: "listContent13c",
-        },
-        {
-          content: "listContent13d",
-        },
-        {
-          content: "listContent13e",
-        },
-        {
-          content: "listContent13f",
-        },
+      content: [
+        { text: ["listContent13a"] },
+        { text: ["listContent13b"] },
+        { text: ["listContent13c"] },
+        { text: ["listContent13d"] },
+        { text: ["listContent13e"] },
+        { text: ["listContent13f"] },
       ],
     },
     {
       title: "listTitle14",
-      description: undefined,
-      subsections: [
-        {
-          content: undefined,
-          pointsHeader: "listContent14a",
-          points: [],
-        },
-      ],
+      content: [{ text: ["listContent14a"] }],
     },
     {
       title: "listTitle15",
-      description: undefined,
-      subsections: [
-        {
-          content: "listContent15a",
-        },
-        {
-          content: "listContent15b",
-        },
-      ],
+      content: [{ text: ["listContent15a"] }, { text: ["listContent15b"] }],
     },
   ],
 }
@@ -412,7 +218,7 @@ const TermsAndConditions = () => {
       description={t("pageDescription")}
       pageRoute="/terms-and-conditions"
     >
-      <NestedList content={ToSContent} t={t} />
+      <NestedList content={tosContent} t={t} />
     </MainLayout>
   )
 }

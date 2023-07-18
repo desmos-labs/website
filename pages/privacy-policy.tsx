@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next"
 import { serverSideTranslations } from "next-i18next/serverSideTranslations"
 import NestedList from "@/components/NestedList"
 import MainLayout from "@/layouts/MainLayout"
+import { PageData } from "@/types/PageData"
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
   props: {
@@ -10,189 +11,131 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
   },
 })
 
-export const PPContent = {
+const privacyPolicyContent: PageData = {
   title: "pageTitle",
   date: "updatedAt",
-  description: "content",
+  content: [
+    { text: ["content01"] },
+    { text: ["content02"] },
+    { text: ["content03"] },
+    { text: ["content04"] },
+    { text: ["content05"] },
+  ],
   sections: [
     {
       title: "listTitle01",
-      description: undefined,
-      subsections: [
-        {
-          content: "listContent01a",
-        },
-        {
-          content: "listContent01b",
-        },
-      ],
+      content: [{ text: ["listContent01a"] }, { text: ["listContent01b"] }],
     },
     {
       title: "listTitle02",
-      description: undefined,
-      subsections: [
+      content: [
+        { text: ["listContent02a"] },
         {
-          content: "listContent02a",
-        },
-        {
-          content: "listContent02b",
+          text: ["listContent02b"],
           points: [
             {
-              content: "listContent02b01",
-              subpoints: [
-                { content: "listContent02b01i" },
-                { content: "listContent02b01ii" },
-                { content: "listContent02b01iii" },
-                { content: "listContent02b01iv" },
-                { content: "listContent02b01v" },
+              text: ["listContent02b01"],
+              points: [
+                { text: ["listContent02b01i"] },
+                { text: ["listContent02b01ii"] },
+                { text: ["listContent02b01iii"] },
+                { text: ["listContent02b01iv"] },
+                { text: ["listContent02b01v"] },
               ],
             },
             {
-              content: "listContent02b02",
-              subpoints: [
-                { content: "listContent02b02i" },
-                { content: "listContent02b02ii" },
-                { content: "listContent02b02iii" },
+              text: ["listContent02b02"],
+              points: [
+                { text: ["listContent02b02i"] },
+                { text: ["listContent02b02ii"] },
+                { text: ["listContent02b02iii"] },
               ],
             },
           ],
         },
-        {
-          content: "listContent02c",
-        },
-        {
-          content: "listContent02d",
-        },
-        {
-          content: "listContent02e",
-        },
+        { text: ["listContent02c"] },
+        { text: ["listContent02d"] },
+        { text: ["listContent02e"] },
       ],
     },
     {
       title: "listTitle03",
-      description: undefined,
-      subsections: [
+      content: [
         {
-          content: "listContent03a",
+          text: ["listContent03a"],
           points: [
-            { content: "listContent03a1" },
-            { content: "listContent03a2" },
-            { content: "listContent03a3" },
-            { content: "listContent03a4" },
-            { content: "listContent03a5" },
+            { text: ["listContent03a1"] },
+            { text: ["listContent03a2"] },
+            { text: ["listContent03a3"] },
+            { text: ["listContent03a4"] },
+            { text: ["listContent03a5"] },
           ],
         },
         {
-          content: "listContent03b",
+          text: ["listContent03b"],
           points: [
-            { content: "listContent03b1" },
-            { content: "listContent03b2" },
-            { content: "listContent03b3" },
-            { content: "listContent03b4" },
-            { content: "listContent03b5" },
+            { text: ["listContent03b1"] },
+            { text: ["listContent03b2"] },
+            { text: ["listContent03b3"] },
+            { text: ["listContent03b4"] },
+            { text: ["listContent03b5"] },
           ],
         },
-        { content: "listContent03c" },
+        { text: ["listContent03c"] },
       ],
     },
     {
       title: "listTitle04",
-      description: undefined,
-      subsections: [
+      content: [
+        { text: ["listContent04a"] },
         {
-          content: "listContent04a",
-        },
-        {
-          content: "listContent04b",
+          text: ["listContent04b"],
           points: [
-            { content: "listContent04b1" },
-            { content: "listContent04b2" },
-            { content: "listContent04b3" },
-            { content: "listContent04b4" },
-            { content: "listContent04b5" },
-            { content: "listContent04b6" },
+            { text: ["listContent04b1"] },
+            { text: ["listContent04b2"] },
+            { text: ["listContent04b3"] },
+            { text: ["listContent04b4"] },
+            { text: ["listContent04b5"] },
+            { text: ["listContent04b6"] },
           ],
         },
-        { content: "listContent04c" },
+        { text: ["listContent04c"] },
       ],
     },
     {
       title: "listTitle05",
-      description: undefined,
-      subsections: [
-        {
-          content: "listContent05a",
-        },
-        {
-          content: "listContent05b",
-        },
-        { content: "listContent05c" },
-        {
-          content: "listContent05d",
-        },
-        {
-          content: "listContent05e",
-        },
+      content: [
+        { text: ["listContent05a"] },
+        { text: ["listContent05b"] },
+        { text: ["listContent05c"] },
+        { text: ["listContent05d"] },
+        { text: ["listContent05e"] },
       ],
     },
     {
       title: "listTitle06",
-      description: undefined,
-      subsections: [
-        {
-          content: "listContent06a",
-        },
-      ],
+      content: [{ text: ["listContent06a"] }],
     },
     {
       title: "listTitle07",
-      description: undefined,
-      subsections: [
-        {
-          content: "listContent07a",
-        },
-        {
-          content: "listContent07b",
-        },
-      ],
+      content: [{ text: ["listContent07a"] }, { text: ["listContent07b"] }],
     },
     {
       title: "listTitle08",
-      description: undefined,
-      subsections: [
-        {
-          content: "listContent08a",
-        },
-        {
-          content: "listContent08b",
-        },
-        {
-          content: "listContent08c",
-        },
-        {
-          content: "listContent08d",
-        },
+      content: [
+        { text: ["listContent08a"] },
+        { text: ["listContent08b"] },
+        { text: ["listContent08c"] },
+        { text: ["listContent08d"] },
       ],
     },
     {
       title: "listTitle09",
-      description: undefined,
-      subsections: [
-        {
-          pointsHeader: "listContent09a",
-          points: [],
-        },
-      ],
+      content: [{ text: ["listContent09a"] }],
     },
     {
       title: "listTitle10",
-      description: undefined,
-      subsections: [
-        {
-          pointsHeader: "listContent10a",
-          points: [],
-        },
-      ],
+      content: [{ text: ["listContent10a"] }],
     },
   ],
 }
@@ -206,7 +149,7 @@ const PrivacyPolicy = () => {
       description={t("pageDescription")}
       pageRoute="/privacy-policy"
     >
-      <NestedList content={PPContent} t={t} />
+      <NestedList content={privacyPolicyContent} t={t} />
     </MainLayout>
   )
 }

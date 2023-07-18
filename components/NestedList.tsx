@@ -34,7 +34,7 @@ const NestedList = (props: NestedListProps) => {
   )
 
   const getListType = (pointLevel: number) => {
-    return pointLevel % 2 === 1 ? "list-decimal" : "list-roman"
+    return pointLevel % 2 === 0 ? "list-decimal" : "list-roman"
   }
 
   const mapPoint = useCallback(
@@ -46,6 +46,7 @@ const NestedList = (props: NestedListProps) => {
             pointData.text?.map((text) => {
               return <div>{translatedBlock(text)}</div>
             })}
+
           {/* Subpoints */}
           {pointData.points && (
             <ul className={`${getListType(pointLevel)} pb-6 pl-10`}>
@@ -61,23 +62,30 @@ const NestedList = (props: NestedListProps) => {
   )
 
   const mapContent = useCallback(
-    (contentData: Content, contentLevel: number = 1) => {
+    (contentData: Content, _: number = 1) => {
       return (
-        <div>
+        <div className="pb-2">
           {/* Text */}
           {contentData.text &&
             contentData.text?.map((text) => {
-              return <div className="pb-2">{translatedBlock(text)}</div>
+              return <p className="p-0">{translatedBlock(text)}</p>
             })}
 
           {/* Points */}
           {contentData.points && (
-            <ul className={"list-decimal pb-6 pl-8"}>
+            <ul className={"list-decimal py-2 pl-8"}>
               {contentData.points.map((pointContent, index) =>
-                mapPoint(index, pointContent, contentLevel)
+                mapPoint(index, pointContent, 1)
               )}
             </ul>
           )}
+
+          {/* Points footer */}
+          {contentData.points &&
+            contentData.pointsFooter &&
+            contentData.pointsFooter.map((text) => {
+              return <p className="p-0 pl-4">{translatedBlock(text)}</p>
+            })}
         </div>
       )
     },
