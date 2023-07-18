@@ -11,30 +11,28 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
   },
 })
 
-export const DPMPPContent: PageData = {
+const privacyPolicyContent: PageData = {
   title: "pageTitle",
   date: "updatedAt",
   content: [
-    {
-      text: ["content01", "content02", "content03", "content04", "content05"],
-    },
+    { text: ["content01"] },
+    { text: ["content02"] },
+    { text: ["content03"] },
+    { text: ["content04"] },
+    { text: ["content05"] },
   ],
   sections: [
     {
       title: "listTitle01",
       content: [
-        {
-          text: ["listContent01a", "listContent01b", "listContent01c"],
-        },
+        { text: ["listContent01a"] },
+        { text: ["listContent01b"] },
+        { text: ["listContent01c"] },
       ],
     },
     {
       title: "listTitle02",
-      content: [
-        {
-          text: ["listContent02a"],
-        },
-      ],
+      content: [{ text: ["listContent02a"] }],
       subsections: [
         {
           title: "listTitle03",
@@ -50,14 +48,12 @@ export const DPMPPContent: PageData = {
                   text: ["listContent03a2"],
                   points: [{ text: ["listContent03a2i"] }],
                 },
-                {
-                  text: ["listContent03a3"],
-                },
+                { text: ["listContent03a3"] },
               ],
             },
-            {
-              text: ["listContent03b", "listContent03c", "listContent03d"],
-            },
+            { text: ["listContent03b"] },
+            { text: ["listContent03c"] },
+            { text: ["listContent03d"] },
           ],
         },
         {
@@ -65,17 +61,11 @@ export const DPMPPContent: PageData = {
           content: [
             {
               points: [
-                {
-                  text: ["listContent04a1"],
-                },
-                {
-                  text: ["listContent04a2"],
-                },
+                { text: ["listContent04a1"] },
+                { text: ["listContent04a2"] },
               ],
             },
-            {
-              text: ["listContent04b"],
-            },
+            { text: ["listContent04b"] },
           ],
         },
         {
@@ -84,98 +74,58 @@ export const DPMPPContent: PageData = {
             {
               text: ["listContent05a"],
               points: [
-                {
-                  text: ["listContent05a1"],
-                },
-                {
-                  text: ["listContent05a2"],
-                },
-                {
-                  text: ["listContent05a3"],
-                },
+                { text: ["listContent05a1"] },
+                { text: ["listContent05a2"] },
+                { text: ["listContent05a3"] },
               ],
             },
             {
               text: ["listContent05b"],
               points: [
-                {
-                  text: ["listContent05b1"],
-                },
-                {
-                  text: ["listContent05b2"],
-                },
-                {
-                  text: ["listContent05b3"],
-                },
+                { text: ["listContent05b1"] },
+                { text: ["listContent05b2"] },
+                { text: ["listContent05b3"] },
               ],
             },
             {
               text: ["listContent05c"],
               points: [
-                {
-                  text: ["listContent05c1"],
-                },
-                {
-                  text: ["listContent05c2"],
-                },
-                {
-                  text: ["listContent05c3"],
-                },
-                {
-                  text: ["listContent05c4"],
-                },
-                {
-                  text: ["listContent05c5"],
-                },
+                { text: ["listContent05c1"] },
+                { text: ["listContent05c2"] },
+                { text: ["listContent05c3"] },
+                { text: ["listContent05c4"] },
+                { text: ["listContent05c5"] },
               ],
             },
-            {
-              text: ["listContent05d"],
-            },
+            { text: ["listContent05d"] },
           ],
         },
         {
           title: "listTitle06",
           content: [
-            {
-              text: [
-                "listContent06a",
-                "listContent06b",
-                "listContent06c",
-                "listContent06d",
-                "listContent06e",
-              ],
-            },
+            { text: ["listContent06a"] },
+            { text: ["listContent06b"] },
+            { text: ["listContent06c"] },
+            { text: ["listContent06d"] },
+            { text: ["listContent06e"] },
           ],
         },
         {
           title: "listTitle07",
           content: [
-            {
-              text: [
-                "listContent07a",
-                "listContent07b",
-                "listContent07c",
-                "listContent07d",
-              ],
-            },
+            { text: ["listContent07a"] },
+            { text: ["listContent07b"] },
+            { text: ["listContent07c"] },
+            { text: ["listContent07d"] },
           ],
         },
         {
           title: "listTitle08",
-          content: [
-            {
-              text: ["listContent08a", "listContent08b"],
-            },
-          ],
+          content: [{ text: ["listContent08a"] }, { text: ["listContent08b"] }],
         },
         {
           title: "listTitle09",
-          content: [
-            {
-              text: ["listContent09a", "listContent09b"],
-            },
-          ],
+          content: [{ text: ["listContent09a"] }, { text: ["listContent09b"] }],
         },
       ],
     },
@@ -191,7 +141,7 @@ const PrivacyPolicyDPM = () => {
       description={t("pageDescription")}
       pageRoute="/privacy-policy-dpm"
     >
-      <NestedList content={DPMPPContent} t={t} />
+      <NestedList content={privacyPolicyContent} t={t} />
     </MainLayout>
   )
 }
