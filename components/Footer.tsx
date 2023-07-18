@@ -25,7 +25,7 @@ const Footer = (props: FooterProps) => {
           <span className="hidden lg:inline-block">|</span>
           <Link
             className="md:inline-block block text-desmos-white-Default px-6 md:leading-[21px] leading-[40px]"
-            href={ppPathOverride || "/terms-and-conditions"}
+            href={ppPathOverride || "/privacy-policy"}
           >
             Privacy Policy
           </Link>
