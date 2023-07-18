@@ -15,6 +15,13 @@ module.exports = {
       lg: "1280px",
       xl: "1920px",
     },
+    listStyleType: {
+      none: "none",
+      disc: "disc",
+      decimal: "decimal",
+      square: "square",
+      roman: "lower-roman",
+    },
     extend: {
       // All the widths and minHeights are follow the Figma section size to define
       // mobile: The Mobile section size

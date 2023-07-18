@@ -36,19 +36,21 @@ const NestedList = (props: NestedListProps) => {
   const mapPoint = useCallback(
     (pointData: Content, pointLevel: number = 1) => {
       return (
-        <ul>
+        <li>
           {/* Text */}
           {pointData.text &&
             pointData.text?.map((text) => {
-              return <div className="pb-16">{translatedBlock(text)}</div>
+              return <div>{translatedBlock(text)}</div>
             })}
-
           {/* Subpoints */}
-          {pointData.points &&
-            pointData.points.map((pointContent) =>
-              mapPoint(pointContent, pointLevel + 1)
-            )}
-        </ul>
+          {pointData.points && (
+            <ul className={`${getListType(pointLevel)} pb-6 pl-10`}>
+              {pointData.points.map((pointContent, index) =>
+                mapPoint(index, pointContent, pointLevel + 1)
+              )}
+            </ul>
+          )}
+        </li>
       )
     },
     [translatedBlock]
@@ -61,14 +63,17 @@ const NestedList = (props: NestedListProps) => {
           {/* Text */}
           {contentData.text &&
             contentData.text?.map((text) => {
-              return <div className="pb-16">{translatedBlock(text)}</div>
+              return <div className="pb-2">{translatedBlock(text)}</div>
             })}
 
           {/* Points */}
-          {contentData.points &&
-            contentData.points.map((pointContent) =>
-              mapPoint(pointContent, contentLevel)
-            )}
+          {contentData.points && (
+            <ul className={"list-decimal pb-6 pl-8"}>
+              {contentData.points.map((pointContent, index) =>
+                mapPoint(index, pointContent, contentLevel)
+              )}
+            </ul>
+          )}
         </div>
       )
     },
@@ -81,10 +86,12 @@ const NestedList = (props: NestedListProps) => {
         <div>
           {/* Section title */}
           {sectionData.title && (
-            <div className="pb-8 md:pb-16">
-              <div className="flex text-base md:text-2xl font-semibold leading-6 md:leading-9 tracking-[0.001em] md:tracking-[0.0015em]">
-                <div className="flex-none w-8 md:w-12 before:[counter-increment:section] before:content-[counter(section)'.']" />
-                <div>{translatedBlock(sectionData.title)}</div>
+            <div className={`pb-${6 - (level - 1)} pt-12`}>
+              <div className="flex font-semibold">
+                <div className={`flex-none`} />
+                <div className={`lg:text-[${32 - (level - 1) * 8}px]`}>
+                  {translatedBlock(sectionData.title)}
+                </div>
               </div>
             </div>
           )}
@@ -114,7 +121,7 @@ const NestedList = (props: NestedListProps) => {
         </h2>
         <div className="text-[12px] md:text-[16px] lg:leading-[29px] md:leading-[22px] tracking-[0.005em] md:pt-[80px] pt-[35px] md:pr-[104px] pr-[79px]">
           {/* Last updated date */}
-          <p>{t(content.date)}</p>
+          <p className={"pb-8"}>{t(content.date)}</p>
 
           {/* Content */}
           {content.content.map(mapContent)}

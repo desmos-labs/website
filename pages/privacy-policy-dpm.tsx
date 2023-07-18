@@ -16,7 +16,7 @@ export const DPMPPContent: PageData = {
   date: "updatedAt",
   content: [
     {
-      text: ["content01", "content02", "content03", "content04"],
+      text: ["content01", "content02", "content03", "content04", "content05"],
     },
   ],
   sections: [
