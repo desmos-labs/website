@@ -122,7 +122,7 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-orange-mobile": "url('/bg gradient orange_mobile.webp')",
         "gradient-orange-tablet": "url('/bg gradient orange_tablet.png')",
-        "gradient-orange-desktop": "url('/bg gradient orange_desktop.png')",
+        "gradient-orange-desktop": "url('/bg_gradient_orange_desktop.png')",
         "modules-section-button": "url('/modules-button.webp')",
         "modules-section-button-hover": "url('/modules-button-hover.webp')",
         "kickstart-program-banner": "url('/program-1920.png')",

@@ -33,7 +33,7 @@ export interface SectionLayoutProps {
 
   /**
    * Tailwind bg
-   * Optional. This is always as wide as the screen width, and as high as scetion height.
+   * Optional. This is always as wide as the screen width, and as high as section height.
    * It is UNDER contentBackground
    */
   sectionBackground?: string
@@ -119,7 +119,7 @@ const SectionLayout = (props: SectionLayoutProps) => {
         )}
       </>
     )
-  }, [videoUrl, isMobile, isMd, isLg, isXl])
+  }, [videoUrl, isMobile, isMd, isLg, isXl, contentBackground?.image])
 
   useEffect(() => {
     if (fullScreenHeightOption) {
@@ -140,7 +140,7 @@ const SectionLayout = (props: SectionLayoutProps) => {
   return (
     <div
       className={`relative overflow-hidden items-center w-full ${sectionHeight} min-h-mobile md:min-h-md lg:min-h-lg xl:min-h-xl ${
-        sectionBackground ? sectionBackground : ""
+        sectionBackground || ""
       } bg-no-repeat`}
     >
       {/* Background */}

@@ -19,8 +19,12 @@ const Custom404 = () => {
       title={t("pagetitle404")}
       description={t("description404")}
       pageRoute="/404"
+      footerBackground={"bg-[#121217]"}
     >
-      <SectionLayout fullScreenHeightOption="always">
+      <SectionLayout
+        fullScreenHeightOption="always"
+        sectionBackground="bg-gradient-orange-mobile md:bg-gradient-orange-tablet lg:bg-gradient-orange-desktop bg-cover bg-center"
+      >
         <CenteredContentLayout>
           <div className="text-desmos-white-Default text-center">
             <h1 className="xl:text-[88px] lg:text-[80px] md:text-[56px] text-[44px] lg:leading-[116px] md:leading-[84px] leading-[66px] -tracking-[.015em] font-bold">
