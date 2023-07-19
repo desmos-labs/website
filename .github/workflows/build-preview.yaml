@@ -1,0 +1,34 @@
+name: Build preview
+# This job builds and deploys a preview of the overall website.
+# It runs on every push to main as well as any PR.
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 🔧
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16.x"
+          cache: 'yarn'
+
+      - name: Build 🔧
+        run: yarn build
+
+      - name: Deploy using Netlify 🚀
+        id: deploy-preview
+        uses: nwtgck/actions-netlify@v2.0
+        with:
+          publish-dir: ./next
+          deploy-message: "Deploy from GitHub Actions"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
