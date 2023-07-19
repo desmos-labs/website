@@ -95,13 +95,17 @@ const NestedList = (props: NestedListProps) => {
   const mapSection = useCallback(
     (sectionData: Section, level: number = 1) => {
       return (
-        <div>
+        <div key={sectionData.title}>
           {/* Section title */}
           {sectionData.title && (
-            <div className={`pb-${6 - (level - 1)} pt-12`}>
+            <div className={`md:pb-${6 - (level - 1)} py-4 md:py-6 lg:pt-12`}>
               <div className="flex font-semibold">
                 <div className={`flex-none`} />
-                <div className={`lg:text-[${32 - (level - 1) * 8}px]`}>
+                <div
+                  className={`text-[${16 - (level - 1) * 8}px] md:text-[${
+                    26 - (level - 1) * 8
+                  }px]  lg:text-[${32 - (level - 1) * 8}px]`}
+                >
                   {translatedBlock(sectionData.title)}
                 </div>
               </div>

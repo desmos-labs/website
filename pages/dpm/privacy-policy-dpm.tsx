@@ -139,7 +139,7 @@ const PrivacyPolicyDPM = () => {
     <MainLayout
       title={t("pageTitle")}
       description={t("pageDescription")}
-      pageRoute="/privacy-policy-dpm"
+      pageRoute="/dpm/privacy-policy-dpm"
     >
       <NestedList content={privacyPolicyContent} t={t} />
     </MainLayout>
