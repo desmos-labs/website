@@ -193,7 +193,7 @@ const TermsAndConditionsDPM = () => {
     <MainLayout
       title={t("pageTitle")}
       description={t("pageDescription")}
-      pageRoute="/terms-and-conditions-dpm"
+      pageRoute="/dpm/terms-and-conditions-dpm"
     >
       <NestedList content={tosContent} t={t} />
     </MainLayout>
