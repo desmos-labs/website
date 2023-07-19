@@ -47,9 +47,8 @@ const MobileMenu = (props: MobileMenuProps) => {
               <div className="absolute w-full h-full bg-desmos-background-primary px-xMobile py-[34px]">
                 <div className="flex gap-10">
                   {items.map((menuItem) => (
-                    <div className="flex flex-col">
+                    <div className="flex flex-col" key={menuItem.id}>
                       <div
-                        key={menuItem.id}
                         onClick={() => {
                           setSelectedItemId(menuItem.id)
                         }}

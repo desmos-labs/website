@@ -1,28 +1,49 @@
-export interface Subpoint {
-  readonly content: string
-}
+export interface Content {
+  /**
+   * Paragraphs representing the text of the content.
+   */
+  readonly text?: string[]
 
-export interface Point {
-  readonly content: string
-  readonly subpoints?: Subpoint[]
-}
+  /**
+   * List of numbered points.
+   */
+  readonly points?: Content[]
 
-export interface Subsection {
-  readonly content?: string
-  readonly points?: Point[]
-  readonly pointsHeader?: string
-  readonly pointsFooter?: string
+  /**
+   * Footer displayed after the points.
+   * This is only used when a list of points is provided as well.
+   */
+  readonly pointsFooter?: string[]
 }
 
 export interface Section {
+  /**
+   * Title of the section
+   */
   readonly title: string
-  readonly description?: string
-  readonly subsections: Subsection[]
+
+  /**
+   * Content of this section.
+   */
+  readonly content?: Content[]
+
+  /**
+   * Subsections of this section.
+   */
+  readonly subsections?: Section[]
 }
 
 export interface PageData {
   readonly title: string
   readonly date: string
-  readonly description: string
+
+  /**
+   * Paragraphs to be displayed before the sections
+   */
+  readonly content: Content[]
+
+  /**
+   * Sections to be displayed
+   */
   readonly sections: Section[]
 }

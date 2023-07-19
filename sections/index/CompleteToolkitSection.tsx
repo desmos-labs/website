@@ -141,6 +141,7 @@ const CompleteToolkitSection = () => {
           slide={buttons.map((button) => {
             return (
               <SlideLayout
+                key={button.id}
                 title={button.popupTitle}
                 subtitle={button.title}
                 desktopContent={button.desktopContent}
@@ -193,7 +194,7 @@ const CompleteToolkitSection = () => {
             </div>
             {buttons.map((button) => {
               return (
-                <div className="md:col-span-1">
+                <div className="md:col-span-1" key={button.id}>
                   <PopupLayout
                     key={button.id}
                     openItem={<CompleteToolkitButton button={button} />}

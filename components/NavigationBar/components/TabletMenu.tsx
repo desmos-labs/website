@@ -41,9 +41,8 @@ const TabletMenu = (props: TabletMenuProps) => {
               <div className="absolute w-full h-full overflow-scroll bg-desmos-background-primary px-xMd py-9">
                 <div className="flex flex-col gap-[82px] pb-20">
                   {items.map((menuItem) => (
-                    <div className="flex flex-col">
+                    <div className="flex flex-col" key={menuItem.id}>
                       <div
-                        key={menuItem.id}
                         onClick={() => {
                           setSelectedItemId(menuItem.id)
                         }}
@@ -54,7 +53,10 @@ const TabletMenu = (props: TabletMenuProps) => {
                       </div>
                       <div className="flex flex-col gap-8 pt-9">
                         {menuItem.subMenuItems.map((subMenuItem) => (
-                          <div className="whitespace-nowrap text-base font-normal tracking-wider leading-[24px] text-desmos-white-Default focus:outline-none">
+                          <div
+                            className="whitespace-nowrap text-base font-normal tracking-wider leading-[24px] text-desmos-white-Default focus:outline-none"
+                            key={subMenuItem.id}
+                          >
                             {subMenuItem.isExternal ? (
                               <a href={subMenuItem.link} target="_blank">
                                 {subMenuItem.title}

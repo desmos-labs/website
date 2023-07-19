@@ -17,7 +17,7 @@ const LargeMenu = (props: LargeMenuProps) => {
     <div className="flex items-center gap-16">
       <div className="flex gap-12">
         {items.map((menuItem) => (
-          <Menu>
+          <Menu key={menuItem.id}>
             {({ open, close }) => (
               <div className="relative" onMouseLeave={() => close()}>
                 <Menu.Button

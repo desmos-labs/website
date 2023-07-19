@@ -12,10 +12,20 @@ export interface MainLayoutProps {
   readonly pageRoute: string
   readonly footerBackground?: string
   readonly children: React.ReactNode
+  readonly privacyPathOverride?: string
+  readonly tosPathOverride?: string
 }
 
 const MainLayout = (props: MainLayoutProps) => {
-  const { title, description, pageRoute, footerBackground, children } = props
+  const {
+    title,
+    description,
+    pageRoute,
+    footerBackground,
+    children,
+    tosPathOverride,
+    privacyPathOverride,
+  } = props
 
   const [isHydrated, setIsHydrated] = useState(false)
   const [isMobile, , , , isBreakpointReady] = useBreakpoints()
@@ -29,14 +39,14 @@ const MainLayout = (props: MainLayoutProps) => {
     setIsHydrated(true)
   }, [])
 
-  useEffect(() => {
-    handleScroll()
-  }, [isBreakpointReady])
-
   const handleScroll = () => {
     const currentScrollPos = window.scrollY
     setNavbarBgVisible(currentScrollPos > 10 || isMobile)
   }
+
+  useEffect(() => {
+    handleScroll()
+  }, [isBreakpointReady])
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll)
@@ -44,7 +54,7 @@ const MainLayout = (props: MainLayoutProps) => {
   })
 
   // Compute the proper page title and URL
-  const pageTitle = title.includes("Desmos") ? title : `Desmos ${title}`
+  const pageTitle = title
 
   return (
     <>
@@ -62,39 +72,38 @@ const MainLayout = (props: MainLayoutProps) => {
         pageRoute={pageRoute}
       />
       {/* Main content */}
-      isHydrated && (
-      <>
-        <div className={`relative mx-auto w-full min-w-[375px]`}>
-          <div
-            className={`fixed top-0 w-full ${
-              navbarBgVisible ? "bg-desmos-background-primary" : "bg-none"
-            }  z-20`}
-          >
-            <div className="relative w-full min-w-[375px] max-w-[1920px] left-1/2 -translate-x-1/2">
-              <NavigationBar />
-            </div>
-          </div>
-          <main className="w-full">{children}</main>
-          <div
-            className={`relative w-full ${
-              footerBackground
-                ? footerBackground
-                : "bg-desmos-background-primary"
-            } bg-no-repeat`}
-          >
+      {isHydrated && (
+        <>
+          <div className={`relative mx-auto w-full min-w-[375px]`}>
             <div
-              className={`relative left-1/2 -translate-x-1/2 w-full min-w-[375px] max-w-[1920px] ${
-                footerBackground
-                  ? footerBackground
-                  : "bg-desmos-background-primary"
+              className={`fixed top-0 w-full ${
+                navbarBgVisible ? "bg-desmos-background-primary" : "bg-none"
+              }  z-20`}
+            >
+              <div className="relative w-full min-w-[375px] max-w-[1920px] left-1/2 -translate-x-1/2">
+                <NavigationBar />
+              </div>
+            </div>
+            <main className="w-full">{children}</main>
+            <div
+              className={`relative w-full ${
+                footerBackground || "bg-desmos-background-primary"
               } bg-no-repeat`}
             >
-              <Footer />
+              <div
+                className={`relative left-1/2 -translate-x-1/2 w-full min-w-[375px] max-w-[1920px] ${
+                  footerBackground || "bg-desmos-background-primary"
+                } bg-no-repeat`}
+              >
+                <Footer
+                  privacyPathOverride={privacyPathOverride}
+                  tosPathOverride={tosPathOverride}
+                />
+              </div>
             </div>
           </div>
-        </div>
-      </>
-      )
+        </>
+      )}
     </>
   )
 }

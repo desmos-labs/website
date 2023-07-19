@@ -1,6 +1,6 @@
 import React, { useCallback } from "react"
 import { Trans } from "next-i18next"
-import { PageData } from "@/types/PageData"
+import { Content, PageData, Section } from "@/types/PageData"
 
 export interface NestedListProps {
   readonly content: PageData
@@ -33,6 +33,102 @@ const NestedList = (props: NestedListProps) => {
     [t]
   )
 
+  const getListType = (pointLevel: number) => {
+    return pointLevel % 2 === 0 ? "list-decimal" : "list-roman"
+  }
+
+  const mapPoint = useCallback(
+    (pointIndex: number, pointData: Content, pointLevel: number = 1) => {
+      return (
+        <li>
+          {/* Text */}
+          {pointData.text &&
+            pointData.text?.map((text) => {
+              return <div>{translatedBlock(text)}</div>
+            })}
+
+          {/* Subpoints */}
+          {pointData.points && (
+            <ul className={`${getListType(pointLevel)} pb-6 pl-10`}>
+              {pointData.points.map((pointContent, index) =>
+                mapPoint(index, pointContent, pointLevel + 1)
+              )}
+            </ul>
+          )}
+        </li>
+      )
+    },
+    [translatedBlock]
+  )
+
+  const mapContent = useCallback(
+    (contentData: Content, _: number = 1) => {
+      return (
+        <div className="pb-2">
+          {/* Text */}
+          {contentData.text &&
+            contentData.text?.map((text) => {
+              return <p className="p-0">{translatedBlock(text)}</p>
+            })}
+
+          {/* Points */}
+          {contentData.points && (
+            <ul className={"list-decimal py-2 pl-8"}>
+              {contentData.points.map((pointContent, index) =>
+                mapPoint(index, pointContent, 1)
+              )}
+            </ul>
+          )}
+
+          {/* Points footer */}
+          {contentData.points &&
+            contentData.pointsFooter &&
+            contentData.pointsFooter.map((text) => {
+              return <p className="p-0 pl-4">{translatedBlock(text)}</p>
+            })}
+        </div>
+      )
+    },
+    [mapPoint, translatedBlock]
+  )
+
+  const mapSection = useCallback(
+    (sectionData: Section, level: number = 1) => {
+      return (
+        <div key={sectionData.title}>
+          {/* Section title */}
+          {sectionData.title && (
+            <div className={`md:pb-${6 - (level - 1)} py-4 md:py-6 lg:pt-12`}>
+              <div className="flex font-semibold">
+                <div className={`flex-none`} />
+                <div
+                  className={`text-[${16 - (level - 1) * 8}px] md:text-[${
+                    26 - (level - 1) * 8
+                  }px]  lg:text-[${32 - (level - 1) * 8}px]`}
+                >
+                  {translatedBlock(sectionData.title)}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Section content */}
+          {sectionData.content &&
+            sectionData.content.map((sectionContent) =>
+              mapContent(sectionContent, level)
+            )}
+
+          {/* Subsections */}
+          {sectionData.subsections &&
+            sectionData.subsections.map((section) =>
+              mapSection(section, level + 1)
+            )}
+        </div>
+      )
+    },
+    [mapContent, translatedBlock]
+  )
+
   return (
     <div className="xl:px-[240px] lg:pl-[90px] lg:pr-[168px] lg:py-[160px] md:pl-[40px] md:pt-[80px] md:pb-[7px] pt-[70px] pb-[20px] pl-[24px] text-desmos-black-light box-border">
       <div className="grid grid-cols-1 md:justify-items-center lg:justify-items-start">
@@ -40,100 +136,14 @@ const NestedList = (props: NestedListProps) => {
           {t(content.title)}
         </h2>
         <div className="text-[12px] md:text-[16px] lg:leading-[29px] md:leading-[22px] tracking-[0.005em] md:pt-[80px] pt-[35px] md:pr-[104px] pr-[79px]">
-          <p>{t(content.date)}</p>
-          <br />
-          <div className="pb-16">{translatedBlock(content.description)}</div>
-          <div>
-            <div className="[counter-reset:section]">
-              {content.sections.map((section) => {
-                return (
-                  section.title && (
-                    <div className="pb-8 md:pb-16">
-                      <div className="flex text-base md:text-2xl font-semibold leading-6 md:leading-9 tracking-[0.001em] md:tracking-[0.0015em]">
-                        <div className="flex-none w-8 md:w-12 before:[counter-increment:section] before:content-[counter(section)'.']" />
-                        <div>{translatedBlock(section.title)}</div>
-                      </div>
-                      {section.description && (
-                        <div className="pt-6 text-base md:text-xl font-normal leading-6 md:leading-9 tracking-[0.001em] md:tracking-[0.0015em]">
-                          {translatedBlock(section.description)}
-                        </div>
-                      )}
-                      {section.subsections && (
-                        <div className="[counter-reset:subsection]">
-                          {section.subsections.map((subsection) => {
-                            return (
-                              (subsection.content || subsection.points) && (
-                                <div className="pt-6">
-                                  {subsection.content && (
-                                    <div className="flex text-xs md:text-base font-normal leading-5 md:leading-[22px] tracking-[-0.018em] md:tracking-[0.005em]">
-                                      <div className="flex-none w-8 md:w-12 before:[counter-increment:subsection] before:content-[counter(section)'.'counter(subsection)'.']" />
-                                      <div>
-                                        {translatedBlock(subsection.content)}
-                                      </div>
-                                    </div>
-                                  )}
-                                  {subsection.pointsHeader && (
-                                    <div className="pl-8 md:pl-12">
-                                      {translatedBlock(subsection.pointsHeader)}
-                                    </div>
-                                  )}
-                                  {subsection.points && (
-                                    <div className="[counter-reset:points] pl-8 md:pl-12">
-                                      {subsection.points.map((point) => {
-                                        return (
-                                          point.content && (
-                                            <div className="pt-4">
-                                              <div className="flex text-xs md:text-base font-normal leading-5 md:leading-[22px] tracking-[-0.018em] md:tracking-[0.005em]">
-                                                <div className="flex-none w-8 md:w-12 before:[counter-increment:points] before:content-['('counter(points,lower-alpha)')']" />
-                                                <div>
-                                                  {translatedBlock(
-                                                    point.content
-                                                  )}
-                                                </div>
-                                              </div>
-                                              {point.subpoints && (
-                                                <div className="[counter-reset:subpoints] pl-8 md:pl-12">
-                                                  {point.subpoints.map(
-                                                    (subpoint) => {
-                                                      return (
-                                                        subpoint.content && (
-                                                          <div className="flex pt-4 text-xs md:text-base font-normal leading-5 md:leading-[22px] tracking-[-0.018em] md:tracking-[0.005em]">
-                                                            <div className="flex-none w-8 md:w-12 before:[counter-increment:subpoints] before:content-['('counter(subpoints,lower-roman)')']" />
-                                                            <div>
-                                                              {translatedBlock(
-                                                                subpoint.content
-                                                              )}
-                                                            </div>
-                                                          </div>
-                                                        )
-                                                      )
-                                                    }
-                                                  )}
-                                                </div>
-                                              )}
-                                            </div>
-                                          )
-                                        )
-                                      })}
-                                    </div>
-                                  )}
-                                  {subsection.pointsFooter && (
-                                    <div className="pl-8 md:pl-12 pt-4">
-                                      {translatedBlock(subsection.pointsFooter)}
-                                    </div>
-                                  )}
-                                </div>
-                              )
-                            )
-                          })}
-                        </div>
-                      )}
-                    </div>
-                  )
-                )
-              })}
-            </div>
-          </div>
+          {/* Last updated date */}
+          <p className={"pb-8"}>{t(content.date)}</p>
+
+          {/* Content */}
+          {content.content.map((contentData) => mapContent(contentData, 1))}
+
+          {/* Sections */}
+          {content.sections.map((sectionData) => mapSection(sectionData, 1))}
         </div>
       </div>
     </div>
