@@ -20,6 +20,9 @@ jobs:
           node-version: "16.x"
           cache: 'yarn'
 
+      - name: Install 🔨
+        run: yarn install --immutable
+
       - name: Build 🔧
         run: yarn build
 
