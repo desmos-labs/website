@@ -22,26 +22,32 @@ jobs:
             ${{ github.workspace }}/.next/cache
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
-
       - name: Setup Node.js 🔧
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
 
-      - name: Install dependencies 🔨
-        run: yarn install --immutable
-
-      - name: Build 📦
-        run: yarn build
+      - name: Install Netlify CLI 🔧
+        run: npm install -g netlify-cli
 
       - name: Deploy to Netlify 🚀
         id: deploy-netlify
-        uses: netlify/actions/cli@master
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        with:
-          args: deploy --build -m 'v${{ steps.package-version.outputs.current-version}} ・ ${{ github.head_ref }}'
+          MESSAGE: v${{ steps.package-version.outputs.current-version}} ・ ${{ github.head_ref }}
+        run: |
+          OUTPUT=$(netlify deploy --build --context deploy-preview --message '{{env.MESSAGE}}')
+          
+          NETLIFY_OUTPUT=$(echo "$OUTPUT")
+          NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
+          NETLIFY_LOGS_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://app.netlify.com/[a-zA-Z0-9./?=_-]*')
+          NETLIFY_LIVE_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*' | grep -Eov "netlify.com")
+          
+          echo "NETLIFY_OUTPUT=$NETLIFY_OUTPUT" >> "$GITHUB_OUTPUT"
+          echo "NETLIFY_URL=$NETLIFY_URL" >> "$GITHUB_OUTPUT"
+          echo "NETLIFY_LOGS_URL=$NETLIFY_LOGS_URL" >> "$GITHUB_OUTPUT"
+          echo "NETLIFY_LIVE_URL=$NETLIFY_LIVE_URL" >> "$GITHUB_OUTPUT"
 
       - name: Netlify Preview URL 👓
         if: github.event_name == 'pull_request'
