@@ -140,7 +140,7 @@ const privacyPolicyContent: PageData = {
   ],
 }
 
-const PrivacyPolicy = () => {
+const Privacy = () => {
   const { t } = useTranslation("privacy-policy")
 
   return (
@@ -154,4 +154,4 @@ const PrivacyPolicy = () => {
   )
 }
 
-export default PrivacyPolicy
+export default Privacy

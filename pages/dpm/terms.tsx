@@ -186,18 +186,18 @@ const tosContent: PageData = {
   ],
 }
 
-const TermsAndConditionsDPM = () => {
+const Terms = () => {
   const { t } = useTranslation("terms-and-conditions-dpm")
 
   return (
     <MainLayout
       title={t("pageTitle")}
       description={t("pageDescription")}
-      pageRoute="/dpm/terms-and-conditions-dpm"
+      pageRoute="/dpm/terms"
     >
       <NestedList content={tosContent} t={t} />
     </MainLayout>
   )
 }
 
-export default TermsAndConditionsDPM
+export default Terms

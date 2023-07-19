@@ -12,7 +12,7 @@ export interface MainLayoutProps {
   readonly pageRoute: string
   readonly footerBackground?: string
   readonly children: React.ReactNode
-  readonly ppPathOverride?: string
+  readonly privacyPathOverride?: string
   readonly tosPathOverride?: string
 }
 
@@ -24,7 +24,7 @@ const MainLayout = (props: MainLayoutProps) => {
     footerBackground,
     children,
     tosPathOverride,
-    ppPathOverride,
+    privacyPathOverride,
   } = props
 
   const [isHydrated, setIsHydrated] = useState(false)
@@ -96,7 +96,7 @@ const MainLayout = (props: MainLayoutProps) => {
                 } bg-no-repeat`}
               >
                 <Footer
-                  ppPathOverride={ppPathOverride}
+                  privacyPathOverride={privacyPathOverride}
                   tosPathOverride={tosPathOverride}
                 />
               </div>

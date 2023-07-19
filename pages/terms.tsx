@@ -209,7 +209,7 @@ const tosContent: PageData = {
   ],
 }
 
-const TermsAndConditions = () => {
+const Terms = () => {
   const { t } = useTranslation("terms-and-conditions")
 
   return (
@@ -223,4 +223,4 @@ const TermsAndConditions = () => {
   )
 }
 
-export default TermsAndConditions
+export default Terms

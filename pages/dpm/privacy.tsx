@@ -132,18 +132,18 @@ const privacyPolicyContent: PageData = {
   ],
 }
 
-const PrivacyPolicyDPM = () => {
+const Privacy = () => {
   const { t } = useTranslation("privacy-policy-dpm")
 
   return (
     <MainLayout
       title={t("pageTitle")}
       description={t("pageDescription")}
-      pageRoute="/dpm/privacy-policy-dpm"
+      pageRoute="/dpm/privacy"
     >
       <NestedList content={privacyPolicyContent} t={t} />
     </MainLayout>
   )
 }
 
-export default PrivacyPolicyDPM
+export default Privacy
