@@ -39,22 +39,26 @@ jobs:
         run: |
           OUTPUT=$(netlify deploy --build --context deploy-preview --message '{{env.MESSAGE}}')
           
-          NETLIFY_OUTPUT=$(echo "$OUTPUT")
-          NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
-          NETLIFY_LOGS_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://app.netlify.com/[a-zA-Z0-9./?=_-]*')
-          NETLIFY_LIVE_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*' | grep -Eov "netlify.com")
+          NETLIFY_PREVIEW_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
+          echo "NETLIFY_PREVIEW_URL=$NETLIFY_PREVIEW_URL" >> "$GITHUB_OUTPUT"
           
-          echo "NETLIFY_OUTPUT=$NETLIFY_OUTPUT" >> "$GITHUB_OUTPUT"
-          echo "NETLIFY_URL=$NETLIFY_URL" >> "$GITHUB_OUTPUT"
+          NETLIFY_LOGS_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://app.netlify.com/[a-zA-Z0-9./?=_-]*')
           echo "NETLIFY_LOGS_URL=$NETLIFY_LOGS_URL" >> "$GITHUB_OUTPUT"
-          echo "NETLIFY_LIVE_URL=$NETLIFY_LIVE_URL" >> "$GITHUB_OUTPUT"
 
       - name: Netlify Preview URL 👓
         if: github.event_name == 'pull_request'
         uses: unsplash/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OUTPUT: "This pull request is being automatically deployed to Netlify.\n\n🔍 Inspect: ${{ steps.deploy-netlify.outputs.NETLIFY_LOGS_URL }}\n✅ Preview: ${{ steps.deploy-netlify.outputs.NETLIFY_URL }}"
+          OUTPUT: "This pull request is being automatically deployed to Netlify.\n\n🔍 Inspect: ${{ steps.deploy-netlify.outputs.NETLIFY_LOGS_URL }}\n✅ Preview: ${{ steps.deploy-netlify.outputs.NETLIFY_PREVIEW_URL }}"
         with:
           msg: ${{ env.OUTPUT }}
           check_for_duplicate_msg: false
+
+      - name: Create status check 📝
+        uses: Sibz/github-status-action@v1.1.1
+        with:
+          authToken: ${{ secrets.GITHUB_TOKEN }}
+          context: Netlify preview
+          state: success
+          target_url: ${{ steps.deploy-netlify.outputs.NETLIFY_PREVIEW_URL }}
