@@ -31,18 +31,24 @@ jobs:
       - name: Install dependencies 🔨
         run: yarn install --immutable
 
-      - name: Deploy preview to Netlify 🚀
-        id: deploy-preview
-        uses: veloii/action-netlify-deploy@v2.2.1
-        with:
+      - name: Build 📦
+        run: yarn build
+
+      - name: Deploy to Netlify 🚀
+        id: deploy-netlify
+        uses: netlify/actions/cli@master
+        env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DEPLOY_MESSAGE: "Deploy from GitHub Actions"
-
-      - name: Comment preview URL 🗨️
-        if: github.event_name == 'pull_request'
-        uses: thollander/actions-comment-pull-request@v2
         with:
+          args: deploy --build -m 'v${{ steps.package-version.outputs.current-version}} ・ ${{ github.head_ref }}'
+
+      - name: Netlify Preview URL 👓
+        if: github.event_name == 'pull_request'
+        uses: unsplash/comment-on-pr@master
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          message: '👀 Docs preview available here: ${{ steps.deploy-preview.outputs.deploy-url }}'
-          comment_tag: '👀 Docs preview available here: '
+          OUTPUT: "This pull request is being automatically deployed to Netlify.\n\n🔍 Inspect: ${{ steps.deploy-netlify.outputs.NETLIFY_LOGS_URL }}\n✅ Preview: ${{ steps.deploy-netlify.outputs.NETLIFY_URL }}"
+        with:
+          msg: ${{ env.OUTPUT }}
+          check_for_duplicate_msg: false
