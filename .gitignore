@@ -39,3 +39,6 @@ yarn-error.log*
 .yarn/*
 !.yarn/releases
 !.yarn/plugins
+
+# Local Netlify folder
+.netlify
