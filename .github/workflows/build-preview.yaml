@@ -35,9 +35,8 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          MESSAGE: v${{ steps.package-version.outputs.current-version}} ・ ${{ github.head_ref }}
         run: |
-          OUTPUT=$(netlify deploy --build --context deploy-preview --message '{{env.MESSAGE}}')
+          OUTPUT=$(netlify deploy --build --context deploy-preview --message 'Deployment from GitHub Actions')
           
           NETLIFY_PREVIEW_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
           echo "NETLIFY_PREVIEW_URL=$NETLIFY_PREVIEW_URL" >> "$GITHUB_OUTPUT"
