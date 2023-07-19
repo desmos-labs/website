@@ -18,8 +18,8 @@ const Dpm = () => {
       title={t("pageTitle")}
       description={t("pageDescription")}
       pageRoute="/dpm"
-      ppPathOverride={"/dpm/privacy-policy-dpm"}
-      tosPathOverride={"/dpm/terms-and-conditions-dpm"}
+      ppPathOverride={"/dpm/privacy"}
+      tosPathOverride={"/dpm/terms"}
     >
       <DpmSection />
     </MainLayout>
