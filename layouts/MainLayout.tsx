@@ -53,7 +53,6 @@ const MainLayout = (props: MainLayoutProps) => {
     return () => window.removeEventListener("scroll", handleScroll)
   })
 
-  // Compute the proper page title and URL
   const pageTitle = title
 
   return (
