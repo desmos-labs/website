@@ -54,7 +54,7 @@ const MainLayout = (props: MainLayoutProps) => {
   })
 
   // Compute the proper page title and URL
-  const pageTitle = title.includes("Desmos") ? title : `Desmos ${title}`
+  const pageTitle = title
 
   return (
     <>
