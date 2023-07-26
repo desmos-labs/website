@@ -18,6 +18,13 @@ const Footer = (props: FooterProps) => {
           </span>
           <Link
             className="md:inline-block text-desmos-white-Default lg:px-6 md:leading-[21px] leading-[40px]"
+            href={"/newsletter"}
+          >
+            Newsletter
+          </Link>
+          <span className="hidden lg:inline-block">|</span>
+          <Link
+            className="md:inline-block text-desmos-white-Default lg:px-6 md:leading-[21px] leading-[40px]"
             href={tosPathOverride || "/terms"}
           >
             Terms & Conditions

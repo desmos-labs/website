@@ -3,15 +3,22 @@ import Link from "next/link"
 
 export interface OrangeButtonProps {
   readonly buttonText: string
-  readonly buttonLink: string
+  readonly buttonLink?: string
   readonly buttonMargin?: string
   readonly buttonPadding?: string
   readonly isInternal?: boolean
+  readonly isSubmit?: boolean
 }
 
 const OrangeButton = (props: OrangeButtonProps) => {
-  const { buttonText, buttonLink, buttonMargin, buttonPadding, isInternal } =
-    props
+  const {
+    buttonText,
+    buttonLink,
+    buttonMargin,
+    buttonPadding,
+    isInternal,
+    isSubmit,
+  } = props
 
   const content = useMemo(() => {
     return (
@@ -36,19 +43,26 @@ const OrangeButton = (props: OrangeButtonProps) => {
     )
   }, [buttonText])
 
-  return isInternal ? (
-    <Link
-      href={buttonLink}
-      className={`${buttonMargin} ${buttonPadding} group relative text-[16px] leading-[24px] tracking-[.0015em] font-semibold box-content md:inline-block text-white z-10`}
-    >
-      {content}
-    </Link>
-  ) : (
-    <a
-      href={`${buttonLink}`}
-      target="_blank"
-      className={`${buttonMargin} ${buttonPadding} group relative text-[16px] leading-[24px] tracking-[.0015em] font-semibold box-content md:inline-block text-white z-10`}
-    >
+  const className = `${buttonMargin} ${buttonPadding} group relative text-[16px] leading-[24px] tracking-[.0015em] font-semibold box-content md:inline-block text-white z-10`
+
+  if (isSubmit) {
+    return (
+      <button type="submit" className={className}>
+        {content}
+      </button>
+    )
+  }
+
+  if (isInternal) {
+    return (
+      <Link href={buttonLink!} className={className}>
+        {content}
+      </Link>
+    )
+  }
+
+  return (
+    <a href={buttonLink!} target="_blank" className={className}>
       {content}
     </a>
   )
