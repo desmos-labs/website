@@ -12,26 +12,26 @@ const Footer = (props: FooterProps) => {
   return (
     <div className="flex flex-col md:gap-6 gap-3 py-12 px-xMobile md:px-xMd lg:px-xLg xl:px-xXl">
       <div className="flex md:flex-row flex-col-reverse items-center md:justify-between">
-        <div className="text-[#878787] text-[14px] font-[400] tracking-[.0025em] leading-[21px]">
-          <span className="hidden lg:inline-block">
+        <div className="text-center md:text-left text-[#878787] text-[14px] font-[400] tracking-[.0025em] leading-[21px]">
+          <span className="hidden lg:inline-block lg:pr-6">
             Copyright © Forbole {new Date().getFullYear()}
           </span>
           <Link
-            className="md:inline-block text-desmos-white-Default lg:px-6 md:leading-[21px] leading-[40px]"
+            className="text-desmos-white-Default block md:inline-block px-0 md:leading-[21px] leading-[40px]"
             href={"/newsletter"}
           >
             Newsletter
           </Link>
-          <span className="hidden lg:inline-block">|</span>
+          <span className="hidden md:inline-block md:px-6">|</span>
           <Link
-            className="md:inline-block text-desmos-white-Default lg:px-6 md:leading-[21px] leading-[40px]"
+            className="text-desmos-white-Default block md:inline-block px-0 md:leading-[21px] leading-[40px]"
             href={tosPathOverride || "/terms"}
           >
             Terms & Conditions
           </Link>
-          <span className="hidden lg:inline-block">|</span>
+          <span className="hidden md:inline-block md:px-6">|</span>
           <Link
-            className="md:inline-block block text-desmos-white-Default px-6 md:leading-[21px] leading-[40px]"
+            className="text-desmos-white-Default block md:inline-block px-0 md:leading-[21px] leading-[40px]"
             href={privacyPathOverride || "/privacy"}
           >
             Privacy Policy
