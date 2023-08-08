@@ -9,7 +9,7 @@ import StoreButton from "@/components/DPM/StoreButton"
 const DpmSection = () => {
   const { t } = useTranslation("dpm")
   return (
-    <div className="mt-[100px] md:mt-[80px] lg:mt-[120px]">
+    <div className="mt-[100px] md:mt-[80px] lg:mt-[120px] max-w-[1920px] mx-auto">
       <div className="flex flex-1 flex-col text-center items-center m-xMd lg:flex-row lg:justify-between lg:text-start">
         <Image
           className="hidden md:block md:w-[300px] lg:w-[849px] lg:hidden"
