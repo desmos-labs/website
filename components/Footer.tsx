@@ -14,7 +14,7 @@ const Footer = (props: FooterProps) => {
       <div className="flex md:flex-row flex-col-reverse items-center md:justify-between">
         <div className="text-center md:text-left text-[#878787] text-[14px] font-[400] tracking-[.0025em] leading-[21px]">
           <span className="hidden lg:inline-block lg:pr-6">
-            Copyright © Forbole {new Date().getFullYear()}
+            Copyright © Desmos Labs {new Date().getFullYear()}
           </span>
           <Link
             className="text-desmos-white-Default block md:inline-block px-0 md:leading-[21px] leading-[40px]"
@@ -129,7 +129,7 @@ const Footer = (props: FooterProps) => {
         </div>
       </div>
       <div className="lg:hidden text-[#878787] text-[14px] font-[400] tracking-[.0025em] leading-[21px] md:text-left text-center">
-        Copyright © Forbole {new Date().getFullYear()}
+        Copyright © Desmos Labs {new Date().getFullYear()}
       </div>
     </div>
   )
