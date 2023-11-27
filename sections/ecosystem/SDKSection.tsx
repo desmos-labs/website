@@ -1,39 +1,45 @@
 import React from "react"
 import { useTranslation } from "next-i18next"
 import LinkButton from "@/components/LinkButton"
+import LinkCardButton from "@/components/LinkCardButton";
 
 const SDKSection = () => {
   const { t } = useTranslation("ecosystem")
   const buttons = [
     {
       id: 1,
-      title: "SDKButton01",
-      link: "https://docs.desmos.network/",
-      margin: "xl:mr-[125px]",
+      image: "/DesmosCore.svg",
+      title: "desmosCore",
+      content: "desmosCoreContent",
+      link: "https://github.com/desmos-labs/desmos",
     },
     {
       id: 2,
-      title: "SDKButton02",
-      link: "https://github.com/desmos-labs/desmos-contracts",
-      margin: "xl:mr-[125px]",
+      image: "/DesmJS.svg",
+      title: "desmJS",
+      content: "desmJSContent",
+      link: "https://github.com/desmos-labs/desmjs",
     },
     {
       id: 3,
-      title: "SDKButton03",
-      link: "https://github.com/desmos-labs/desmos-bindings",
-      margin: "xl:mr-[125px]",
+      image: "/ContractsBindings.svg",
+      title: "desmosBindings",
+      content: "desmosBindingsContent",
+      link: "https://github.com/desmos-labs/contracts-bindings",
     },
     {
       id: 4,
-      title: "SDKButton04",
-      link: "https://github.com/desmos-labs/desmjs",
-      margin: "xl:mr-[125px]",
+      image: "/Athena.svg",
+      title: "athena",
+      content: "athenaContent",
+      link: "https://github.com/desmos-labs/djuno",
     },
     {
       id: 5,
-      title: "SDKButton05",
-      link: "https://github.com/desmos-labs/djuno",
-      margin: "xl:mr-[125px]",
+      image: "/Caerus.svg",
+      title: "caerus",
+      content: "caerusContent",
+      link: "https://github.com/desmos-labs/caerus",
     },
   ]
   return (
@@ -41,15 +47,18 @@ const SDKSection = () => {
       <h2 className="md:tracking-[0.0015em] tracking-[-0.015em] font-semibold text-[18px] md:text-[22px] lg:text-[24px]">
         {t("SDKTitle")}
       </h2>
-      <div className="xl:max-w-[1440px] px-[32px] md:px-[42px] py-[50px] lg:py-[40px] rounded-[8px] bg-[#7D747433] grid md:grid-cols-2 lg:grid-cols-3 xl:block lg:gap-5 lg:gap-y-[36px] gap-4 gap-y-[44px] mt-[16px] md:mt-[24px]">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 lg:gap-[24px] md:gap-[18px] gap-4 mt-[16px] md:mt-[24px] xl:max-w-[1407px]">
         {buttons.map((button) => {
           return (
-            <LinkButton
-              key={button.id}
-              title={button.title}
-              link={button.link}
-              margin={button.margin}
-            />
+            <div className="md:col-span-1" key={button.id}>
+              <LinkCardButton
+                key={button.id}
+                image={button.image}
+                title={button.title}
+                content={button.content}
+                link={button.link}
+              />
+            </div>
           )
         })}
       </div>
