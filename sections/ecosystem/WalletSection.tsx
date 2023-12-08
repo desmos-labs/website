@@ -32,7 +32,14 @@ const WalletsSection = () => {
       title: "walletsButtonTitle05",
       image: "/LeapWallet.png",
       content: "walletsButtonContent05",
-      link: "https://www.leapwallet.io/",
+      link: "https://leapwallet.io/",
+    },
+    {
+      id: 4,
+      title: "walletsButtonTitle06",
+      image: "/XDEFI.png",
+      content: "walletsButtonContent06",
+      link: "https://xdefi.io/",
     },
   ]
   return (
