@@ -7,23 +7,23 @@ const ApplicationsSection = () => {
   const buttons = [
     {
       id: 1,
-      title: "applicationsButtonTitle01",
+      title: "goFindMeTitle",
       image: "/goFindMe.png",
-      content: "applicationsButtonContent01",
+      content: "goFindMeContent",
       link: "https://go-find.me/",
     },
     {
       id: 2,
-      title: "applicationsButtonTitle02",
+      title: "scriptaTitle",
       image: "/scripta.png",
-      content: "applicationsButtonContent02",
+      content: "scriptaContent",
       link: "https://scripta.network/",
     },
     {
       id: 3,
-      title: "applicationsButtonTitle03",
+      title: "butterTitle",
       image: "/butter.png",
-      content: "applicationsButtonContent03",
+      content: "butterContent",
       link: "https://butter.social",
     },
   ]
