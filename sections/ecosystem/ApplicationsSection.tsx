@@ -26,6 +26,13 @@ const ApplicationsSection = () => {
       content: "butterContent",
       link: "https://butter.social",
     },
+    {
+      id: 4,
+      title: "bondscapeTitle",
+      image: "/bondscape.png",
+      content: "bondscapeContent",
+      link: "https://bondscape.app",
+    },
   ]
   return (
     <div className="text-white mt-[60px] md:mt-[80px] lg:mt-[120px] ">
