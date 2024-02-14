@@ -21,10 +21,10 @@ const ApplicationsSection = () => {
     },
     {
       id: 3,
-      title: "butterTitle",
-      image: "/butter.png",
-      content: "butterContent",
-      link: "https://butter.social",
+      title: "mooncakeTitle",
+      image: "/mooncake.png",
+      content: "mooncakeContent",
+      link: "https://mooncake.space",
     },
     {
       id: 4,
